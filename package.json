@@ -27,6 +27,13 @@
     "url": "https://github.com/tutkli/jikan-ts/issues"
   },
   "homepage": "https://github.com/tutkli/jikan-ts#readme",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "axios-cache-interceptor": "^0.10.7",
+    "pino": "^8.7.0",
+    "pino-pretty": "^9.1.1",
+    "tslib": "^2.4.1"
+  },
   "devDependencies": {
     "@swc/core": "^1.3.14",
     "@swc/jest": "^0.2.23",
