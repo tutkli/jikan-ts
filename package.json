@@ -1,8 +1,12 @@
 {
   "name": "jikan-ts",
-  "version": "0.0.1",
-  "description": "Node.js wrapper for the Jikan API",
+  "version": "0.1.1",
+  "description": "Node.js wrapper for the Jikan API with build-in typings.",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "/dist"
+  ]
   "scripts": {
     "build": "rimraf dist && tsc",
     "test:coverage": "jest --coverage",
