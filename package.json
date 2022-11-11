@@ -6,7 +6,7 @@
   "types": "dist/index.d.ts",
   "files": [
     "/dist"
-  ]
+  ],
   "scripts": {
     "build": "rimraf dist && tsc",
     "test:coverage": "jest --coverage",
