@@ -6,12 +6,13 @@ import {
   JikanResourceTitle,
   JikanUniqueResource,
 } from '../Common';
+import { AnimeYoutubeVideo } from './anime-video.model';
 
 export interface Anime {
   mal_id: string;
   url: string;
   images: JikanImages;
-  trailer: AnimeTrailer;
+  trailer: AnimeYoutubeVideo;
   approved: boolean;
   titles: JikanResourceTitle[];
   title: string;
@@ -48,12 +49,6 @@ export interface Anime {
   theme?: AnimeTheme;
   external?: JikanNamedResource[];
   streaming: JikanNamedResource[];
-}
-
-export interface AnimeTrailer {
-  youtube_id: string;
-  url: string;
-  embed_url: string;
 }
 
 export interface AnimeBroadcast {

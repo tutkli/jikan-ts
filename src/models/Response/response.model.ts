@@ -1,7 +1,7 @@
 export interface JikanPagination {
   last_visible_page: number;
   has_next_page: boolean;
-  items: JikanPaginationItems;
+  items?: JikanPaginationItems;
 }
 
 export interface JikanPaginationItems {
@@ -12,7 +12,7 @@ export interface JikanPaginationItems {
 
 export interface JikanResponse<T> {
   data: T[];
-  pagination: JikanPagination;
+  pagination?: JikanPagination;
 }
 
 export interface JikanUniqueResponse<T> {
