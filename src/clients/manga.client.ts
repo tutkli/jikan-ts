@@ -2,8 +2,7 @@ import { BaseClient, ClientArgs } from './base.client';
 import { MangaEndpoints } from '../constants';
 import { CacheAxiosResponse } from 'axios-cache-interceptor';
 import { AxiosError } from 'axios';
-import { JikanResponse, JikanUniqueResponse } from '../models/Response';
-import { Manga } from '../models/Manga';
+import { JikanResponse, JikanUniqueResponse, Manga } from '../models';
 
 /**
  * **Manga Client**

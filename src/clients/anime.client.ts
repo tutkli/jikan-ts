@@ -2,8 +2,7 @@ import { BaseClient, ClientArgs } from './base.client';
 import { AnimeEndpoints } from '../constants';
 import { CacheAxiosResponse } from 'axios-cache-interceptor';
 import { AxiosError } from 'axios';
-import { JikanResponse, JikanUniqueResponse } from '../models/Response';
-import { Anime } from '../models/Anime';
+import { Anime, JikanResponse, JikanUniqueResponse } from '../models';
 
 /**
  * **Anime Client**
