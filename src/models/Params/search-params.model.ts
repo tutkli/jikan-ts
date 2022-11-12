@@ -1,21 +1,34 @@
 import { MangaStatus, MangaType } from '../Manga';
 import { AnimeRating, AnimeStatus, AnimeType } from '../Anime';
 
-export type SortOptions = 'asc' | 'desc';
+export enum SortOptions {
+  asc = 'asc',
+  desc = 'desc',
+}
 
-export type SearchOrder =
-  | 'mal_id'
-  | 'title'
-  | 'start_date'
-  | 'end_date'
-  | 'score'
-  | 'scored_by'
-  | 'rank'
-  | 'popularity'
-  | 'members'
-  | 'favorites';
-export type AnimeSearchOrder = 'type' | 'rating' | 'episodes';
-export type MangaSearchOrder = 'chapters' | 'volumes';
+export enum SearchOrder {
+  mal_id = 'mal_id',
+  title = 'title',
+  start_date = 'start_date',
+  end_date = 'end_date',
+  score = 'score',
+  scored_by = 'scored_by',
+  rank = 'rank',
+  popularity = 'popularity',
+  members = 'members',
+  favorites = 'favorites',
+}
+
+export enum AnimeSearchOrder {
+  type = 'type',
+  rating = 'rating',
+  episodes = 'episodes',
+}
+
+export enum MangaSearchOrder {
+  chapters = 'chapters',
+  volumes = 'volumes',
+}
 
 export interface JikanSearchParams {
   q?: string;

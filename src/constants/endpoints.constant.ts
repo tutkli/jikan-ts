@@ -25,5 +25,5 @@ export enum MangaEndpoints {
 
 export enum TopEndpoints {
   TopAnime = '/top/anime',
-  TopManga = '/top/Manga',
+  TopManga = '/top/manga',
 }

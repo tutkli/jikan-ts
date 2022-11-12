@@ -49,7 +49,7 @@ export class AnimeClient extends BaseClient {
    * @param searchParams Filter parameters
    * @returns A JikanResponse with Anime data
    */
-  public async getAnimeSearch(searchParams: AnimeSearchParams): Promise<JikanResponse<Anime>> {
+  public async getAnimeSearch(searchParams?: AnimeSearchParams): Promise<JikanResponse<Anime>> {
     return new Promise<JikanResponse<Anime>>((resolve, reject) => {
       const endpoint = `${AnimeEndpoints.AnimeSearch}`;
       this.api

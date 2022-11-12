@@ -39,6 +39,20 @@ export interface Manga {
   external?: JikanNamedResource[];
 }
 
-export type MangaType = 'Manga' | 'Novel' | 'Lightnovel' | 'Oneshot' | 'Doujin' | 'Manwha' | 'Manhua';
+export enum MangaType {
+  manga = 'Manga',
+  novel = 'Novel',
+  lightnovel = 'Lightnovel',
+  oneshot = 'Oneshot',
+  doujin = 'Doujin',
+  manwha = 'Manwha',
+  manhua = 'Manhua',
+}
 
-export type MangaStatus = 'Publishing' | 'Complete' | 'Hiatus' | 'Discontinued' | 'Upcoming';
+export enum MangaStatus {
+  publishing = 'Publishing',
+  complete = 'Complete',
+  hiatus = 'Hiatus',
+  discontinued = 'Discontinued',
+  upcoming = 'Upcoming',
+}

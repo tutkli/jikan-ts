@@ -2,7 +2,7 @@ import { JikanImages } from './image.model';
 
 export interface CommonCharacter {
   character: CommonCharacterData;
-  role: CommonCharacterRole;
+  role: CharacterRole;
 }
 
 export interface CommonCharacterData {
@@ -12,4 +12,7 @@ export interface CommonCharacterData {
   name: string;
 }
 
-export type CommonCharacterRole = 'Main' | 'Supporting';
+export enum CharacterRole {
+  main = 'Main',
+  supporting = 'Supporting',
+}

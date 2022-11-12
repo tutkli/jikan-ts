@@ -63,10 +63,33 @@ export interface AnimeTheme {
   endings: string[];
 }
 
-export type AnimeType = 'TV' | 'Movie' | 'Ova' | 'Special' | 'Ona' | 'Music';
+export enum AnimeType {
+  tv = 'TV',
+  movie = 'Movie',
+  ova = 'Ova',
+  special = 'Special',
+  ona = 'Ona',
+  music = 'Music',
+}
 
-export type AnimeStatus = 'Finished Airing' | 'Currently Airing' | 'Complete';
+export enum AnimeStatus {
+  finished = 'Finished Airing',
+  airing = 'Currently Airing',
+  complete = 'Complete',
+}
 
-export type AnimeRating = 'g' | 'pg' | 'pg13' | 'r17' | 'r' | 'rx';
+export enum AnimeRating {
+  g = 'g',
+  pg = 'pg',
+  pg13 = 'pg13',
+  r17 = 'r17',
+  r = 'r',
+  rx = 'rx',
+}
 
-export type AnimeSeason = 'spring' | 'summer' | 'fall' | 'winter';
+export enum AnimeSeason {
+  spring = 'spring',
+  summer = 'summer',
+  fall = 'fall',
+  winter = 'winter',
+}

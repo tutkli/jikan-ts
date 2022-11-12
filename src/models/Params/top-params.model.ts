@@ -1,12 +1,23 @@
 import { AnimeType } from '../Anime';
 import { MangaType } from '../Manga';
 
-export type TopFilter = 'airing' | 'upcoming' | 'bypopularity' | 'favorite';
+export enum TopAnimeFilter {
+  airing = 'airing',
+  upcoming = 'upcoming',
+  bypopularity = 'bypopularity',
+  favorite = 'favorite',
+}
+
+export enum TopMangaFilter {
+  publishing = 'publishing',
+  upcoming = 'upcoming',
+  bypopularity = 'bypopularity',
+  favorite = 'favorite',
+}
 
 export interface JikanTopParams {
   page?: number;
   limit?: number;
-  filter?: TopFilter;
 }
 
 /**
@@ -15,7 +26,8 @@ export interface JikanTopParams {
  * See also: [Jikan API Documentation](https://docs.api.jikan.moe/#tag/top/operation/getTopAnime)
  */
 export interface AnimeTopParams extends JikanTopParams {
-  type: AnimeType;
+  type?: AnimeType;
+  filter?: TopAnimeFilter;
 }
 
 /**
@@ -24,5 +36,6 @@ export interface AnimeTopParams extends JikanTopParams {
  * See also: [Jikan API Documentation](https://docs.api.jikan.moe/#tag/top/operation/getTopManga)
  */
 export interface MangaTopParams extends JikanTopParams {
-  type: MangaType;
+  type?: MangaType;
+  filter: TopMangaFilter;
 }
