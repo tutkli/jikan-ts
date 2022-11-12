@@ -9,6 +9,7 @@ Node.js wrapper of the Jikan API with build-in typings.
 - Built-in typings
 - Axios with Request Cache
 - Logging Configuration
+- Fully Tree-Shakable
 
 ## Installation
 
