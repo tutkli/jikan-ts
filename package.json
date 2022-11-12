@@ -10,7 +10,8 @@
     "watch": "parcel watch",
     "build": "parcel build",
     "test:coverage": "jest --coverage",
-    "test:dev": "jest --verbose --colors --expand --maxWorkers=50% --detectOpenHandles --errorOnDeprecated --bail"
+    "test:dev": "jest --verbose --colors --expand --maxWorkers=50% --detectOpenHandles --errorOnDeprecated --bail",
+    "lint:fix": "npx eslint src/** --fix"
   },
   "repository": {
     "type": "git",
