@@ -1,3 +1,15 @@
+# v0.5.2 (12/11/2022)
+
+### Config
+
+- Change TS module config to "es2022"
+
+### Bugs
+
+- Fix pino logger imports
+
+<!-- CHANGELOG SPLIT MARKER -->
+
 # v0.5.1 (12/11/2022)
 
 ### Modules
