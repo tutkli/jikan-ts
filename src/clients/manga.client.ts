@@ -16,13 +16,15 @@ import {
  * **Manga Client**
  *
  * Client used to access the Manga Endpoints:
- * - [Manga](https://docs.api.jikan.moe/#tag/manga)
+ * - [MangaSearch](https://docs.api.jikan.moe/#tag/manga)
  * - [MangaFullById](https://docs.api.jikan.moe/#tag/manga/operation/getMangaFullById)
  * - [MangaById](https://docs.api.jikan.moe/#tag/manga/operation/getMangaById)
  * - [MangaCharacters](https://docs.api.jikan.moe/#tag/manga/operation/getMangaCharacters)
  * - [MangaPictures](https://docs.api.jikan.moe/#tag/manga/operation/getMangaPictures)
  * - [MangaStatistics](https://docs.api.jikan.moe/#tag/manga/operation/getMangaStatistics)
  * - [MangaRecommendations](https://docs.api.jikan.moe/#tag/manga/operation/getMangaRecommendations)
+ *
+ * See also: [JikanAPI Documentation](https://docs.api.jikan.moe/)
  */
 export class MangaClient extends BaseClient {
   /**
@@ -33,12 +35,12 @@ export class MangaClient extends BaseClient {
   }
 
   /**
-   * Get all the Mangas
+   * Get all the filtered Mangas. Returns all the Mangas if no filters are given.
    * @returns A JikanResponse with Manga data
    */
-  public async getMangas(): Promise<JikanResponse<Manga>> {
+  public async getMangaSearch(): Promise<JikanResponse<Manga>> {
     return new Promise<JikanResponse<Manga>>((resolve, reject) => {
-      const endpoint = `${MangaEndpoints.Manga}`;
+      const endpoint = `${MangaEndpoints.MangaSearch}`;
       this.api
         .get<JikanResponse<Manga>>(endpoint)
         .then((response: CacheAxiosResponse<JikanResponse<Manga>>) => resolve(response.data))

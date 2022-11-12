@@ -41,7 +41,7 @@ export class TopClient extends BaseClient {
    */
   public async getTopManga(): Promise<JikanResponse<Manga>> {
     return new Promise<JikanResponse<Manga>>((resolve, reject) => {
-      const endpoint = `${MangaEndpoints.Manga}`;
+      const endpoint = `${MangaEndpoints.MangaSearch}`;
       this.api
         .get<JikanResponse<Manga>>(endpoint)
         .then((response: CacheAxiosResponse<JikanResponse<Manga>>) => resolve(response.data))

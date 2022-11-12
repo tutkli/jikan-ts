@@ -14,7 +14,7 @@ export enum AnimeEndpoints {
 }
 
 export enum MangaEndpoints {
-  Manga = '/manga',
+  MangaSearch = '/manga',
   MangaFullById = '/manga/{id}/full',
   MangaById = '/manga/{id}',
   MangaCharacters = '/manga/{id}/characters',
