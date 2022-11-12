@@ -1,3 +1,11 @@
+# v0.5.0 (12/11/2022)
+
+### Test
+
+- Added Client tests
+
+<!-- CHANGELOG SPLIT MARKER -->
+
 # v0.4.0 (12/11/2022)
 
 ### Clients
