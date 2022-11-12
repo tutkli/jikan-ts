@@ -9,10 +9,20 @@ export interface JikanTopParams {
   filter?: TopFilter;
 }
 
+/**
+ * QueryParams used in **getTopAnime** call
+ *
+ * See also: [Jikan API Documentation](https://docs.api.jikan.moe/#tag/top/operation/getTopAnime)
+ */
 export interface AnimeTopParams extends JikanTopParams {
   type: AnimeType;
 }
 
+/**
+ * QueryParams used in **getTopManga** call
+ *
+ * See also: [Jikan API Documentation](https://docs.api.jikan.moe/#tag/top/operation/getTopManga)
+ */
 export interface MangaTopParams extends JikanTopParams {
   type: MangaType;
 }

@@ -34,6 +34,11 @@ export interface JikanSearchParams {
   end_date?: string;
 }
 
+/**
+ * QueryParams used in **getMangaSearch** call
+ *
+ * See also: [Jikan API Documentation](https://docs.api.jikan.moe/#tag/manga/operation/getMangaSearch)
+ */
 export interface MangaSearchParams extends JikanSearchParams {
   type?: MangaType | string;
   status?: MangaStatus | string;
@@ -41,6 +46,11 @@ export interface MangaSearchParams extends JikanSearchParams {
   magazines?: string;
 }
 
+/**
+ * QueryParams used in **getAnimeSearch** call
+ *
+ * See also: [Jikan API Documentation](https://docs.api.jikan.moe/#tag/anime/operation/getAnimeSearch)
+ */
 export interface AnimeSearchParams extends JikanSearchParams {
   type?: AnimeType | string;
   status?: AnimeStatus | string;
