@@ -13,7 +13,7 @@ Node.js wrapper of the Jikan API with build-in typings.
 ## Installation
 
 ```bash
-npm install --save jikan-ts
+npm install --save @tutkli/jikan-ts
 ```
 
 ## Basic Example
