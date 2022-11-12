@@ -1,4 +1,4 @@
-import { DestinationStream, Logger, LoggerOptions, pino } from 'pino';
+import pino, { DestinationStream, Logger, LoggerOptions } from 'pino';
 import { AxiosError } from 'axios';
 import { CacheAxiosResponse, CacheRequestConfig } from 'axios-cache-interceptor';
 
