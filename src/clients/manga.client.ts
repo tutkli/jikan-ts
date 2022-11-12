@@ -11,6 +11,7 @@ import {
   MangaStatistics,
   Recommendation,
 } from '../models';
+import { MangaSearchParams } from '../models/Params';
 
 /**
  * **Manga Client**
@@ -36,13 +37,14 @@ export class MangaClient extends BaseClient {
 
   /**
    * Get all the filtered Mangas. Returns all the Mangas if no filters are given.
+   * @param searchParams Filter parameters
    * @returns A JikanResponse with Manga data
    */
-  public async getMangaSearch(): Promise<JikanResponse<Manga>> {
+  public async getMangaSearch(searchParams: MangaSearchParams): Promise<JikanResponse<Manga>> {
     return new Promise<JikanResponse<Manga>>((resolve, reject) => {
       const endpoint = `${MangaEndpoints.MangaSearch}`;
       this.api
-        .get<JikanResponse<Manga>>(endpoint)
+        .get<JikanResponse<Manga>>(endpoint, { params: searchParams })
         .then((response: CacheAxiosResponse<JikanResponse<Manga>>) => resolve(response.data))
         .catch((error: AxiosError<string>) => reject(error));
     });

@@ -3,6 +3,7 @@ import { Anime, JikanResponse, Manga } from '../models';
 import { AnimeEndpoints, MangaEndpoints } from '../constants';
 import { CacheAxiosResponse } from 'axios-cache-interceptor';
 import { AxiosError } from 'axios';
+import { AnimeTopParams, MangaTopParams } from '../models/Params';
 
 /**
  * **Anime Client**
@@ -25,11 +26,11 @@ export class TopClient extends BaseClient {
    * Get the top Animes
    * @returns A JikanResponse with Anime data
    */
-  public async getTopAnime(): Promise<JikanResponse<Anime>> {
+  public async getTopAnime(searchParams: AnimeTopParams): Promise<JikanResponse<Anime>> {
     return new Promise<JikanResponse<Anime>>((resolve, reject) => {
       const endpoint = `${AnimeEndpoints.AnimeSearch}`;
       this.api
-        .get<JikanResponse<Anime>>(endpoint)
+        .get<JikanResponse<Anime>>(endpoint, { params: searchParams })
         .then((response: CacheAxiosResponse<JikanResponse<Anime>>) => resolve(response.data))
         .catch((error: AxiosError<string>) => reject(error));
     });
@@ -39,11 +40,11 @@ export class TopClient extends BaseClient {
    * Get the top Mangas
    * @returns A JikanResponse with Manga data
    */
-  public async getTopManga(): Promise<JikanResponse<Manga>> {
+  public async getTopManga(searchParams: MangaTopParams): Promise<JikanResponse<Manga>> {
     return new Promise<JikanResponse<Manga>>((resolve, reject) => {
       const endpoint = `${MangaEndpoints.MangaSearch}`;
       this.api
-        .get<JikanResponse<Manga>>(endpoint)
+        .get<JikanResponse<Manga>>(endpoint, { params: searchParams })
         .then((response: CacheAxiosResponse<JikanResponse<Manga>>) => resolve(response.data))
         .catch((error: AxiosError<string>) => reject(error));
     });

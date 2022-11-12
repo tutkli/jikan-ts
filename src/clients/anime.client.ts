@@ -15,6 +15,7 @@ import {
   JikanUniqueResponse,
   Recommendation,
 } from '../models';
+import { AnimeSearchParams } from '../models/Params';
 
 /**
  * **Anime Client**
@@ -45,13 +46,14 @@ export class AnimeClient extends BaseClient {
 
   /**
    * Get all the filtered Animes. Returns all the Animes if no filters are given.
+   * @param searchParams Filter parameters
    * @returns A JikanResponse with Anime data
    */
-  public async getAnimeSearch(): Promise<JikanResponse<Anime>> {
+  public async getAnimeSearch(searchParams: AnimeSearchParams): Promise<JikanResponse<Anime>> {
     return new Promise<JikanResponse<Anime>>((resolve, reject) => {
       const endpoint = `${AnimeEndpoints.AnimeSearch}`;
       this.api
-        .get<JikanResponse<Anime>>(endpoint)
+        .get<JikanResponse<Anime>>(endpoint, { params: searchParams })
         .then((response: CacheAxiosResponse<JikanResponse<Anime>>) => resolve(response.data))
         .catch((error: AxiosError<string>) => reject(error));
     });
