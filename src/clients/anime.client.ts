@@ -7,6 +7,7 @@ import {
   AnimeCharacter,
   AnimeEpisode,
   AnimePicture,
+  AnimeSearchParams,
   AnimeStaff,
   AnimeStatistics,
   AnimeVideo,
@@ -15,7 +16,6 @@ import {
   JikanUniqueResponse,
   Recommendation,
 } from '../models';
-import { AnimeSearchParams } from '../models/Params';
 
 /**
  * **Anime Client**
