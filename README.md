@@ -18,10 +18,10 @@ npm install --save jikan-ts
 
 ## Basic Example
 
-Use a specific client, like AnimeClient:
+Using a specific client, like AnimeClient:
 
 ```js
-import { AnimeClient } from 'jikan-ts';
+import { AnimeClient } from '@tutkli/jikan-ts';
 
 (async () => {
   const api = new AnimeClient();
@@ -33,10 +33,10 @@ import { AnimeClient } from 'jikan-ts';
 })();
 ```
 
-Or, use the JikanClient:
+Or, using the JikanClient:
 
 ```js
-import { JikanClient } from 'jikan-ts';
+import { JikanClient } from '@tutkli/jikan-ts';
 
 (async () => {
   const api = new JikanClient();
@@ -47,3 +47,17 @@ import { JikanClient } from 'jikan-ts';
     .catch((error) => console.error(error));
 })();
 ```
+
+## Available Clients
+
+- AnimeClient
+- MangaClient
+- TopClient
+- JikanClient (Main client)
+
+## Leave you feedback
+
+- Did you find this project useful? [Leave a ⭐](https://github.com/tutkli/jikan-ts)
+- Found a problem? [Create an issue 🔎](https://github.com/tutkli/jikan-ts/issues)
+- Want to contribute? [Submit a PR 📑](https://github.com/tutkli/jikan-ts/pulls)
+
