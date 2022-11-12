@@ -1,3 +1,15 @@
+# v0.5.1 (12/11/2022)
+
+### Modules
+
+ - Fix exporting Params module
+
+### Build
+
+ - Add lint script
+
+<!-- CHANGELOG SPLIT MARKER -->
+
 # v0.5.0 (12/11/2022)
 
 ### Test
