@@ -7,7 +7,7 @@
     "forceConsistentCasingInFileNames": true,
     "declaration": true,
     "esModuleInterop": true,
-    "module": "CommonJS",
+    "module": "es2022",
     "moduleResolution": "node",
     "typeRoots": ["./node_modules/@types"],
     "experimentalDecorators": true,
