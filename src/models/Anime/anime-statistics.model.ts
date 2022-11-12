@@ -1,15 +1,6 @@
-export interface AnimeStatistics {
-  watching: number;
-  completed: number;
-  on_hold: number;
-  dropped: number;
-  plan_to_watch: number;
-  total: number;
-  scores: AnimeStatisticsScore[];
-}
+import { Statistics } from '../Common';
 
-export interface AnimeStatisticsScore {
-  score: number;
-  votes: number;
-  percentage: number;
+export interface AnimeStatistics extends Statistics {
+  watching: number;
+  plan_to_watch: number;
 }

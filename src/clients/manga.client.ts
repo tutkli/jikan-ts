@@ -2,16 +2,27 @@ import { BaseClient, ClientArgs } from './base.client';
 import { MangaEndpoints } from '../constants';
 import { CacheAxiosResponse } from 'axios-cache-interceptor';
 import { AxiosError } from 'axios';
-import { JikanResponse, JikanUniqueResponse, Manga } from '../models';
+import {
+  CommonCharacter,
+  JikanImages,
+  JikanResponse,
+  JikanUniqueResponse,
+  Manga,
+  MangaStatistics,
+  Recommendation,
+} from '../models';
 
 /**
  * **Manga Client**
  *
  * Client used to access the Manga Endpoints:
  * - [Manga](https://docs.api.jikan.moe/#tag/manga)
- * - [TopMangas](https://docs.api.jikan.moe/#tag/top/operation/getTopManga)
  * - [MangaFullById](https://docs.api.jikan.moe/#tag/manga/operation/getMangaFullById)
  * - [MangaById](https://docs.api.jikan.moe/#tag/manga/operation/getMangaById)
+ * - [MangaCharacters](https://docs.api.jikan.moe/#tag/manga/operation/getMangaCharacters)
+ * - [MangaPictures](https://docs.api.jikan.moe/#tag/manga/operation/getMangaPictures)
+ * - [MangaStatistics](https://docs.api.jikan.moe/#tag/manga/operation/getMangaStatistics)
+ * - [MangaRecommendations](https://docs.api.jikan.moe/#tag/manga/operation/getMangaRecommendations)
  */
 export class MangaClient extends BaseClient {
   /**
@@ -27,21 +38,9 @@ export class MangaClient extends BaseClient {
    */
   public async getMangas(): Promise<JikanResponse<Manga>> {
     return new Promise<JikanResponse<Manga>>((resolve, reject) => {
+      const endpoint = `${MangaEndpoints.Manga}`;
       this.api
-        .get<JikanResponse<Manga>>(`${MangaEndpoints.Manga}`)
-        .then((response: CacheAxiosResponse<JikanResponse<Manga>>) => resolve(response.data))
-        .catch((error: AxiosError<string>) => reject(error));
-    });
-  }
-
-  /**
-   * Get the top Mangas
-   * @returns A JikanResponse with Manga data
-   */
-  public async getTopMangas(): Promise<JikanResponse<Manga>> {
-    return new Promise<JikanResponse<Manga>>((resolve, reject) => {
-      this.api
-        .get<JikanResponse<Manga>>(`${MangaEndpoints.TopManga}`)
+        .get<JikanResponse<Manga>>(endpoint)
         .then((response: CacheAxiosResponse<JikanResponse<Manga>>) => resolve(response.data))
         .catch((error: AxiosError<string>) => reject(error));
     });
@@ -54,8 +53,9 @@ export class MangaClient extends BaseClient {
    */
   public async getMangaFullById(mal_id: number): Promise<JikanUniqueResponse<Manga>> {
     return new Promise<JikanUniqueResponse<Manga>>((resolve, reject) => {
+      const endpoint = `${MangaEndpoints.MangaFullById.replace('{id}', String(mal_id))}`;
       this.api
-        .get<JikanUniqueResponse<Manga>>(`${MangaEndpoints.MangaFullById.replace('{id}', String(mal_id))}`)
+        .get<JikanUniqueResponse<Manga>>(endpoint)
         .then((response: CacheAxiosResponse<JikanUniqueResponse<Manga>>) => resolve(response.data))
         .catch((error: AxiosError<string>) => reject(error));
     });
@@ -68,9 +68,70 @@ export class MangaClient extends BaseClient {
    */
   public async getMangaById(mal_id: number): Promise<JikanUniqueResponse<Manga>> {
     return new Promise<JikanUniqueResponse<Manga>>((resolve, reject) => {
+      const endpoint = `${MangaEndpoints.MangaById.replace('{id}', String(mal_id))}`;
       this.api
-        .get<JikanUniqueResponse<Manga>>(`${MangaEndpoints.MangaById.replace('{id}', String(mal_id))}`)
+        .get<JikanUniqueResponse<Manga>>(endpoint)
         .then((response: CacheAxiosResponse<JikanUniqueResponse<Manga>>) => resolve(response.data))
+        .catch((error: AxiosError<string>) => reject(error));
+    });
+  }
+
+  /**
+   * Get Characters of a specific Manga
+   * @param mal_id The Manga ID
+   * @returns A JikanResponse with CommonCharacter data
+   */
+  public async getMangaCharacters(mal_id: number): Promise<JikanResponse<CommonCharacter>> {
+    return new Promise<JikanResponse<CommonCharacter>>((resolve, reject) => {
+      const endpoint = `${MangaEndpoints.MangaCharacters.replace('{id}', String(mal_id))}`;
+      this.api
+        .get<JikanResponse<CommonCharacter>>(endpoint)
+        .then((response: CacheAxiosResponse<JikanResponse<CommonCharacter>>) => resolve(response.data))
+        .catch((error: AxiosError<string>) => reject(error));
+    });
+  }
+
+  /**
+   * Get Pictures related to a specific Manga
+   * @param mal_id The Manga ID
+   * @returns A JikanResponse with JikanImages data
+   */
+  public async getMangaPictures(mal_id: number): Promise<JikanResponse<JikanImages>> {
+    return new Promise<JikanResponse<JikanImages>>((resolve, reject) => {
+      const endpoint = `${MangaEndpoints.MangaPictures.replace('{id}', String(mal_id))}`;
+      this.api
+        .get<JikanResponse<JikanImages>>(endpoint)
+        .then((response: CacheAxiosResponse<JikanResponse<JikanImages>>) => resolve(response.data))
+        .catch((error: AxiosError<string>) => reject(error));
+    });
+  }
+
+  /**
+   * Get Statistics related to a specific Manga
+   * @param mal_id The Manga ID
+   * @returns A JikanUniqueResponse with MangaStatistics data
+   */
+  public async getAnimeStatistics(mal_id: number): Promise<JikanUniqueResponse<MangaStatistics>> {
+    return new Promise<JikanUniqueResponse<MangaStatistics>>((resolve, reject) => {
+      const endpoint = `${MangaEndpoints.MangaStatistics.replace('{id}', String(mal_id))}`;
+      this.api
+        .get<JikanUniqueResponse<MangaStatistics>>(endpoint)
+        .then((response: CacheAxiosResponse<JikanUniqueResponse<MangaStatistics>>) => resolve(response.data))
+        .catch((error: AxiosError<string>) => reject(error));
+    });
+  }
+
+  /**
+   * Get Recommendations related to a specific Manga
+   * @param mal_id The Manga ID
+   * @returns A JikanResponse with Recommendation data
+   */
+  public async getMangaRecommendation(mal_id: number): Promise<JikanResponse<Recommendation>> {
+    return new Promise<JikanResponse<Recommendation>>((resolve, reject) => {
+      const endpoint = `${MangaEndpoints.MangaRecommendations.replace('{id}', String(mal_id))}`;
+      this.api
+        .get<JikanResponse<Recommendation>>(endpoint)
+        .then((response: CacheAxiosResponse<JikanResponse<Recommendation>>) => resolve(response.data))
         .catch((error: AxiosError<string>) => reject(error));
     });
   }
