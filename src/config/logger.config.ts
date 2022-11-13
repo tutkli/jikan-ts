@@ -1,4 +1,4 @@
-import pino from 'pino';
+import { pino } from 'pino';
 import { AxiosError } from 'axios';
 import { CacheAxiosResponse, CacheRequestConfig } from 'axios-cache-interceptor';
 
