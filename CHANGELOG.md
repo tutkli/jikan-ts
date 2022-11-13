@@ -1,3 +1,11 @@
+# v0.5.4 (13/11/2022)
+
+### Build
+
+- Add .npmignore
+
+<!-- CHANGELOG SPLIT MARKER -->
+
 # v0.5.3 (13/11/2022)
 
 ### Bugs
