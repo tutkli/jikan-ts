@@ -40,7 +40,7 @@ export interface Anime {
   broadcast: AnimeBroadcast;
   producers: JikanUniqueResource[];
   licensors: JikanUniqueResource[];
-  studio: JikanUniqueResource[];
+  studios: JikanUniqueResource[];
   genres: JikanUniqueResource[];
   explicit_genres: JikanUniqueResource[];
   themes: JikanUniqueResource[];
