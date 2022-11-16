@@ -8,10 +8,10 @@ import {
   JikanResponse,
   JikanUniqueResponse,
   Manga,
+  MangaSearchParams,
   MangaStatistics,
   Recommendation,
 } from '../models';
-import { MangaSearchParams } from '../models/Params';
 
 /**
  * **Manga Client**
@@ -40,7 +40,7 @@ export class MangaClient extends BaseClient {
    * @param searchParams Filter parameters
    * @returns A JikanResponse with Manga data
    */
-  public async getMangaSearch(searchParams: MangaSearchParams): Promise<JikanResponse<Manga>> {
+  public async getMangaSearch(searchParams?: MangaSearchParams): Promise<JikanResponse<Manga>> {
     return new Promise<JikanResponse<Manga>>((resolve, reject) => {
       const endpoint = `${MangaEndpoints.MangaSearch}`;
       this.api

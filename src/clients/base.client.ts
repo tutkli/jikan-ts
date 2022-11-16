@@ -1,3 +1,4 @@
+import pino from 'pino';
 import {
   AxiosCacheInstance,
   CacheAxiosResponse,
@@ -15,7 +16,6 @@ import {
   handleResponse,
   handleResponseError,
 } from '../config';
-import { Logger, LoggerOptions } from 'pino';
 
 /**
  * **Client Args**
@@ -27,7 +27,7 @@ export interface ClientArgs {
    * Options for the client logger.
    * @see https://getpino.io/#/docs/api?id=options
    */
-  logOptions?: LoggerOptions;
+  logOptions?: pino.LoggerOptions;
   /**
    * **Axios Cache Options**
    * Options for cache.
@@ -46,9 +46,9 @@ export interface ClientArgs {
  */
 export abstract class BaseClient {
   public api: AxiosCacheInstance;
-  public logger: Logger;
+  public logger: pino.Logger;
 
-  protected constructor(clientOptions?: ClientArgs) {
+  constructor(clientOptions?: ClientArgs) {
     this.api = setupCache(
       axios.create({
         baseURL: clientOptions?.baseURL ?? BaseURL.REST,

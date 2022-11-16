@@ -1,3 +1,19 @@
+# v0.5.4 (13/11/2022)
+
+### Build
+
+- Add .npmignore
+
+<!-- CHANGELOG SPLIT MARKER -->
+
+# v0.5.3 (13/11/2022)
+
+### Bugs
+
+- Fix pino logger imports
+
+<!-- CHANGELOG SPLIT MARKER -->
+
 # v0.5.2 (12/11/2022)
 
 ### Config

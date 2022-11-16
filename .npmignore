@@ -1,0 +1,13 @@
+.idea
+.parcel-cache
+src
+docs
+.editorconfig
+.eslintignore
+.eslintrc.json
+.gitignore
+.prettierrc.json
+jest.config.js
+package-lock.json
+tsconfig.json
+tsconfig.eslint.json
