@@ -1,6 +1,5 @@
 import { AnimeClient } from '../clients';
-import { Anime, JikanResponse, JikanUniqueResponse } from '../models';
-import { AnimeSearchParams } from '../models/Params';
+import { Anime, AnimeSearchParams, JikanResponse, JikanUniqueResponse } from '../models';
 
 describe('test Anime Client', () => {
   let client: AnimeClient;

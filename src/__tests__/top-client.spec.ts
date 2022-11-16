@@ -1,5 +1,14 @@
-import { AnimeTopParams, MangaTopParams, TopAnimeFilter, TopMangaFilter } from '../models/Params';
-import { Anime, AnimeStatus, JikanResponse, Manga, MangaStatus } from '../models';
+import {
+  Anime,
+  AnimeStatus,
+  AnimeTopParams,
+  JikanResponse,
+  Manga,
+  MangaStatus,
+  MangaTopParams,
+  TopAnimeFilter,
+  TopMangaFilter,
+} from '../models';
 import { TopClient } from '../clients/top.client';
 
 describe('test Top Client', () => {

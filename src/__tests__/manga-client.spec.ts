@@ -1,6 +1,5 @@
 import { MangaClient } from '../clients';
-import { MangaSearchParams } from '../models/Params';
-import { JikanResponse, JikanUniqueResponse, Manga } from '../models';
+import { JikanResponse, JikanUniqueResponse, Manga, MangaSearchParams } from '../models';
 
 describe('test Manga Client', () => {
   let client: MangaClient;
