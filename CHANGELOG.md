@@ -1,3 +1,11 @@
+# v0.5.42 (13/11/2022)
+
+### Models
+
+- Fix typo in anime model
+
+<!-- CHANGELOG SPLIT MARKER -->
+
 # v0.5.4 (13/11/2022)
 
 ### Build
