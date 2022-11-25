@@ -1,4 +1,3 @@
-import pino from 'pino';
 import {
   AxiosCacheInstance,
   CacheAxiosResponse,
@@ -16,6 +15,7 @@ import {
   handleResponse,
   handleResponseError,
 } from '../config';
+import { ISettingsParam, Logger } from 'tslog';
 
 /**
  * **Client Args**
@@ -25,9 +25,9 @@ export interface ClientArgs {
   /**
    * **Logger Options**
    * Options for the client logger.
-   * @see https://getpino.io/#/docs/api?id=options
+   * @see https://tslog.js.org/#/?id=settings
    */
-  logOptions?: pino.LoggerOptions;
+  loggerOptions?: ISettingsParam<never>;
   /**
    * **Axios Cache Options**
    * Options for cache.
@@ -46,7 +46,7 @@ export interface ClientArgs {
  */
 export abstract class BaseClient {
   public api: AxiosCacheInstance;
-  public logger: pino.Logger;
+  public logger: Logger<never>;
 
   constructor(clientOptions?: ClientArgs) {
     this.api = setupCache(
@@ -64,11 +64,14 @@ export abstract class BaseClient {
       }
     );
 
-    this.logger = createLogger({
-      enabled: !(clientOptions?.logOptions?.enabled === undefined || clientOptions?.logOptions.enabled === false),
-      ...clientOptions?.logOptions,
-    });
+    this.logger = createLogger(clientOptions?.loggerOptions);
 
+    if (clientOptions?.loggerOptions !== undefined) {
+      this.addHttpInterceptors();
+    }
+  }
+
+  private addHttpInterceptors(): void {
     this.api.interceptors.request.use(
       (config: CacheRequestConfig) => handleRequest(config, this.logger),
       (error: AxiosError<string>) => handleRequestError(error, this.logger)

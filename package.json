@@ -35,9 +35,8 @@
   "dependencies": {
     "axios": "^0.27.2",
     "axios-cache-interceptor": "^0.10.7",
-    "pino": "^8.7.0",
-    "pino-pretty": "^9.1.1",
-    "tslib": "^2.4.1"
+    "tslib": "^2.4.1",
+    "tslog": "^4.4.0"
   },
   "devDependencies": {
     "@parcel/packager-ts": "^2.8.0",
