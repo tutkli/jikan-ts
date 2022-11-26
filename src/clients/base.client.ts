@@ -14,8 +14,10 @@ import {
   handleRequestError,
   handleResponse,
   handleResponseError,
+  LoggerOptions,
 } from '../config';
-import { ISettingsParam, Logger } from 'tslog';
+import { Logger } from 'tslog';
+import { ILogObj } from 'tslog/dist/types/interfaces';
 
 /**
  * **Client Args**
@@ -27,7 +29,7 @@ export interface ClientArgs {
    * Options for the client logger.
    * @see https://tslog.js.org/#/?id=settings
    */
-  loggerOptions?: ISettingsParam<never>;
+  loggerOptions?: LoggerOptions;
   /**
    * **Axios Cache Options**
    * Options for cache.
@@ -46,9 +48,9 @@ export interface ClientArgs {
  */
 export abstract class BaseClient {
   public api: AxiosCacheInstance;
-  public logger: Logger<never>;
+  public logger: Logger<ILogObj> | undefined;
 
-  constructor(clientOptions?: ClientArgs) {
+  protected constructor(clientOptions?: ClientArgs) {
     this.api = setupCache(
       axios.create({
         baseURL: clientOptions?.baseURL ?? BaseURL.REST,
@@ -64,11 +66,11 @@ export abstract class BaseClient {
       }
     );
 
-    this.logger = createLogger(clientOptions?.loggerOptions);
-
-    if (clientOptions?.loggerOptions !== undefined) {
-      this.addHttpInterceptors();
+    if (clientOptions?.loggerOptions?.enabled) {
+      this.logger = createLogger(clientOptions.loggerOptions.settings);
     }
+
+    this.addHttpInterceptors();
   }
 
   private addHttpInterceptors(): void {
