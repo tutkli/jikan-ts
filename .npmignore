@@ -16,3 +16,4 @@ tsconfig.json
 tsconfig.eslint.json
 tsconfig.build.json
 tsconfig.types.json
+*.tgz

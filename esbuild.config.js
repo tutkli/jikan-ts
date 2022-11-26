@@ -3,7 +3,6 @@ import { build } from 'esbuild';
 build({
   entryPoints: ['src/index.ts'],
   outfile: 'dist/index.js',
-  platform: 'node',
   bundle: true,
   minify: true,
   format: 'esm',
