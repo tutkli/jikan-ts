@@ -1,3 +1,17 @@
+# v0.5.5 (26/11/2022)
+
+### Build
+
+- Replace parcel with esbuild
+- Update dependencies
+
+### Clients
+
+- Replace Pino with tslog
+- Fix exporting TopClient
+
+<!-- CHANGELOG SPLIT MARKER -->
+
 # v0.5.42 (13/11/2022)
 
 ### Models
