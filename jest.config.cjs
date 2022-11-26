@@ -16,7 +16,6 @@ const jestConfig = {
     '!**/src/models/**',
     '!**/src/constants/**',
     '!**/src/config/**',
-    '!**/src/structures/**',
   ],
   testMatch: ['**/__tests__/**/*.[jt]s?(x)', '**/?(*.)+(spec|test).[tj]s?(x)'],
   testPathIgnorePatterns: ['/node_modules/', '/dist/'],
