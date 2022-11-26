@@ -1,6 +1,12 @@
 # jikan-ts
 
-Node.js wrapper of the Jikan API with build-in typings.
+![Language Shield](https://img.shields.io/badge/language-typescript-blue?style=for-the-badge)
+![License Shield](https://img.shields.io/badge/license-mit-blueviolet?style=for-the-badge)
+![Build Shield](https://img.shields.io/badge/build-passing-brightgreen?style=for-the-badge)
+![Coverage Shield](https://img.shields.io/badge/coverage-80%25-yellow?style=for-the-badge)
+![Code Style Shield](https://img.shields.io/badge/code%20style-Prettier-magenta?style=for-the-badge)
+
+> Jikan wrapper for Typescript and Javascript with build in typings.
 
 ## Features
 
