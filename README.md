@@ -6,7 +6,7 @@
 ![Coverage Shield](https://img.shields.io/badge/coverage-80%25-yellow?style=for-the-badge)
 ![Code Style Shield](https://img.shields.io/badge/code%20style-Prettier-magenta?style=for-the-badge)
 
-> Jikan API wrapper for Typescript and Javascript with build in typings.
+> Jikan API wrapper for Typescript and NodeJS with build in typings.
 
 ## Features
 

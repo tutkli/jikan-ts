@@ -1,3 +1,16 @@
+# v0.5.52 (26/11/2022)
+
+### Build
+
+- Remove yarn-check from package as it has vulnerable dependencies
+
+### Docs
+
+- Complete docs overhaul
+
+
+<!-- CHANGELOG SPLIT MARKER -->
+
 # v0.5.5 (26/11/2022)
 
 ### Build
