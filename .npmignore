@@ -10,5 +10,9 @@ docs
 jest.config.js
 package-lock.json
 yarn.lock
+dts-bundle-generator.config.json
+esbuild.config.js
 tsconfig.json
 tsconfig.eslint.json
+tsconfig.build.json
+tsconfig.types.json
