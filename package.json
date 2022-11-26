@@ -1,6 +1,6 @@
 {
   "name": "@tutkli/jikan-ts",
-  "version": "0.5.5",
+  "version": "0.5.51",
   "description": "Node.js wrapper for the Jikan API with build-in typings.",
   "source": "src/index.ts",
   "main": "dist/index.js",
@@ -8,9 +8,10 @@
   "type": "module",
   "scripts": {
     "prebuild": "rimraf dist",
-    "build": "npm run esbuild && npm run build-types",
+    "build": "yarn run esbuild && yarn run build-types",
     "esbuild": "node ./esbuild.config.js",
     "build-types": "dts-bundle-generator --config dts-bundle-generator.config.json",
+    "prepublish": "yarn run build",
     "test:coverage": "jest --coverage",
     "test:dev": "jest --verbose --colors --expand --maxWorkers=50% --detectOpenHandles --errorOnDeprecated --bail",
     "lint:fix": "npx eslint src/** --fix"
