@@ -15,6 +15,8 @@
 - 📄 Configurable Logging
 - 📦 ESM with tree shaking support
 
+#### 📖 Check out the [documentation page](https://tutkli.github.io/jikan-ts/)!
+
 ## Installation
 
 ```bash
@@ -98,6 +100,10 @@ See also: [tslog Settings](https://tslog.js.org/#/?id=settings).
 - MangaClient
 - TopClient
 - JikanClient (Main client)
+
+## Documentation
+
+Check out the [documentation page](https://tutkli.github.io/jikan-ts/)!
 
 ## Leave you feedback
 
