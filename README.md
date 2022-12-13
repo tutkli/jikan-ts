@@ -1,5 +1,8 @@
 # jikan-ts
 
+![jikan-ts-890w](https://user-images.githubusercontent.com/49206247/207465731-9908e843-7c8d-4e05-838b-41bcd8c677f8.png)
+
+
 ![Language Shield](https://img.shields.io/badge/language-typescript-blue?style=for-the-badge)
 ![License Shield](https://img.shields.io/badge/license-mit-blueviolet?style=for-the-badge)
 ![Build Shield](https://img.shields.io/badge/build-passing-brightgreen?style=for-the-badge)
