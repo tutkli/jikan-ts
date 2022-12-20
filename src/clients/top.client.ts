@@ -23,28 +23,30 @@ export class TopClient extends BaseClient {
 
   /**
    * Get the top Animes
-   * @returns A JikanResponse with Anime data
+   * @param searchParams Filter parameters
+   * @returns JikanResponse with Anime array data
    */
-  public async getTopAnime(searchParams?: AnimeTopParams): Promise<JikanResponse<Anime>> {
-    return new Promise<JikanResponse<Anime>>((resolve, reject) => {
+  public async getTopAnime(searchParams?: AnimeTopParams): Promise<JikanResponse<Anime[]>> {
+    return new Promise<JikanResponse<Anime[]>>((resolve, reject) => {
       const endpoint = `${TopEndpoints.TopAnime}`;
       this.api
-        .get<JikanResponse<Anime>>(endpoint, { params: searchParams })
-        .then((response: CacheAxiosResponse<JikanResponse<Anime>>) => resolve(response.data))
+        .get<JikanResponse<Anime[]>>(endpoint, { params: searchParams })
+        .then((response: CacheAxiosResponse<JikanResponse<Anime[]>>) => resolve(response.data))
         .catch((error: AxiosError<string>) => reject(error));
     });
   }
 
   /**
    * Get the top Mangas
-   * @returns A JikanResponse with Manga data
+   * @param searchParams Filter parameters
+   * @returns JikanResponse with Manga array data
    */
-  public async getTopManga(searchParams?: MangaTopParams): Promise<JikanResponse<Manga>> {
-    return new Promise<JikanResponse<Manga>>((resolve, reject) => {
+  public async getTopManga(searchParams?: MangaTopParams): Promise<JikanResponse<Manga[]>> {
+    return new Promise<JikanResponse<Manga[]>>((resolve, reject) => {
       const endpoint = `${TopEndpoints.TopManga}`;
       this.api
-        .get<JikanResponse<Manga>>(endpoint, { params: searchParams })
-        .then((response: CacheAxiosResponse<JikanResponse<Manga>>) => resolve(response.data))
+        .get<JikanResponse<Manga[]>>(endpoint, { params: searchParams })
+        .then((response: CacheAxiosResponse<JikanResponse<Manga[]>>) => resolve(response.data))
         .catch((error: AxiosError<string>) => reject(error));
     });
   }

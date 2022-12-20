@@ -6,7 +6,6 @@ import {
   CommonCharacter,
   JikanImages,
   JikanResponse,
-  JikanUniqueResponse,
   Manga,
   MangaSearchParams,
   MangaStatistics,
@@ -38,14 +37,14 @@ export class MangaClient extends BaseClient {
   /**
    * Get all the filtered Mangas. Returns all the Mangas if no filters are given.
    * @param searchParams Filter parameters
-   * @returns A JikanResponse with Manga data
+   * @returns JikanResponse with Manga array data
    */
-  public async getMangaSearch(searchParams?: MangaSearchParams): Promise<JikanResponse<Manga>> {
-    return new Promise<JikanResponse<Manga>>((resolve, reject) => {
+  public async getMangaSearch(searchParams?: MangaSearchParams): Promise<JikanResponse<Manga[]>> {
+    return new Promise<JikanResponse<Manga[]>>((resolve, reject) => {
       const endpoint = `${MangaEndpoints.MangaSearch}`;
       this.api
-        .get<JikanResponse<Manga>>(endpoint, { params: searchParams })
-        .then((response: CacheAxiosResponse<JikanResponse<Manga>>) => resolve(response.data))
+        .get<JikanResponse<Manga[]>>(endpoint, { params: searchParams })
+        .then((response: CacheAxiosResponse<JikanResponse<Manga[]>>) => resolve(response.data))
         .catch((error: AxiosError<string>) => reject(error));
     });
   }
@@ -53,14 +52,14 @@ export class MangaClient extends BaseClient {
   /**
    * Get a Manga with full information by its ID
    * @param mal_id The Manga ID
-   * @returns A JikanUniqueResponse with Manga data
+   * @returns JikanResponse with Manga data
    */
-  public async getMangaFullById(mal_id: number): Promise<JikanUniqueResponse<Manga>> {
-    return new Promise<JikanUniqueResponse<Manga>>((resolve, reject) => {
+  public async getMangaFullById(mal_id: number): Promise<JikanResponse<Manga>> {
+    return new Promise<JikanResponse<Manga>>((resolve, reject) => {
       const endpoint = `${MangaEndpoints.MangaFullById.replace('{id}', String(mal_id))}`;
       this.api
-        .get<JikanUniqueResponse<Manga>>(endpoint)
-        .then((response: CacheAxiosResponse<JikanUniqueResponse<Manga>>) => resolve(response.data))
+        .get<JikanResponse<Manga>>(endpoint)
+        .then((response: CacheAxiosResponse<JikanResponse<Manga>>) => resolve(response.data))
         .catch((error: AxiosError<string>) => reject(error));
     });
   }
@@ -68,14 +67,14 @@ export class MangaClient extends BaseClient {
   /**
    * Get a Manga by its ID
    * @param mal_id The Manga ID
-   * @returns A JikanUniqueResponse with Manga data
+   * @returns JikanResponse with Manga data
    */
-  public async getMangaById(mal_id: number): Promise<JikanUniqueResponse<Manga>> {
-    return new Promise<JikanUniqueResponse<Manga>>((resolve, reject) => {
+  public async getMangaById(mal_id: number): Promise<JikanResponse<Manga>> {
+    return new Promise<JikanResponse<Manga>>((resolve, reject) => {
       const endpoint = `${MangaEndpoints.MangaById.replace('{id}', String(mal_id))}`;
       this.api
-        .get<JikanUniqueResponse<Manga>>(endpoint)
-        .then((response: CacheAxiosResponse<JikanUniqueResponse<Manga>>) => resolve(response.data))
+        .get<JikanResponse<Manga>>(endpoint)
+        .then((response: CacheAxiosResponse<JikanResponse<Manga>>) => resolve(response.data))
         .catch((error: AxiosError<string>) => reject(error));
     });
   }
@@ -83,14 +82,14 @@ export class MangaClient extends BaseClient {
   /**
    * Get Characters of a specific Manga
    * @param mal_id The Manga ID
-   * @returns A JikanResponse with CommonCharacter data
+   * @returns JikanResponse with CommonCharacter array data
    */
-  public async getMangaCharacters(mal_id: number): Promise<JikanResponse<CommonCharacter>> {
-    return new Promise<JikanResponse<CommonCharacter>>((resolve, reject) => {
+  public async getMangaCharacters(mal_id: number): Promise<JikanResponse<CommonCharacter[]>> {
+    return new Promise<JikanResponse<CommonCharacter[]>>((resolve, reject) => {
       const endpoint = `${MangaEndpoints.MangaCharacters.replace('{id}', String(mal_id))}`;
       this.api
-        .get<JikanResponse<CommonCharacter>>(endpoint)
-        .then((response: CacheAxiosResponse<JikanResponse<CommonCharacter>>) => resolve(response.data))
+        .get<JikanResponse<CommonCharacter[]>>(endpoint)
+        .then((response: CacheAxiosResponse<JikanResponse<CommonCharacter[]>>) => resolve(response.data))
         .catch((error: AxiosError<string>) => reject(error));
     });
   }
@@ -98,14 +97,14 @@ export class MangaClient extends BaseClient {
   /**
    * Get Pictures related to a specific Manga
    * @param mal_id The Manga ID
-   * @returns A JikanResponse with JikanImages data
+   * @returns JikanResponse with JikanImages array data
    */
-  public async getMangaPictures(mal_id: number): Promise<JikanResponse<JikanImages>> {
-    return new Promise<JikanResponse<JikanImages>>((resolve, reject) => {
+  public async getMangaPictures(mal_id: number): Promise<JikanResponse<JikanImages[]>> {
+    return new Promise<JikanResponse<JikanImages[]>>((resolve, reject) => {
       const endpoint = `${MangaEndpoints.MangaPictures.replace('{id}', String(mal_id))}`;
       this.api
-        .get<JikanResponse<JikanImages>>(endpoint)
-        .then((response: CacheAxiosResponse<JikanResponse<JikanImages>>) => resolve(response.data))
+        .get<JikanResponse<JikanImages[]>>(endpoint)
+        .then((response: CacheAxiosResponse<JikanResponse<JikanImages[]>>) => resolve(response.data))
         .catch((error: AxiosError<string>) => reject(error));
     });
   }
@@ -113,14 +112,14 @@ export class MangaClient extends BaseClient {
   /**
    * Get Statistics related to a specific Manga
    * @param mal_id The Manga ID
-   * @returns A JikanUniqueResponse with MangaStatistics data
+   * @returns JikanResponse with MangaStatistics data
    */
-  public async getAnimeStatistics(mal_id: number): Promise<JikanUniqueResponse<MangaStatistics>> {
-    return new Promise<JikanUniqueResponse<MangaStatistics>>((resolve, reject) => {
+  public async getMangaStatistics(mal_id: number): Promise<JikanResponse<MangaStatistics>> {
+    return new Promise<JikanResponse<MangaStatistics>>((resolve, reject) => {
       const endpoint = `${MangaEndpoints.MangaStatistics.replace('{id}', String(mal_id))}`;
       this.api
-        .get<JikanUniqueResponse<MangaStatistics>>(endpoint)
-        .then((response: CacheAxiosResponse<JikanUniqueResponse<MangaStatistics>>) => resolve(response.data))
+        .get<JikanResponse<MangaStatistics>>(endpoint)
+        .then((response: CacheAxiosResponse<JikanResponse<MangaStatistics>>) => resolve(response.data))
         .catch((error: AxiosError<string>) => reject(error));
     });
   }
@@ -128,14 +127,14 @@ export class MangaClient extends BaseClient {
   /**
    * Get Recommendations related to a specific Manga
    * @param mal_id The Manga ID
-   * @returns A JikanResponse with Recommendation data
+   * @returns JikanResponse with Recommendation array data
    */
-  public async getMangaRecommendation(mal_id: number): Promise<JikanResponse<Recommendation>> {
-    return new Promise<JikanResponse<Recommendation>>((resolve, reject) => {
+  public async getMangaRecommendation(mal_id: number): Promise<JikanResponse<Recommendation[]>> {
+    return new Promise<JikanResponse<Recommendation[]>>((resolve, reject) => {
       const endpoint = `${MangaEndpoints.MangaRecommendations.replace('{id}', String(mal_id))}`;
       this.api
-        .get<JikanResponse<Recommendation>>(endpoint)
-        .then((response: CacheAxiosResponse<JikanResponse<Recommendation>>) => resolve(response.data))
+        .get<JikanResponse<Recommendation[]>>(endpoint)
+        .then((response: CacheAxiosResponse<JikanResponse<Recommendation[]>>) => resolve(response.data))
         .catch((error: AxiosError<string>) => reject(error));
     });
   }

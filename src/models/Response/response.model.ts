@@ -11,11 +11,6 @@ export interface JikanPaginationItems {
 }
 
 export interface JikanResponse<T> {
-  data: T[];
-  pagination?: JikanPagination;
-}
-
-export interface JikanUniqueResponse<T> {
   data: T;
   pagination?: JikanPagination;
 }
