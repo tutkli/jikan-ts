@@ -6,12 +6,12 @@ import {
   Anime,
   AnimeCharacter,
   AnimeEpisode,
+  AnimeEpisodeVideo,
   AnimePicture,
   AnimeSearchParams,
   AnimeStaff,
   AnimeStatistics,
-  AnimeVideo,
-  AnimeVideoEpisode,
+  AnimeVideos,
   JikanResponse,
   Recommendation,
 } from '../models';
@@ -157,12 +157,12 @@ export class AnimeClient extends BaseClient {
    * @param mal_id The Anime ID
    * @returns JikanResponse with AnimeVideo data
    */
-  public async getAnimeVideos(mal_id: number): Promise<JikanResponse<AnimeVideo>> {
-    return new Promise<JikanResponse<AnimeVideo>>((resolve, reject) => {
+  public async getAnimeVideos(mal_id: number): Promise<JikanResponse<AnimeVideos>> {
+    return new Promise<JikanResponse<AnimeVideos>>((resolve, reject) => {
       const endpoint = `${AnimeEndpoints.AnimeVideos.replace('{id}', String(mal_id))}`;
       this.api
-        .get<JikanResponse<AnimeVideo>>(endpoint)
-        .then((response: CacheAxiosResponse<JikanResponse<AnimeVideo>>) => resolve(response.data))
+        .get<JikanResponse<AnimeVideos>>(endpoint)
+        .then((response: CacheAxiosResponse<JikanResponse<AnimeVideos>>) => resolve(response.data))
         .catch((error: AxiosError<string>) => reject(error));
     });
   }
@@ -172,12 +172,12 @@ export class AnimeClient extends BaseClient {
    * @param mal_id The Anime ID
    * @returns JikanResponse with AnimeVideoEpisode array data
    */
-  public async getAnimeVideosEpisode(mal_id: number): Promise<JikanResponse<AnimeVideoEpisode[]>> {
-    return new Promise<JikanResponse<AnimeVideoEpisode[]>>((resolve, reject) => {
+  public async getAnimeEpisodeVideos(mal_id: number): Promise<JikanResponse<AnimeEpisodeVideo[]>> {
+    return new Promise<JikanResponse<AnimeEpisodeVideo[]>>((resolve, reject) => {
       const endpoint = `${AnimeEndpoints.AnimeVideosEpisodes.replace('{id}', String(mal_id))}`;
       this.api
-        .get<JikanResponse<AnimeVideoEpisode[]>>(endpoint)
-        .then((response: CacheAxiosResponse<JikanResponse<AnimeVideoEpisode[]>>) => resolve(response.data))
+        .get<JikanResponse<AnimeEpisodeVideo[]>>(endpoint)
+        .then((response: CacheAxiosResponse<JikanResponse<AnimeEpisodeVideo[]>>) => resolve(response.data))
         .catch((error: AxiosError<string>) => reject(error));
     });
   }
@@ -217,7 +217,7 @@ export class AnimeClient extends BaseClient {
    * @param mal_id The Anime ID
    * @returns JikanResponse with Recommendation array data
    */
-  public async getAnimeRecommendation(mal_id: number): Promise<JikanResponse<Recommendation[]>> {
+  public async getAnimeRecommendations(mal_id: number): Promise<JikanResponse<Recommendation[]>> {
     return new Promise<JikanResponse<Recommendation[]>>((resolve, reject) => {
       const endpoint = `${AnimeEndpoints.AnimeRecommendations.replace('{id}', String(mal_id))}`;
       this.api

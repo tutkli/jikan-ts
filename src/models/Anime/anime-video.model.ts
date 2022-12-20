@@ -1,12 +1,12 @@
 import { JikanImages, JikanImagesCollection } from '../Common';
 
-export interface AnimeVideo {
-  promo: AnimeVideoPromo[];
-  episodes: AnimeVideoEpisode[];
+export interface AnimeVideos {
+  promo: AnimePromoVideo[];
+  episodes: AnimeEpisodeVideo[];
   music_videos: AnimeMusicVideo[];
 }
 
-export interface AnimeVideoPromo {
+export interface AnimePromoVideo {
   title: string;
   trailer: AnimeYoutubeVideo;
 }
@@ -18,7 +18,7 @@ export interface AnimeYoutubeVideo {
   images?: JikanImagesCollection;
 }
 
-export interface AnimeVideoEpisode {
+export interface AnimeEpisodeVideo {
   mal_id: number;
   url: string;
   title: string;
