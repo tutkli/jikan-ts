@@ -1,10 +1,10 @@
 import {
   JikanImages,
   JikanNamedResource,
+  JikanResource,
   JikanResourcePeriod,
   JikanResourceRelation,
   JikanResourceTitle,
-  JikanUniqueResource,
 } from '../Common';
 import { AnimeYoutubeVideo } from './anime-video.model';
 
@@ -38,13 +38,13 @@ export interface Anime {
   season?: AnimeSeason;
   year: number;
   broadcast: AnimeBroadcast;
-  producers: JikanUniqueResource[];
-  licensors: JikanUniqueResource[];
-  studios: JikanUniqueResource[];
-  genres: JikanUniqueResource[];
-  explicit_genres: JikanUniqueResource[];
-  themes: JikanUniqueResource[];
-  demographic: JikanUniqueResource[];
+  producers: JikanResource[];
+  licensors: JikanResource[];
+  studios: JikanResource[];
+  genres: JikanResource[];
+  explicit_genres: JikanResource[];
+  themes: JikanResource[];
+  demographic: JikanResource[];
   relations?: JikanResourceRelation[];
   theme?: AnimeTheme;
   external?: JikanNamedResource[];

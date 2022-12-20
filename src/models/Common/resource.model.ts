@@ -1,4 +1,4 @@
-export interface JikanUniqueResource {
+export interface JikanResource {
   mal_id: number;
   type: string;
   name: string;
@@ -27,5 +27,5 @@ export interface JikanResourcePeriod {
 
 export interface JikanResourceRelation {
   relation: string;
-  entry: JikanUniqueResource[];
+  entry: JikanResource[];
 }

@@ -1,10 +1,10 @@
 import {
   JikanImages,
   JikanNamedResource,
+  JikanResource,
   JikanResourcePeriod,
   JikanResourceRelation,
   JikanResourceTitle,
-  JikanUniqueResource,
 } from '../Common';
 
 export interface Manga {
@@ -30,11 +30,11 @@ export interface Manga {
   favorites: number;
   synopsis: string;
   background: string;
-  authors: JikanUniqueResource[];
-  serializations: JikanUniqueResource[];
-  explicit_genres: JikanUniqueResource[];
-  themes: JikanUniqueResource[];
-  demographics: JikanUniqueResource[];
+  authors: JikanResource[];
+  serializations: JikanResource[];
+  explicit_genres: JikanResource[];
+  themes: JikanResource[];
+  demographics: JikanResource[];
   relations?: JikanResourceRelation[];
   external?: JikanNamedResource[];
 }
