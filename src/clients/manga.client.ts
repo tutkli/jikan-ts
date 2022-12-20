@@ -129,7 +129,7 @@ export class MangaClient extends BaseClient {
    * @param mal_id The Manga ID
    * @returns JikanResponse with Recommendation array data
    */
-  public async getMangaRecommendation(mal_id: number): Promise<JikanResponse<Recommendation[]>> {
+  public async getMangaRecommendations(mal_id: number): Promise<JikanResponse<Recommendation[]>> {
     return new Promise<JikanResponse<Recommendation[]>>((resolve, reject) => {
       const endpoint = `${MangaEndpoints.MangaRecommendations.replace('{id}', String(mal_id))}`;
       this.api

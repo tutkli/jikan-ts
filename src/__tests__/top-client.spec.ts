@@ -9,7 +9,7 @@ import {
   TopAnimeFilter,
   TopMangaFilter,
 } from '../models';
-import { TopClient } from '../clients/top.client';
+import { TopClient } from '../clients';
 
 describe('test Top Client', () => {
   let client: TopClient;
@@ -22,7 +22,7 @@ describe('test Top Client', () => {
 
   it('should get top animes filtered by params', async () => {
     const params: AnimeTopParams = { limit: 3, filter: TopAnimeFilter.airing };
-    const data = await client.getTopAnime(params).then((response: JikanResponse<Anime>) => response.data);
+    const data = await client.getTopAnime(params).then((response: JikanResponse<Anime[]>) => response.data);
 
     expect(data).toHaveLength(3);
     for (const anime of data) {
@@ -32,7 +32,7 @@ describe('test Top Client', () => {
 
   it('should get top mangas filtered by params', async () => {
     const params: MangaTopParams = { limit: 3, filter: TopMangaFilter.publishing };
-    const data = await client.getTopManga(params).then((response: JikanResponse<Manga>) => response.data);
+    const data = await client.getTopManga(params).then((response: JikanResponse<Manga[]>) => response.data);
 
     expect(data).toHaveLength(3);
     for (const manga of data) {
