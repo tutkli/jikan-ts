@@ -17,3 +17,5 @@ tsconfig.eslint.json
 tsconfig.build.json
 tsconfig.types.json
 *.tgz
+node_modules
+coverage
