@@ -61,7 +61,7 @@ export class AnimeClient extends BaseClient {
   /**
    * Get a complete Anime resource data
    * @param mal_id The Anime ID
-   * @returns JikanUniqueResponse with Anime data
+   * @returns JikanResponse with Anime data
    */
   public async getAnimeFullById(mal_id: number): Promise<JikanResponse<Anime>> {
     return new Promise<JikanResponse<Anime>>((resolve, reject) => {
@@ -76,7 +76,7 @@ export class AnimeClient extends BaseClient {
   /**
    * Get Anime resource data
    * @param mal_id The Anime ID
-   * @returns JikanUniqueResponse with Anime data
+   * @returns JikanResponse with Anime data
    */
   public async getAnimeById(mal_id: number): Promise<JikanResponse<Anime>> {
     return new Promise<JikanResponse<Anime>>((resolve, reject) => {
