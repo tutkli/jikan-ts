@@ -6,7 +6,7 @@
 ![Language Shield](https://img.shields.io/badge/language-typescript-blue?style=for-the-badge)
 ![License Shield](https://img.shields.io/badge/license-mit-blueviolet?style=for-the-badge)
 ![Build Shield](https://img.shields.io/badge/build-passing-brightgreen?style=for-the-badge)
-![Coverage Shield](https://img.shields.io/badge/coverage-80%25-yellow?style=for-the-badge)
+![Coverage Shield](https://img.shields.io/badge/coverage-100%25-brightgreen?style=for-the-badge)
 ![Code Style Shield](https://img.shields.io/badge/code%20style-Prettier-magenta?style=for-the-badge)
 
 > Jikan API wrapper for Typescript and NodeJS with build in typings.
@@ -33,14 +33,14 @@ yarn add @tutkli/jikan-ts # recommended
 Using a specific client, like AnimeClient:
 
 ```ts
-import { AnimeClient } from '@tutkli/jikan-ts';
+import { AnimeClient, JikanResponse, Anime } from '@tutkli/jikan-ts';
 
 (async () => {
   const animeClient = new AnimeClient();
 
   await animeClient
     .getAnimeById(1)
-    .then((jikanResponse) => console.log(jikanResponse.data.title)) // will output "Cowboy Bebob"
+    .then((jikanResponse: JikanResponse<Anime>) => { /* ... */ })
     .catch((error) => console.error(error));
 })();
 ```
@@ -48,14 +48,14 @@ import { AnimeClient } from '@tutkli/jikan-ts';
 Or, using the JikanClient:
 
 ```ts
-import { JikanClient } from '@tutkli/jikan-ts';
+import { JikanClient, JikanResponse, Anime } from '@tutkli/jikan-ts';
 
 (async () => {
   const jikanClient = new JikanClient();
 
   await jikanClient.anime
     .getAnimeById(1)
-    .then((jikanResponse) => console.log(jikanResponse.data.title)) // will output "Cowboy Bebob"
+    .then((jikanResponse: JikanResponse<Anime>) => { /* ... */ })
     .catch((error) => console.error(error));
 })();
 ```
@@ -69,7 +69,7 @@ Jikan-ts has default cache and logging configurations. If you want to customize 
 To use a specific configuration, pass the cacheOptions argument when instantiating a client:
 
 ```ts
-import {AnimeClient} from '@tutkli/jikan-ts';
+import { AnimeClient } from '@tutkli/jikan-ts';
 
 const animeClient = new AnimeClient({ 
     cacheOptions: { ... } // your custom axios-cache-interceptor options
@@ -77,14 +77,14 @@ const animeClient = new AnimeClient({
 );
 ```
 
-See also: [axios-cache-interceptor Configuration](https://axios-cache-interceptor.js.org/#/pages/configuration).
+See also: [axios-cache-interceptor Configuration](https://axios-cache-interceptor.js.org/guide).
 
 ### Logging Configuration
 
 To enable logging, pass the `loggerOptions` argument with `enabled: true`. You can also customize the styling of the logger with your custom tslog settings.
 
 ```ts
-import {AnimeClient} from '@tutkli/jikan-ts';
+import { AnimeClient } from '@tutkli/jikan-ts';
 
 const animeClient = new AnimeClient({ 
     loggerOptions: { 
