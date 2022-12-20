@@ -1,5 +1,3 @@
-// @ts-check
-
 /** @type {import('@jest/types').Config.InitialOptions} */
 const jestConfig = {
   displayName: 'jikan-ts',
@@ -21,4 +19,4 @@ const jestConfig = {
   testPathIgnorePatterns: ['/node_modules/', '/dist/'],
 };
 
-module.exports = jestConfig;
+export default jestConfig;

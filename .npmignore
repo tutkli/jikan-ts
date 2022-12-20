@@ -7,7 +7,7 @@ docs
 .eslintrc.json
 .gitignore
 .prettierrc.json
-jest.config.cjs
+jest.config.js
 package-lock.json
 yarn.lock
 dts-bundle-generator.config.json
