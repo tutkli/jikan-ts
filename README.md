@@ -18,7 +18,7 @@
 - 📄 Configurable Logging
 - 📦 ESM with tree shaking support
 
-#### 📖 Check out the [documentation page](https://tutkli.github.io/jikan-ts/)!
+#### 📖 Check out the [documentation page](https://tutkli.github.io/jikan-ts-docs/)!
 
 ## Installation
 
@@ -106,7 +106,7 @@ See also: [tslog Settings](https://tslog.js.org/#/?id=settings).
 
 ## Documentation
 
-Check out the [documentation page](https://tutkli.github.io/jikan-ts/)!
+Check out the [documentation page](https://tutkli.github.io/jikan-ts-docs/)!
 
 ## Leave you feedback
 
