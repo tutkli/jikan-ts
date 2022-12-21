@@ -1,3 +1,30 @@
+# v0.6 (21/12/2022)
+
+### BREAKING CHANGES
+
+- `JikanUniqueResponse` has been removed. Now all the request return `JikanResponse` with the corresponding data Type.
+- `JikanUniqueResource` has been renamed to `JikanResource`.
+
+### MangaClient
+
+- Correct `getMangaStatistics` function name.
+- Correct `getEpisodeVideos` function name.
+
+### AnimeClient
+
+- Correct `getEpisodeVideos` function name.
+
+### Tests
+
+- Complete coverage of all the clients.
+
+### Docs
+
+- Remove typedoc documentation generator.
+- Launch new documentation page! https://tutkli.github.io/jikan-ts-docs/
+
+<!-- CHANGELOG SPLIT MARKER -->
+
 # v0.5.52 (26/11/2022)
 
 ### Build
