@@ -20,18 +20,18 @@ import {
  * **Anime Client**
  *
  * Client used to access the Anime Endpoints:
- * - [AnimeSearch](https://docs.api.jikan.moe/#tag/anime)
- * - [AnimeFullById](https://docs.api.jikan.moe/#tag/anime/operation/getAnimeFullById)
- * - [AnimeById](https://docs.api.jikan.moe/#tag/anime/operation/getAnimeById)
- * - [AnimeCharacters](https://docs.api.jikan.moe/#tag/anime/operation/getAnimeCharacters)
- * - [AnimeStaff](https://docs.api.jikan.moe/#tag/anime/operation/getAnimeStaff)
- * - [AnimeEpisodes](https://docs.api.jikan.moe/#tag/anime/operation/getAnimeEpisodes)
- * - [AnimeEpisodeById](https://docs.api.jikan.moe/#tag/anime/operation/getAnimeEpisodeById)
- * - [AnimeVideos](https://docs.api.jikan.moe/#tag/anime/operation/getAnimeVideos)
- * - [AnimeVideosEpisodes](https://docs.api.jikan.moe/#tag/anime/operation/getAnimeVideosEpisodes)
- * - [AnimePictures](https://docs.api.jikan.moe/#tag/anime/operation/getAnimePictures)
- * - [AnimeStatistics](https://docs.api.jikan.moe/#tag/anime/operation/getAnimeStatistics)
- * - [AnimeRecommendations](https://docs.api.jikan.moe/#tag/anime/operation/getAnimeRecommendations)
+ * - [AnimeSearch](https://tutkli.github.io/jikan-ts-docs/clients/anime-client.html#getanimesearch-anime)
+ * - [AnimeFullById](https://tutkli.github.io/jikan-ts-docs/clients/anime-client.html#getanimefullbyid-anime-id-full)
+ * - [AnimeById](https://tutkli.github.io/jikan-ts-docs/clients/anime-client.html#getanimebyid-anime-id)
+ * - [AnimeCharacters](https://tutkli.github.io/jikan-ts-docs/clients/anime-client.html#getanimecharacters-anime-id-characters)
+ * - [AnimeStaff](https://tutkli.github.io/jikan-ts-docs/clients/anime-client.html#getanimestaff-anime-id-staff)
+ * - [AnimeEpisodes](https://tutkli.github.io/jikan-ts-docs/clients/anime-client.html#getanimeepisodes-anime-id-episodes)
+ * - [AnimeEpisodeById](https://tutkli.github.io/jikan-ts-docs/clients/anime-client.html#getanimeepisodebyid-anime-id-episodes-episode)
+ * - [AnimeVideos](https://tutkli.github.io/jikan-ts-docs/clients/anime-client.html#getanimevideos-anime-id-videos)
+ * - [AnimeEpisodeVideos](https://tutkli.github.io/jikan-ts-docs/clients/anime-client.html#getanimeepisodevideos-anime-id-videos-episodes)
+ * - [AnimePictures](https://tutkli.github.io/jikan-ts-docs/clients/anime-client.html#getanimepictures-anime-id-pictures)
+ * - [AnimeStatistics](https://tutkli.github.io/jikan-ts-docs/clients/anime-client.html#getanimestatistics-anime-id-statistics)
+ * - [AnimeRecommendations](https://tutkli.github.io/jikan-ts-docs/clients/anime-client.html#getanimerecommendations-anime-id-recommendations)
  *
  * See also: [JikanAPI](https://docs.api.jikan.moe/)
  */

@@ -5,11 +5,11 @@ import { CacheAxiosResponse } from 'axios-cache-interceptor';
 import { AxiosError } from 'axios';
 
 /**
- * **Anime Client**
+ * **Top Client**
  *
  * Client used to access the Top Endpoints:
- * - [TopAnime](https://docs.api.jikan.moe/#tag/top/operation/getTopAnime)
- * - [TopManga](https://docs.api.jikan.moe/#tag/top/operation/getTopManga)
+ * - [TopAnime](https://tutkli.github.io/jikan-ts-docs/clients/top-client.html#gettopanime-top-anime)
+ * - [TopManga](https://tutkli.github.io/jikan-ts-docs/clients/top-client.html#gettopmanga-top-manga)
  *
  * See also: [JikanAPI Documentation](https://docs.api.jikan.moe/)
  */

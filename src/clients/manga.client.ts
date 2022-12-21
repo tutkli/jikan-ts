@@ -16,13 +16,13 @@ import {
  * **Manga Client**
  *
  * Client used to access the Manga Endpoints:
- * - [MangaSearch](https://docs.api.jikan.moe/#tag/manga)
- * - [MangaFullById](https://docs.api.jikan.moe/#tag/manga/operation/getMangaFullById)
- * - [MangaById](https://docs.api.jikan.moe/#tag/manga/operation/getMangaById)
- * - [MangaCharacters](https://docs.api.jikan.moe/#tag/manga/operation/getMangaCharacters)
- * - [MangaPictures](https://docs.api.jikan.moe/#tag/manga/operation/getMangaPictures)
- * - [MangaStatistics](https://docs.api.jikan.moe/#tag/manga/operation/getMangaStatistics)
- * - [MangaRecommendations](https://docs.api.jikan.moe/#tag/manga/operation/getMangaRecommendations)
+ * - [MangaSearch](https://tutkli.github.io/jikan-ts-docs/clients/manga-client.html#getmangasearch-manga)
+ * - [MangaFullById](https://tutkli.github.io/jikan-ts-docs/clients/manga-client.html#getmangafullbyid-manga-id-full)
+ * - [MangaById](https://tutkli.github.io/jikan-ts-docs/clients/manga-client.html#getmangabyid-manga-id)
+ * - [MangaCharacters](https://tutkli.github.io/jikan-ts-docs/clients/manga-client.html#getmangacharacters-manga-id-characters)
+ * - [MangaPictures](https://tutkli.github.io/jikan-ts-docs/clients/manga-client.html#getmangapictures-manga-id-pictures)
+ * - [MangaStatistics](https://tutkli.github.io/jikan-ts-docs/clients/manga-client.html#getmangastatistics-manga-id-statistics)
+ * - [MangaRecommendations](https://tutkli.github.io/jikan-ts-docs/clients/manga-client.html#getmangarecommendations-manga-id-recommendations)
  *
  * See also: [JikanAPI Documentation](https://docs.api.jikan.moe/)
  */
