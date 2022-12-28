@@ -19,3 +19,4 @@ tsconfig.types.json
 *.tgz
 node_modules
 coverage
+CHANGELOG.md
