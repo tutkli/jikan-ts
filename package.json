@@ -41,8 +41,8 @@
   },
   "homepage": "https://github.com/tutkli/jikan-ts#readme",
   "dependencies": {
-    "axios": "^0.27.2",
-    "axios-cache-interceptor": "^0.10.7",
+    "axios": "1.2.1",
+    "axios-cache-interceptor": "1.0.0",
     "tslib": "^2.4.1",
     "tslog": "4.7.1"
   },
