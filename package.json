@@ -1,6 +1,6 @@
 {
   "name": "@tutkli/jikan-ts",
-  "version": "0.6.0",
+  "version": "0.6.1",
   "description": "Node.js wrapper for the Jikan API with build-in typings.",
   "source": "src/index.ts",
   "main": "dist/index.js",
@@ -36,9 +36,8 @@
   },
   "homepage": "https://github.com/tutkli/jikan-ts#readme",
   "dependencies": {
-    "axios": "^0.27.2",
-    "axios-cache-interceptor": "^0.10.7",
-    "tslib": "^2.4.1",
+    "axios": "1.2.1",
+    "axios-cache-interceptor": "1.0.0",
     "tslog": "4.7.1"
   },
   "devDependencies": {
@@ -50,6 +49,7 @@
     "@typescript-eslint/parser": "5.47.1",
     "dts-bundle-generator": "^7.1.0",
     "esbuild": "0.16.12",
+    "esbuild-node-externals": "^1.6.0",
     "eslint": "8.30.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-jest": "^27.1.4",
