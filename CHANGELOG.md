@@ -1,3 +1,12 @@
+# v0.6.1
+
+### Build
+
+- Update dependencies
+- Don't add external dependencies in built package
+
+<!-- CHANGELOG SPLIT MARKER -->
+
 # v0.6 (21/12/2022)
 
 ### BREAKING CHANGES
