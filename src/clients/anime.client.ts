@@ -39,7 +39,7 @@ export class AnimeClient extends BaseClient {
   /**
    * @argument clientOptions Options for the client.
    */
-  constructor(clientOptions?: ClientArgs) {
+  constructor(clientOptions?: Partial<ClientArgs>) {
     super(clientOptions);
   }
 
@@ -48,7 +48,7 @@ export class AnimeClient extends BaseClient {
    * @param searchParams Filter parameters
    * @returns JikanResponse with Anime array data
    */
-  public async getAnimeSearch(searchParams?: AnimeSearchParams): Promise<JikanResponse<Anime[]>> {
+  public async getAnimeSearch(searchParams?: Partial<AnimeSearchParams>): Promise<JikanResponse<Anime[]>> {
     return new Promise<JikanResponse<Anime[]>>((resolve, reject) => {
       const endpoint = `${AnimeEndpoints.AnimeSearch}`;
       this.api

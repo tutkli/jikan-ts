@@ -1,4 +1,4 @@
-import { BaseClient, ClientArgs } from './base.client';
+import { ClientArgs } from './base.client';
 import { AnimeClient } from './anime.client';
 import { MangaClient } from './manga.client';
 import { TopClient } from './top.client';
@@ -13,14 +13,12 @@ import { TopClient } from './top.client';
  *
  * See also: [JikanAPI Documentation](https://docs.api.jikan.moe/)
  */
-export class JikanClient extends BaseClient {
+export class JikanClient {
   public anime: AnimeClient;
   public manga: MangaClient;
   public top: TopClient;
 
-  constructor(clientOptions?: ClientArgs) {
-    super(clientOptions);
-
+  constructor(clientOptions?: Partial<ClientArgs>) {
     this.anime = new AnimeClient(clientOptions);
     this.manga = new MangaClient(clientOptions);
     this.top = new TopClient(clientOptions);

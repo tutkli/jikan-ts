@@ -17,7 +17,7 @@ export class TopClient extends BaseClient {
   /**
    * @argument clientOptions Options for the client.
    */
-  constructor(clientOptions?: ClientArgs) {
+  constructor(clientOptions?: Partial<ClientArgs>) {
     super(clientOptions);
   }
 
@@ -26,7 +26,7 @@ export class TopClient extends BaseClient {
    * @param searchParams Filter parameters
    * @returns JikanResponse with Anime array data
    */
-  public async getTopAnime(searchParams?: AnimeTopParams): Promise<JikanResponse<Anime[]>> {
+  public async getTopAnime(searchParams?: Partial<AnimeTopParams>): Promise<JikanResponse<Anime[]>> {
     return new Promise<JikanResponse<Anime[]>>((resolve, reject) => {
       const endpoint = `${TopEndpoints.TopAnime}`;
       this.api
@@ -41,7 +41,7 @@ export class TopClient extends BaseClient {
    * @param searchParams Filter parameters
    * @returns JikanResponse with Manga array data
    */
-  public async getTopManga(searchParams?: MangaTopParams): Promise<JikanResponse<Manga[]>> {
+  public async getTopManga(searchParams?: Partial<MangaTopParams>): Promise<JikanResponse<Manga[]>> {
     return new Promise<JikanResponse<Manga[]>>((resolve, reject) => {
       const endpoint = `${TopEndpoints.TopManga}`;
       this.api

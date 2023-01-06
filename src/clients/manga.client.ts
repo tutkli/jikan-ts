@@ -30,7 +30,7 @@ export class MangaClient extends BaseClient {
   /**
    * @argument clientOptions Options for the client.
    */
-  constructor(clientOptions?: ClientArgs) {
+  constructor(clientOptions?: Partial<ClientArgs>) {
     super(clientOptions);
   }
 
@@ -39,7 +39,7 @@ export class MangaClient extends BaseClient {
    * @param searchParams Filter parameters
    * @returns JikanResponse with Manga array data
    */
-  public async getMangaSearch(searchParams?: MangaSearchParams): Promise<JikanResponse<Manga[]>> {
+  public async getMangaSearch(searchParams?: Partial<MangaSearchParams>): Promise<JikanResponse<Manga[]>> {
     return new Promise<JikanResponse<Manga[]>>((resolve, reject) => {
       const endpoint = `${MangaEndpoints.MangaSearch}`;
       this.api

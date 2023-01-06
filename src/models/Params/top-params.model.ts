@@ -16,8 +16,8 @@ export enum TopMangaFilter {
 }
 
 export interface JikanTopParams {
-  page?: number;
-  limit?: number;
+  page: number;
+  limit: number;
 }
 
 /**
@@ -26,8 +26,8 @@ export interface JikanTopParams {
  * See also: [Jikan API Documentation](https://docs.api.jikan.moe/#tag/top/operation/getTopAnime)
  */
 export interface AnimeTopParams extends JikanTopParams {
-  type?: AnimeType;
-  filter?: TopAnimeFilter;
+  type: AnimeType;
+  filter: TopAnimeFilter;
 }
 
 /**
@@ -36,6 +36,6 @@ export interface AnimeTopParams extends JikanTopParams {
  * See also: [Jikan API Documentation](https://docs.api.jikan.moe/#tag/top/operation/getTopManga)
  */
 export interface MangaTopParams extends JikanTopParams {
-  type?: MangaType;
+  type: MangaType;
   filter: TopMangaFilter;
 }
