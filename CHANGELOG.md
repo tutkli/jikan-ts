@@ -1,3 +1,18 @@
+# v0.6.2
+
+### Build
+
+- Updated dependencies
+- Make package side effects free
+- Refactor BaseClient for better organization
+- Remove unnecessary inheritance in JikanClient
+
+### Typings
+
+- Fix Typo in Manhwa type
+
+<!-- CHANGELOG SPLIT MARKER -->
+
 # v0.6.1
 
 ### Build
