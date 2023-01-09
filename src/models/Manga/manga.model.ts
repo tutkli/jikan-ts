@@ -45,7 +45,7 @@ export enum MangaType {
   lightnovel = 'Lightnovel',
   oneshot = 'Oneshot',
   doujin = 'Doujin',
-  manwha = 'Manwha',
+  manhwa = 'Manhwa',
   manhua = 'Manhua',
 }
 
