@@ -9,7 +9,7 @@ import {
 import { AnimeYoutubeVideo } from './anime-video.model';
 
 export interface Anime {
-  mal_id: string;
+  mal_id: number;
   url: string;
   images: JikanImages;
   trailer: AnimeYoutubeVideo;
@@ -44,7 +44,7 @@ export interface Anime {
   genres: JikanResource[];
   explicit_genres: JikanResource[];
   themes: JikanResource[];
-  demographic: JikanResource[];
+  demographics: JikanResource[];
   relations?: JikanResourceRelation[];
   theme?: AnimeTheme;
   external?: JikanNamedResource[];
