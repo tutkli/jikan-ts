@@ -1,3 +1,15 @@
+# v0.6.3
+
+### Anime Client
+
+- Add page query param in `getAnimeEpisodes` and `getAnimeEpisodeVideos`
+
+### Typings
+
+- Fix Typos in Anime interface 
+
+<!-- CHANGELOG SPLIT MARKER -->
+
 # v0.6.2
 
 ### Build
