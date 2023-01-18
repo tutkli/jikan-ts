@@ -5,6 +5,7 @@ build({
   entryPoints: ['src/index.ts'],
   outfile: 'dist/index.js',
   treeShaking: true,
+  platform: 'node',
   bundle: true,
   minify: true,
   format: 'esm',
