@@ -27,3 +27,10 @@ export enum TopEndpoints {
   TopAnime = '/top/anime',
   TopManga = '/top/manga',
 }
+
+export enum SeasonsEndpoints {
+  Season = '/seasons/{year}/{season}',
+  SeasonNow = '/seasons/now',
+  SeasonsList = '/seasons',
+  SeasonUpcoming = '/seasons/upcoming',
+}
