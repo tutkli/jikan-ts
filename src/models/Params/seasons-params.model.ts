@@ -1,16 +1,9 @@
-export enum SeasonsFilter {
-  tv = 'tv',
-  movie = 'movie',
-  ova = 'ova',
-  special = 'special',
-  ona = 'ona',
-  music = 'music',
-}
+import { AnimeType } from '../Anime';
 
 export interface JikanSeasonsParams {
   page?: number;
   limit?: number;
-  filter?: SeasonsFilter;
+  filter?: AnimeType;
 }
 
 /**
