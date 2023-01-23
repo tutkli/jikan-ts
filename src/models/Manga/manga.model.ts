@@ -32,6 +32,7 @@ export interface Manga {
   background: string;
   authors: JikanResource[];
   serializations: JikanResource[];
+  genres: JikanResource[];
   explicit_genres: JikanResource[];
   themes: JikanResource[];
   demographics: JikanResource[];
