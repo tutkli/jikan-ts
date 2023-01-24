@@ -76,6 +76,7 @@ export enum AnimeStatus {
   finished = 'Finished Airing',
   airing = 'Currently Airing',
   complete = 'Complete',
+  upcoming = 'Not yet aired',
 }
 
 export enum AnimeRating {
