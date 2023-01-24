@@ -1,3 +1,23 @@
+# v0.6.4 (24.01.2023)
+
+### Build
+
+- ⚠️ Downgrade `axios` to v0.27.2 and `axios-cache-interceptor` to v0.10.7.
+
+Version 1 of Axios caused CORS errors on browser calls that I yet have to figure a solution for. In the meantime, Axios will be downgraded so the lib actually works. Sorry for the inconvenience.
+
+- All other dependencies have been updated.
+
+### Clients
+
+- New Seasons Clients added!
+
+### Typings
+
+- Add missing genres in `Manga` model.
+
+<!-- CHANGELOG SPLIT MARKER -->
+
 # v0.6.3
 
 ### Anime Client
