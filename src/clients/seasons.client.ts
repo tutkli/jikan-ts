@@ -1,10 +1,8 @@
 import { BaseClient, ClientArgs } from './base.client';
-import { Anime, AnimeSeason, JikanResponse } from '../models';
+import { Anime, AnimeSeason, JikanResponse, JikanSeasonsParams, SeasonNowParams, SeasonsListData } from '../models';
 import { SeasonsEndpoints } from '../constants';
 import { CacheAxiosResponse } from 'axios-cache-interceptor';
 import { AxiosError } from 'axios';
-import { JikanSeasonsParams, SeasonNowParams } from '../models/Params/seasons-params.model';
-import { SeasonsListData } from '../models/Common/seasons-list.model';
 
 /**
  * **Seasons Client**
