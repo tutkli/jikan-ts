@@ -1,3 +1,12 @@
+# v0.6.5 (28.01.2023)
+
+### Clients
+
+- Fix: missing imports from Season Client.
+
+
+<!-- CHANGELOG SPLIT MARKER -->
+
 # v0.6.4 (24.01.2023)
 
 ### Build

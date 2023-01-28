@@ -102,6 +102,7 @@ See also: [tslog Settings](https://tslog.js.org/#/?id=settings).
 - AnimeClient
 - MangaClient
 - TopClient
+- SeasonsClient
 - JikanClient (Main client)
 
 ## Documentation
