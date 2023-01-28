@@ -1,9 +1,15 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 import { SeasonsClient } from '../clients';
-import { Anime, AnimeSeason, AnimeStatus, JikanResponse } from '../models';
-import { SeasonsListData } from '../models/Common/seasons-list.model';
-import { JikanSeasonsParams, SeasonNowParams } from '../models/Params/seasons-params.model';
+import {
+  Anime,
+  AnimeSeason,
+  AnimeStatus,
+  JikanResponse,
+  JikanSeasonsParams,
+  SeasonNowParams,
+  SeasonsListData,
+} from '../models';
 
 describe('test Seasons Client', () => {
   let client: SeasonsClient;
