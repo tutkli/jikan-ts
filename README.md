@@ -15,7 +15,7 @@
 
 - 💅 Fully typed
 - ♻ Http Request Cache
-- 📄 Configurable Logging
+- 📄 Logging
 - 📦 ESM with tree shaking support
 
 #### 📖 Check out the [documentation page](https://tutkli.github.io/jikan-ts-docs/)!
@@ -25,7 +25,7 @@
 ```bash
 npm install --save @tutkli/jikan-ts
 # or
-yarn add @tutkli/jikan-ts # recommended
+yarn add @tutkli/jikan-ts
 ```
 
 ## Basic Example
@@ -81,21 +81,16 @@ See also: [axios-cache-interceptor Configuration](https://axios-cache-intercepto
 
 ### Logging Configuration
 
-To enable logging, pass the `loggerOptions` argument with `enabled: true`. You can also customize the styling of the logger with your custom tslog settings.
+To enable logging, pass the `enableLogging` argument as `true`.
 
 ```ts
 import { AnimeClient } from '@tutkli/jikan-ts';
 
 const animeClient = new AnimeClient({ 
-    loggerOptions: { 
-        enabled: true, // enables logging
-        settings: { ... } // [Optional] your custom tslog settings
-    } 
+    enableLogging: true,
   }
 );
 ```
-
-See also: [tslog Settings](https://tslog.js.org/#/?id=settings).
 
 ## Available Clients
 

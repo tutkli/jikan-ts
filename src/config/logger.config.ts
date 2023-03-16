@@ -1,38 +1,25 @@
 import { AxiosError } from 'axios';
 import { CacheAxiosResponse, CacheRequestConfig } from 'axios-cache-interceptor';
-import { ISettingsParam, Logger } from 'tslog';
-import { ILogObj } from 'tslog/dist/types/interfaces';
 
-export interface LoggerOptions {
-  enabled: boolean;
-  settings: ISettingsParam<ILogObj>;
-}
-
-export const DEFAULT_LOGGER_SETTINGS: ISettingsParam<ILogObj> = {
-  prettyLogTemplate: '{{yyyy}}.{{mm}}.{{dd}} {{hh}}:{{MM}}:{{ss}}:{{ms}} {{logLevelName}} [{{name}}] ',
-  name: 'Jikan-ts Logger',
-};
-
-export const createLogger = (options: ISettingsParam<ILogObj> = DEFAULT_LOGGER_SETTINGS): Logger<ILogObj> =>
-  new Logger(options);
-
-export const handleRequest = (requestConfig: CacheRequestConfig, logger: Logger<ILogObj>): CacheRequestConfig => {
-  logger.info(`[Request Config] ${requestConfig.method?.toUpperCase() || ''} | ${requestConfig.url || ''}`);
+export const handleRequest = (requestConfig: CacheRequestConfig): CacheRequestConfig => {
+  console.info(`[Request] ${requestConfig.method?.toUpperCase() || ''} | ${requestConfig.url || ''}`);
   return requestConfig;
 };
 
-export const handleRequestError = (error: AxiosError, logger: Logger<ILogObj>): Promise<AxiosError> => {
-  logger.error(`[Request Error] CODE ${error.code || 'UNKNOWN'} | ${error.message}`);
+export const handleRequestError = (error: AxiosError): Promise<AxiosError> => {
+  console.error(`[Request Error] CODE ${error.code || 'UNKNOWN'} | ${error.message}`);
   throw error;
 };
 
-export const handleResponse = (response: CacheAxiosResponse, logger: Logger<ILogObj>): CacheAxiosResponse => {
-  logger.info();
-  console.log(response.data);
+export const handleResponse = (response: CacheAxiosResponse): CacheAxiosResponse => {
+  console.info(
+    `[Request Response] ${response.config.method?.toUpperCase() || ''} | ${response.config.url || ''}`,
+    response.data
+  );
   return response;
 };
 
-export const handleResponseError = (error: AxiosError, logger: Logger<ILogObj>): Promise<AxiosError> => {
-  logger.error(`[ Response Error ] CODE ${error.code || 'UNKNOWN'} | ${error.message}`);
+export const handleResponseError = (error: AxiosError): Promise<AxiosError> => {
+  console.error(`[ Response Error ] CODE ${error.code || 'UNKNOWN'} | ${error.message}`);
   throw error;
 };
