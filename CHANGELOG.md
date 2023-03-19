@@ -1,3 +1,24 @@
+# v0.6.6 (19.03.2023)
+
+### Clients
+
+- ⚠️ `tslog` have been removed.
+
+The benefits of pretty logging weren't enough to add an external lib.
+
+- Removed default cache options as they are not necessary.
+
+### Docs
+
+- Documentation has been moved to this project
+
+### Build 
+
+- Updated dependencies
+
+
+<!-- CHANGELOG SPLIT MARKER -->
+
 # v0.6.5 (28.01.2023)
 
 ### Clients
