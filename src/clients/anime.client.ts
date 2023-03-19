@@ -20,20 +20,8 @@ import {
  * **Anime Client**
  *
  * Client used to access the Anime Endpoints:
- * - [AnimeSearch](https://tutkli.github.io/jikan-ts-docs/clients/anime-client.html#getanimesearch-anime)
- * - [AnimeFullById](https://tutkli.github.io/jikan-ts-docs/clients/anime-client.html#getanimefullbyid-anime-id-full)
- * - [AnimeById](https://tutkli.github.io/jikan-ts-docs/clients/anime-client.html#getanimebyid-anime-id)
- * - [AnimeCharacters](https://tutkli.github.io/jikan-ts-docs/clients/anime-client.html#getanimecharacters-anime-id-characters)
- * - [AnimeStaff](https://tutkli.github.io/jikan-ts-docs/clients/anime-client.html#getanimestaff-anime-id-staff)
- * - [AnimeEpisodes](https://tutkli.github.io/jikan-ts-docs/clients/anime-client.html#getanimeepisodes-anime-id-episodes)
- * - [AnimeEpisodeById](https://tutkli.github.io/jikan-ts-docs/clients/anime-client.html#getanimeepisodebyid-anime-id-episodes-episode)
- * - [AnimeVideos](https://tutkli.github.io/jikan-ts-docs/clients/anime-client.html#getanimevideos-anime-id-videos)
- * - [AnimeEpisodeVideos](https://tutkli.github.io/jikan-ts-docs/clients/anime-client.html#getanimeepisodevideos-anime-id-videos-episodes)
- * - [AnimePictures](https://tutkli.github.io/jikan-ts-docs/clients/anime-client.html#getanimepictures-anime-id-pictures)
- * - [AnimeStatistics](https://tutkli.github.io/jikan-ts-docs/clients/anime-client.html#getanimestatistics-anime-id-statistics)
- * - [AnimeRecommendations](https://tutkli.github.io/jikan-ts-docs/clients/anime-client.html#getanimerecommendations-anime-id-recommendations)
  *
- * See also: [JikanAPI](https://docs.api.jikan.moe/)
+ * See also: [Jikan Documentation](https://docs.api.jikan.moe/)
  */
 export class AnimeClient extends BaseClient {
   /**

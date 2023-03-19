@@ -8,10 +8,8 @@ import { AxiosError } from 'axios';
  * **Top Client**
  *
  * Client used to access the Top Endpoints:
- * - [TopAnime](https://tutkli.github.io/jikan-ts-docs/clients/top-client.html#gettopanime-top-anime)
- * - [TopManga](https://tutkli.github.io/jikan-ts-docs/clients/top-client.html#gettopmanga-top-manga)
  *
- * See also: [JikanAPI Documentation](https://docs.api.jikan.moe/)
+ * See also: [Jikan Documentation](https://docs.api.jikan.moe/)
  */
 export class TopClient extends BaseClient {
   /**

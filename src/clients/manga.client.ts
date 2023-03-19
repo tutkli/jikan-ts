@@ -16,15 +16,8 @@ import {
  * **Manga Client**
  *
  * Client used to access the Manga Endpoints:
- * - [MangaSearch](https://tutkli.github.io/jikan-ts-docs/clients/manga-client.html#getmangasearch-manga)
- * - [MangaFullById](https://tutkli.github.io/jikan-ts-docs/clients/manga-client.html#getmangafullbyid-manga-id-full)
- * - [MangaById](https://tutkli.github.io/jikan-ts-docs/clients/manga-client.html#getmangabyid-manga-id)
- * - [MangaCharacters](https://tutkli.github.io/jikan-ts-docs/clients/manga-client.html#getmangacharacters-manga-id-characters)
- * - [MangaPictures](https://tutkli.github.io/jikan-ts-docs/clients/manga-client.html#getmangapictures-manga-id-pictures)
- * - [MangaStatistics](https://tutkli.github.io/jikan-ts-docs/clients/manga-client.html#getmangastatistics-manga-id-statistics)
- * - [MangaRecommendations](https://tutkli.github.io/jikan-ts-docs/clients/manga-client.html#getmangarecommendations-manga-id-recommendations)
  *
- * See also: [JikanAPI Documentation](https://docs.api.jikan.moe/)
+ * See also: [Jikan Documentation](https://docs.api.jikan.moe/)
  */
 export class MangaClient extends BaseClient {
   /**
