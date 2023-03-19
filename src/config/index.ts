@@ -1,2 +1,1 @@
-export * from './cache.config';
-export * from './logger.config';
+export * from './logging.config';

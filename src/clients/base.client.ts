@@ -7,7 +7,7 @@ import {
 } from 'axios-cache-interceptor';
 import axios, { AxiosError } from 'axios';
 import { BaseURL } from '../constants';
-import { getCacheOptions, handleRequest, handleRequestError, handleResponse, handleResponseError } from '../config';
+import { handleRequest, handleRequestError, handleResponse, handleResponseError } from '../config';
 
 /**
  * **Client Args**
@@ -46,7 +46,7 @@ export abstract class BaseClient {
           'Content-Type': 'application/json',
         },
       }),
-      getCacheOptions(clientOptions.cacheOptions)
+      clientOptions.cacheOptions
     );
 
     if (clientOptions.enableLogging) {
