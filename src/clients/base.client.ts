@@ -7,17 +7,7 @@ import {
 } from 'axios-cache-interceptor';
 import axios, { AxiosError } from 'axios';
 import { BaseURL } from '../constants';
-import {
-  createLogger,
-  getCacheOptions,
-  handleRequest,
-  handleRequestError,
-  handleResponse,
-  handleResponseError,
-  LoggerOptions,
-} from '../config';
-import { Logger } from 'tslog';
-import { ILogObj } from 'tslog/dist/types/interfaces';
+import { handleRequest, handleRequestError, handleResponse, handleResponseError } from '../config';
 
 /**
  * **Client Args**
@@ -25,11 +15,10 @@ import { ILogObj } from 'tslog/dist/types/interfaces';
  */
 export interface ClientArgs {
   /**
-   * **Logger Options**
-   * Options for the client logger.
-   * @see https://tslog.js.org/#/?id=settings
+   * **EnableLogging**
+   * Enables logging request responses.
    */
-  loggerOptions: Partial<LoggerOptions>;
+  enableLogging: boolean;
   /**
    * **Axios Cache Options**
    * Options for cache.
@@ -57,24 +46,23 @@ export abstract class BaseClient {
           'Content-Type': 'application/json',
         },
       }),
-      getCacheOptions(clientOptions.cacheOptions)
+      clientOptions.cacheOptions
     );
 
-    if (clientOptions.loggerOptions?.enabled) {
-      const logger: Logger<ILogObj> = createLogger(clientOptions.loggerOptions.settings);
-      this.addHttpInterceptors(logger);
+    if (clientOptions.enableLogging) {
+      this.addLoggingInterceptors();
     }
   }
 
-  private addHttpInterceptors(logger: Logger<ILogObj>): void {
+  private addLoggingInterceptors(): void {
     this.api.interceptors.request.use(
-      (config: CacheRequestConfig) => handleRequest(config, logger),
-      (error: AxiosError<string>) => handleRequestError(error, logger)
+      (config: CacheRequestConfig) => handleRequest(config),
+      (error: AxiosError<string>) => handleRequestError(error)
     );
 
     this.api.interceptors.response.use(
-      (response: CacheAxiosResponse) => handleResponse(response, logger),
-      (error: AxiosError<string>) => handleResponseError(error, logger)
+      (response: CacheAxiosResponse) => handleResponse(response),
+      (error: AxiosError<string>) => handleResponseError(error)
     );
   }
 }

@@ -9,7 +9,7 @@ import { AxiosError } from 'axios';
  *
  * Client used to access the Seasons Endpoints
  *
- * See also: [JikanAPI Documentation](https://docs.api.jikan.moe/)
+ * See also: [Jikan Documentation](https://docs.api.jikan.moe/)
  */
 export class SeasonsClient extends BaseClient {
   /**

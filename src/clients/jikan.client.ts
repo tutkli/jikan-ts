@@ -7,13 +7,9 @@ import { SeasonsClient } from './seasons.client';
 /**
  * **Jikan Client**
  *
- * The main client used to access all the JikanAPI Endpoints:
- * - [Anime](https://docs.api.jikan.moe/#tag/anime)
- * - [Manga](https://docs.api.jikan.moe/#tag/manga)
- * - [Top](https://docs.api.jikan.moe/#tag/top)
- * - [Seasons](https://docs.api.jikan.moe/#tag/seasons)
+ * The main client used to access all the Jikan Endpoints:
  *
- * See also: [JikanAPI Documentation](https://docs.api.jikan.moe/)
+ * See also: [Jikan Documentation](https://docs.api.jikan.moe/)
  */
 export class JikanClient {
   public anime: AnimeClient;
