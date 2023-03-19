@@ -20,3 +20,4 @@ tsconfig.types.json
 node_modules
 coverage
 CHANGELOG.md
+.github
