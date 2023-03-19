@@ -18,7 +18,7 @@
 - 📄 Logging
 - 📦 ESM with tree shaking support
 
-#### 📖 Check out the [documentation page](https://tutkli.github.io/jikan-ts-docs/)!
+#### 📖 Check out the [documentation page](https://tutkli.github.io/jikan-ts/)!
 
 ## Installation
 
@@ -28,9 +28,9 @@ npm install --save @tutkli/jikan-ts
 yarn add @tutkli/jikan-ts
 ```
 
-## Basic Example
+## Example
 
-Using a specific client, like AnimeClient:
+Using a specific client, like **AnimeClient**:
 
 ```ts
 import { AnimeClient, JikanResponse, Anime } from '@tutkli/jikan-ts';
@@ -45,7 +45,7 @@ import { AnimeClient, JikanResponse, Anime } from '@tutkli/jikan-ts';
 })();
 ```
 
-Or, using the JikanClient:
+Or, using the **JikanClient**:
 
 ```ts
 import { JikanClient, JikanResponse, Anime } from '@tutkli/jikan-ts';
@@ -62,24 +62,23 @@ import { JikanClient, JikanResponse, Anime } from '@tutkli/jikan-ts';
 
 ## Client configuration
 
-Jikan-ts has default cache and logging configurations. If you want to customize any configuration, you can do so by passing `cacheOptions` or `loggerOptions` arguments when instantiating a client.
-
 ### Cache Configuration
 
-To use a specific configuration, pass the cacheOptions argument when instantiating a client:
+Jikan-ts uses `axios-cache-interceptor` to store request results.
+To use a specific configuration, pass the `cacheOptions` argument when instantiating a client:
 
 ```ts
 import { AnimeClient } from '@tutkli/jikan-ts';
 
 const animeClient = new AnimeClient({ 
-    cacheOptions: { ... } // your custom axios-cache-interceptor options
+    cacheOptions: { ... } // axios-cache-interceptor options
   }
 );
 ```
 
-See also: [axios-cache-interceptor Configuration](https://axios-cache-interceptor.js.org/guide).
+For more information, check out the [axios-cache-interceptor Documentation](https://axios-cache-interceptor.js.org/).
 
-### Logging Configuration
+### Logging
 
 To enable logging, pass the `enableLogging` argument as `true`.
 
@@ -99,10 +98,6 @@ const animeClient = new AnimeClient({
 - TopClient
 - SeasonsClient
 - JikanClient (Main client)
-
-## Documentation
-
-Check out the [documentation page](https://tutkli.github.io/jikan-ts-docs/)!
 
 ## Leave you feedback
 
