@@ -35,14 +35,12 @@ Using a specific client, like **AnimeClient**:
 ```ts
 import { AnimeClient, JikanResponse, Anime } from '@tutkli/jikan-ts';
 
-(async () => {
-  const animeClient = new AnimeClient();
+const animeClient = new AnimeClient();
 
-  await animeClient
-    .getAnimeById(1)
-    .then((jikanResponse: JikanResponse<Anime>) => { /* ... */ })
-    .catch((error) => console.error(error));
-})();
+animeClient
+  .getAnimeById(1)
+  .then((jikanResponse: JikanResponse<Anime>) => { /* ... */ })
+  .catch((error) => console.error(error));
 ```
 
 Or, using the **JikanClient**:
@@ -50,14 +48,12 @@ Or, using the **JikanClient**:
 ```ts
 import { JikanClient, JikanResponse, Anime } from '@tutkli/jikan-ts';
 
-(async () => {
-  const jikanClient = new JikanClient();
+const jikanClient = new JikanClient();
 
-  await jikanClient.anime
-    .getAnimeById(1)
-    .then((jikanResponse: JikanResponse<Anime>) => { /* ... */ })
-    .catch((error) => console.error(error));
-})();
+jikanClient.anime
+  .getAnimeById(1)
+  .then((jikanResponse: JikanResponse<Anime>) => { /* ... */ })
+  .catch((error) => console.error(error));
 ```
 
 ## Client configuration
