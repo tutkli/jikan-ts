@@ -31,20 +31,20 @@ export enum MangaSearchOrder {
 }
 
 export interface JikanSearchParams {
-  q: string;
-  page: number;
-  limit: number;
-  score: number;
-  min_score: number;
-  max_score: number;
-  sfw: boolean;
-  genres: string;
-  genres_exclude: string;
-  sort: SortOptions | string;
-  letter: string;
-  producers: string;
-  start_date: string;
-  end_date: string;
+  q?: string;
+  page?: number;
+  limit?: number;
+  score?: number;
+  min_score?: number;
+  max_score?: number;
+  sfw?: boolean;
+  genres?: string;
+  genres_exclude?: string;
+  sort?: SortOptions | string;
+  letter?: string;
+  producers?: string;
+  start_date?: string;
+  end_date?: string;
 }
 
 /**
@@ -53,10 +53,10 @@ export interface JikanSearchParams {
  * See also: [Jikan API Documentation](https://docs.api.jikan.moe/#tag/manga/operation/getMangaSearch)
  */
 export interface MangaSearchParams extends JikanSearchParams {
-  type: MangaType | string;
-  status: MangaStatus | string;
-  order_by: MangaSearchOrder | SearchOrder | string;
-  magazines: string;
+  type?: MangaType | string;
+  status?: MangaStatus | string;
+  order_by?: MangaSearchOrder | SearchOrder | string;
+  magazines?: string;
 }
 
 /**
@@ -65,8 +65,8 @@ export interface MangaSearchParams extends JikanSearchParams {
  * See also: [Jikan API Documentation](https://docs.api.jikan.moe/#tag/anime/operation/getAnimeSearch)
  */
 export interface AnimeSearchParams extends JikanSearchParams {
-  type: AnimeType | string;
-  status: AnimeStatus | string;
-  rating: AnimeRating | string;
-  order_by: AnimeSearchOrder | SearchOrder | string;
+  type?: AnimeType | string;
+  status?: AnimeStatus | string;
+  rating?: AnimeRating | string;
+  order_by?: AnimeSearchOrder | SearchOrder | string;
 }

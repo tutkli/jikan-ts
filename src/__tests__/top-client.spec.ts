@@ -22,7 +22,7 @@ describe('test Top Client', () => {
   });
 
   it('should get top animes filtered by params', async () => {
-    const params: Partial<AnimeTopParams> = { limit: 3, filter: TopAnimeFilter.airing };
+    const params: AnimeTopParams = { limit: 3, filter: TopAnimeFilter.airing };
     const data = await client.getTopAnime(params).then((response: JikanResponse<Anime[]>) => response.data);
 
     expect(data).toHaveLength(3);

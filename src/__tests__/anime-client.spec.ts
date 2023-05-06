@@ -24,7 +24,7 @@ describe('test Anime Client', () => {
   });
 
   it('should get animes filtered by params', async () => {
-    const params: Partial<AnimeSearchParams> = { limit: 3, score: 9 };
+    const params: AnimeSearchParams = { limit: 3, score: 9 };
     const data = await client.getAnimeSearch(params).then((response: JikanResponse<Anime[]>) => response.data);
 
     expect(data).toHaveLength(3);

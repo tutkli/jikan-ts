@@ -20,7 +20,7 @@ describe('test Manga Client', () => {
   });
 
   it('should get mangas filtered by params', async () => {
-    const params: Partial<MangaSearchParams> = { limit: 3, score: 9 };
+    const params: MangaSearchParams = { limit: 3, score: 9 };
     const data = await client.getMangaSearch(params).then((response: JikanResponse<Manga[]>) => response.data);
 
     expect(data).toHaveLength(3);
