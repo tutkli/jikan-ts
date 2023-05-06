@@ -54,6 +54,16 @@ export abstract class BaseClient {
     }
   }
 
+  protected replacePathParams(path: string, params: { [key in string]: unknown }): string {
+    for (const param of Object.keys(params)) {
+      if (!path.match(`{${param}}`)) throw new Error(`Path does not contain "${param}" parameter.`);
+
+      path = path.replace(`{${param}}`, String(params[param]));
+    }
+
+    return path;
+  }
+
   private addLoggingInterceptors(): void {
     this.api.interceptors.request.use(
       (config: CacheRequestConfig) => handleRequest(config),

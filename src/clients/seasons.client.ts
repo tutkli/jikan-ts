@@ -32,7 +32,7 @@ export class SeasonsClient extends BaseClient {
     searchParams?: Partial<JikanSeasonsParams>
   ): Promise<JikanResponse<Anime[]>> {
     return new Promise<JikanResponse<Anime[]>>((resolve, reject) => {
-      const endpoint = `${SeasonsEndpoints.Season.replace('{year}', String(year)).replace('{season}', season)}`;
+      const endpoint = this.replacePathParams(SeasonsEndpoints.Season, { year: year, season: season });
       this.api
         .get<JikanResponse<Anime[]>>(endpoint, { params: searchParams })
         .then((response: CacheAxiosResponse<JikanResponse<Anime[]>>) => resolve(response.data))

@@ -49,7 +49,7 @@ export class MangaClient extends BaseClient {
    */
   public async getMangaFullById(mal_id: number): Promise<JikanResponse<Manga>> {
     return new Promise<JikanResponse<Manga>>((resolve, reject) => {
-      const endpoint = `${MangaEndpoints.MangaFullById.replace('{id}', String(mal_id))}`;
+      const endpoint = this.replacePathParams(MangaEndpoints.MangaFullById, { id: mal_id });
       this.api
         .get<JikanResponse<Manga>>(endpoint)
         .then((response: CacheAxiosResponse<JikanResponse<Manga>>) => resolve(response.data))
@@ -64,7 +64,7 @@ export class MangaClient extends BaseClient {
    */
   public async getMangaById(mal_id: number): Promise<JikanResponse<Manga>> {
     return new Promise<JikanResponse<Manga>>((resolve, reject) => {
-      const endpoint = `${MangaEndpoints.MangaById.replace('{id}', String(mal_id))}`;
+      const endpoint = this.replacePathParams(MangaEndpoints.MangaById, { id: mal_id });
       this.api
         .get<JikanResponse<Manga>>(endpoint)
         .then((response: CacheAxiosResponse<JikanResponse<Manga>>) => resolve(response.data))
@@ -79,7 +79,7 @@ export class MangaClient extends BaseClient {
    */
   public async getMangaCharacters(mal_id: number): Promise<JikanResponse<CommonCharacter[]>> {
     return new Promise<JikanResponse<CommonCharacter[]>>((resolve, reject) => {
-      const endpoint = `${MangaEndpoints.MangaCharacters.replace('{id}', String(mal_id))}`;
+      const endpoint = this.replacePathParams(MangaEndpoints.MangaCharacters, { id: mal_id });
       this.api
         .get<JikanResponse<CommonCharacter[]>>(endpoint)
         .then((response: CacheAxiosResponse<JikanResponse<CommonCharacter[]>>) => resolve(response.data))
@@ -94,7 +94,7 @@ export class MangaClient extends BaseClient {
    */
   public async getMangaPictures(mal_id: number): Promise<JikanResponse<JikanImages[]>> {
     return new Promise<JikanResponse<JikanImages[]>>((resolve, reject) => {
-      const endpoint = `${MangaEndpoints.MangaPictures.replace('{id}', String(mal_id))}`;
+      const endpoint = this.replacePathParams(MangaEndpoints.MangaPictures, { id: mal_id });
       this.api
         .get<JikanResponse<JikanImages[]>>(endpoint)
         .then((response: CacheAxiosResponse<JikanResponse<JikanImages[]>>) => resolve(response.data))
@@ -109,7 +109,7 @@ export class MangaClient extends BaseClient {
    */
   public async getMangaStatistics(mal_id: number): Promise<JikanResponse<MangaStatistics>> {
     return new Promise<JikanResponse<MangaStatistics>>((resolve, reject) => {
-      const endpoint = `${MangaEndpoints.MangaStatistics.replace('{id}', String(mal_id))}`;
+      const endpoint = this.replacePathParams(MangaEndpoints.MangaStatistics, { id: mal_id });
       this.api
         .get<JikanResponse<MangaStatistics>>(endpoint)
         .then((response: CacheAxiosResponse<JikanResponse<MangaStatistics>>) => resolve(response.data))
@@ -124,7 +124,7 @@ export class MangaClient extends BaseClient {
    */
   public async getMangaRecommendations(mal_id: number): Promise<JikanResponse<Recommendation[]>> {
     return new Promise<JikanResponse<Recommendation[]>>((resolve, reject) => {
-      const endpoint = `${MangaEndpoints.MangaRecommendations.replace('{id}', String(mal_id))}`;
+      const endpoint = this.replacePathParams(MangaEndpoints.MangaRecommendations, { id: mal_id });
       this.api
         .get<JikanResponse<Recommendation[]>>(endpoint)
         .then((response: CacheAxiosResponse<JikanResponse<Recommendation[]>>) => resolve(response.data))
