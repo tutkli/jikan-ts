@@ -1,6 +1,6 @@
 {
   "name": "@tutkli/jikan-ts",
-  "version": "0.6.61",
+  "version": "0.6.62",
   "description": "Node.js wrapper for the Jikan API with built-in typings.",
   "source": "src/index.ts",
   "main": "dist/index.js",

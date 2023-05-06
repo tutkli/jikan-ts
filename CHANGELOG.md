@@ -1,3 +1,15 @@
+# v0.6.62 (06.05.2023)
+
+### Typings
+
+- Every search param is now optional
+
+### Build
+
+- Dependencies has been updated
+
+<!-- CHANGELOG SPLIT MARKER -->
+
 # v0.6.61 (19.03.2023)
 
 ### Clients
