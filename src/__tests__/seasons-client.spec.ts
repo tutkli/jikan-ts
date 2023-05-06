@@ -1,5 +1,4 @@
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
-/* eslint-disable @typescript-eslint/no-unsafe-call */
+import { beforeAll, beforeEach, describe, expect, it } from '@jest/globals';
 import { SeasonsClient } from '../clients';
 import {
   Anime,

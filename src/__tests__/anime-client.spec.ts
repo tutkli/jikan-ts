@@ -1,9 +1,11 @@
+import { beforeAll, beforeEach, describe, expect, it } from '@jest/globals';
 import { AnimeClient } from '../clients';
 import {
   Anime,
   AnimeCharacter,
   AnimeEpisode,
   AnimeEpisodeVideo,
+  AnimePicture,
   AnimeSearchParams,
   AnimeStaff,
   AnimeStatistics,
@@ -22,7 +24,7 @@ describe('test Anime Client', () => {
   });
 
   it('should get animes filtered by params', async () => {
-    const params: AnimeSearchParams = { limit: 3, score: 9 };
+    const params: Partial<AnimeSearchParams> = { limit: 3, score: 9 };
     const data = await client.getAnimeSearch(params).then((response: JikanResponse<Anime[]>) => response.data);
 
     expect(data).toHaveLength(3);
@@ -72,6 +74,11 @@ describe('test Anime Client', () => {
     const data = await client
       .getAnimeEpisodeVideos(1)
       .then((response: JikanResponse<AnimeEpisodeVideo[]>) => response.data);
+    expect(data.length).toBeGreaterThanOrEqual(0);
+  });
+
+  it('should get anime pictures', async () => {
+    const data = await client.getAnimePictures(1).then((response: JikanResponse<AnimePicture[]>) => response.data);
     expect(data.length).toBeGreaterThanOrEqual(0);
   });
 

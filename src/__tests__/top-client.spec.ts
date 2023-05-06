@@ -1,3 +1,4 @@
+import { beforeAll, beforeEach, describe, expect, it } from '@jest/globals';
 import {
   Anime,
   AnimeStatus,
@@ -21,7 +22,7 @@ describe('test Top Client', () => {
   });
 
   it('should get top animes filtered by params', async () => {
-    const params: AnimeTopParams = { limit: 3, filter: TopAnimeFilter.airing };
+    const params: Partial<AnimeTopParams> = { limit: 3, filter: TopAnimeFilter.airing };
     const data = await client.getTopAnime(params).then((response: JikanResponse<Anime[]>) => response.data);
 
     expect(data).toHaveLength(3);
@@ -31,7 +32,7 @@ describe('test Top Client', () => {
   });
 
   it('should get top mangas filtered by params', async () => {
-    const params: MangaTopParams = { limit: 3, filter: TopMangaFilter.publishing };
+    const params: Partial<MangaTopParams> = { limit: 3, filter: TopMangaFilter.publishing };
     const data = await client.getTopManga(params).then((response: JikanResponse<Manga[]>) => response.data);
 
     expect(data).toHaveLength(3);
