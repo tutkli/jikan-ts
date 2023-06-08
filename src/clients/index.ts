@@ -4,3 +4,4 @@ export * from './manga.client';
 export * from './top.client';
 export * from './jikan.client';
 export * from './seasons.client';
+export * from './genres.client';
