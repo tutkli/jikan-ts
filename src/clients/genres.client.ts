@@ -4,6 +4,13 @@ import { GenresEndpoints } from '../constants';
 import { CacheAxiosResponse } from 'axios-cache-interceptor';
 import { AxiosError } from 'axios';
 
+/**
+ * **Anime Client**
+ *
+ * Client used to access the Anime Endpoints:
+ *
+ * See also: [Jikan Documentation](https://docs.api.jikan.moe/)
+ */
 export class GenresClient extends BaseClient {
   /**
    * Get Anime genres

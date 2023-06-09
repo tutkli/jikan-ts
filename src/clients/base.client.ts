@@ -11,6 +11,7 @@ import { handleRequest, handleRequestError, handleResponse, handleResponseError 
 
 /**
  * **Client Args**
+ *
  * Used to pass optional configuration for logging and cache to the clients.
  */
 export interface ClientArgs {
@@ -33,7 +34,9 @@ export interface ClientArgs {
 }
 
 /**
- * **Base Client** This client is responsible for creating an Axios Instance and the cache and logging configurations
+ * **Base Client**
+ *
+ * This client is responsible for creating an Axios Instance and the cache and logging configurations
  */
 export abstract class BaseClient {
   public api: AxiosCacheInstance;
