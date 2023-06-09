@@ -6,3 +6,4 @@ export * from './jikan.client';
 export * from './seasons.client';
 export * from './genres.client';
 export * from './characters.client';
+export * from './schedules.client';

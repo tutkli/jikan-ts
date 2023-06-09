@@ -5,6 +5,7 @@ import { TopClient } from './top.client';
 import { SeasonsClient } from './seasons.client';
 import { GenresClient } from './genres.client';
 import { CharactersClient } from './characters.client';
+import { SchedulesClient } from './schedules.client';
 
 /**
  * **Jikan Client**
@@ -19,6 +20,7 @@ export class JikanClient {
   public genres: GenresClient;
   public manga: MangaClient;
   public top: TopClient;
+  public schedules: SchedulesClient;
   public seasons: SeasonsClient;
 
   constructor(clientOptions?: Partial<ClientArgs>) {
@@ -27,6 +29,7 @@ export class JikanClient {
     this.genres = new GenresClient(clientOptions);
     this.manga = new MangaClient(clientOptions);
     this.top = new TopClient(clientOptions);
+    this.schedules = new SchedulesClient(clientOptions);
     this.seasons = new SeasonsClient(clientOptions);
   }
 }
