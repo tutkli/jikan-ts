@@ -90,8 +90,11 @@ const animeClient = new AnimeClient({
 ## Available Clients
 
 - AnimeClient
+- CharactersClient
+- GenresClient
 - MangaClient
 - TopClient
+- SchedulesClient
 - SeasonsClient
 - JikanClient (Main client)
 
