@@ -1,8 +1,6 @@
 import { beforeAll, beforeEach, describe, expect, it } from '@jest/globals';
-import { GenresClient } from '../clients/genres.client';
-import { JikanResponse } from '../models';
-import { Genre } from '../models/Common/genre.model';
-import { GenresFilter } from '../models/Params/genres-params.model';
+import { GenresClient } from '../clients';
+import { Genre, GenresFilter, JikanResponse } from '../models';
 
 describe('test Genres Client', () => {
   let client: GenresClient;
