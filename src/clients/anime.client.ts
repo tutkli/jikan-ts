@@ -1,4 +1,4 @@
-import { BaseClient, ClientArgs } from './base.client';
+import { BaseClient } from './base.client';
 import { AnimeEndpoints } from '../constants';
 import { CacheAxiosResponse } from 'axios-cache-interceptor';
 import { AxiosError } from 'axios';
@@ -24,13 +24,6 @@ import {
  * See also: [Jikan Documentation](https://docs.api.jikan.moe/)
  */
 export class AnimeClient extends BaseClient {
-  /**
-   * @argument clientOptions Options for the client.
-   */
-  constructor(clientOptions?: Partial<ClientArgs>) {
-    super(clientOptions);
-  }
-
   /**
    * Get all the Animes within the given filter. Returns all the Animes if no filters are given.
    * @param searchParams Filter parameters

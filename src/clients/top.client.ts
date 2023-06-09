@@ -1,4 +1,4 @@
-import { BaseClient, ClientArgs } from './base.client';
+import { BaseClient } from './base.client';
 import { Anime, AnimeTopParams, JikanResponse, Manga, MangaTopParams } from '../models';
 import { TopEndpoints } from '../constants';
 import { CacheAxiosResponse } from 'axios-cache-interceptor';
@@ -12,13 +12,6 @@ import { AxiosError } from 'axios';
  * See also: [Jikan Documentation](https://docs.api.jikan.moe/)
  */
 export class TopClient extends BaseClient {
-  /**
-   * @argument clientOptions Options for the client.
-   */
-  constructor(clientOptions?: Partial<ClientArgs>) {
-    super(clientOptions);
-  }
-
   /**
    * Get the top Animes
    * @param searchParams Filter parameters

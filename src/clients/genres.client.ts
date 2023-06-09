@@ -1,19 +1,10 @@
-import { BaseClient, ClientArgs } from './base.client';
-import { JikanResponse } from '../models';
-import { Genre } from '../models/Common/genre.model';
-import { GenresEndpoints } from '../constants/endpoints/genres.endpoints';
-import { GenresFilter } from '../models/Params/genres-params.model';
+import { BaseClient } from './base.client';
+import { Genre, GenresFilter, JikanResponse } from '../models';
+import { GenresEndpoints } from '../constants';
 import { CacheAxiosResponse } from 'axios-cache-interceptor';
 import { AxiosError } from 'axios';
 
 export class GenresClient extends BaseClient {
-  /**
-   * @argument clientOptions Options for the client.
-   */
-  constructor(clientOptions?: Partial<ClientArgs>) {
-    super(clientOptions);
-  }
-
   /**
    * Get Anime genres
    * @param filter Type of the desired genres

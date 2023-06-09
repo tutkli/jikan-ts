@@ -1,4 +1,4 @@
-import { BaseClient, ClientArgs } from './base.client';
+import { BaseClient } from './base.client';
 import { Anime, AnimeSeason, JikanResponse, JikanSeasonsParams, SeasonNowParams, SeasonsListData } from '../models';
 import { SeasonsEndpoints } from '../constants';
 import { CacheAxiosResponse } from 'axios-cache-interceptor';
@@ -12,13 +12,6 @@ import { AxiosError } from 'axios';
  * See also: [Jikan Documentation](https://docs.api.jikan.moe/)
  */
 export class SeasonsClient extends BaseClient {
-  /**
-   * @argument clientOptions Options for the client.
-   */
-  constructor(clientOptions?: Partial<ClientArgs>) {
-    super(clientOptions);
-  }
-
   /**
    * Get the seasonal anime by year and season
    * @param year Season year

@@ -38,7 +38,7 @@ export interface ClientArgs {
 export abstract class BaseClient {
   public api: AxiosCacheInstance;
 
-  protected constructor(clientOptions: Partial<ClientArgs> = {}) {
+  constructor(clientOptions: Partial<ClientArgs> = {}) {
     this.api = setupCache(
       axios.create({
         baseURL: clientOptions.baseURL ?? BaseURL.REST,
