@@ -1,3 +1,15 @@
+# v1.0.0 (10.06.2023)
+
+### Clients
+
+- NEW! Schedules, Genres and Characters clients have been added.
+
+### Build
+
+- Dependencies has been updated
+
+<!-- CHANGELOG SPLIT MARKER -->
+
 # v0.6.62 (06.05.2023)
 
 ### Typings
