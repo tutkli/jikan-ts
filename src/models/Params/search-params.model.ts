@@ -45,6 +45,7 @@ export interface JikanSearchParams {
   producers?: string;
   start_date?: string;
   end_date?: string;
+  unapproved?: boolean;
 }
 
 /**
