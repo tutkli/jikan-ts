@@ -53,7 +53,7 @@ export enum MangaType {
 export enum MangaStatus {
   publishing = 'Publishing',
   complete = 'Complete',
-  hiatus = 'Hiatus',
+  hiatus = 'On Hiatus',
   discontinued = 'Discontinued',
   upcoming = 'Upcoming',
 }
