@@ -61,6 +61,6 @@
     "prettier": "3.0.2",
     "rimraf": "5.0.1",
     "typescript": "5.1.6",
-    "vitepress": "^1.0.0-alpha.60"
+    "vitepress": "^1.0.0-rc.4"
   }
 }
