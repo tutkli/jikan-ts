@@ -62,6 +62,18 @@ export abstract class BaseClient {
     }
   }
 
+  protected async getResource<T>(
+    endpoint: string,
+    pathParams: { [key in string]: unknown } = {},
+    params: { [key in string]: unknown } = {}
+  ): Promise<T> {
+    return (
+      await this.api.get<T>(this.replacePathParams(endpoint, pathParams), {
+        params,
+      })
+    ).data;
+  }
+
   protected replacePathParams(
     path: string,
     params: { [key in string]: unknown }
