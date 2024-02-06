@@ -136,8 +136,8 @@ interface JikanResourceRelation {
 
 ```ts
 interface SeasonsListData {
-    year: number;
-    seasons: Array<keyof typeof AnimeSeason>;
+  year: number;
+  seasons: Array<keyof typeof AnimeSeason>;
 }
 ```
 

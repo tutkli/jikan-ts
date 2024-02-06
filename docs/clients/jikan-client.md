@@ -1,6 +1,5 @@
 # JikanClient
 
-
 ## Usage
 
 The JikanClient provides endpoints for all the available clients.
@@ -21,7 +20,7 @@ import { JikanClient, JikanResponse, Anime } from '@tutkli/jikan-ts';
   await jikanClient.anime
     .getAnimeById(1)
     .then((response: JikanResponse<Anime>) => console.log(response.data))
-    .catch((error) => console.error(error));
+    .catch(error => console.error(error));
 })();
 ```
 

@@ -10,19 +10,27 @@ Client used to access the **Top endpoints**:
 ## Example
 
 ```ts
-import { TopClient, AnimeTopParams, AnimeType, JikanResponse, Anime } from '@tutkli/jikan-ts';
+import {
+  TopClient,
+  AnimeTopParams,
+  AnimeType,
+  JikanResponse,
+  Anime,
+} from '@tutkli/jikan-ts';
 
 (async () => {
-    const topClient = new TopClient();
+  const topClient = new TopClient();
 
-    const searchParams: AnimeTopParams = {
-        type: AnimeType.tv
-    }
+  const searchParams: AnimeTopParams = {
+    type: AnimeType.tv,
+  };
 
-    await topClient
-        .getTopAnime(searchParams)
-        .then((jikanResponse: JikanResponse<Anime[]>) => { /* your code */ })
-        .catch((error) => console.error(error));
+  await topClient
+    .getTopAnime(searchParams)
+    .then((jikanResponse: JikanResponse<Anime[]>) => {
+      /* your code */
+    })
+    .catch(error => console.error(error));
 })();
 ```
 

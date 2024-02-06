@@ -26,8 +26,10 @@ import { AnimeClient, JikanResponse, Anime } from '@tutkli/jikan-ts';
 
   await animeClient
     .getAnimeById(1)
-    .then((response: JikanResponse<Anime>) => { /* your code */ })
-    .catch((error) => console.error(error));
+    .then((response: JikanResponse<Anime>) => {
+      /* your code */
+    })
+    .catch(error => console.error(error));
 })();
 ```
 

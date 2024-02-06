@@ -1,3 +1,4 @@
+import axios, { AxiosError } from 'axios';
 import {
   AxiosCacheInstance,
   CacheAxiosResponse,
@@ -5,9 +6,13 @@ import {
   CacheRequestConfig,
   setupCache,
 } from 'axios-cache-interceptor';
-import axios, { AxiosError } from 'axios';
+import {
+  handleRequest,
+  handleRequestError,
+  handleResponse,
+  handleResponseError,
+} from '../config';
 import { BaseURL } from '../constants';
-import { handleRequest, handleRequestError, handleResponse, handleResponseError } from '../config';
 
 /**
  * **Client Args**
@@ -57,9 +62,13 @@ export abstract class BaseClient {
     }
   }
 
-  protected replacePathParams(path: string, params: { [key in string]: unknown }): string {
+  protected replacePathParams(
+    path: string,
+    params: { [key in string]: unknown }
+  ): string {
     for (const param of Object.keys(params)) {
-      if (!path.match(`{${param}}`)) throw new Error(`Path does not contain "${param}" parameter.`);
+      if (!path.match(`{${param}}`))
+        throw new Error(`Path does not contain "${param}" parameter.`);
 
       path = path.replace(`{${param}}`, String(params[param]));
     }

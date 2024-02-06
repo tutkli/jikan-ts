@@ -2,7 +2,6 @@
 
 ![jikan-ts-890w](https://user-images.githubusercontent.com/49206247/207465731-9908e843-7c8d-4e05-838b-41bcd8c677f8.png)
 
-
 ![Language Shield](https://img.shields.io/badge/language-typescript-blue?style=for-the-badge)
 ![License Shield](https://img.shields.io/badge/license-mit-blueviolet?style=for-the-badge)
 ![Build Shield](https://img.shields.io/badge/build-passing-brightgreen?style=for-the-badge)
@@ -39,8 +38,10 @@ const animeClient = new AnimeClient();
 
 animeClient
   .getAnimeById(1)
-  .then((jikanResponse: JikanResponse<Anime>) => { /* ... */ })
-  .catch((error) => console.error(error));
+  .then((jikanResponse: JikanResponse<Anime>) => {
+    /* ... */
+  })
+  .catch(error => console.error(error));
 ```
 
 Or, using the **JikanClient**:
@@ -52,8 +53,10 @@ const jikanClient = new JikanClient();
 
 jikanClient.anime
   .getAnimeById(1)
-  .then((jikanResponse: JikanResponse<Anime>) => { /* ... */ })
-  .catch((error) => console.error(error));
+  .then((jikanResponse: JikanResponse<Anime>) => {
+    /* ... */
+  })
+  .catch(error => console.error(error));
 ```
 
 ## Client configuration
@@ -66,7 +69,7 @@ To use a specific configuration, pass the `cacheOptions` argument when instantia
 ```ts
 import { AnimeClient } from '@tutkli/jikan-ts';
 
-const animeClient = new AnimeClient({ 
+const animeClient = new AnimeClient({
     cacheOptions: { ... } // axios-cache-interceptor options
   }
 );
@@ -81,10 +84,9 @@ To enable logging, pass the `enableLogging` argument as `true`.
 ```ts
 import { AnimeClient } from '@tutkli/jikan-ts';
 
-const animeClient = new AnimeClient({ 
-    enableLogging: true,
-  }
-);
+const animeClient = new AnimeClient({
+  enableLogging: true,
+});
 ```
 
 ## Available Clients
@@ -103,4 +105,3 @@ const animeClient = new AnimeClient({
 - Did you find this project useful? [Leave a ⭐](https://github.com/tutkli/jikan-ts)
 - Found a problem? [Create an issue 🔎](https://github.com/tutkli/jikan-ts/issues)
 - Want to contribute? [Submit a PR 📑](https://github.com/tutkli/jikan-ts/pulls)
-

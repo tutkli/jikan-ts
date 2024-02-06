@@ -8,7 +8,7 @@ describe('test Genres Client', () => {
     client = new GenresClient();
   });
   beforeEach(async () => {
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    await new Promise(resolve => setTimeout(resolve, 1000));
   });
 
   it('should get anime genres', async () => {
@@ -20,7 +20,9 @@ describe('test Genres Client', () => {
   });
 
   it('should get manga genres', async () => {
-    const data = await client.getMangaGenres().then((response: JikanResponse<Genre[]>) => response.data);
+    const data = await client
+      .getMangaGenres()
+      .then((response: JikanResponse<Genre[]>) => response.data);
 
     expect(data.length).toBeGreaterThan(0);
   });

@@ -15,7 +15,7 @@
     "emitDecoratorMetadata": true,
     "inlineSourceMap": false,
     "isolatedModules": true,
-    "importHelpers": true,
+    "importHelpers": true
   },
   "exclude": ["node_modules", "dist", "**/*.spec.ts", "**/*.test.ts"]
 }

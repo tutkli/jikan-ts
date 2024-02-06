@@ -1,11 +1,11 @@
-import { ClientArgs } from './base.client';
 import { AnimeClient } from './anime.client';
-import { MangaClient } from './manga.client';
-import { TopClient } from './top.client';
-import { SeasonsClient } from './seasons.client';
-import { GenresClient } from './genres.client';
+import { ClientArgs } from './base.client';
 import { CharactersClient } from './characters.client';
+import { GenresClient } from './genres.client';
+import { MangaClient } from './manga.client';
 import { SchedulesClient } from './schedules.client';
+import { SeasonsClient } from './seasons.client';
+import { TopClient } from './top.client';
 
 /**
  * **Jikan Client**

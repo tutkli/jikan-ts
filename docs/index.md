@@ -3,8 +3,8 @@
 layout: home
 
 hero:
-  name: "Jikan-ts"
-  text: "TypeScript and Node.js Jikan wrapper"
+  name: 'Jikan-ts'
+  text: 'TypeScript and Node.js Jikan wrapper'
   actions:
     - theme: brand
       text: Get Started

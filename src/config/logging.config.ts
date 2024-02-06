@@ -1,25 +1,42 @@
 import { AxiosError } from 'axios';
-import { CacheAxiosResponse, CacheRequestConfig } from 'axios-cache-interceptor';
+import {
+  CacheAxiosResponse,
+  CacheRequestConfig,
+} from 'axios-cache-interceptor';
 
-export const handleRequest = (requestConfig: CacheRequestConfig): CacheRequestConfig => {
-  console.info(`[Request] ${requestConfig.method?.toUpperCase() || ''} | ${requestConfig.url || ''}`);
+export const handleRequest = (
+  requestConfig: CacheRequestConfig
+): CacheRequestConfig => {
+  console.info(
+    `[Request] ${requestConfig.method?.toUpperCase() || ''} | ${
+      requestConfig.url || ''
+    }`
+  );
   return requestConfig;
 };
 
 export const handleRequestError = (error: AxiosError): Promise<AxiosError> => {
-  console.error(`[Request Error] CODE ${error.code || 'UNKNOWN'} | ${error.message}`);
+  console.error(
+    `[Request Error] CODE ${error.code || 'UNKNOWN'} | ${error.message}`
+  );
   throw error;
 };
 
-export const handleResponse = (response: CacheAxiosResponse): CacheAxiosResponse => {
+export const handleResponse = (
+  response: CacheAxiosResponse
+): CacheAxiosResponse => {
   console.info(
-    `[Request Response] ${response.config.method?.toUpperCase() || ''} | ${response.config.url || ''}`,
+    `[Request Response] ${response.config.method?.toUpperCase() || ''} | ${
+      response.config.url || ''
+    }`,
     response.data
   );
   return response;
 };
 
 export const handleResponseError = (error: AxiosError): Promise<AxiosError> => {
-  console.error(`[ Response Error ] CODE ${error.code || 'UNKNOWN'} | ${error.message}`);
+  console.error(
+    `[ Response Error ] CODE ${error.code || 'UNKNOWN'} | ${error.message}`
+  );
   throw error;
 };

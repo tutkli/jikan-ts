@@ -24,12 +24,12 @@ Using a specific client, like AnimeClient:
 import { AnimeClient, JikanResponse, Anime } from '@tutkli/jikan-ts';
 
 (async () => {
-    const animeClient = new AnimeClient();
+  const animeClient = new AnimeClient();
 
-    await animeClient
-        .getAnimeById(1)
-        .then((response: JikanResponse<Anime>) => console.log(response.data))
-        .catch((error) => console.error(error));
+  await animeClient
+    .getAnimeById(1)
+    .then((response: JikanResponse<Anime>) => console.log(response.data))
+    .catch(error => console.error(error));
 })();
 ```
 
@@ -44,7 +44,7 @@ import { JikanClient, JikanResponse, Anime } from '@tutkli/jikan-ts';
   await jikanClient.anime
     .getAnimeById(1)
     .then((response: JikanResponse<Anime>) => console.log(jikanResponse.data))
-    .catch((error) => console.error(error));
+    .catch(error => console.error(error));
 })();
 ```
 
@@ -53,4 +53,3 @@ import { JikanClient, JikanResponse, Anime } from '@tutkli/jikan-ts';
 - Did you find this project useful? [Leave a ⭐](https://github.com/tutkli/jikan-ts)
 - Found a problem? [Create an issue 🔎](https://github.com/tutkli/jikan-ts/issues)
 - Want to contribute? [Submit a PR 📑](https://github.com/tutkli/jikan-ts/pulls)
-

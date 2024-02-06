@@ -1,4 +1,9 @@
-import { CharacterRole, CharacterVoiceActor, CommonCharacterData, JikanImages } from '../Common';
+import {
+  CharacterRole,
+  CharacterVoiceActor,
+  CommonCharacterData,
+  JikanImages,
+} from '../Common';
 
 export interface Character {
   mal_id: number;

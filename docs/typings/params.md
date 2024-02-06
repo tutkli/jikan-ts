@@ -23,7 +23,7 @@ interface JikanSearchParams {
 
 ## AnimeSearchParams
 
-- *extends* [JikanSearchParams](#jikansearchparams)
+- _extends_ [JikanSearchParams](#jikansearchparams)
 
 ```ts
 interface AnimeSearchParams extends JikanSearchParams {
@@ -36,7 +36,7 @@ interface AnimeSearchParams extends JikanSearchParams {
 
 ## MangaSearchParams
 
-- *extends* [JikanSearchParams](#jikansearchparams)
+- _extends_ [JikanSearchParams](#jikansearchparams)
 
 ```ts
 interface MangaSearchParams extends JikanSearchParams {
@@ -87,8 +87,8 @@ enum AnimeSearchOrder {
 
 ```ts
 enum MangaSearchOrder {
-    chapters = 'chapters',
-    volumes = 'volumes',
+  chapters = 'chapters',
+  volumes = 'volumes',
 }
 ```
 
@@ -103,7 +103,7 @@ interface JikanTopParams {
 
 ## AnimeTopParams
 
-- *extends* [JikanTopParams](#jikantopparams)
+- _extends_ [JikanTopParams](#jikantopparams)
 
 ```ts
 interface AnimeTopParams extends JikanTopParams {
@@ -114,12 +114,12 @@ interface AnimeTopParams extends JikanTopParams {
 
 ## MangaTopParams
 
-- *extends* [JikanTopParams](#jikantopparams)
+- _extends_ [JikanTopParams](#jikantopparams)
 
 ```ts
 interface MangaTopParams extends JikanTopParams {
-    type?: MangaType;
-    filter: TopMangaFilter;
+  type?: MangaType;
+  filter: TopMangaFilter;
 }
 ```
 
@@ -149,9 +149,9 @@ enum TopMangaFilter {
 
 ```ts
 interface JikanSeasonsParams {
-    page?: number;
-    limit?: number;
-    filter?: AnimeType;
+  page?: number;
+  limit?: number;
+  filter?: AnimeType;
 }
 ```
 

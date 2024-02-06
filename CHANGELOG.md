@@ -40,7 +40,6 @@ The benefits of pretty logging weren't enough to add an external lib.
 
 - Updated dependencies
 
-
 <!-- CHANGELOG SPLIT MARKER -->
 
 # v0.6.6 (19.03.2023)
@@ -57,10 +56,9 @@ The benefits of pretty logging weren't enough to add an external lib.
 
 - Documentation has been moved to this project
 
-### Build 
+### Build
 
 - Updated dependencies
-
 
 <!-- CHANGELOG SPLIT MARKER -->
 
@@ -69,7 +67,6 @@ The benefits of pretty logging weren't enough to add an external lib.
 ### Clients
 
 - Fix: missing imports from Season Client.
-
 
 <!-- CHANGELOG SPLIT MARKER -->
 
@@ -101,7 +98,7 @@ Version 1 of Axios caused CORS errors on browser calls that I yet have to figure
 
 ### Typings
 
-- Fix Typos in Anime interface 
+- Fix Typos in Anime interface
 
 <!-- CHANGELOG SPLIT MARKER -->
 
@@ -166,7 +163,6 @@ Version 1 of Axios caused CORS errors on browser calls that I yet have to figure
 
 - Complete docs overhaul
 
-
 <!-- CHANGELOG SPLIT MARKER -->
 
 # v0.5.5 (26/11/2022)
@@ -223,11 +219,11 @@ Version 1 of Axios caused CORS errors on browser calls that I yet have to figure
 
 ### Modules
 
- - Fix exporting Params module
+- Fix exporting Params module
 
 ### Build
 
- - Add lint script
+- Add lint script
 
 <!-- CHANGELOG SPLIT MARKER -->
 

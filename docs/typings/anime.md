@@ -4,46 +4,46 @@
 
 ```ts
 interface Anime {
-    mal_id: number;
-    url: string;
-    images: JikanImages;
-    trailer: AnimeYoutubeVideo;
-    approved: boolean;
-    titles: JikanResourceTitle[];
-    title: string;
-    title_english: string;
-    title_japanese: string;
-    title_synonyms: string[];
-    type: AnimeType;
-    source: string;
-    episodes: number;
-    status: AnimeStatus;
-    airing: boolean;
-    aired: JikanResourcePeriod;
-    duration: string;
-    rating: AnimeRating;
-    score: number;
-    scored_by: number;
-    rank: number;
-    popularity: number;
-    members: number;
-    favorites: number;
-    synopsis: string;
-    background: string;
-    season?: AnimeSeason;
-    year: number;
-    broadcast: AnimeBroadcast;
-    producers: JikanResource[];
-    licensors: JikanResource[];
-    studios: JikanResource[];
-    genres: JikanResource[];
-    explicit_genres: JikanResource[];
-    themes: JikanResource[];
-    demographics: JikanResource[];
-    relations?: JikanResourceRelation[];
-    theme?: AnimeTheme;
-    external?: JikanNamedResource[];
-    streaming: JikanNamedResource[];
+  mal_id: number;
+  url: string;
+  images: JikanImages;
+  trailer: AnimeYoutubeVideo;
+  approved: boolean;
+  titles: JikanResourceTitle[];
+  title: string;
+  title_english: string;
+  title_japanese: string;
+  title_synonyms: string[];
+  type: AnimeType;
+  source: string;
+  episodes: number;
+  status: AnimeStatus;
+  airing: boolean;
+  aired: JikanResourcePeriod;
+  duration: string;
+  rating: AnimeRating;
+  score: number;
+  scored_by: number;
+  rank: number;
+  popularity: number;
+  members: number;
+  favorites: number;
+  synopsis: string;
+  background: string;
+  season?: AnimeSeason;
+  year: number;
+  broadcast: AnimeBroadcast;
+  producers: JikanResource[];
+  licensors: JikanResource[];
+  studios: JikanResource[];
+  genres: JikanResource[];
+  explicit_genres: JikanResource[];
+  themes: JikanResource[];
+  demographics: JikanResource[];
+  relations?: JikanResourceRelation[];
+  theme?: AnimeTheme;
+  external?: JikanNamedResource[];
+  streaming: JikanNamedResource[];
 }
 ```
 
@@ -116,11 +116,11 @@ enum AnimeSeason {
 
 ## AnimeCharacter
 
-- *extends* [CommonCharacter](/typings/common#common-character)
+- _extends_ [CommonCharacter](/typings/common#common-character)
 
 ```ts
 interface AnimeCharacter extends CommonCharacter {
-    voice_actors: AnimeCharacterVoiceActor[];
+  voice_actors: AnimeCharacterVoiceActor[];
 }
 ```
 
@@ -169,7 +169,7 @@ interface AnimeStaff {
 
 ## AnimeStatistics
 
-- *extends* [Statistics](/typings/common#statistics)
+- _extends_ [Statistics](/typings/common#statistics)
 
 ```ts
 interface AnimeStatistics extends Statistics {
@@ -201,10 +201,10 @@ interface AnimePromoVideo {
 
 ```ts
 interface AnimeYoutubeVideo {
-    youtube_id: string;
-    url: string;
-    embed_url: string;
-    images?: JikanImagesCollection;
+  youtube_id: string;
+  url: string;
+  embed_url: string;
+  images?: JikanImagesCollection;
 }
 ```
 

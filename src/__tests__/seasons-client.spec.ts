@@ -16,7 +16,7 @@ describe('test Seasons Client', () => {
     client = new SeasonsClient();
   });
   beforeEach(async () => {
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    await new Promise(resolve => setTimeout(resolve, 1000));
   });
 
   it('should get the seasonal anime by year and season', async () => {
@@ -34,7 +34,9 @@ describe('test Seasons Client', () => {
 
   it('should get current seasonal anime filtered by params', async () => {
     const params: SeasonNowParams = { limit: 3 };
-    const data = await client.getSeasonNow(params).then((response: JikanResponse<Anime[]>) => response.data);
+    const data = await client
+      .getSeasonNow(params)
+      .then((response: JikanResponse<Anime[]>) => response.data);
 
     expect(data).toHaveLength(3);
     for (const anime of data) {
@@ -43,7 +45,9 @@ describe('test Seasons Client', () => {
   });
 
   it('should available list of seasons', async () => {
-    const data = await client.getSeasonsList().then((response: JikanResponse<SeasonsListData[]>) => response.data);
+    const data = await client
+      .getSeasonsList()
+      .then((response: JikanResponse<SeasonsListData[]>) => response.data);
 
     for (const season of data) {
       expect(typeof season.year).toEqual('number');
@@ -52,7 +56,9 @@ describe('test Seasons Client', () => {
 
   it("should get upcoming season's anime filtered by params", async () => {
     const params: JikanSeasonsParams = { limit: 3 };
-    const data = await client.getSeasonUpcoming(params).then((response: JikanResponse<Anime[]>) => response.data);
+    const data = await client
+      .getSeasonUpcoming(params)
+      .then((response: JikanResponse<Anime[]>) => response.data);
 
     expect(data).toHaveLength(3);
     for (const anime of data) {

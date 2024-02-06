@@ -29,7 +29,7 @@ The requested resource is received in the data property.
 
 ### Pagination
 
-If the endpoint is paginated, it will receive a *JikanPagination* property.
+If the endpoint is paginated, it will receive a _JikanPagination_ property.
 
 #### `JikanPagination`
 

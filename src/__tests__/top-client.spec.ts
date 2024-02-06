@@ -1,4 +1,5 @@
 import { beforeAll, beforeEach, describe, expect, it } from '@jest/globals';
+import { TopClient } from '../clients';
 import {
   Anime,
   AnimeStatus,
@@ -10,7 +11,6 @@ import {
   TopAnimeFilter,
   TopMangaFilter,
 } from '../models';
-import { TopClient } from '../clients';
 
 describe('test Top Client', () => {
   let client: TopClient;
@@ -18,12 +18,14 @@ describe('test Top Client', () => {
     client = new TopClient();
   });
   beforeEach(async () => {
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    await new Promise(resolve => setTimeout(resolve, 1000));
   });
 
   it('should get top animes filtered by params', async () => {
     const params: AnimeTopParams = { limit: 3, filter: TopAnimeFilter.airing };
-    const data = await client.getTopAnime(params).then((response: JikanResponse<Anime[]>) => response.data);
+    const data = await client
+      .getTopAnime(params)
+      .then((response: JikanResponse<Anime[]>) => response.data);
 
     expect(data).toHaveLength(3);
     for (const anime of data) {
@@ -32,8 +34,13 @@ describe('test Top Client', () => {
   });
 
   it('should get top mangas filtered by params', async () => {
-    const params: Partial<MangaTopParams> = { limit: 3, filter: TopMangaFilter.publishing };
-    const data = await client.getTopManga(params).then((response: JikanResponse<Manga[]>) => response.data);
+    const params: Partial<MangaTopParams> = {
+      limit: 3,
+      filter: TopMangaFilter.publishing,
+    };
+    const data = await client
+      .getTopManga(params)
+      .then((response: JikanResponse<Manga[]>) => response.data);
 
     expect(data).toHaveLength(3);
     for (const manga of data) {

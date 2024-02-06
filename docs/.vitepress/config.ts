@@ -58,8 +58,10 @@ export default defineConfig({
     ],
 
     footer: {
-      message: 'Released under the <a href="https://github.com/tutkli/jikan-ts/blob/main/LICENSE">MIT License</a>.',
-      copyright: '2023 © Jikan-ts by <a href="https://github.com/tutkli">Tutkli</a> and contributors.',
+      message:
+        'Released under the <a href="https://github.com/tutkli/jikan-ts/blob/main/LICENSE">MIT License</a>.',
+      copyright:
+        '2023 © Jikan-ts by <a href="https://github.com/tutkli">Tutkli</a> and contributors.',
     },
   },
   lastUpdated: true,

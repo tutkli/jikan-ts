@@ -10,7 +10,7 @@ To use a specific configuration, pass the `cacheOptions` argument when instantia
 ```ts
 import {AnimeClient} from '@tutkli/jikan-ts';
 
-const animeClient = new AnimeClient({ 
+const animeClient = new AnimeClient({
     cacheOptions: { ... } // axios-cache-interceptor options
   }
 );
@@ -19,4 +19,3 @@ const animeClient = new AnimeClient({
 ## More
 
 > For more information, check out the [axios-cache-interceptor Documentation](https://axios-cache-interceptor.js.org/).
-

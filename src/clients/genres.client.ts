@@ -1,8 +1,8 @@
-import { BaseClient } from './base.client';
-import { Genre, GenresFilter, JikanResponse } from '../models';
-import { GenresEndpoints } from '../constants';
-import { CacheAxiosResponse } from 'axios-cache-interceptor';
 import { AxiosError } from 'axios';
+import { CacheAxiosResponse } from 'axios-cache-interceptor';
+import { GenresEndpoints } from '../constants';
+import { Genre, GenresFilter, JikanResponse } from '../models';
+import { BaseClient } from './base.client';
 
 /**
  * **Anime Client**
@@ -21,7 +21,9 @@ export class GenresClient extends BaseClient {
       const endpoint = `${GenresEndpoints.AnimeGenres}`;
       this.api
         .get<JikanResponse<Genre[]>>(endpoint, { params: { filter } })
-        .then((response: CacheAxiosResponse<JikanResponse<Genre[]>>) => resolve(response.data))
+        .then((response: CacheAxiosResponse<JikanResponse<Genre[]>>) =>
+          resolve(response.data)
+        )
         .catch((error: AxiosError<string>) => reject(error));
     });
   }
@@ -35,7 +37,9 @@ export class GenresClient extends BaseClient {
       const endpoint = `${GenresEndpoints.MangaGenres}`;
       this.api
         .get<JikanResponse<Genre[]>>(endpoint, { params: { filter } })
-        .then((response: CacheAxiosResponse<JikanResponse<Genre[]>>) => resolve(response.data))
+        .then((response: CacheAxiosResponse<JikanResponse<Genre[]>>) =>
+          resolve(response.data)
+        )
         .catch((error: AxiosError<string>) => reject(error));
     });
   }

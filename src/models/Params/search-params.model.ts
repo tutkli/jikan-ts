@@ -1,5 +1,5 @@
-import { MangaStatus, MangaType } from '../Manga';
 import { AnimeRating, AnimeStatus, AnimeType } from '../Anime';
+import { MangaStatus, MangaType } from '../Manga';
 
 export enum SortOptions {
   asc = 'asc',
