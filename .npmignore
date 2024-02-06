@@ -22,3 +22,6 @@ coverage
 CHANGELOG.md
 .github
 README.md
+biome.json
+.lintstagedrc.json
+.githooks
