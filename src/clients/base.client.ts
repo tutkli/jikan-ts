@@ -64,28 +64,27 @@ export abstract class BaseClient {
 
   protected async getResource<T>(
     endpoint: string,
-    pathParams: { [key in string]: unknown } = {},
+    identifiers: { [key in string]: unknown } = {},
     params: { [key in string]: unknown } = {},
   ): Promise<T> {
     return (
-      await this.api.get<T>(this.replacePathParams(endpoint, pathParams), {
+      await this.api.get<T>(this.replaceIdentifiers(endpoint, identifiers), {
         params,
       })
     ).data;
   }
 
-  private replacePathParams(
+  private replaceIdentifiers(
     path: string,
     params: { [key in string]: unknown },
   ): string {
+    let endpoint = path;
     for (const param of Object.keys(params)) {
       if (!path.match(`{${param}}`))
         throw new Error(`Path does not contain "${param}" parameter.`);
-
-      path = path.replace(`{${param}}`, String(params[param]));
+      endpoint = endpoint.replace(`{${param}}`, String(params[param]));
     }
-
-    return path;
+    return endpoint;
   }
 
   private addLoggingInterceptors(): void {
