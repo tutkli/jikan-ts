@@ -15,12 +15,12 @@ export class GenresClient extends BaseClient {
    * @param filter Type of the desired genres
    */
   public async getAnimeGenres(
-    filter?: GenresFilter
+    filter?: GenresFilter,
   ): Promise<JikanResponse<Genre[]>> {
     return this.getResource<JikanResponse<Genre[]>>(
       GenresEndpoints.AnimeGenres,
       {},
-      { filter }
+      { filter },
     );
   }
 
@@ -29,12 +29,12 @@ export class GenresClient extends BaseClient {
    * @param filter Type of the desired genres
    */
   public async getMangaGenres(
-    filter?: GenresFilter
+    filter?: GenresFilter,
   ): Promise<JikanResponse<Genre[]>> {
     return this.getResource<JikanResponse<Genre[]>>(
       GenresEndpoints.MangaGenres,
       {},
-      { filter }
+      { filter },
     );
   }
 }

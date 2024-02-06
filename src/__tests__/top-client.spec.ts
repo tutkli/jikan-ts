@@ -18,7 +18,7 @@ describe('test Top Client', () => {
     client = new TopClient();
   });
   beforeEach(async () => {
-    await new Promise(resolve => setTimeout(resolve, 1000));
+    await new Promise((resolve) => setTimeout(resolve, 1000));
   });
 
   it('should get top animes filtered by params', async () => {

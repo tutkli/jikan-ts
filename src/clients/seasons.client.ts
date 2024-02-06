@@ -27,12 +27,12 @@ export class SeasonsClient extends BaseClient {
   public async getSeason(
     year: number,
     season: AnimeSeason,
-    searchParams?: Partial<JikanSeasonsParams>
+    searchParams?: Partial<JikanSeasonsParams>,
   ): Promise<JikanResponse<Anime[]>> {
     return this.getResource<JikanResponse<Anime[]>>(
       SeasonsEndpoints.Season,
       { year, season },
-      searchParams
+      searchParams,
     );
   }
 
@@ -42,12 +42,12 @@ export class SeasonsClient extends BaseClient {
    * @returns JikanResponse with Anime array data
    */
   public async getSeasonNow(
-    searchParams?: Partial<SeasonNowParams>
+    searchParams?: Partial<SeasonNowParams>,
   ): Promise<JikanResponse<Anime[]>> {
     return this.getResource<JikanResponse<Anime[]>>(
       SeasonsEndpoints.SeasonNow,
       {},
-      searchParams
+      searchParams,
     );
   }
 
@@ -57,7 +57,7 @@ export class SeasonsClient extends BaseClient {
    */
   public async getSeasonsList(): Promise<JikanResponse<SeasonsListData[]>> {
     return this.getResource<JikanResponse<SeasonsListData[]>>(
-      SeasonsEndpoints.SeasonsList
+      SeasonsEndpoints.SeasonsList,
     );
   }
 
@@ -67,12 +67,12 @@ export class SeasonsClient extends BaseClient {
    * @returns JikanResponse with Anime array data
    */
   public async getSeasonUpcoming(
-    searchParams?: Partial<JikanSeasonsParams>
+    searchParams?: Partial<JikanSeasonsParams>,
   ): Promise<JikanResponse<Anime[]>> {
     return this.getResource<JikanResponse<Anime[]>>(
       SeasonsEndpoints.SeasonUpcoming,
       {},
-      searchParams
+      searchParams,
     );
   }
 }

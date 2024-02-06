@@ -26,7 +26,7 @@ export class MangaClient extends BaseClient {
   public async getMangaFullById(id: number): Promise<JikanResponse<Manga>> {
     return this.getResource<JikanResponse<Manga>>(
       MangaEndpoints.MangaFullById,
-      { id }
+      { id },
     );
   }
 
@@ -47,11 +47,11 @@ export class MangaClient extends BaseClient {
    * @returns JikanResponse with CommonCharacter array data
    */
   public async getMangaCharacters(
-    id: number
+    id: number,
   ): Promise<JikanResponse<CommonCharacter[]>> {
     return this.getResource<JikanResponse<CommonCharacter[]>>(
       MangaEndpoints.MangaCharacters,
-      { id }
+      { id },
     );
   }
 
@@ -61,11 +61,11 @@ export class MangaClient extends BaseClient {
    * @returns JikanResponse with JikanImages array data
    */
   public async getMangaPictures(
-    id: number
+    id: number,
   ): Promise<JikanResponse<JikanImages[]>> {
     return this.getResource<JikanResponse<JikanImages[]>>(
       MangaEndpoints.MangaPictures,
-      { id }
+      { id },
     );
   }
 
@@ -75,11 +75,11 @@ export class MangaClient extends BaseClient {
    * @returns JikanResponse with MangaStatistics data
    */
   public async getMangaStatistics(
-    id: number
+    id: number,
   ): Promise<JikanResponse<MangaStatistics>> {
     return this.getResource<JikanResponse<MangaStatistics>>(
       MangaEndpoints.MangaStatistics,
-      { id }
+      { id },
     );
   }
 
@@ -89,11 +89,11 @@ export class MangaClient extends BaseClient {
    * @returns JikanResponse with Recommendation array data
    */
   public async getMangaRecommendations(
-    id: number
+    id: number,
   ): Promise<JikanResponse<Recommendation[]>> {
     return this.getResource<JikanResponse<Recommendation[]>>(
       MangaEndpoints.MangaRecommendations,
-      { id }
+      { id },
     );
   }
 
@@ -103,12 +103,12 @@ export class MangaClient extends BaseClient {
    * @returns JikanResponse with Manga array data
    */
   public async getMangaSearch(
-    searchParams?: Partial<MangaSearchParams>
+    searchParams?: Partial<MangaSearchParams>,
   ): Promise<JikanResponse<Manga[]>> {
     return this.getResource<JikanResponse<Manga[]>>(
       MangaEndpoints.MangaSearch,
       {},
-      searchParams
+      searchParams,
     );
   }
 }

@@ -16,12 +16,12 @@ export class SchedulesClient extends BaseClient {
    * @returns JikanResponse with Anime array data
    */
   public async getSchedules(
-    searchParams?: Partial<SchedulesParams>
+    searchParams?: Partial<SchedulesParams>,
   ): Promise<JikanResponse<Anime[]>> {
     return this.getResource<JikanResponse<Anime[]>>(
       SchedulesEndpoints.Schedules,
       {},
-      searchParams
+      searchParams,
     );
   }
 }

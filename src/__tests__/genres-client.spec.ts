@@ -8,7 +8,7 @@ describe('test Genres Client', () => {
     client = new GenresClient();
   });
   beforeEach(async () => {
-    await new Promise(resolve => setTimeout(resolve, 1000));
+    await new Promise((resolve) => setTimeout(resolve, 1000));
   });
 
   it('should get anime genres', async () => {

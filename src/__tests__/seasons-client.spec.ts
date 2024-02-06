@@ -16,7 +16,7 @@ describe('test Seasons Client', () => {
     client = new SeasonsClient();
   });
   beforeEach(async () => {
-    await new Promise(resolve => setTimeout(resolve, 1000));
+    await new Promise((resolve) => setTimeout(resolve, 1000));
   });
 
   it('should get the seasonal anime by year and season', async () => {

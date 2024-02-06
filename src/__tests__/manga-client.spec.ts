@@ -16,7 +16,7 @@ describe('test Manga Client', () => {
     client = new MangaClient();
   });
   beforeEach(async () => {
-    await new Promise(resolve => setTimeout(resolve, 1000));
+    await new Promise((resolve) => setTimeout(resolve, 1000));
   });
 
   it('should get mangas filtered by params', async () => {

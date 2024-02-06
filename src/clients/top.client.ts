@@ -22,12 +22,12 @@ export class TopClient extends BaseClient {
    * @returns JikanResponse with Anime array data
    */
   public async getTopAnime(
-    searchParams?: Partial<AnimeTopParams>
+    searchParams?: Partial<AnimeTopParams>,
   ): Promise<JikanResponse<Anime[]>> {
     return this.getResource<JikanResponse<Anime[]>>(
       TopEndpoints.TopAnime,
       {},
-      searchParams
+      searchParams,
     );
   }
 
@@ -37,12 +37,12 @@ export class TopClient extends BaseClient {
    * @returns JikanResponse with Manga array data
    */
   public async getTopManga(
-    searchParams?: Partial<MangaTopParams>
+    searchParams?: Partial<MangaTopParams>,
   ): Promise<JikanResponse<Manga[]>> {
     return this.getResource<JikanResponse<Manga[]>>(
       TopEndpoints.TopManga,
       {},
-      searchParams
+      searchParams,
     );
   }
 }

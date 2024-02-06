@@ -54,7 +54,7 @@ export abstract class BaseClient {
           'Content-Type': 'application/json',
         },
       }),
-      { ...clientOptions.cacheOptions, cacheTakeover: false }
+      { ...clientOptions.cacheOptions, cacheTakeover: false },
     );
 
     if (clientOptions.enableLogging) {
@@ -65,7 +65,7 @@ export abstract class BaseClient {
   protected async getResource<T>(
     endpoint: string,
     pathParams: { [key in string]: unknown } = {},
-    params: { [key in string]: unknown } = {}
+    params: { [key in string]: unknown } = {},
   ): Promise<T> {
     return (
       await this.api.get<T>(this.replacePathParams(endpoint, pathParams), {
@@ -76,7 +76,7 @@ export abstract class BaseClient {
 
   private replacePathParams(
     path: string,
-    params: { [key in string]: unknown }
+    params: { [key in string]: unknown },
   ): string {
     for (const param of Object.keys(params)) {
       if (!path.match(`{${param}}`))
@@ -91,12 +91,12 @@ export abstract class BaseClient {
   private addLoggingInterceptors(): void {
     this.api.interceptors.request.use(
       (config: InternalCacheRequestConfig) => handleRequest(config),
-      (error: AxiosError<string>) => handleRequestError(error)
+      (error: AxiosError<string>) => handleRequestError(error),
     );
 
     this.api.interceptors.response.use(
       (response: CacheAxiosResponse) => handleResponse(response),
-      (error: AxiosError<string>) => handleResponseError(error)
+      (error: AxiosError<string>) => handleResponseError(error),
     );
   }
 }

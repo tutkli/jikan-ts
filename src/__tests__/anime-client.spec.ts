@@ -20,7 +20,7 @@ describe('test Anime Client', () => {
     client = new AnimeClient();
   });
   beforeEach(async () => {
-    await new Promise(resolve => setTimeout(resolve, 1000));
+    await new Promise((resolve) => setTimeout(resolve, 1000));
   });
 
   it('should get animes filtered by params', async () => {

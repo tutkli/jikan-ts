@@ -34,7 +34,7 @@ export class AnimeClient extends BaseClient {
   public async getAnimeFullById(id: number): Promise<JikanResponse<Anime>> {
     return this.getResource<JikanResponse<Anime>>(
       AnimeEndpoints.AnimeFullById,
-      { id }
+      { id },
     );
   }
 
@@ -53,11 +53,11 @@ export class AnimeClient extends BaseClient {
    * @param id anime id
    */
   public async getAnimeCharacters(
-    id: number
+    id: number,
   ): Promise<JikanResponse<AnimeCharacter[]>> {
     return this.getResource<JikanResponse<AnimeCharacter[]>>(
       AnimeEndpoints.AnimeCharacters,
-      { id }
+      { id },
     );
   }
 
@@ -68,7 +68,7 @@ export class AnimeClient extends BaseClient {
   public async getAnimeStaff(id: number): Promise<JikanResponse<AnimeStaff[]>> {
     return this.getResource<JikanResponse<AnimeStaff[]>>(
       AnimeEndpoints.AnimeStaff,
-      { id }
+      { id },
     );
   }
 
@@ -79,12 +79,12 @@ export class AnimeClient extends BaseClient {
    */
   public async getAnimeEpisodes(
     id: number,
-    page = 1
+    page = 1,
   ): Promise<JikanResponse<AnimeEpisode[]>> {
     return this.getResource<JikanResponse<AnimeEpisode[]>>(
       AnimeEndpoints.AnimeEpisodes,
       { id },
-      { page }
+      { page },
     );
   }
 
@@ -95,11 +95,11 @@ export class AnimeClient extends BaseClient {
    */
   public async getAnimeEpisodeById(
     anime_id: number,
-    episode_id: number
+    episode_id: number,
   ): Promise<JikanResponse<AnimeEpisode>> {
     return this.getResource<JikanResponse<AnimeEpisode>>(
       AnimeEndpoints.AnimeEpisodeById,
-      { id: anime_id, episode: episode_id }
+      { id: anime_id, episode: episode_id },
     );
   }
 
@@ -110,12 +110,12 @@ export class AnimeClient extends BaseClient {
    */
   public async getAnimeNews(
     id: number,
-    page: number
+    page: number,
   ): Promise<JikanResponse<JikanNews>> {
     return this.getResource<JikanResponse<JikanNews>>(
       AnimeEndpoints.AnimeNews,
       { id },
-      { page }
+      { page },
     );
   }
 
@@ -126,12 +126,12 @@ export class AnimeClient extends BaseClient {
    */
   public async getAnimeForum(
     id: number,
-    filter: AnimeForumFilter
+    filter: AnimeForumFilter,
   ): Promise<JikanResponse<AnimeForum[]>> {
     return this.getResource<JikanResponse<AnimeForum[]>>(
       AnimeEndpoints.AnimeNews,
       { id },
-      { filter }
+      { filter },
     );
   }
 
@@ -142,7 +142,7 @@ export class AnimeClient extends BaseClient {
   public async getAnimeVideos(id: number): Promise<JikanResponse<AnimeVideos>> {
     return this.getResource<JikanResponse<AnimeVideos>>(
       AnimeEndpoints.AnimeVideos,
-      { id }
+      { id },
     );
   }
 
@@ -153,12 +153,12 @@ export class AnimeClient extends BaseClient {
    */
   public async getAnimeEpisodeVideos(
     id: number,
-    page = 1
+    page = 1,
   ): Promise<JikanResponse<AnimeEpisodeVideo[]>> {
     return this.getResource<JikanResponse<AnimeEpisodeVideo[]>>(
       AnimeEndpoints.AnimeVideosEpisodes,
       { id },
-      { page }
+      { page },
     );
   }
 
@@ -167,11 +167,11 @@ export class AnimeClient extends BaseClient {
    * @param id anime id
    */
   public async getAnimePictures(
-    id: number
+    id: number,
   ): Promise<JikanResponse<AnimePicture[]>> {
     return this.getResource<JikanResponse<AnimePicture[]>>(
       AnimeEndpoints.AnimePictures,
-      { id }
+      { id },
     );
   }
 
@@ -180,11 +180,11 @@ export class AnimeClient extends BaseClient {
    * @param id anime id
    */
   public async getAnimeStatistics(
-    id: number
+    id: number,
   ): Promise<JikanResponse<AnimeStatistics>> {
     return this.getResource<JikanResponse<AnimeStatistics>>(
       AnimeEndpoints.AnimeStatistics,
-      { id }
+      { id },
     );
   }
 
@@ -193,11 +193,11 @@ export class AnimeClient extends BaseClient {
    * @param id anime id
    */
   public async getAnimeMoreInfo(
-    id: number
+    id: number,
   ): Promise<JikanResponse<JikanMoreInfo>> {
     return this.getResource<JikanResponse<JikanMoreInfo>>(
       AnimeEndpoints.AnimeMoreInfo,
-      { id }
+      { id },
     );
   }
 
@@ -206,11 +206,11 @@ export class AnimeClient extends BaseClient {
    * @param id anime id
    */
   public async getAnimeRecommendations(
-    id: number
+    id: number,
   ): Promise<JikanResponse<Recommendation[]>> {
     return this.getResource<JikanResponse<Recommendation[]>>(
       AnimeEndpoints.AnimeRecommendations,
-      { id }
+      { id },
     );
   }
 
@@ -219,11 +219,11 @@ export class AnimeClient extends BaseClient {
    * @param id anime id
    */
   public async getAnimeRelations(
-    id: number
+    id: number,
   ): Promise<JikanResponse<JikanRelation[]>> {
     return this.getResource<JikanResponse<JikanRelation[]>>(
       AnimeEndpoints.AnimeRelations,
-      { id }
+      { id },
     );
   }
 
@@ -233,12 +233,12 @@ export class AnimeClient extends BaseClient {
    * @returns JikanResponse with Anime array data
    */
   public async getAnimeSearch(
-    searchParams?: Partial<AnimeSearchParams>
+    searchParams?: Partial<AnimeSearchParams>,
   ): Promise<JikanResponse<Anime[]>> {
     return this.getResource<JikanResponse<Anime[]>>(
       AnimeEndpoints.AnimeSearch,
       {},
-      searchParams
+      searchParams,
     );
   }
 }
