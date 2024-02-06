@@ -4,11 +4,16 @@ import {
   AnimeCharacter,
   AnimeEpisode,
   AnimeEpisodeVideo,
+  AnimeForum,
+  AnimeForumFilter,
   AnimePicture,
   AnimeSearchParams,
   AnimeStaff,
   AnimeStatistics,
   AnimeVideos,
+  JikanMoreInfo,
+  JikanNews,
+  JikanRelation,
   JikanResponse,
   Recommendation,
 } from '../models';
@@ -23,9 +28,8 @@ import { BaseClient } from './base.client';
  */
 export class AnimeClient extends BaseClient {
   /**
-   * Get a complete Anime resource data
-   * @param id The Anime ID
-   * @returns JikanResponse with Anime data
+   * Get complete anime resource data
+   * @param id anime id
    */
   public async getAnimeFullById(id: number): Promise<JikanResponse<Anime>> {
     return this.getResource<JikanResponse<Anime>>(
@@ -35,9 +39,8 @@ export class AnimeClient extends BaseClient {
   }
 
   /**
-   * Get Anime resource data
-   * @param id The Anime ID
-   * @returns JikanResponse with Anime data
+   * Get anime resource
+   * @param id anime id
    */
   public async getAnimeById(id: number): Promise<JikanResponse<Anime>> {
     return this.getResource<JikanResponse<Anime>>(AnimeEndpoints.AnimeById, {
@@ -46,9 +49,8 @@ export class AnimeClient extends BaseClient {
   }
 
   /**
-   * Get Characters of a specific Anime
-   * @param id The Anime ID
-   * @returns JikanResponse with array of AnimeCharacter data
+   * Get characters of a specific anime
+   * @param id anime id
    */
   public async getAnimeCharacters(
     id: number
@@ -60,9 +62,8 @@ export class AnimeClient extends BaseClient {
   }
 
   /**
-   * Get Staff of a specific Anime
-   * @param id The Anime ID
-   * @returns JikanResponse with array of AnimeStaff data
+   * Get staff of a specific Anime
+   * @param id anime id
    */
   public async getAnimeStaff(id: number): Promise<JikanResponse<AnimeStaff[]>> {
     return this.getResource<JikanResponse<AnimeStaff[]>>(
@@ -72,10 +73,9 @@ export class AnimeClient extends BaseClient {
   }
 
   /**
-   * Get a list of all the episodes of a specific Anime
-   * @param id The Anime ID
-   * @param page The page number
-   * @returns JikanResponse with array of AnimeEpisode data
+   * Get a list of all the episodes of a specific anime
+   * @param id anime id
+   * @param page page number
    */
   public async getAnimeEpisodes(
     id: number,
@@ -89,10 +89,9 @@ export class AnimeClient extends BaseClient {
   }
 
   /**
-   * Get a single Episode of a specific Anime by its ID
-   * @param anime_id The Anime ID
-   * @param episode_id The Episode ID
-   * @returns JikanResponse with AnimeEpisode data
+   * Get a single episode of a specific anime by its id
+   * @param anime_id anime id
+   * @param episode_id episode id
    */
   public async getAnimeEpisodeById(
     anime_id: number,
@@ -105,9 +104,40 @@ export class AnimeClient extends BaseClient {
   }
 
   /**
-   * Get Videos related to a specific Anime
-   * @param id The Anime ID
-   * @returns JikanResponse with AnimeVideo data
+   * Get a list of news articles related to the anime
+   * @param id anime id
+   * @param page page number
+   */
+  public async getAnimeNews(
+    id: number,
+    page: number
+  ): Promise<JikanResponse<JikanNews>> {
+    return this.getResource<JikanResponse<JikanNews>>(
+      AnimeEndpoints.AnimeNews,
+      { id },
+      { page }
+    );
+  }
+
+  /**
+   * Get a list of forum topics related to the anime
+   * @param id anime id
+   * @param filter forum filter
+   */
+  public async getAnimeForum(
+    id: number,
+    filter: AnimeForumFilter
+  ): Promise<JikanResponse<AnimeForum[]>> {
+    return this.getResource<JikanResponse<AnimeForum[]>>(
+      AnimeEndpoints.AnimeNews,
+      { id },
+      { filter }
+    );
+  }
+
+  /**
+   * Get videos related to the anime
+   * @param id anime id
    */
   public async getAnimeVideos(id: number): Promise<JikanResponse<AnimeVideos>> {
     return this.getResource<JikanResponse<AnimeVideos>>(
@@ -117,10 +147,9 @@ export class AnimeClient extends BaseClient {
   }
 
   /**
-   * Get Episode Videos related to a specific Anime
-   * @param id The Anime ID
-   * @param page The page number
-   * @returns JikanResponse with array of AnimeVideoEpisode data
+   * Get episode videos related to the anime
+   * @param id anime id
+   * @param page page number
    */
   public async getAnimeEpisodeVideos(
     id: number,
@@ -134,9 +163,8 @@ export class AnimeClient extends BaseClient {
   }
 
   /**
-   * Get Pictures related to a specific Anime
-   * @param id The Anime ID
-   * @returns JikanResponse with array of AnimePicture data
+   * Get pictures related to the Anime
+   * @param id anime id
    */
   public async getAnimePictures(
     id: number
@@ -148,9 +176,8 @@ export class AnimeClient extends BaseClient {
   }
 
   /**
-   * Get Statistics related to a specific Anime
-   * @param id The Anime ID
-   * @returns JikanResponse with AnimeStatistics data
+   * Get statistics related to the Anime
+   * @param id anime id
    */
   public async getAnimeStatistics(
     id: number
@@ -162,15 +189,40 @@ export class AnimeClient extends BaseClient {
   }
 
   /**
-   * Get Recommendations related to a specific Anime
-   * @param id The Anime ID
-   * @returns JikanResponse with array of Recommendation data
+   * Get more info related to the anime
+   * @param id anime id
+   */
+  public async getAnimeMoreInfo(
+    id: number
+  ): Promise<JikanResponse<JikanMoreInfo>> {
+    return this.getResource<JikanResponse<JikanMoreInfo>>(
+      AnimeEndpoints.AnimeMoreInfo,
+      { id }
+    );
+  }
+
+  /**
+   * Get recommendations based on the anime
+   * @param id anime id
    */
   public async getAnimeRecommendations(
     id: number
   ): Promise<JikanResponse<Recommendation[]>> {
     return this.getResource<JikanResponse<Recommendation[]>>(
       AnimeEndpoints.AnimeRecommendations,
+      { id }
+    );
+  }
+
+  /**
+   * Get anime relations
+   * @param id anime id
+   */
+  public async getAnimeRelations(
+    id: number
+  ): Promise<JikanResponse<JikanRelation[]>> {
+    return this.getResource<JikanResponse<JikanRelation[]>>(
+      AnimeEndpoints.AnimeRelations,
       { id }
     );
   }
