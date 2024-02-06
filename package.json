@@ -1,6 +1,6 @@
 {
   "name": "@tutkli/jikan-ts",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Node.js wrapper for the Jikan API with built-in typings.",
   "source": "src/index.ts",
   "main": "dist/index.js",
@@ -17,7 +17,7 @@
     "test:dev": "jest --verbose --colors --expand --maxWorkers=50% --detectOpenHandles --errorOnDeprecated --bail",
     "lint:fix": "npx eslint src/** --fix",
     "prettify": "prettier --write .",
-    "version": "auto-changelog -p && git add CHANGELOG.md"
+    "version": "auto-changelog -p -l false && git add CHANGELOG.md"
   },
   "repository": {
     "type": "git",
