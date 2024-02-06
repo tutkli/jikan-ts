@@ -1,5 +1,3 @@
-import { AxiosError } from 'axios';
-import { CacheAxiosResponse } from 'axios-cache-interceptor';
 import { SeasonsEndpoints } from '../constants';
 import {
   Anime,
@@ -31,18 +29,11 @@ export class SeasonsClient extends BaseClient {
     season: AnimeSeason,
     searchParams?: Partial<JikanSeasonsParams>
   ): Promise<JikanResponse<Anime[]>> {
-    return new Promise<JikanResponse<Anime[]>>((resolve, reject) => {
-      const endpoint = this.replacePathParams(SeasonsEndpoints.Season, {
-        year: year,
-        season: season,
-      });
-      this.api
-        .get<JikanResponse<Anime[]>>(endpoint, { params: searchParams })
-        .then((response: CacheAxiosResponse<JikanResponse<Anime[]>>) =>
-          resolve(response.data)
-        )
-        .catch((error: AxiosError<string>) => reject(error));
-    });
+    return this.getResource<JikanResponse<Anime[]>>(
+      SeasonsEndpoints.Season,
+      { year, season },
+      searchParams
+    );
   }
 
   /**
@@ -53,15 +44,11 @@ export class SeasonsClient extends BaseClient {
   public async getSeasonNow(
     searchParams?: Partial<SeasonNowParams>
   ): Promise<JikanResponse<Anime[]>> {
-    return new Promise<JikanResponse<Anime[]>>((resolve, reject) => {
-      const endpoint = `${SeasonsEndpoints.SeasonNow}`;
-      this.api
-        .get<JikanResponse<Anime[]>>(endpoint, { params: searchParams })
-        .then((response: CacheAxiosResponse<JikanResponse<Anime[]>>) =>
-          resolve(response.data)
-        )
-        .catch((error: AxiosError<string>) => reject(error));
-    });
+    return this.getResource<JikanResponse<Anime[]>>(
+      SeasonsEndpoints.SeasonNow,
+      {},
+      searchParams
+    );
   }
 
   /**
@@ -69,16 +56,9 @@ export class SeasonsClient extends BaseClient {
    * @returns JikanResponse with Seasons array data
    */
   public async getSeasonsList(): Promise<JikanResponse<SeasonsListData[]>> {
-    return new Promise<JikanResponse<SeasonsListData[]>>((resolve, reject) => {
-      const endpoint = `${SeasonsEndpoints.SeasonsList}`;
-      this.api
-        .get<JikanResponse<SeasonsListData[]>>(endpoint)
-        .then(
-          (response: CacheAxiosResponse<JikanResponse<SeasonsListData[]>>) =>
-            resolve(response.data)
-        )
-        .catch((error: AxiosError<string>) => reject(error));
-    });
+    return this.getResource<JikanResponse<SeasonsListData[]>>(
+      SeasonsEndpoints.SeasonsList
+    );
   }
 
   /**
@@ -89,14 +69,10 @@ export class SeasonsClient extends BaseClient {
   public async getSeasonUpcoming(
     searchParams?: Partial<JikanSeasonsParams>
   ): Promise<JikanResponse<Anime[]>> {
-    return new Promise<JikanResponse<Anime[]>>((resolve, reject) => {
-      const endpoint = `${SeasonsEndpoints.SeasonUpcoming}`;
-      this.api
-        .get<JikanResponse<Anime[]>>(endpoint, { params: searchParams })
-        .then((response: CacheAxiosResponse<JikanResponse<Anime[]>>) =>
-          resolve(response.data)
-        )
-        .catch((error: AxiosError<string>) => reject(error));
-    });
+    return this.getResource<JikanResponse<Anime[]>>(
+      SeasonsEndpoints.SeasonUpcoming,
+      {},
+      searchParams
+    );
   }
 }
