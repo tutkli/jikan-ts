@@ -1,6 +1,6 @@
 {
   "name": "@tutkli/jikan-ts",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Node.js wrapper for the Jikan API with built-in typings.",
   "source": "src/index.ts",
   "main": "dist/index.js",
@@ -15,7 +15,8 @@
     "test:coverage": "jest --coverage",
     "test:dev": "jest --verbose --colors --expand --maxWorkers=50% --detectOpenHandles --errorOnDeprecated --bail",
     "lint:fix": "npx eslint src/** --fix",
-    "prettify": "prettier --write ."
+    "prettify": "prettier --write .",
+    "version": "auto-changelog -p && git add CHANGELOG.md"
   },
   "repository": {
     "type": "git",
@@ -47,6 +48,9 @@
     "@types/node": "20.11.16",
     "@typescript-eslint/eslint-plugin": "6.21.0",
     "@typescript-eslint/parser": "6.21.0",
+    "auto-changelog": "^2.4.0",
+    "axios": "^1.6.7",
+    "axios-cache-interceptor": "^1.5.1",
     "dts-bundle-generator": "9.3.1",
     "esbuild": "0.20.0",
     "esbuild-node-externals": "1.12.0",
