@@ -1,3 +1,15 @@
+# v1.0.1 (21.08.2023)
+
+### Models
+
+- Added Anime and Manga search status.
+
+### Build
+
+- Dependencies has been updated
+
+<!-- CHANGELOG SPLIT MARKER -->
+
 # v1.0.0 (10.06.2023)
 
 ### Clients

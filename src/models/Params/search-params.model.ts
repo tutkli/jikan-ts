@@ -1,5 +1,5 @@
-import { AnimeRating, AnimeStatus, AnimeType } from '../Anime';
-import { MangaStatus, MangaType } from '../Manga';
+import { AnimeRating, AnimeType } from '../Anime';
+import { MangaType } from '../Manga';
 
 export enum SortOptions {
   asc = 'asc',
@@ -25,9 +25,23 @@ export enum AnimeSearchOrder {
   episodes = 'episodes',
 }
 
+export enum AnimeSearchStatus {
+  airing = 'airing',
+  complete = 'complete',
+  upcoming = 'upcoming',
+}
+
 export enum MangaSearchOrder {
   chapters = 'chapters',
   volumes = 'volumes',
+}
+
+export enum MangaSearchStatus {
+  publishing = 'publishing',
+  complete = 'complete',
+  hiatus = 'hiatus',
+  discontinued = 'discontinued',
+  upcoming = 'upcoming',
 }
 
 export interface JikanSearchParams {
@@ -55,7 +69,7 @@ export interface JikanSearchParams {
  */
 export interface MangaSearchParams extends JikanSearchParams {
   type?: MangaType | string;
-  status?: MangaStatus | string;
+  status?: MangaSearchStatus | string;
   order_by?: MangaSearchOrder | SearchOrder | string;
   magazines?: string;
 }
@@ -67,7 +81,7 @@ export interface MangaSearchParams extends JikanSearchParams {
  */
 export interface AnimeSearchParams extends JikanSearchParams {
   type?: AnimeType | string;
-  status?: AnimeStatus | string;
+  status?: AnimeSearchStatus | string;
   rating?: AnimeRating | string;
   order_by?: AnimeSearchOrder | SearchOrder | string;
 }
