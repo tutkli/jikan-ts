@@ -15,9 +15,12 @@
     "prepublish": "yarn run build",
     "test:coverage": "jest --coverage",
     "test:dev": "jest --verbose --colors --expand --maxWorkers=50% --detectOpenHandles --errorOnDeprecated --bail",
-    "lint:fix": "npx eslint src/** --fix",
-    "prettify": "prettier --write .",
-    "version": "auto-changelog -p -l false && git add CHANGELOG.md"
+    "version": "auto-changelog -p -l false && git add CHANGELOG.md",
+    "format": "biome format ./src",
+    "format:fix": "biome format --write ./src",
+    "lint": "biome check src",
+    "lint:ci": "biome ci src",
+    "lint:fix": "biome check --apply-unsafe ./src"
   },
   "repository": {
     "type": "git",
@@ -43,6 +46,7 @@
     "axios-cache-interceptor": "^1.5.1"
   },
   "devDependencies": {
+    "@biomejs/biome": "1.5.3",
     "@swc/core": "1.4.0",
     "@swc/jest": "0.2.36",
     "@types/jest": "29.5.12",
