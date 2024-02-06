@@ -1,5 +1,3 @@
-import { AxiosError } from 'axios';
-import { CacheAxiosResponse } from 'axios-cache-interceptor';
 import { TopEndpoints } from '../constants';
 import {
   Anime,
@@ -26,15 +24,11 @@ export class TopClient extends BaseClient {
   public async getTopAnime(
     searchParams?: Partial<AnimeTopParams>
   ): Promise<JikanResponse<Anime[]>> {
-    return new Promise<JikanResponse<Anime[]>>((resolve, reject) => {
-      const endpoint = `${TopEndpoints.TopAnime}`;
-      this.api
-        .get<JikanResponse<Anime[]>>(endpoint, { params: searchParams })
-        .then((response: CacheAxiosResponse<JikanResponse<Anime[]>>) =>
-          resolve(response.data)
-        )
-        .catch((error: AxiosError<string>) => reject(error));
-    });
+    return this.getResource<JikanResponse<Anime[]>>(
+      TopEndpoints.TopAnime,
+      {},
+      searchParams
+    );
   }
 
   /**
@@ -45,14 +39,10 @@ export class TopClient extends BaseClient {
   public async getTopManga(
     searchParams?: Partial<MangaTopParams>
   ): Promise<JikanResponse<Manga[]>> {
-    return new Promise<JikanResponse<Manga[]>>((resolve, reject) => {
-      const endpoint = `${TopEndpoints.TopManga}`;
-      this.api
-        .get<JikanResponse<Manga[]>>(endpoint, { params: searchParams })
-        .then((response: CacheAxiosResponse<JikanResponse<Manga[]>>) =>
-          resolve(response.data)
-        )
-        .catch((error: AxiosError<string>) => reject(error));
-    });
+    return this.getResource<JikanResponse<Manga[]>>(
+      TopEndpoints.TopManga,
+      {},
+      searchParams
+    );
   }
 }
