@@ -7,6 +7,7 @@
   "types": "dist/index.d.ts",
   "type": "module",
   "scripts": {
+    "prepare": "git config core.hookspath .githooks",
     "prebuild": "rimraf dist",
     "build": "yarn run esbuild && yarn run build-types",
     "esbuild": "node ./esbuild.config.js",
