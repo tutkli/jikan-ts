@@ -186,7 +186,7 @@ export class AnimeClient extends BaseClient {
     return this.getResource<JikanResponse<Anime[]>>(
       AnimeEndpoints.AnimeSearch,
       {},
-      { searchParams }
+      searchParams
     );
   }
 }
