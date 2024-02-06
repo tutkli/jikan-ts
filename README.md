@@ -17,8 +17,6 @@
 - 📄 Logging
 - 📦 ESM with tree shaking support
 
-#### 📖 Check out the [documentation page](https://tutkli.github.io/jikan-ts/)!
-
 ## Installation
 
 ```bash
