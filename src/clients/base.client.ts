@@ -44,7 +44,7 @@ export interface ClientArgs {
  * This client is responsible for creating an Axios Instance and the cache and logging configurations
  */
 export abstract class BaseClient {
-  public api: AxiosCacheInstance;
+  private api: AxiosCacheInstance;
 
   constructor(clientOptions: Partial<ClientArgs> = {}) {
     this.api = setupCache(
@@ -74,7 +74,7 @@ export abstract class BaseClient {
     ).data;
   }
 
-  protected replacePathParams(
+  private replacePathParams(
     path: string,
     params: { [key in string]: unknown }
   ): string {
