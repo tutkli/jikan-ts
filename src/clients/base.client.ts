@@ -3,7 +3,7 @@ import {
   AxiosCacheInstance,
   CacheAxiosResponse,
   CacheOptions,
-  CacheRequestConfig,
+  InternalCacheRequestConfig,
   setupCache,
 } from 'axios-cache-interceptor';
 import {
@@ -54,7 +54,7 @@ export abstract class BaseClient {
           'Content-Type': 'application/json',
         },
       }),
-      clientOptions.cacheOptions
+      { ...clientOptions.cacheOptions, cacheTakeover: false }
     );
 
     if (clientOptions.enableLogging) {
@@ -78,7 +78,7 @@ export abstract class BaseClient {
 
   private addLoggingInterceptors(): void {
     this.api.interceptors.request.use(
-      (config: CacheRequestConfig) => handleRequest(config),
+      (config: InternalCacheRequestConfig) => handleRequest(config),
       (error: AxiosError<string>) => handleRequestError(error)
     );
 

@@ -36,9 +36,9 @@
     "url": "https://github.com/tutkli/jikan-ts/issues"
   },
   "homepage": "https://github.com/tutkli/jikan-ts#readme",
-  "dependencies": {
-    "axios": "^0.27.2",
-    "axios-cache-interceptor": "^0.10.7"
+  "peerDependencies": {
+    "axios": "^1.6.7",
+    "axios-cache-interceptor": "^1.5.1"
   },
   "devDependencies": {
     "@swc/core": "1.4.0",
