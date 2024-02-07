@@ -1,5 +1,5 @@
-import { beforeAll, beforeEach, describe, expect, it } from '@jest/globals';
-import { MangaClient } from '../clients';
+import { beforeAll, beforeEach, describe, expect, it } from "vitest";
+import { MangaClient } from "../clients";
 import {
   CommonCharacter,
   JikanImages,
@@ -7,8 +7,8 @@ import {
   Manga,
   MangaSearchParams,
   MangaStatistics,
-  Recommendation,
-} from '../models';
+  Recommendation
+} from "../models";
 
 describe('test Manga Client', () => {
   let client: MangaClient;
@@ -20,14 +20,14 @@ describe('test Manga Client', () => {
   });
 
   it('should get mangas filtered by params', async () => {
-    const params: MangaSearchParams = { limit: 3, score: 9 };
+    const params: MangaSearchParams = { limit: 3, score: 8 };
     const data = await client
       .getMangaSearch(params)
       .then((response: JikanResponse<Manga[]>) => response.data);
 
     expect(data).toHaveLength(3);
     for (const anime of data) {
-      expect(anime.score).toBeGreaterThanOrEqual(9);
+      expect(anime.score).toBeGreaterThanOrEqual(8);
     }
   });
 

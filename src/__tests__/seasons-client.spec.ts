@@ -1,5 +1,5 @@
-import { beforeAll, beforeEach, describe, expect, it } from '@jest/globals';
-import { SeasonsClient } from '../clients';
+import { beforeAll, beforeEach, describe, expect, it } from "vitest";
+import { SeasonsClient } from "../clients";
 import {
   Anime,
   AnimeSeason,
@@ -7,8 +7,8 @@ import {
   JikanResponse,
   JikanSeasonsParams,
   SeasonNowParams,
-  SeasonsListData,
-} from '../models';
+  SeasonsListData
+} from "../models";
 
 describe('test Seasons Client', () => {
   let client: SeasonsClient;

@@ -10,8 +10,10 @@
     "prepare": "git config core.hookspath .githooks",
     "build": "tsup --config tsup.config.ts",
     "prepublishOnly": "yarn run build",
-    "test:coverage": "jest --coverage",
-    "test:dev": "jest --verbose --colors --expand --maxWorkers=50% --detectOpenHandles --errorOnDeprecated --bail",
+    "test:ci": "vitest --silent --run",
+    "test:coverage": "vitest run --coverage",
+    "test:dev": "vitest",
+    "test:ui": "vitest --ui",
     "version": "auto-changelog -p -l false && git add CHANGELOG.md",
     "format": "biome format ./src",
     "format:fix": "biome format --write ./src",
@@ -44,16 +46,15 @@
   },
   "devDependencies": {
     "@biomejs/biome": "1.5.3",
-    "@swc/core": "1.4.0",
-    "@swc/jest": "0.2.36",
-    "@types/jest": "29.5.12",
     "@types/node": "20.11.16",
+    "@vitest/coverage-v8": "^1.2.2",
+    "@vitest/ui": "^1.2.2",
     "auto-changelog": "^2.4.0",
     "axios": "^1.6.7",
     "axios-cache-interceptor": "^1.5.1",
-    "jest": "29.7.0",
     "lint-staged": "^15.2.2",
     "tsup": "^8.0.1",
-    "typescript": "5.3.3"
+    "typescript": "5.3.3",
+    "vitest": "^1.2.2"
   }
 }
