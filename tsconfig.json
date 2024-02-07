@@ -9,7 +9,7 @@
     "esModuleInterop": true,
     "module": "esnext",
     "moduleResolution": "node",
-    "types": ["node"],
+    "types": ["node", "vitest/importMeta"],
     "resolveJsonModule": true,
     "typeRoots": ["./node_modules/@types"],
     "experimentalDecorators": true,

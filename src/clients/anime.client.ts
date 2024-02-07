@@ -1,4 +1,4 @@
-import { AnimeEndpoints } from '../constants';
+import { AnimeEndpoints } from "../constants";
 import {
   Anime,
   AnimeCharacter,
@@ -15,9 +15,9 @@ import {
   JikanNews,
   JikanRelation,
   JikanResponse,
-  Recommendation,
-} from '../models';
-import { BaseClient } from './base.client';
+  Recommendation
+} from "../models";
+import { BaseClient } from "./base.client";
 
 /**
  * **Anime Client**
@@ -111,8 +111,8 @@ export class AnimeClient extends BaseClient {
   public async getAnimeNews(
     id: number,
     page: number,
-  ): Promise<JikanResponse<JikanNews>> {
-    return this.getResource<JikanResponse<JikanNews>>(
+  ): Promise<JikanResponse<JikanNews[]>> {
+    return this.getResource<JikanResponse<JikanNews[]>>(
       AnimeEndpoints.AnimeNews,
       { id },
       { page },
@@ -126,12 +126,12 @@ export class AnimeClient extends BaseClient {
    */
   public async getAnimeForum(
     id: number,
-    filter: AnimeForumFilter,
+    filter?: AnimeForumFilter,
   ): Promise<JikanResponse<AnimeForum[]>> {
     return this.getResource<JikanResponse<AnimeForum[]>>(
       AnimeEndpoints.AnimeNews,
       { id },
-      { filter },
+      filter ? { filter } : undefined,
     );
   }
 
