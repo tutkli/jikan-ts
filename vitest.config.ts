@@ -5,7 +5,6 @@ export default defineConfig({
     testTimeout: 10_000,
     fileParallelism: false,
     coverage: {
-      enabled: true,
       provider: "v8",
       exclude: ["src/models/*", "/.*"],
     },

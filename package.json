@@ -13,7 +13,7 @@
     "test:ci": "vitest --silent --run",
     "test:coverage": "vitest run --coverage",
     "test:dev": "vitest",
-    "test:ui": "vitest --ui",
+    "test:ui": "vitest --ui --coverage",
     "version": "auto-changelog -p -l false && git add CHANGELOG.md",
     "format": "biome format ./src",
     "format:fix": "biome format --write ./src",
