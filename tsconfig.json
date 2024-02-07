@@ -10,6 +10,7 @@
     "module": "esnext",
     "moduleResolution": "node",
     "types": ["node"],
+    "resolveJsonModule": true,
     "typeRoots": ["./node_modules/@types"],
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
