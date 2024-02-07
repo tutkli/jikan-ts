@@ -17,3 +17,4 @@ biome.json
 .lintstagedrc.json
 .githooks
 tsup.config.ts
+vitest.config.ts
