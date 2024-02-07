@@ -1,5 +1,5 @@
-import { beforeAll, beforeEach, describe, expect, it } from "vitest";
-import { MangaClient } from "../clients";
+import { beforeAll, beforeEach, describe, expect, it } from 'vitest';
+import { MangaClient } from '../clients';
 import {
   CommonCharacter,
   JikanImages,
@@ -7,8 +7,8 @@ import {
   Manga,
   MangaSearchParams,
   MangaStatistics,
-  Recommendation
-} from "../models";
+  Recommendation,
+} from '../models';
 
 describe('test Manga Client', () => {
   let client: MangaClient;

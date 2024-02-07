@@ -1,13 +1,18 @@
-import axios, { AxiosError } from "axios";
+import axios, { AxiosError } from 'axios';
 import {
   AxiosCacheInstance,
   CacheAxiosResponse,
   CacheOptions,
   InternalCacheRequestConfig,
-  setupCache
-} from "axios-cache-interceptor";
-import { handleRequest, handleRequestError, handleResponse, handleResponseError } from "../config";
-import { BaseURL } from "../constants";
+  setupCache,
+} from 'axios-cache-interceptor';
+import {
+  handleRequest,
+  handleRequestError,
+  handleResponse,
+  handleResponseError,
+} from '../config';
+import { BaseURL } from '../constants';
 
 /**
  * **Client Args**

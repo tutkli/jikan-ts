@@ -1,6 +1,13 @@
-import { assertType, beforeAll, beforeEach, describe, expect, it } from "vitest";
-import { AnimeClient } from "../clients";
-import { AnimeSearchParams } from "../models";
+import {
+  assertType,
+  beforeAll,
+  beforeEach,
+  describe,
+  expect,
+  it,
+} from 'vitest';
+import { AnimeClient } from '../clients';
+import { AnimeSearchParams } from '../models';
 
 describe('test Anime Client', () => {
   let client: AnimeClient;
@@ -14,7 +21,7 @@ describe('test Anime Client', () => {
     await new Promise((resolve) => setTimeout(resolve, 1000));
   });
 
-  it("should be instantiated correctly", () => {
+  it('should be instantiated correctly', () => {
     expect(client).toBeDefined();
     assertType<AnimeClient>(client);
   });
@@ -22,17 +29,17 @@ describe('test Anime Client', () => {
   // Endpoints
 
   it('should get a full anime by its id', async () => {
-    const { data } = await client.getAnimeFullById(1)
+    const { data } = await client.getAnimeFullById(1);
     expect(data.mal_id).toBe(1);
   });
 
   it('should get an anime by its id', async () => {
-    const { data } = await client.getAnimeById(1)
+    const { data } = await client.getAnimeById(1);
     expect(data.mal_id).toBe(1);
   });
 
   it('should get anime characters', async () => {
-    const { data } = await client.getAnimeCharacters(1)
+    const { data } = await client.getAnimeCharacters(1);
     expect(data.length).toBeGreaterThanOrEqual(0);
   });
 
@@ -42,7 +49,7 @@ describe('test Anime Client', () => {
   });
 
   it('should get anime episodes', async () => {
-    const { data } = await client.getAnimeEpisodes(1)
+    const { data } = await client.getAnimeEpisodes(1);
     expect(data.length).toBeGreaterThanOrEqual(0);
   });
 
@@ -79,12 +86,12 @@ describe('test Anime Client', () => {
   });
 
   it('should get anime statistics', async () => {
-    const { data } = await client.getAnimeStatistics(1)
+    const { data } = await client.getAnimeStatistics(1);
     expect(data.total).toBeGreaterThanOrEqual(1000);
   });
 
   it('should get anime more info', async () => {
-    const { data } = await client.getAnimeMoreInfo(1)
+    const { data } = await client.getAnimeMoreInfo(1);
     expect(data.moreinfo.length).toBeGreaterThanOrEqual(0);
   });
 

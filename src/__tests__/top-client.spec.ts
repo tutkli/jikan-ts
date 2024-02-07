@@ -1,5 +1,5 @@
-import { beforeAll, beforeEach, describe, expect, it } from "vitest";
-import { TopClient } from "../clients";
+import { beforeAll, beforeEach, describe, expect, it } from 'vitest';
+import { TopClient } from '../clients';
 import {
   Anime,
   AnimeStatus,
@@ -9,8 +9,8 @@ import {
   MangaStatus,
   MangaTopParams,
   TopAnimeFilter,
-  TopMangaFilter
-} from "../models";
+  TopMangaFilter,
+} from '../models';
 
 describe('test Top Client', () => {
   let client: TopClient;

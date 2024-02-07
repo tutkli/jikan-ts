@@ -1,6 +1,6 @@
-import { beforeAll, beforeEach, describe, expect, it } from "vitest";
-import { GenresClient } from "../clients";
-import { Genre, GenresFilter, JikanResponse } from "../models";
+import { beforeAll, beforeEach, describe, expect, it } from 'vitest';
+import { GenresClient } from '../clients';
+import { Genre, GenresFilter, JikanResponse } from '../models';
 
 describe('test Genres Client', () => {
   let client: GenresClient;

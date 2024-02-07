@@ -1,4 +1,4 @@
-import { AnimeEndpoints } from "../constants";
+import { AnimeEndpoints } from '../constants';
 import {
   Anime,
   AnimeCharacter,
@@ -15,9 +15,9 @@ import {
   JikanNews,
   JikanRelation,
   JikanResponse,
-  Recommendation
-} from "../models";
-import { BaseClient } from "./base.client";
+  Recommendation,
+} from '../models';
+import { BaseClient } from './base.client';
 
 /**
  * **Anime Client**
