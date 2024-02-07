@@ -1,18 +1,13 @@
-import axios, { AxiosError } from 'axios';
+import axios, { AxiosError } from "axios";
 import {
   AxiosCacheInstance,
   CacheAxiosResponse,
   CacheOptions,
   InternalCacheRequestConfig,
-  setupCache,
-} from 'axios-cache-interceptor';
-import {
-  handleRequest,
-  handleRequestError,
-  handleResponse,
-  handleResponseError,
-} from '../config';
-import { BaseURL } from '../constants';
+  setupCache
+} from "axios-cache-interceptor";
+import { handleRequest, handleRequestError, handleResponse, handleResponseError } from "../config";
+import { BaseURL } from "../constants";
 
 /**
  * **Client Args**
@@ -80,7 +75,7 @@ export abstract class BaseClient {
   ): string {
     let endpoint = path;
     for (const param of Object.keys(params)) {
-      if (!path.match(`{${param}}`))
+      if (!RegExp(`{${param}}`).exec(endpoint))
         throw new Error(`Path does not contain "${param}" parameter.`);
       endpoint = endpoint.replace(`{${param}}`, String(params[param]));
     }
