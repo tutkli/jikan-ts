@@ -2,11 +2,15 @@
 
 ![jikan-ts-890w](https://user-images.githubusercontent.com/49206247/207465731-9908e843-7c8d-4e05-838b-41bcd8c677f8.png)
 
-![Language Shield](https://img.shields.io/badge/language-typescript-blue?style=for-the-badge)
-![License Shield](https://img.shields.io/badge/license-mit-blueviolet?style=for-the-badge)
-![Build Shield](https://img.shields.io/badge/build-passing-brightgreen?style=for-the-badge)
-![Coverage Shield](https://img.shields.io/badge/coverage-100%25-brightgreen?style=for-the-badge)
-![Code Style Shield](https://img.shields.io/badge/code%20style-Prettier-magenta?style=for-the-badge)
+<p align="center">
+
+  ![Language Shield](https://img.shields.io/badge/language-typescript-blue?style=for-the-badge)
+  ![GitHub License](https://img.shields.io/github/license/tutkli/jikan-ts?style=for-the-badge&color=blueviolet)
+  ![Code Style Shield](https://img.shields.io/badge/code%20style-Biome-60A5FA?style=for-the-badge&logo=biome)
+  ![NPM Downloads](https://img.shields.io/npm/dt/%40tutkli%2Fjikan-ts?style=for-the-badge&color=red&logo=npm&link=https%3A%2F%2Fwww.npmjs.com%2Fpackage%2F%40tutkli%2Fjikan-ts)
+  ![npm bundle size](https://img.shields.io/bundlephobia/minzip/%40tutkli%2Fjikan-ts?style=for-the-badge&color=darkgreen&link=https%3A%2F%2Fwww.npmjs.com%2Fpackage%2F%40tutkli%2Fjikan-ts)
+
+</p>
 
 > Jikan API wrapper for Typescript and NodeJS with build in typings.
 
