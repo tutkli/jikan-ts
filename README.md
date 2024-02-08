@@ -24,9 +24,9 @@
 ## Installation
 
 ```bash
-npm install --save @tutkli/jikan-ts
+npm install --save @tutkli/jikan-ts axios axios-cache-interceptor
 # or
-yarn add @tutkli/jikan-ts
+yarn add @tutkli/jikan-ts axios axios-cache-interceptor
 ```
 
 ## Example
