@@ -18,7 +18,7 @@ export class GenresClient extends BaseClient {
     filter?: GenresFilter,
   ): Promise<JikanResponse<Genre[]>> {
     return this.getResource<JikanResponse<Genre[]>>(
-      GenresEndpoints.AnimeGenres,
+      GenresEndpoints.animeGenres,
       {},
       { filter },
     );
@@ -32,7 +32,7 @@ export class GenresClient extends BaseClient {
     filter?: GenresFilter,
   ): Promise<JikanResponse<Genre[]>> {
     return this.getResource<JikanResponse<Genre[]>>(
-      GenresEndpoints.MangaGenres,
+      GenresEndpoints.mangaGenres,
       {},
       { filter },
     );

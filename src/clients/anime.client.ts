@@ -33,7 +33,7 @@ export class AnimeClient extends BaseClient {
    */
   public async getAnimeFullById(id: number): Promise<JikanResponse<Anime>> {
     return this.getResource<JikanResponse<Anime>>(
-      AnimeEndpoints.AnimeFullById,
+      AnimeEndpoints.animeFullById,
       { id },
     );
   }
@@ -43,7 +43,7 @@ export class AnimeClient extends BaseClient {
    * @param id anime id
    */
   public async getAnimeById(id: number): Promise<JikanResponse<Anime>> {
-    return this.getResource<JikanResponse<Anime>>(AnimeEndpoints.AnimeById, {
+    return this.getResource<JikanResponse<Anime>>(AnimeEndpoints.animeById, {
       id,
     });
   }
@@ -56,7 +56,7 @@ export class AnimeClient extends BaseClient {
     id: number,
   ): Promise<JikanResponse<AnimeCharacter[]>> {
     return this.getResource<JikanResponse<AnimeCharacter[]>>(
-      AnimeEndpoints.AnimeCharacters,
+      AnimeEndpoints.animeCharacters,
       { id },
     );
   }
@@ -67,7 +67,7 @@ export class AnimeClient extends BaseClient {
    */
   public async getAnimeStaff(id: number): Promise<JikanResponse<AnimeStaff[]>> {
     return this.getResource<JikanResponse<AnimeStaff[]>>(
-      AnimeEndpoints.AnimeStaff,
+      AnimeEndpoints.animeStaff,
       { id },
     );
   }
@@ -82,7 +82,7 @@ export class AnimeClient extends BaseClient {
     page = 1,
   ): Promise<JikanResponse<AnimeEpisode[]>> {
     return this.getResource<JikanResponse<AnimeEpisode[]>>(
-      AnimeEndpoints.AnimeEpisodes,
+      AnimeEndpoints.animeEpisodes,
       { id },
       { page },
     );
@@ -98,7 +98,7 @@ export class AnimeClient extends BaseClient {
     episode_id: number,
   ): Promise<JikanResponse<AnimeEpisode>> {
     return this.getResource<JikanResponse<AnimeEpisode>>(
-      AnimeEndpoints.AnimeEpisodeById,
+      AnimeEndpoints.animeEpisodeById,
       { id: anime_id, episode: episode_id },
     );
   }
@@ -113,7 +113,7 @@ export class AnimeClient extends BaseClient {
     page: number,
   ): Promise<JikanResponse<JikanNews[]>> {
     return this.getResource<JikanResponse<JikanNews[]>>(
-      AnimeEndpoints.AnimeNews,
+      AnimeEndpoints.animeNews,
       { id },
       { page },
     );
@@ -129,7 +129,7 @@ export class AnimeClient extends BaseClient {
     filter?: AnimeForumFilter,
   ): Promise<JikanResponse<AnimeForum[]>> {
     return this.getResource<JikanResponse<AnimeForum[]>>(
-      AnimeEndpoints.AnimeNews,
+      AnimeEndpoints.animeForum,
       { id },
       filter ? { filter } : undefined,
     );
@@ -141,7 +141,7 @@ export class AnimeClient extends BaseClient {
    */
   public async getAnimeVideos(id: number): Promise<JikanResponse<AnimeVideos>> {
     return this.getResource<JikanResponse<AnimeVideos>>(
-      AnimeEndpoints.AnimeVideos,
+      AnimeEndpoints.animeVideos,
       { id },
     );
   }
@@ -156,7 +156,7 @@ export class AnimeClient extends BaseClient {
     page = 1,
   ): Promise<JikanResponse<AnimeEpisodeVideo[]>> {
     return this.getResource<JikanResponse<AnimeEpisodeVideo[]>>(
-      AnimeEndpoints.AnimeVideosEpisodes,
+      AnimeEndpoints.animeVideosEpisodes,
       { id },
       { page },
     );
@@ -170,7 +170,7 @@ export class AnimeClient extends BaseClient {
     id: number,
   ): Promise<JikanResponse<AnimePicture[]>> {
     return this.getResource<JikanResponse<AnimePicture[]>>(
-      AnimeEndpoints.AnimePictures,
+      AnimeEndpoints.animePictures,
       { id },
     );
   }
@@ -183,7 +183,7 @@ export class AnimeClient extends BaseClient {
     id: number,
   ): Promise<JikanResponse<AnimeStatistics>> {
     return this.getResource<JikanResponse<AnimeStatistics>>(
-      AnimeEndpoints.AnimeStatistics,
+      AnimeEndpoints.animeStatistics,
       { id },
     );
   }
@@ -196,7 +196,7 @@ export class AnimeClient extends BaseClient {
     id: number,
   ): Promise<JikanResponse<JikanMoreInfo>> {
     return this.getResource<JikanResponse<JikanMoreInfo>>(
-      AnimeEndpoints.AnimeMoreInfo,
+      AnimeEndpoints.animeMoreInfo,
       { id },
     );
   }
@@ -209,7 +209,7 @@ export class AnimeClient extends BaseClient {
     id: number,
   ): Promise<JikanResponse<Recommendation[]>> {
     return this.getResource<JikanResponse<Recommendation[]>>(
-      AnimeEndpoints.AnimeRecommendations,
+      AnimeEndpoints.animeRecommendations,
       { id },
     );
   }
@@ -222,7 +222,7 @@ export class AnimeClient extends BaseClient {
     id: number,
   ): Promise<JikanResponse<JikanRelation[]>> {
     return this.getResource<JikanResponse<JikanRelation[]>>(
-      AnimeEndpoints.AnimeRelations,
+      AnimeEndpoints.animeRelations,
       { id },
     );
   }
@@ -236,7 +236,7 @@ export class AnimeClient extends BaseClient {
     searchParams?: Partial<AnimeSearchParams>,
   ): Promise<JikanResponse<Anime[]>> {
     return this.getResource<JikanResponse<Anime[]>>(
-      AnimeEndpoints.AnimeSearch,
+      AnimeEndpoints.animeSearch,
       {},
       searchParams,
     );

@@ -25,7 +25,7 @@ export class TopClient extends BaseClient {
     searchParams?: Partial<AnimeTopParams>,
   ): Promise<JikanResponse<Anime[]>> {
     return this.getResource<JikanResponse<Anime[]>>(
-      TopEndpoints.TopAnime,
+      TopEndpoints.topAnime,
       {},
       searchParams,
     );
@@ -40,7 +40,7 @@ export class TopClient extends BaseClient {
     searchParams?: Partial<MangaTopParams>,
   ): Promise<JikanResponse<Manga[]>> {
     return this.getResource<JikanResponse<Manga[]>>(
-      TopEndpoints.TopManga,
+      TopEndpoints.topManga,
       {},
       searchParams,
     );

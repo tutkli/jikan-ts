@@ -49,7 +49,7 @@ export abstract class BaseClient {
   constructor(clientOptions: Partial<ClientArgs> = {}) {
     this.api = setupCache(
       axios.create({
-        baseURL: clientOptions.baseURL ?? BaseURL.REST,
+        baseURL: clientOptions.baseURL ?? BaseURL,
         headers: {
           'Content-Type': 'application/json',
         },

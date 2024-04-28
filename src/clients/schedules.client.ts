@@ -19,7 +19,7 @@ export class SchedulesClient extends BaseClient {
     searchParams?: Partial<SchedulesParams>,
   ): Promise<JikanResponse<Anime[]>> {
     return this.getResource<JikanResponse<Anime[]>>(
-      SchedulesEndpoints.Schedules,
+      SchedulesEndpoints.schedules,
       {},
       searchParams,
     );

@@ -1,6 +1,6 @@
-export enum SeasonsEndpoints {
-  Season = '/seasons/{year}/{season}',
-  SeasonNow = '/seasons/now',
-  SeasonsList = '/seasons',
-  SeasonUpcoming = '/seasons/upcoming',
-}
+export const SeasonsEndpoints = {
+  season: '/seasons/{year}/{season}',
+  seasonNow: '/seasons/now',
+  seasonsList: '/seasons',
+  seasonUpcoming: '/seasons/upcoming',
+} as const;

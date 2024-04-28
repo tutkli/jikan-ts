@@ -27,7 +27,7 @@ export class CharactersClient extends BaseClient {
     id: number,
   ): Promise<JikanResponse<Character>> {
     return this.getResource<JikanResponse<Character>>(
-      CharactersEndpoints.CharacterFullById,
+      CharactersEndpoints.characterFullById,
       { id },
     );
   }
@@ -39,7 +39,7 @@ export class CharactersClient extends BaseClient {
    */
   public async getCharacterById(id: number): Promise<JikanResponse<Character>> {
     return this.getResource<JikanResponse<Character>>(
-      CharactersEndpoints.CharacterById,
+      CharactersEndpoints.characterById,
       { id },
     );
   }
@@ -53,7 +53,7 @@ export class CharactersClient extends BaseClient {
     id: number,
   ): Promise<JikanResponse<CharacterAnime[]>> {
     return this.getResource<JikanResponse<CharacterAnime[]>>(
-      CharactersEndpoints.CharacterAnime,
+      CharactersEndpoints.characterAnime,
       { id },
     );
   }
@@ -67,7 +67,7 @@ export class CharactersClient extends BaseClient {
     id: number,
   ): Promise<JikanResponse<CharacterManga[]>> {
     return this.getResource<JikanResponse<CharacterManga[]>>(
-      CharactersEndpoints.CharactersManga,
+      CharactersEndpoints.charactersManga,
       { id },
     );
   }
@@ -81,7 +81,7 @@ export class CharactersClient extends BaseClient {
     id: number,
   ): Promise<JikanResponse<CharacterVoiceActor[]>> {
     return this.getResource<JikanResponse<CharacterVoiceActor[]>>(
-      CharactersEndpoints.CharacterVoiceActors,
+      CharactersEndpoints.characterVoiceActors,
       { id },
     );
   }
@@ -95,7 +95,7 @@ export class CharactersClient extends BaseClient {
     id: number,
   ): Promise<JikanResponse<JikanImagesCollection[]>> {
     return this.getResource<JikanResponse<JikanImagesCollection[]>>(
-      CharactersEndpoints.CharacterPictures,
+      CharactersEndpoints.characterPictures,
       { id },
     );
   }
@@ -109,7 +109,7 @@ export class CharactersClient extends BaseClient {
     searchParams: Partial<CharactersSearchParams>,
   ): Promise<JikanResponse<Character[]>> {
     return this.getResource<JikanResponse<Character[]>>(
-      CharactersEndpoints.CharacterPictures,
+      CharactersEndpoints.characterSearch,
       {},
       searchParams,
     );

@@ -25,7 +25,7 @@ export class MangaClient extends BaseClient {
    */
   public async getMangaFullById(id: number): Promise<JikanResponse<Manga>> {
     return this.getResource<JikanResponse<Manga>>(
-      MangaEndpoints.MangaFullById,
+      MangaEndpoints.mangaFullById,
       { id },
     );
   }
@@ -36,7 +36,7 @@ export class MangaClient extends BaseClient {
    * @returns JikanResponse with Manga data
    */
   public async getMangaById(id: number): Promise<JikanResponse<Manga>> {
-    return this.getResource<JikanResponse<Manga>>(MangaEndpoints.MangaById, {
+    return this.getResource<JikanResponse<Manga>>(MangaEndpoints.mangaById, {
       id,
     });
   }
@@ -50,7 +50,7 @@ export class MangaClient extends BaseClient {
     id: number,
   ): Promise<JikanResponse<CommonCharacter[]>> {
     return this.getResource<JikanResponse<CommonCharacter[]>>(
-      MangaEndpoints.MangaCharacters,
+      MangaEndpoints.mangaCharacters,
       { id },
     );
   }
@@ -64,7 +64,7 @@ export class MangaClient extends BaseClient {
     id: number,
   ): Promise<JikanResponse<JikanImages[]>> {
     return this.getResource<JikanResponse<JikanImages[]>>(
-      MangaEndpoints.MangaPictures,
+      MangaEndpoints.mangaPictures,
       { id },
     );
   }
@@ -78,7 +78,7 @@ export class MangaClient extends BaseClient {
     id: number,
   ): Promise<JikanResponse<MangaStatistics>> {
     return this.getResource<JikanResponse<MangaStatistics>>(
-      MangaEndpoints.MangaStatistics,
+      MangaEndpoints.mangaStatistics,
       { id },
     );
   }
@@ -92,7 +92,7 @@ export class MangaClient extends BaseClient {
     id: number,
   ): Promise<JikanResponse<Recommendation[]>> {
     return this.getResource<JikanResponse<Recommendation[]>>(
-      MangaEndpoints.MangaRecommendations,
+      MangaEndpoints.mangaRecommendations,
       { id },
     );
   }
@@ -106,7 +106,7 @@ export class MangaClient extends BaseClient {
     searchParams?: Partial<MangaSearchParams>,
   ): Promise<JikanResponse<Manga[]>> {
     return this.getResource<JikanResponse<Manga[]>>(
-      MangaEndpoints.MangaSearch,
+      MangaEndpoints.mangaSearch,
       {},
       searchParams,
     );

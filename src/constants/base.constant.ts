@@ -1,3 +1,1 @@
-export enum BaseURL {
-  REST = 'https://api.jikan.moe/v4',
-}
+export const BaseURL = 'https://api.jikan.moe/v4' as const;

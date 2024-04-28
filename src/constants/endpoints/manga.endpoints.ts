@@ -1,9 +1,9 @@
-export enum MangaEndpoints {
-  MangaSearch = '/manga',
-  MangaFullById = '/manga/{id}/full',
-  MangaById = '/manga/{id}',
-  MangaCharacters = '/manga/{id}/characters',
-  MangaPictures = '/manga/{id}/pictures',
-  MangaStatistics = '/manga/{id}/statistics',
-  MangaRecommendations = '/manga/{id}/recommendations',
-}
+export const MangaEndpoints = {
+  mangaSearch: '/manga',
+  mangaFullById: '/manga/{id}/full',
+  mangaById: '/manga/{id}',
+  mangaCharacters: '/manga/{id}/characters',
+  mangaPictures: '/manga/{id}/pictures',
+  mangaStatistics: '/manga/{id}/statistics',
+  mangaRecommendations: '/manga/{id}/recommendations',
+} as const;
