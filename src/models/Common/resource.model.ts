@@ -19,7 +19,7 @@ export interface JikanResourcePeriod {
   from: string;
   to: string;
   prop: {
-    form: { day: number; month: number; year: number };
+    from: { day: number; month: number; year: number };
     to: { day: number; month: number; year: number };
     string: string;
   };
