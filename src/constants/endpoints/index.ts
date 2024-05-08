@@ -4,3 +4,4 @@ export * from './genres.endpoints';
 export * from './manga.endpoints';
 export * from './seasons.endpoints';
 export * from './top.endpoints';
+export * from './random.endpoints';

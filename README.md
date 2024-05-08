@@ -100,6 +100,7 @@ const animeClient = new AnimeClient({
 - TopClient
 - SchedulesClient
 - SeasonsClient
+- RandomClient
 - JikanClient (Main client)
 
 ## Leave you feedback

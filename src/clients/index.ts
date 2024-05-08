@@ -7,3 +7,4 @@ export * from './manga.client';
 export * from './schedules.client';
 export * from './seasons.client';
 export * from './top.client';
+export * from './random.client';
