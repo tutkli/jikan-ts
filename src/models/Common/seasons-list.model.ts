@@ -1,6 +1,6 @@
-import { AnimeSeason } from '../Anime';
+import type { AnimeSeason } from '../Anime'
 
 export interface SeasonsListData {
-  year: number;
-  seasons: AnimeSeason[];
+	year: number
+	seasons: AnimeSeason[]
 }

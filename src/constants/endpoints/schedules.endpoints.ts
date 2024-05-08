@@ -1,3 +1,3 @@
 export const SchedulesEndpoints = {
-  schedules: '/schedules',
-} as const;
+	schedules: '/schedules'
+} as const

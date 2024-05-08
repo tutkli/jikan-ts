@@ -1,5 +1,5 @@
-import { CharacterVoiceActor, CommonCharacter } from '../Common';
+import type { CharacterVoiceActor, CommonCharacter } from '../Common'
 
 export interface AnimeCharacter extends CommonCharacter {
-  voice_actors: CharacterVoiceActor[];
+	voice_actors: CharacterVoiceActor[]
 }

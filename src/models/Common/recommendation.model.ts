@@ -1,12 +1,12 @@
-import { JikanImages } from './image.model';
+import type { JikanImages } from './image.model'
 
 export interface Recommendation {
-  entry: RecommendationEntry;
+	entry: RecommendationEntry
 }
 
 export interface RecommendationEntry {
-  mal_id: number;
-  url: string;
-  images: JikanImages;
-  title: string;
+	mal_id: number
+	url: string
+	images: JikanImages
+	title: string
 }

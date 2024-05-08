@@ -1,6 +1,6 @@
-import { JikanPerson } from '../Common';
+import type { JikanPerson } from '../Common'
 
 export interface AnimeStaff {
-  person: JikanPerson;
-  positions: string[];
+	person: JikanPerson
+	positions: string[]
 }

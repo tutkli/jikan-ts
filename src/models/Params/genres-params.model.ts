@@ -1,5 +1,5 @@
 export type GenresFilter =
-  | 'genres'
-  | 'explicit_genres'
-  | 'themes'
-  | 'demographics';
+	| 'genres'
+	| 'explicit_genres'
+	| 'themes'
+	| 'demographics'
