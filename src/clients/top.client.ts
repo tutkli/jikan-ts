@@ -21,9 +21,7 @@ export class TopClient extends BaseClient {
 	 * @param searchParams Filter parameters
 	 * @returns JikanResponse with Anime array data
 	 */
-	public async getTopAnime(
-		searchParams?: Partial<AnimeTopParams>
-	): Promise<JikanResponse<Anime[]>> {
+	public async getTopAnime(searchParams?: Partial<AnimeTopParams>) {
 		return this.getResource<JikanResponse<Anime[]>>(
 			TopEndpoints.topAnime,
 			{},
@@ -36,9 +34,7 @@ export class TopClient extends BaseClient {
 	 * @param searchParams Filter parameters
 	 * @returns JikanResponse with Manga array data
 	 */
-	public async getTopManga(
-		searchParams?: Partial<MangaTopParams>
-	): Promise<JikanResponse<Manga[]>> {
+	public async getTopManga(searchParams?: Partial<MangaTopParams>) {
 		return this.getResource<JikanResponse<Manga[]>>(
 			TopEndpoints.topManga,
 			{},

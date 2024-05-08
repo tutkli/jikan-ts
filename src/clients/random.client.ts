@@ -13,23 +13,23 @@ export class RandomClient extends BaseClient {
 	/**
 	 * Get random anime
 	 */
-	public async getRandomAnime(): Promise<JikanResponse<Anime>> {
+	public async getRandomAnime() {
 		return this.getResource<JikanResponse<Anime>>(RandomEndpoints.randomAnime)
 	}
 
 	/**
 	 * Get random manga
 	 */
-	public async getRandomManga(): Promise<JikanResponse<Manga>> {
-		return this.getResource(RandomEndpoints.randomManga)
+	public async getRandomManga() {
+		return this.getResource<JikanResponse<Manga>>(RandomEndpoints.randomManga)
 	}
 
 	/**
 	 * Get random character
 	 */
-	public async getRandomCharacters(): Promise<
-		JikanResponse<Omit<Character, 'anime' | 'manga' | 'voices'>>
-	> {
-		return this.getResource(RandomEndpoints.randomManga)
+	public async getRandomCharacters() {
+		return this.getResource<Omit<Character, 'anime' | 'manga' | 'voices'>>(
+			RandomEndpoints.randomCharacters
+		)
 	}
 }

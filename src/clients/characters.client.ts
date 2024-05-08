@@ -23,9 +23,7 @@ export class CharactersClient extends BaseClient {
 	 * @param id The Character ID
 	 * @returns JikanResponse with Character data
 	 */
-	public async getCharacterFullById(
-		id: number
-	): Promise<JikanResponse<Character>> {
+	public async getCharacterFullById(id: number) {
 		return this.getResource<JikanResponse<Character>>(
 			CharactersEndpoints.characterFullById,
 			{ id }
@@ -37,7 +35,7 @@ export class CharactersClient extends BaseClient {
 	 * @param id The Character ID
 	 * @returns JikanResponse with Character data
 	 */
-	public async getCharacterById(id: number): Promise<JikanResponse<Character>> {
+	public async getCharacterById(id: number) {
 		return this.getResource<JikanResponse<Character>>(
 			CharactersEndpoints.characterById,
 			{ id }
@@ -49,9 +47,7 @@ export class CharactersClient extends BaseClient {
 	 * @param id The Character ID
 	 * @returns JikanResponse with CharacterAnime data
 	 */
-	public async getCharacterAnime(
-		id: number
-	): Promise<JikanResponse<CharacterAnime[]>> {
+	public async getCharacterAnime(id: number) {
 		return this.getResource<JikanResponse<CharacterAnime[]>>(
 			CharactersEndpoints.characterAnime,
 			{ id }
@@ -63,9 +59,7 @@ export class CharactersClient extends BaseClient {
 	 * @param id The Character ID
 	 * @returns JikanResponse with CharacterManga data
 	 */
-	public async getCharacterManga(
-		id: number
-	): Promise<JikanResponse<CharacterManga[]>> {
+	public async getCharacterManga(id: number) {
 		return this.getResource<JikanResponse<CharacterManga[]>>(
 			CharactersEndpoints.charactersManga,
 			{ id }
@@ -77,9 +71,7 @@ export class CharactersClient extends BaseClient {
 	 * @param id The Character ID
 	 * @returns JikanResponse with CharacterVoiceActor data
 	 */
-	public async getCharacterVoiceActors(
-		id: number
-	): Promise<JikanResponse<CharacterVoiceActor[]>> {
+	public async getCharacterVoiceActors(id: number) {
 		return this.getResource<JikanResponse<CharacterVoiceActor[]>>(
 			CharactersEndpoints.characterVoiceActors,
 			{ id }
@@ -91,9 +83,7 @@ export class CharactersClient extends BaseClient {
 	 * @param id The Character ID
 	 * @returns JikanResponse with JikanImagesCollection data
 	 */
-	public async getCharacterPictures(
-		id: number
-	): Promise<JikanResponse<JikanImagesCollection[]>> {
+	public async getCharacterPictures(id: number) {
 		return this.getResource<JikanResponse<JikanImagesCollection[]>>(
 			CharactersEndpoints.characterPictures,
 			{ id }
@@ -107,7 +97,7 @@ export class CharactersClient extends BaseClient {
    */
 	public async getCharacterSearch(
 		searchParams: Partial<CharactersSearchParams>
-	): Promise<JikanResponse<Character[]>> {
+	) {
 		return this.getResource<JikanResponse<Character[]>>(
 			CharactersEndpoints.characterSearch,
 			{},

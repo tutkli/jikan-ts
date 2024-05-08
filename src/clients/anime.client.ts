@@ -31,7 +31,7 @@ export class AnimeClient extends BaseClient {
 	 * Get complete anime resource data
 	 * @param id anime id
 	 */
-	public async getAnimeFullById(id: number): Promise<JikanResponse<Anime>> {
+	public async getAnimeFullById(id: number) {
 		return this.getResource<JikanResponse<Anime>>(
 			AnimeEndpoints.animeFullById,
 			{ id }
@@ -42,7 +42,7 @@ export class AnimeClient extends BaseClient {
 	 * Get anime resource
 	 * @param id anime id
 	 */
-	public async getAnimeById(id: number): Promise<JikanResponse<Anime>> {
+	public async getAnimeById(id: number) {
 		return this.getResource<JikanResponse<Anime>>(AnimeEndpoints.animeById, {
 			id
 		})
@@ -52,9 +52,7 @@ export class AnimeClient extends BaseClient {
 	 * Get characters of a specific anime
 	 * @param id anime id
 	 */
-	public async getAnimeCharacters(
-		id: number
-	): Promise<JikanResponse<AnimeCharacter[]>> {
+	public async getAnimeCharacters(id: number) {
 		return this.getResource<JikanResponse<AnimeCharacter[]>>(
 			AnimeEndpoints.animeCharacters,
 			{ id }
@@ -65,7 +63,7 @@ export class AnimeClient extends BaseClient {
 	 * Get staff of a specific Anime
 	 * @param id anime id
 	 */
-	public async getAnimeStaff(id: number): Promise<JikanResponse<AnimeStaff[]>> {
+	public async getAnimeStaff(id: number) {
 		return this.getResource<JikanResponse<AnimeStaff[]>>(
 			AnimeEndpoints.animeStaff,
 			{ id }
@@ -77,10 +75,7 @@ export class AnimeClient extends BaseClient {
 	 * @param id anime id
 	 * @param page page number
 	 */
-	public async getAnimeEpisodes(
-		id: number,
-		page = 1
-	): Promise<JikanResponse<AnimeEpisode[]>> {
+	public async getAnimeEpisodes(id: number, page = 1) {
 		return this.getResource<JikanResponse<AnimeEpisode[]>>(
 			AnimeEndpoints.animeEpisodes,
 			{ id },
@@ -93,10 +88,7 @@ export class AnimeClient extends BaseClient {
 	 * @param anime_id anime id
 	 * @param episode_id episode id
 	 */
-	public async getAnimeEpisodeById(
-		anime_id: number,
-		episode_id: number
-	): Promise<JikanResponse<AnimeEpisode>> {
+	public async getAnimeEpisodeById(anime_id: number, episode_id: number) {
 		return this.getResource<JikanResponse<AnimeEpisode>>(
 			AnimeEndpoints.animeEpisodeById,
 			{ id: anime_id, episode: episode_id }
@@ -108,10 +100,7 @@ export class AnimeClient extends BaseClient {
 	 * @param id anime id
 	 * @param page page number
 	 */
-	public async getAnimeNews(
-		id: number,
-		page: number
-	): Promise<JikanResponse<JikanNews[]>> {
+	public async getAnimeNews(id: number, page: number) {
 		return this.getResource<JikanResponse<JikanNews[]>>(
 			AnimeEndpoints.animeNews,
 			{ id },
@@ -124,10 +113,7 @@ export class AnimeClient extends BaseClient {
 	 * @param id anime id
 	 * @param filter forum filter
 	 */
-	public async getAnimeForum(
-		id: number,
-		filter?: AnimeForumFilter
-	): Promise<JikanResponse<AnimeForum[]>> {
+	public async getAnimeForum(id: number, filter?: AnimeForumFilter) {
 		return this.getResource<JikanResponse<AnimeForum[]>>(
 			AnimeEndpoints.animeForum,
 			{ id },
@@ -139,7 +125,7 @@ export class AnimeClient extends BaseClient {
 	 * Get videos related to the anime
 	 * @param id anime id
 	 */
-	public async getAnimeVideos(id: number): Promise<JikanResponse<AnimeVideos>> {
+	public async getAnimeVideos(id: number) {
 		return this.getResource<JikanResponse<AnimeVideos>>(
 			AnimeEndpoints.animeVideos,
 			{ id }
@@ -151,10 +137,7 @@ export class AnimeClient extends BaseClient {
 	 * @param id anime id
 	 * @param page page number
 	 */
-	public async getAnimeEpisodeVideos(
-		id: number,
-		page = 1
-	): Promise<JikanResponse<AnimeEpisodeVideo[]>> {
+	public async getAnimeEpisodeVideos(id: number, page = 1) {
 		return this.getResource<JikanResponse<AnimeEpisodeVideo[]>>(
 			AnimeEndpoints.animeVideosEpisodes,
 			{ id },
@@ -166,9 +149,7 @@ export class AnimeClient extends BaseClient {
 	 * Get pictures related to the Anime
 	 * @param id anime id
 	 */
-	public async getAnimePictures(
-		id: number
-	): Promise<JikanResponse<AnimePicture[]>> {
+	public async getAnimePictures(id: number) {
 		return this.getResource<JikanResponse<AnimePicture[]>>(
 			AnimeEndpoints.animePictures,
 			{ id }
@@ -179,9 +160,7 @@ export class AnimeClient extends BaseClient {
 	 * Get statistics related to the Anime
 	 * @param id anime id
 	 */
-	public async getAnimeStatistics(
-		id: number
-	): Promise<JikanResponse<AnimeStatistics>> {
+	public async getAnimeStatistics(id: number) {
 		return this.getResource<JikanResponse<AnimeStatistics>>(
 			AnimeEndpoints.animeStatistics,
 			{ id }
@@ -192,9 +171,7 @@ export class AnimeClient extends BaseClient {
 	 * Get more info related to the anime
 	 * @param id anime id
 	 */
-	public async getAnimeMoreInfo(
-		id: number
-	): Promise<JikanResponse<JikanMoreInfo>> {
+	public async getAnimeMoreInfo(id: number) {
 		return this.getResource<JikanResponse<JikanMoreInfo>>(
 			AnimeEndpoints.animeMoreInfo,
 			{ id }
@@ -205,9 +182,7 @@ export class AnimeClient extends BaseClient {
 	 * Get recommendations based on the anime
 	 * @param id anime id
 	 */
-	public async getAnimeRecommendations(
-		id: number
-	): Promise<JikanResponse<Recommendation[]>> {
+	public async getAnimeRecommendations(id: number) {
 		return this.getResource<JikanResponse<Recommendation[]>>(
 			AnimeEndpoints.animeRecommendations,
 			{ id }
@@ -218,9 +193,7 @@ export class AnimeClient extends BaseClient {
 	 * Get anime relations
 	 * @param id anime id
 	 */
-	public async getAnimeRelations(
-		id: number
-	): Promise<JikanResponse<JikanRelation[]>> {
+	public async getAnimeRelations(id: number) {
 		return this.getResource<JikanResponse<JikanRelation[]>>(
 			AnimeEndpoints.animeRelations,
 			{ id }
@@ -232,9 +205,7 @@ export class AnimeClient extends BaseClient {
 	 * @param searchParams Filter parameters
 	 * @returns JikanResponse with Anime array data
 	 */
-	public async getAnimeSearch(
-		searchParams?: Partial<AnimeSearchParams>
-	): Promise<JikanResponse<Anime[]>> {
+	public async getAnimeSearch(searchParams?: Partial<AnimeSearchParams>) {
 		return this.getResource<JikanResponse<Anime[]>>(
 			AnimeEndpoints.animeSearch,
 			{},

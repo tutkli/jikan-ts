@@ -23,7 +23,7 @@ export class MangaClient extends BaseClient {
 	 * @param id The Manga ID
 	 * @returns JikanResponse with Manga data
 	 */
-	public async getMangaFullById(id: number): Promise<JikanResponse<Manga>> {
+	public async getMangaFullById(id: number) {
 		return this.getResource<JikanResponse<Manga>>(
 			MangaEndpoints.mangaFullById,
 			{ id }
@@ -35,7 +35,7 @@ export class MangaClient extends BaseClient {
 	 * @param id The Manga ID
 	 * @returns JikanResponse with Manga data
 	 */
-	public async getMangaById(id: number): Promise<JikanResponse<Manga>> {
+	public async getMangaById(id: number) {
 		return this.getResource<JikanResponse<Manga>>(MangaEndpoints.mangaById, {
 			id
 		})
@@ -46,9 +46,7 @@ export class MangaClient extends BaseClient {
 	 * @param id The Manga ID
 	 * @returns JikanResponse with CommonCharacter array data
 	 */
-	public async getMangaCharacters(
-		id: number
-	): Promise<JikanResponse<CommonCharacter[]>> {
+	public async getMangaCharacters(id: number) {
 		return this.getResource<JikanResponse<CommonCharacter[]>>(
 			MangaEndpoints.mangaCharacters,
 			{ id }
@@ -60,9 +58,7 @@ export class MangaClient extends BaseClient {
 	 * @param id The Manga ID
 	 * @returns JikanResponse with JikanImages array data
 	 */
-	public async getMangaPictures(
-		id: number
-	): Promise<JikanResponse<JikanImages[]>> {
+	public async getMangaPictures(id: number) {
 		return this.getResource<JikanResponse<JikanImages[]>>(
 			MangaEndpoints.mangaPictures,
 			{ id }
@@ -74,9 +70,7 @@ export class MangaClient extends BaseClient {
 	 * @param id The Manga ID
 	 * @returns JikanResponse with MangaStatistics data
 	 */
-	public async getMangaStatistics(
-		id: number
-	): Promise<JikanResponse<MangaStatistics>> {
+	public async getMangaStatistics(id: number) {
 		return this.getResource<JikanResponse<MangaStatistics>>(
 			MangaEndpoints.mangaStatistics,
 			{ id }
@@ -88,9 +82,7 @@ export class MangaClient extends BaseClient {
 	 * @param id The Manga ID
 	 * @returns JikanResponse with Recommendation array data
 	 */
-	public async getMangaRecommendations(
-		id: number
-	): Promise<JikanResponse<Recommendation[]>> {
+	public async getMangaRecommendations(id: number) {
 		return this.getResource<JikanResponse<Recommendation[]>>(
 			MangaEndpoints.mangaRecommendations,
 			{ id }
@@ -102,9 +94,7 @@ export class MangaClient extends BaseClient {
 	 * @param searchParams Filter parameters
 	 * @returns JikanResponse with Manga array data
 	 */
-	public async getMangaSearch(
-		searchParams?: Partial<MangaSearchParams>
-	): Promise<JikanResponse<Manga[]>> {
+	public async getMangaSearch(searchParams?: Partial<MangaSearchParams>) {
 		return this.getResource<JikanResponse<Manga[]>>(
 			MangaEndpoints.mangaSearch,
 			{},

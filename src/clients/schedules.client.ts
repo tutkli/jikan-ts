@@ -15,9 +15,7 @@ export class SchedulesClient extends BaseClient {
 	 * @param searchParams Filter parameters
 	 * @returns JikanResponse with Anime array data
 	 */
-	public async getSchedules(
-		searchParams?: Partial<SchedulesParams>
-	): Promise<JikanResponse<Anime[]>> {
+	public async getSchedules(searchParams?: Partial<SchedulesParams>) {
 		return this.getResource<JikanResponse<Anime[]>>(
 			SchedulesEndpoints.schedules,
 			{},
