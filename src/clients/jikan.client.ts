@@ -3,6 +3,7 @@ import type { ClientArgs } from './base.client'
 import { CharactersClient } from './characters.client'
 import { GenresClient } from './genres.client'
 import { MangaClient } from './manga.client'
+import { RandomClient } from './random.client'
 import { SchedulesClient } from './schedules.client'
 import { SeasonsClient } from './seasons.client'
 import { TopClient } from './top.client'
@@ -22,6 +23,7 @@ export class JikanClient {
 	public top: TopClient
 	public schedules: SchedulesClient
 	public seasons: SeasonsClient
+	public random: RandomClient
 
 	constructor(clientOptions?: Partial<ClientArgs>) {
 		this.anime = new AnimeClient(clientOptions)
@@ -31,5 +33,6 @@ export class JikanClient {
 		this.top = new TopClient(clientOptions)
 		this.schedules = new SchedulesClient(clientOptions)
 		this.seasons = new SeasonsClient(clientOptions)
+		this.random = new RandomClient(clientOptions)
 	}
 }
