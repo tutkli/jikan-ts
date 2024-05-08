@@ -1,48 +1,58 @@
 import { AnimeRating, AnimeType } from '../Anime';
 import { MangaType } from '../Manga';
 
-export enum SortOptions {
-  asc = 'asc',
-  desc = 'desc',
-}
+const SortOptions = {
+  asc: 'asc',
+  desc: 'desc',
+} as const;
+export type SortOptions = (typeof SortOptions)[keyof typeof SortOptions];
 
-export enum SearchOrder {
-  mal_id = 'mal_id',
-  title = 'title',
-  start_date = 'start_date',
-  end_date = 'end_date',
-  score = 'score',
-  scored_by = 'scored_by',
-  rank = 'rank',
-  popularity = 'popularity',
-  members = 'members',
-  favorites = 'favorites',
-}
+const SearchOrder = {
+  mal_id: 'mal_id',
+  title: 'title',
+  start_date: 'start_date',
+  end_date: 'end_date',
+  score: 'score',
+  scored_by: 'scored_by',
+  rank: 'rank',
+  popularity: 'popularity',
+  members: 'members',
+  favorites: 'favorites',
+} as const;
+export type SearchOrder = (typeof SearchOrder)[keyof typeof SearchOrder];
 
-export enum AnimeSearchOrder {
-  type = 'type',
-  rating = 'rating',
-  episodes = 'episodes',
-}
+const AnimeSearchOrder = {
+  type: 'type',
+  rating: 'rating',
+  episodes: 'episodes',
+} as const;
+export type AnimeSearchOrder =
+  (typeof AnimeSearchOrder)[keyof typeof AnimeSearchOrder];
 
-export enum AnimeSearchStatus {
-  airing = 'airing',
-  complete = 'complete',
-  upcoming = 'upcoming',
-}
+const AnimeSearchStatus = {
+  airing: 'airing',
+  complete: 'complete',
+  upcoming: 'upcoming',
+} as const;
+export type AnimeSearchStatus =
+  (typeof AnimeSearchStatus)[keyof typeof AnimeSearchStatus];
 
-export enum MangaSearchOrder {
-  chapters = 'chapters',
-  volumes = 'volumes',
-}
+const MangaSearchOrder = {
+  chapters: 'chapters',
+  volumes: 'volumes',
+} as const;
+export type MangaSearchOrder =
+  (typeof MangaSearchOrder)[keyof typeof MangaSearchOrder];
 
-export enum MangaSearchStatus {
-  publishing = 'publishing',
-  complete = 'complete',
-  hiatus = 'hiatus',
-  discontinued = 'discontinued',
-  upcoming = 'upcoming',
-}
+const MangaSearchStatus = {
+  publishing: 'publishing',
+  complete: 'complete',
+  hiatus: 'hiatus',
+  discontinued: 'discontinued',
+  upcoming: 'upcoming',
+} as const;
+export type MangaSearchStatus =
+  (typeof MangaSearchStatus)[keyof typeof MangaSearchStatus];
 
 export interface JikanSearchParams {
   q?: string;
@@ -54,7 +64,7 @@ export interface JikanSearchParams {
   sfw?: boolean;
   genres?: string;
   genres_exclude?: string;
-  sort?: SortOptions | string;
+  sort?: SortOptions;
   letter?: string;
   producers?: string;
   start_date?: string;
@@ -69,8 +79,8 @@ export interface JikanSearchParams {
  */
 export interface MangaSearchParams extends JikanSearchParams {
   type?: MangaType | string;
-  status?: MangaSearchStatus | string;
-  order_by?: MangaSearchOrder | SearchOrder | string;
+  status?: MangaSearchStatus;
+  order_by?: MangaSearchOrder & SearchOrder;
   magazines?: string;
 }
 
@@ -81,7 +91,7 @@ export interface MangaSearchParams extends JikanSearchParams {
  */
 export interface AnimeSearchParams extends JikanSearchParams {
   type?: AnimeType | string;
-  status?: AnimeSearchStatus | string;
+  status?: AnimeSearchStatus;
   rating?: AnimeRating | string;
-  order_by?: AnimeSearchOrder | SearchOrder | string;
+  order_by?: AnimeSearchOrder & SearchOrder;
 }

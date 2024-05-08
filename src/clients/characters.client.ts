@@ -3,8 +3,8 @@ import {
   Character,
   CharacterAnime,
   CharacterManga,
-  CharacterVoiceActor,
   CharactersSearchParams,
+  CharacterVoiceActor,
   JikanImagesCollection,
   JikanResponse,
 } from '../models';

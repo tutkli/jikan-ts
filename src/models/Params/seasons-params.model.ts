@@ -8,6 +8,5 @@ export interface JikanSeasonsParams {
 
 /**
  * QueryParams used in **getSeasonNow** call
- *
  */
 export type SeasonNowParams = Omit<JikanSeasonsParams, 'filter'>;

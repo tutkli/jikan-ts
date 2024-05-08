@@ -1,19 +1,23 @@
 import { AnimeType } from '../Anime';
 import { MangaType } from '../Manga';
 
-export enum TopAnimeFilter {
-  airing = 'airing',
-  upcoming = 'upcoming',
-  bypopularity = 'bypopularity',
-  favorite = 'favorite',
-}
+const TopAnimeFilter = {
+  airing: 'airing',
+  upcoming: 'upcoming',
+  bypopularity: 'bypopularity',
+  favorite: 'favorite',
+} as const;
+export type TopAnimeFilter =
+  (typeof TopAnimeFilter)[keyof typeof TopAnimeFilter];
 
-export enum TopMangaFilter {
-  publishing = 'publishing',
-  upcoming = 'upcoming',
-  bypopularity = 'bypopularity',
-  favorite = 'favorite',
-}
+const TopMangaFilter = {
+  publishing: 'publishing',
+  upcoming: 'upcoming',
+  bypopularity: 'bypopularity',
+  favorite: 'favorite',
+};
+export type TopMangaFilter =
+  (typeof TopMangaFilter)[keyof typeof TopMangaFilter];
 
 export interface JikanTopParams {
   page?: number;

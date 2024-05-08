@@ -17,7 +17,8 @@ export interface CharacterVoiceActor {
   language: string;
 }
 
-export enum CharacterRole {
-  main = 'Main',
-  supporting = 'Supporting',
-}
+const CharacterRole = {
+  main: 'Main',
+  supporting: 'Supporting',
+} as const;
+export type CharacterRole = (typeof CharacterRole)[keyof typeof CharacterRole];
