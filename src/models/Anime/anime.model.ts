@@ -63,34 +63,38 @@ export interface AnimeTheme {
   endings: string[];
 }
 
-export enum AnimeType {
-  tv = 'TV',
-  movie = 'Movie',
-  ova = 'Ova',
-  special = 'Special',
-  ona = 'Ona',
-  music = 'Music',
-}
+const AnimeType = {
+  tv: 'TV',
+  movie: 'Movie',
+  ova: 'Ova',
+  special: 'Special',
+  ona: 'Ona',
+  music: 'Music',
+} as const;
+export type AnimeType = (typeof AnimeType)[keyof typeof AnimeType];
 
-export enum AnimeStatus {
-  finished = 'Finished Airing',
-  airing = 'Currently Airing',
-  complete = 'Complete',
-  upcoming = 'Not yet aired',
-}
+const AnimeStatus = {
+  finished: 'Finished Airing',
+  airing: 'Currently Airing',
+  complete: 'Complete',
+  upcoming: 'Not yet aired',
+} as const;
+export type AnimeStatus = (typeof AnimeStatus)[keyof typeof AnimeStatus];
 
-export enum AnimeRating {
-  g = 'g',
-  pg = 'pg',
-  pg13 = 'pg13',
-  r17 = 'r17',
-  r = 'r',
-  rx = 'rx',
-}
+const AnimeRating = {
+  g: 'g',
+  pg: 'pg',
+  pg13: 'pg13',
+  r17: 'r17',
+  r: 'r',
+  rx: 'rx',
+} as const;
+export type AnimeRating = (typeof AnimeRating)[keyof typeof AnimeRating];
 
-export enum AnimeSeason {
-  spring = 'spring',
-  summer = 'summer',
-  fall = 'fall',
-  winter = 'winter',
-}
+const AnimeSeason = {
+  spring: 'spring',
+  summer: 'summer',
+  fall: 'fall',
+  winter: 'winter',
+} as const;
+export type AnimeSeason = (typeof AnimeSeason)[keyof typeof AnimeSeason];

@@ -40,20 +40,22 @@ export interface Manga {
   external?: JikanNamedResource[];
 }
 
-export enum MangaType {
-  manga = 'Manga',
-  novel = 'Novel',
-  lightnovel = 'Lightnovel',
-  oneshot = 'Oneshot',
-  doujin = 'Doujin',
-  manhwa = 'Manhwa',
-  manhua = 'Manhua',
-}
+const MangaType = {
+  manga: 'Manga',
+  novel: 'Novel',
+  lightnovel: 'Lightnovel',
+  oneshot: 'Oneshot',
+  doujin: 'Doujin',
+  manhwa: 'Manhwa',
+  manhua: 'Manhua',
+} as const;
+export type MangaType = (typeof MangaType)[keyof typeof MangaType];
 
-export enum MangaStatus {
-  publishing = 'Publishing',
-  complete = 'Complete',
-  hiatus = 'On Hiatus',
-  discontinued = 'Discontinued',
-  upcoming = 'Upcoming',
-}
+const MangaStatus = {
+  publishing: 'Publishing',
+  complete: 'Complete',
+  hiatus: 'On Hiatus',
+  discontinued: 'Discontinued',
+  upcoming: 'Upcoming',
+} as const;
+export type MangaStatus = (typeof MangaStatus)[keyof typeof MangaStatus];
