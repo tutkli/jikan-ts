@@ -9,10 +9,4 @@ export interface CharactersSearchParams {
   letter?: string;
 }
 
-const CharactersSearchOrder = {
-  mal_id: 'mal_id',
-  name: 'name',
-  favorites: 'favorites',
-} as const;
-export type CharactersSearchOrder =
-  (typeof CharactersSearchOrder)[keyof typeof CharactersSearchOrder];
+export type CharactersSearchOrder = 'mal_id' | 'name' | 'favorites';

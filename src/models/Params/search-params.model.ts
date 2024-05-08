@@ -1,58 +1,32 @@
 import { AnimeRating, AnimeType } from '../Anime';
 import { MangaType } from '../Manga';
 
-const SortOptions = {
-  asc: 'asc',
-  desc: 'desc',
-} as const;
-export type SortOptions = (typeof SortOptions)[keyof typeof SortOptions];
+export type SortOptions = 'asc' | 'desc';
 
-const SearchOrder = {
-  mal_id: 'mal_id',
-  title: 'title',
-  start_date: 'start_date',
-  end_date: 'end_date',
-  score: 'score',
-  scored_by: 'scored_by',
-  rank: 'rank',
-  popularity: 'popularity',
-  members: 'members',
-  favorites: 'favorites',
-} as const;
-export type SearchOrder = (typeof SearchOrder)[keyof typeof SearchOrder];
+export type SearchOrder =
+  | 'mal_id'
+  | 'title'
+  | 'start_date'
+  | 'end_date'
+  | 'score'
+  | 'scored_by'
+  | 'rank'
+  | 'popularity'
+  | 'members'
+  | 'favorites';
 
-const AnimeSearchOrder = {
-  type: 'type',
-  rating: 'rating',
-  episodes: 'episodes',
-} as const;
-export type AnimeSearchOrder =
-  (typeof AnimeSearchOrder)[keyof typeof AnimeSearchOrder];
+export type AnimeSearchOrder = 'type' | 'rating' | 'episodes' | SearchOrder;
 
-const AnimeSearchStatus = {
-  airing: 'airing',
-  complete: 'complete',
-  upcoming: 'upcoming',
-} as const;
-export type AnimeSearchStatus =
-  (typeof AnimeSearchStatus)[keyof typeof AnimeSearchStatus];
+export type AnimeSearchStatus = 'airing' | 'complete' | 'upcoming';
 
-const MangaSearchOrder = {
-  chapters: 'chapters',
-  volumes: 'volumes',
-} as const;
-export type MangaSearchOrder =
-  (typeof MangaSearchOrder)[keyof typeof MangaSearchOrder];
+export type MangaSearchOrder = 'chapters' | 'volumes' | SearchOrder;
 
-const MangaSearchStatus = {
-  publishing: 'publishing',
-  complete: 'complete',
-  hiatus: 'hiatus',
-  discontinued: 'discontinued',
-  upcoming: 'upcoming',
-} as const;
 export type MangaSearchStatus =
-  (typeof MangaSearchStatus)[keyof typeof MangaSearchStatus];
+  | 'publishing'
+  | 'complete'
+  | 'hiatus'
+  | 'discontinued'
+  | 'upcoming';
 
 export interface JikanSearchParams {
   q?: string;
@@ -78,9 +52,9 @@ export interface JikanSearchParams {
  * See also: [Jikan API Documentation](https://docs.api.jikan.moe/#tag/manga/operation/getMangaSearch)
  */
 export interface MangaSearchParams extends JikanSearchParams {
-  type?: MangaType | string;
+  type?: MangaType;
   status?: MangaSearchStatus;
-  order_by?: MangaSearchOrder & SearchOrder;
+  order_by?: MangaSearchOrder;
   magazines?: string;
 }
 
@@ -90,8 +64,8 @@ export interface MangaSearchParams extends JikanSearchParams {
  * See also: [Jikan API Documentation](https://docs.api.jikan.moe/#tag/anime/operation/getAnimeSearch)
  */
 export interface AnimeSearchParams extends JikanSearchParams {
-  type?: AnimeType | string;
+  type?: AnimeType;
   status?: AnimeSearchStatus;
-  rating?: AnimeRating | string;
-  order_by?: AnimeSearchOrder & SearchOrder;
+  rating?: AnimeRating;
+  order_by?: AnimeSearchOrder;
 }

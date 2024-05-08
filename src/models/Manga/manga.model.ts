@@ -40,22 +40,17 @@ export interface Manga {
   external?: JikanNamedResource[];
 }
 
-const MangaType = {
-  manga: 'Manga',
-  novel: 'Novel',
-  lightnovel: 'Lightnovel',
-  oneshot: 'Oneshot',
-  doujin: 'Doujin',
-  manhwa: 'Manhwa',
-  manhua: 'Manhua',
-} as const;
-export type MangaType = (typeof MangaType)[keyof typeof MangaType];
-
-const MangaStatus = {
-  publishing: 'Publishing',
-  complete: 'Complete',
-  hiatus: 'On Hiatus',
-  discontinued: 'Discontinued',
-  upcoming: 'Upcoming',
-} as const;
-export type MangaStatus = (typeof MangaStatus)[keyof typeof MangaStatus];
+export type MangaType =
+  | 'Manga'
+  | 'Novel'
+  | 'Lightnovel'
+  | 'Oneshot'
+  | 'Doujin'
+  | 'Manhwa'
+  | 'Manhua';
+export type MangaStatus =
+  | 'Publishing'
+  | 'Complete'
+  | 'On Hiatus'
+  | 'Discontinued'
+  | 'Upcoming';

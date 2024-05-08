@@ -17,8 +17,4 @@ export interface CharacterVoiceActor {
   language: string;
 }
 
-const CharacterRole = {
-  main: 'Main',
-  supporting: 'Supporting',
-} as const;
-export type CharacterRole = (typeof CharacterRole)[keyof typeof CharacterRole];
+export type CharacterRole = 'Main' | 'Supporting';
