@@ -1,5 +1,5 @@
 import { GenresEndpoints } from '../constants'
-import type { Genre, GenresFilter, JikanResponse } from '../models'
+import type { Genre, GenresFilter } from '../models'
 import { BaseClient } from './base.client'
 
 /**
@@ -14,8 +14,8 @@ export class GenresClient extends BaseClient {
 	 * Get Anime genres
 	 * @param filter Type of the desired genres
 	 */
-	public async getAnimeGenres(filter?: GenresFilter) {
-		return this.getResource<JikanResponse<Genre[]>>(
+	public getAnimeGenres(filter?: GenresFilter) {
+		return this.getResource<Genre[]>(
 			GenresEndpoints.animeGenres,
 			{},
 			{ filter }
@@ -26,8 +26,8 @@ export class GenresClient extends BaseClient {
 	 * Get Manga genres
 	 * @param filter Type of the desired genres
 	 */
-	public async getMangaGenres(filter?: GenresFilter) {
-		return this.getResource<JikanResponse<Genre[]>>(
+	public getMangaGenres(filter?: GenresFilter) {
+		return this.getResource<Genre[]>(
 			GenresEndpoints.mangaGenres,
 			{},
 			{ filter }

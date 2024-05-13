@@ -13,6 +13,7 @@ import {
 	handleResponseError
 } from '../config'
 import { BaseURL } from '../constants'
+import type { JikanResponse } from '../models'
 
 /**
  * **Client Args**
@@ -66,11 +67,14 @@ export abstract class BaseClient {
 		endpoint: string,
 		identifiers: { [key in string]: unknown } = {},
 		params: { [key in string]: unknown } = {}
-	): Promise<T> {
+	): Promise<JikanResponse<T>> {
 		return (
-			await this.api.get<T>(this.replaceIdentifiers(endpoint, identifiers), {
-				params
-			})
+			await this.api.get<JikanResponse<T>>(
+				this.replaceIdentifiers(endpoint, identifiers),
+				{
+					params
+				}
+			)
 		).data
 	}
 

@@ -2,7 +2,6 @@ import { SeasonsEndpoints } from '../constants'
 import type {
 	Anime,
 	AnimeSeason,
-	JikanResponse,
 	JikanSeasonsParams,
 	SeasonNowParams,
 	SeasonsListData
@@ -22,14 +21,13 @@ export class SeasonsClient extends BaseClient {
 	 * @param year Season year
 	 * @param season Season value
 	 * @param searchParams Filter parameters
-	 * @returns JikanResponse with Anime array data
 	 */
-	public async getSeason(
+	public getSeason(
 		year: number,
 		season: AnimeSeason,
 		searchParams?: Partial<JikanSeasonsParams>
 	) {
-		return this.getResource<JikanResponse<Anime[]>>(
+		return this.getResource<Anime[]>(
 			SeasonsEndpoints.season,
 			{ year, season },
 			searchParams
@@ -39,10 +37,9 @@ export class SeasonsClient extends BaseClient {
 	/**
 	 * Get current seasonal anime
 	 * @param searchParams Filter parameters
-	 * @returns JikanResponse with Anime array data
 	 */
-	public async getSeasonNow(searchParams?: Partial<SeasonNowParams>) {
-		return this.getResource<JikanResponse<Anime[]>>(
+	public getSeasonNow(searchParams?: Partial<SeasonNowParams>) {
+		return this.getResource<Anime[]>(
 			SeasonsEndpoints.seasonNow,
 			{},
 			searchParams
@@ -51,21 +48,17 @@ export class SeasonsClient extends BaseClient {
 
 	/**
 	 * Get available list of seasons
-	 * @returns JikanResponse with Seasons array data
 	 */
-	public async getSeasonsList() {
-		return this.getResource<JikanResponse<SeasonsListData[]>>(
-			SeasonsEndpoints.seasonsList
-		)
+	public getSeasonsList() {
+		return this.getResource<SeasonsListData[]>(SeasonsEndpoints.seasonsList)
 	}
 
 	/**
 	 * Get upcoming season's anime
 	 * @param searchParams Filter parameters
-	 * @returns JikanResponse with Anime array data
 	 */
-	public async getSeasonUpcoming(searchParams?: Partial<JikanSeasonsParams>) {
-		return this.getResource<JikanResponse<Anime[]>>(
+	public getSeasonUpcoming(searchParams?: Partial<JikanSeasonsParams>) {
+		return this.getResource<Anime[]>(
 			SeasonsEndpoints.seasonUpcoming,
 			{},
 			searchParams

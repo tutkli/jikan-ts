@@ -1,11 +1,5 @@
 import { TopEndpoints } from '../constants'
-import type {
-	Anime,
-	AnimeTopParams,
-	JikanResponse,
-	Manga,
-	MangaTopParams
-} from '../models'
+import type { Anime, AnimeTopParams, Manga, MangaTopParams } from '../models'
 import { BaseClient } from './base.client'
 
 /**
@@ -19,26 +13,16 @@ export class TopClient extends BaseClient {
 	/**
 	 * Get the top Animes
 	 * @param searchParams Filter parameters
-	 * @returns JikanResponse with Anime array data
 	 */
-	public async getTopAnime(searchParams?: Partial<AnimeTopParams>) {
-		return this.getResource<JikanResponse<Anime[]>>(
-			TopEndpoints.topAnime,
-			{},
-			searchParams
-		)
+	public getTopAnime(searchParams?: Partial<AnimeTopParams>) {
+		return this.getResource<Anime[]>(TopEndpoints.topAnime, {}, searchParams)
 	}
 
 	/**
 	 * Get the top Mangas
 	 * @param searchParams Filter parameters
-	 * @returns JikanResponse with Manga array data
 	 */
-	public async getTopManga(searchParams?: Partial<MangaTopParams>) {
-		return this.getResource<JikanResponse<Manga[]>>(
-			TopEndpoints.topManga,
-			{},
-			searchParams
-		)
+	public getTopManga(searchParams?: Partial<MangaTopParams>) {
+		return this.getResource<Manga[]>(TopEndpoints.topManga, {}, searchParams)
 	}
 }

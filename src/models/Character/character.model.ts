@@ -28,3 +28,5 @@ export interface CharacterManga {
 	role: CharacterRole
 	manga: CommonCharacterData & { title: string }
 }
+
+export type RandomCharacter = Omit<Character, 'anime' | 'manga' | 'voices'>

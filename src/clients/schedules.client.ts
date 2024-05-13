@@ -1,5 +1,5 @@
 import { SchedulesEndpoints } from '../constants/endpoints/schedules.endpoints'
-import type { Anime, JikanResponse, SchedulesParams } from '../models'
+import type { Anime, SchedulesParams } from '../models'
 import { BaseClient } from './base.client'
 
 /**
@@ -13,10 +13,9 @@ export class SchedulesClient extends BaseClient {
 	/**
 	 * Returns weekly schedule
 	 * @param searchParams Filter parameters
-	 * @returns JikanResponse with Anime array data
 	 */
-	public async getSchedules(searchParams?: Partial<SchedulesParams>) {
-		return this.getResource<JikanResponse<Anime[]>>(
+	public getSchedules(searchParams?: Partial<SchedulesParams>) {
+		return this.getResource<Anime[]>(
 			SchedulesEndpoints.schedules,
 			{},
 			searchParams

@@ -1,5 +1,5 @@
 import { RandomEndpoints } from '../constants'
-import type { Anime, Character, JikanResponse, Manga } from '../models'
+import type { Anime, Manga, RandomCharacter } from '../models'
 import { BaseClient } from './base.client'
 
 /**
@@ -13,23 +13,21 @@ export class RandomClient extends BaseClient {
 	/**
 	 * Get random anime
 	 */
-	public async getRandomAnime() {
-		return this.getResource<JikanResponse<Anime>>(RandomEndpoints.randomAnime)
+	public getRandomAnime() {
+		return this.getResource<Anime>(RandomEndpoints.randomAnime)
 	}
 
 	/**
 	 * Get random manga
 	 */
-	public async getRandomManga() {
-		return this.getResource<JikanResponse<Manga>>(RandomEndpoints.randomManga)
+	public getRandomManga() {
+		return this.getResource<Manga>(RandomEndpoints.randomManga)
 	}
 
 	/**
 	 * Get random character
 	 */
-	public async getRandomCharacters() {
-		return this.getResource<Omit<Character, 'anime' | 'manga' | 'voices'>>(
-			RandomEndpoints.randomCharacters
-		)
+	public getRandomCharacters() {
+		return this.getResource<RandomCharacter>(RandomEndpoints.randomCharacters)
 	}
 }

@@ -5,8 +5,7 @@ import type {
 	CharacterManga,
 	CharacterVoiceActor,
 	CharactersSearchParams,
-	JikanImagesCollection,
-	JikanResponse
+	JikanImagesCollection
 } from '../models'
 import { BaseClient } from './base.client'
 
@@ -21,34 +20,29 @@ export class CharactersClient extends BaseClient {
 	/**
 	 * Get complete Character data
 	 * @param id The Character ID
-	 * @returns JikanResponse with Character data
 	 */
-	public async getCharacterFullById(id: number) {
-		return this.getResource<JikanResponse<Character>>(
-			CharactersEndpoints.characterFullById,
-			{ id }
-		)
+	public getCharacterFullById(id: number) {
+		return this.getResource<Character>(CharactersEndpoints.characterFullById, {
+			id
+		})
 	}
 
 	/**
 	 * Get Character data
 	 * @param id The Character ID
-	 * @returns JikanResponse with Character data
 	 */
-	public async getCharacterById(id: number) {
-		return this.getResource<JikanResponse<Character>>(
-			CharactersEndpoints.characterById,
-			{ id }
-		)
+	public getCharacterById(id: number) {
+		return this.getResource<Character>(CharactersEndpoints.characterById, {
+			id
+		})
 	}
 
 	/**
 	 * Get Character anime data
 	 * @param id The Character ID
-	 * @returns JikanResponse with CharacterAnime data
 	 */
-	public async getCharacterAnime(id: number) {
-		return this.getResource<JikanResponse<CharacterAnime[]>>(
+	public getCharacterAnime(id: number) {
+		return this.getResource<CharacterAnime[]>(
 			CharactersEndpoints.characterAnime,
 			{ id }
 		)
@@ -57,10 +51,9 @@ export class CharactersClient extends BaseClient {
 	/**
 	 * Get Character manga data
 	 * @param id The Character ID
-	 * @returns JikanResponse with CharacterManga data
 	 */
-	public async getCharacterManga(id: number) {
-		return this.getResource<JikanResponse<CharacterManga[]>>(
+	public getCharacterManga(id: number) {
+		return this.getResource<CharacterManga[]>(
 			CharactersEndpoints.charactersManga,
 			{ id }
 		)
@@ -69,10 +62,9 @@ export class CharactersClient extends BaseClient {
 	/**
 	 * Get Character voices data
 	 * @param id The Character ID
-	 * @returns JikanResponse with CharacterVoiceActor data
 	 */
-	public async getCharacterVoiceActors(id: number) {
-		return this.getResource<JikanResponse<CharacterVoiceActor[]>>(
+	public getCharacterVoiceActors(id: number) {
+		return this.getResource<CharacterVoiceActor[]>(
 			CharactersEndpoints.characterVoiceActors,
 			{ id }
 		)
@@ -81,24 +73,20 @@ export class CharactersClient extends BaseClient {
 	/**
 	 * Get Character pictures data
 	 * @param id The Character ID
-	 * @returns JikanResponse with JikanImagesCollection data
 	 */
-	public async getCharacterPictures(id: number) {
-		return this.getResource<JikanResponse<JikanImagesCollection[]>>(
+	public getCharacterPictures(id: number) {
+		return this.getResource<JikanImagesCollection[]>(
 			CharactersEndpoints.characterPictures,
 			{ id }
 		)
 	}
 
 	/**
-   * Get all the Characters within the given filter. Returns all Characters if no filters are given.
-   @param searchParams Filter parameters
-   * @returns JikanResponse with Character array data
-   */
-	public async getCharacterSearch(
-		searchParams: Partial<CharactersSearchParams>
-	) {
-		return this.getResource<JikanResponse<Character[]>>(
+	 * Get all the Characters within the given filter. Returns all Characters if no filters are given.
+	 * @param searchParams Filter parameters
+	 */
+	public getCharacterSearch(searchParams: Partial<CharactersSearchParams>) {
+		return this.getResource<Character[]>(
 			CharactersEndpoints.characterSearch,
 			{},
 			searchParams
