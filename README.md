@@ -12,7 +12,7 @@
 
 </p>
 
-> Jikan API wrapper for Typescript and NodeJS with build in typings.
+> Jikan API wrapper for Typescript and Node.js with built-in typings.
 
 ## Features
 
@@ -40,10 +40,9 @@ const animeClient = new AnimeClient();
 
 animeClient
   .getAnimeById(1)
-  .then((jikanResponse: JikanResponse<Anime>) => {
+  .then((response: JikanResponse<Anime>) => {
     /* ... */
   })
-  .catch(error => console.error(error));
 ```
 
 Or, using the **JikanClient**:
@@ -55,10 +54,9 @@ const jikanClient = new JikanClient();
 
 jikanClient.anime
   .getAnimeById(1)
-  .then((jikanResponse: JikanResponse<Anime>) => {
+  .then((response: JikanResponse<Anime>) => {
     /* ... */
   })
-  .catch(error => console.error(error));
 ```
 
 ## Client configuration
