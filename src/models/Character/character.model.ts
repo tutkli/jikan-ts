@@ -30,3 +30,4 @@ export interface CharacterManga {
 }
 
 export type RandomCharacter = Omit<Character, 'anime' | 'manga' | 'voices'>
+export type TopCharacter = Omit<Character, 'anime' | 'manga' | 'voices'>

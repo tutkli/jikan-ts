@@ -1,4 +1,5 @@
 export const TopEndpoints = {
 	topAnime: '/top/anime',
-	topManga: '/top/manga'
+	topManga: '/top/manga',
+	topCharacters: '/top/characters'
 } as const
