@@ -22,21 +22,21 @@ describe('test Top Client', () => {
 	})
 
 	it('should get top animes filtered by params', async () => {
-		const params: AnimeTopParams = { limit: 3, filter: TopAnimeFilter.airing }
+		const params: AnimeTopParams = { limit: 3, filter: 'airing' }
 		const data = await client
 			.getTopAnime(params)
 			.then((response: JikanResponse<Anime[]>) => response.data)
 
 		expect(data).toHaveLength(3)
 		for (const anime of data) {
-			expect(anime.status).toBe(AnimeStatus.airing)
+			expect(anime.status).toBe('Currently Airing')
 		}
 	})
 
 	it('should get top mangas filtered by params', async () => {
 		const params: Partial<MangaTopParams> = {
 			limit: 3,
-			filter: TopMangaFilter.publishing
+			filter: 'publishing'
 		}
 		const data = await client
 			.getTopManga(params)
@@ -44,7 +44,7 @@ describe('test Top Client', () => {
 
 		expect(data).toHaveLength(3)
 		for (const manga of data) {
-			expect(manga.status).toBe(MangaStatus.publishing)
+			expect(manga.status).toBe('Publishing')
 		}
 	})
 })

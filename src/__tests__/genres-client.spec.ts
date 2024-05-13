@@ -13,7 +13,7 @@ describe('test Genres Client', () => {
 
 	it('should get anime genres', async () => {
 		const data = await client
-			.getAnimeGenres(GenresFilter.demographics)
+			.getAnimeGenres('demographics')
 			.then((response: JikanResponse<Genre[]>) => response.data)
 
 		expect(data.length).toBeGreaterThan(0)

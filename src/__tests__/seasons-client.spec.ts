@@ -22,13 +22,13 @@ describe('test Seasons Client', () => {
 	it('should get the seasonal anime by year and season', async () => {
 		const year = 2022
 		const data = await client
-			.getSeason(year, AnimeSeason.winter, { limit: 3 })
+			.getSeason(year, 'winter', { limit: 3 })
 			.then((response: JikanResponse<Anime[]>) => response.data)
 
 		expect(data).toHaveLength(3)
 		for (const anime of data) {
 			expect(anime.year).toBe(year)
-			expect(anime.season).toBe(AnimeSeason.winter)
+			expect(anime.season).toBe('winter')
 		}
 	})
 
@@ -40,7 +40,7 @@ describe('test Seasons Client', () => {
 
 		expect(data).toHaveLength(3)
 		for (const anime of data) {
-			expect(anime.status).toBe(AnimeStatus.airing)
+			expect(anime.status).toBe('Currently Airing')
 		}
 	})
 
@@ -62,7 +62,7 @@ describe('test Seasons Client', () => {
 
 		expect(data).toHaveLength(3)
 		for (const anime of data) {
-			expect(anime.status).toBe(AnimeStatus.upcoming)
+			expect(anime.status).toBe('Not yet aired')
 		}
 	})
 })
