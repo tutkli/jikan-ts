@@ -1,7 +1,13 @@
 import { MangaEndpoints } from '../constants'
 import type {
 	CommonCharacter,
+	ForumFilter,
+	JikanExternalLink,
+	JikanForum,
 	JikanImages,
+	JikanMoreInfo,
+	JikanNews,
+	JikanRelation,
 	JikanResponse,
 	Manga,
 	MangaSearchParams,
@@ -54,6 +60,30 @@ export class MangaClient extends BaseClient {
 	}
 
 	/**
+	 * Get a list of manga news
+	 * @param id The Manga ID
+	 */
+	public async getMangaNews(id: string) {
+		return this.getResource<JikanResponse<JikanNews[]>>(
+			MangaEndpoints.mangaNews,
+			{ id }
+		)
+	}
+
+	/**
+	 * Get a list og manga forum topics
+	 * @param id The manga ID
+	 * @param filter Filter topics
+	 */
+	public async getMangaTopics(id: string, filter?: ForumFilter) {
+		return this.getResource<JikanResponse<JikanForum[]>>(
+			MangaEndpoints.mangaTopics,
+			{ id },
+			filter ? { filter } : undefined
+		)
+	}
+
+	/**
 	 * Get Pictures related to a specific Manga
 	 * @param id The Manga ID
 	 * @returns JikanResponse with JikanImages array data
@@ -78,6 +108,17 @@ export class MangaClient extends BaseClient {
 	}
 
 	/**
+	 * Get more info related to the manga
+	 * @param id manga id
+	 */
+	public async getMangaMoreInfo(id: number) {
+		return this.getResource<JikanResponse<JikanMoreInfo>>(
+			MangaEndpoints.mangaMoreInfo,
+			{ id }
+		)
+	}
+
+	/**
 	 * Get Recommendations related to a specific Manga
 	 * @param id The Manga ID
 	 * @returns JikanResponse with Recommendation array data
@@ -85,6 +126,28 @@ export class MangaClient extends BaseClient {
 	public async getMangaRecommendations(id: number) {
 		return this.getResource<JikanResponse<Recommendation[]>>(
 			MangaEndpoints.mangaRecommendations,
+			{ id }
+		)
+	}
+
+	/**
+	 * Get anime Relations
+	 * @param id manga id
+	 */
+	public async getMangaRelations(id: number) {
+		return this.getResource<JikanResponse<JikanRelation[]>>(
+			MangaEndpoints.mangaRelations,
+			{ id }
+		)
+	}
+
+	/**
+	 * Get manga external links
+	 * @param id manga id
+	 */
+	public getMangaExternal(id: number) {
+		return this.getResource<JikanResponse<JikanExternalLink[]>>(
+			MangaEndpoints.mangaExternal,
 			{ id }
 		)
 	}

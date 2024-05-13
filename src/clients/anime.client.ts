@@ -4,13 +4,14 @@ import type {
 	AnimeCharacter,
 	AnimeEpisode,
 	AnimeEpisodeVideo,
-	AnimeForum,
-	AnimeForumFilter,
 	AnimePicture,
 	AnimeSearchParams,
 	AnimeStaff,
 	AnimeStatistics,
 	AnimeVideos,
+	ForumFilter,
+	JikanExternalLink,
+	JikanForum,
 	JikanMoreInfo,
 	JikanNews,
 	JikanRelation,
@@ -111,10 +112,10 @@ export class AnimeClient extends BaseClient {
 	/**
 	 * Get a list of forum topics related to the anime
 	 * @param id anime id
-	 * @param filter forum filter
+	 * @param filter filter topics
 	 */
-	public async getAnimeForum(id: number, filter?: AnimeForumFilter) {
-		return this.getResource<JikanResponse<AnimeForum[]>>(
+	public async getAnimeForum(id: number, filter?: ForumFilter) {
+		return this.getResource<JikanResponse<JikanForum[]>>(
 			AnimeEndpoints.animeForum,
 			{ id },
 			filter ? { filter } : undefined
@@ -196,6 +197,17 @@ export class AnimeClient extends BaseClient {
 	public async getAnimeRelations(id: number) {
 		return this.getResource<JikanResponse<JikanRelation[]>>(
 			AnimeEndpoints.animeRelations,
+			{ id }
+		)
+	}
+
+	/**
+	 * Get anime external links
+	 * @param id anime id
+	 */
+	public getAnimeExternal(id: number) {
+		return this.getResource<JikanResponse<JikanExternalLink[]>>(
+			AnimeEndpoints.animeExternal,
 			{ id }
 		)
 	}

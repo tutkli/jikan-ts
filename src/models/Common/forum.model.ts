@@ -1,4 +1,4 @@
-export interface AnimeForum {
+export interface JikanForum {
 	mal_id: number
 	url: string
 	title: string
@@ -14,4 +14,4 @@ export interface AnimeForum {
 	}
 }
 
-export type AnimeForumFilter = 'all' | 'episode' | 'other'
+export type ForumFilter = 'all' | 'episode' | 'other'
