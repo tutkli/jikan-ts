@@ -65,12 +65,12 @@ export abstract class BaseClient {
 
 	protected async getResource<T>(
 		endpoint: string,
-		identifiers: { [key in string]: unknown } = {},
+		pathParams: { [key in string]: unknown } = {},
 		params: { [key in string]: unknown } = {}
 	): Promise<JikanResponse<T>> {
 		return (
 			await this.api.get<JikanResponse<T>>(
-				this.replaceIdentifiers(endpoint, identifiers),
+				this.replacePathParams(endpoint, pathParams),
 				{
 					params
 				}
@@ -78,7 +78,7 @@ export abstract class BaseClient {
 		).data
 	}
 
-	private replaceIdentifiers(
+	private replacePathParams(
 		path: string,
 		params: { [key in string]: unknown }
 	): string {
