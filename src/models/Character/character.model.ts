@@ -14,6 +14,9 @@ export interface Character {
 	nicknames: string[]
 	favorites: number
 	about: string
+}
+
+export interface CharacterFull extends Character {
 	anime: CharacterAnime[]
 	manga: CharacterManga[]
 	voices: CharacterVoiceActor[]
@@ -28,6 +31,3 @@ export interface CharacterManga {
 	role: CharacterRole
 	manga: CommonCharacterData & { title: string }
 }
-
-export type RandomCharacter = Omit<Character, 'anime' | 'manga' | 'voices'>
-export type TopCharacter = Omit<Character, 'anime' | 'manga' | 'voices'>

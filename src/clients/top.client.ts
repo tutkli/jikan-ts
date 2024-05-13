@@ -2,10 +2,10 @@ import { TopEndpoints } from '../constants'
 import type {
 	Anime,
 	AnimeTopParams,
+	Character,
 	JikanTopParams,
 	Manga,
-	MangaTopParams,
-	TopCharacter
+	MangaTopParams
 } from '../models'
 import { BaseClient } from './base.client'
 
@@ -38,7 +38,7 @@ export class TopClient extends BaseClient {
 	 * @param searchParams Filter parameters
 	 */
 	public getTopCharacters(searchParams?: Partial<JikanTopParams>) {
-		return this.getResource<TopCharacter[]>(
+		return this.getResource<Character[]>(
 			TopEndpoints.topCharacters,
 			{},
 			searchParams

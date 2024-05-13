@@ -2,6 +2,7 @@ import { CharactersEndpoints } from '../constants'
 import type {
 	Character,
 	CharacterAnime,
+	CharacterFull,
 	CharacterManga,
 	CharacterVoiceActor,
 	CharactersSearchParams,
@@ -22,9 +23,12 @@ export class CharactersClient extends BaseClient {
 	 * @param id The Character ID
 	 */
 	public getCharacterFullById(id: number) {
-		return this.getResource<Character>(CharactersEndpoints.characterFullById, {
-			id
-		})
+		return this.getResource<CharacterFull>(
+			CharactersEndpoints.characterFullById,
+			{
+				id
+			}
+		)
 	}
 
 	/**
