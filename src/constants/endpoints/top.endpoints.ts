@@ -1,4 +1,5 @@
-export enum TopEndpoints {
-  TopAnime = '/top/anime',
-  TopManga = '/top/manga',
-}
+export const TopEndpoints = {
+	topAnime: '/top/anime',
+	topManga: '/top/manga',
+	topCharacters: '/top/characters'
+} as const

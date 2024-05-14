@@ -1,26 +1,14 @@
-import { defineConfig } from "tsup";
-import { author, description, license, peerDependencies, version } from "./package.json";
+import { defineConfig } from 'tsup';
+import { peerDependencies } from './package.json';
 
 // Extract peerDependencies from package.json
 const EXTERNAL_DEPS = Object.keys(peerDependencies as Record<string, string>);
 
-// Custom banner
-const authorBanner = `
-/**
- * ${description}
- * Version: ${version} | Build Date: ${new Date().toLocaleDateString("en-us")}
- * Build Environment: Node ${process.version}
- * License: ${license}
- *
- * ${author.name} <${author.url}>
- */
-`;
-
 export default defineConfig({
   // Entry file(s) for the bundling process
-  entry: ["src/index.ts"],
+  entry: ['src/index.ts'],
   // Output directory for the bundled code
-  outDir: "dist",
+  outDir: 'dist',
   // Enable code splitting for better performance
   splitting: true,
   // Specify external dependencies to exclude from the bundle
@@ -32,9 +20,7 @@ export default defineConfig({
   // Generate declaration files (.d.ts)
   dts: true,
   // Output formats: CommonJS and ECMAScript modules
-  format: ["esm"],
+  format: ['esm'],
   // Minify the code if in a continuous integration environment
   minify: true,
-  // Add a custom banner to the top of each bundled file
-  banner: { js: authorBanner },
 });

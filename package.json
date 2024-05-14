@@ -1,60 +1,55 @@
 {
-  "name": "@tutkli/jikan-ts",
-  "version": "1.2.2",
-  "description": "Node.js wrapper for the Jikan API with built-in typings.",
-  "source": "src/index.ts",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
-  "type": "module",
-  "scripts": {
-    "prepare": "git config core.hookspath .githooks",
-    "build": "tsup --config tsup.config.ts",
-    "prepublishOnly": "yarn run build",
-    "test:ci": "vitest --silent --run",
-    "test:coverage": "vitest run --coverage",
-    "test:dev": "vitest",
-    "test:ui": "vitest --ui --coverage",
-    "version": "auto-changelog -p -l false && git add CHANGELOG.md",
-    "format": "biome format ./src",
-    "format:fix": "biome format --write ./src",
-    "lint": "biome check src",
-    "lint:ci": "biome ci src",
-    "lint:fix": "biome check --apply-unsafe ./src"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/tutkli/jikan-ts.git"
-  },
-  "keywords": [
-    "jikan",
-    "jikan-api",
-    "jikanAPI",
-    "MyAnimeList"
-  ],
-  "author": {
-    "name": "Clara Castillo",
-    "url": "https://github.com/tutkli"
-  },
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/tutkli/jikan-ts/issues"
-  },
-  "homepage": "https://github.com/tutkli/jikan-ts#readme",
-  "peerDependencies": {
-    "axios": "^1.6.7",
-    "axios-cache-interceptor": "^1.5.1"
-  },
-  "devDependencies": {
-    "@biomejs/biome": "1.5.3",
-    "@types/node": "20.11.16",
-    "@vitest/coverage-v8": "^1.2.2",
-    "@vitest/ui": "^1.2.2",
-    "auto-changelog": "^2.4.0",
-    "axios": "^1.6.7",
-    "axios-cache-interceptor": "^1.5.1",
-    "lint-staged": "^15.2.2",
-    "tsup": "^8.0.1",
-    "typescript": "5.3.3",
-    "vitest": "^1.2.2"
-  }
+	"name": "@tutkli/jikan-ts",
+	"version": "2.0.0",
+	"description": "Node.js wrapper for the Jikan API with built-in typings.",
+	"source": "src/index.ts",
+	"main": "dist/index.js",
+	"types": "dist/index.d.ts",
+	"type": "module",
+	"scripts": {
+		"prepare": "git config core.hookspath .githooks",
+		"build": "tsup --config tsup.config.ts",
+		"prepublishOnly": "yarn run build",
+		"test:ci": "vitest --silent --run",
+		"test:coverage": "vitest run --coverage",
+		"test:dev": "vitest",
+		"test:ui": "vitest --ui --coverage",
+		"version": "auto-changelog -p -l false && git add CHANGELOG.md",
+		"format": "biome format ./src",
+		"format:fix": "biome format --write ./src",
+		"lint": "biome check src",
+		"lint:ci": "biome ci src",
+		"lint:fix": "biome check --apply-unsafe ./src"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/tutkli/jikan-ts.git"
+	},
+	"keywords": ["jikan", "jikan-api", "jikanAPI", "MyAnimeList"],
+	"author": {
+		"name": "Clara Castillo",
+		"url": "https://github.com/tutkli"
+	},
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/tutkli/jikan-ts/issues"
+	},
+	"homepage": "https://github.com/tutkli/jikan-ts#readme",
+	"peerDependencies": {
+		"axios": "^1.6.8",
+		"axios-cache-interceptor": "^1.5.2"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "1.7.3",
+		"@types/node": "20.12.10",
+		"@vitest/coverage-v8": "^1.6.0",
+		"@vitest/ui": "^1.6.0",
+		"auto-changelog": "^2.4.0",
+		"axios": "^1.6.8",
+		"axios-cache-interceptor": "^1.5.2",
+		"lint-staged": "^15.2.2",
+		"tsup": "^8.0.2",
+		"typescript": "5.4.5",
+		"vitest": "^1.6.0"
+	}
 }

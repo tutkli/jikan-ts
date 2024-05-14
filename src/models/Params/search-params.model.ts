@@ -1,65 +1,49 @@
-import { AnimeRating, AnimeType } from '../Anime';
-import { MangaType } from '../Manga';
+import type { AnimeRating, AnimeType } from '../Anime'
+import type { MangaType } from '../Manga'
 
-export enum SortOptions {
-  asc = 'asc',
-  desc = 'desc',
-}
+export type SortOptions = 'asc' | 'desc'
 
-export enum SearchOrder {
-  mal_id = 'mal_id',
-  title = 'title',
-  start_date = 'start_date',
-  end_date = 'end_date',
-  score = 'score',
-  scored_by = 'scored_by',
-  rank = 'rank',
-  popularity = 'popularity',
-  members = 'members',
-  favorites = 'favorites',
-}
+export type SearchOrder =
+	| 'mal_id'
+	| 'title'
+	| 'start_date'
+	| 'end_date'
+	| 'score'
+	| 'scored_by'
+	| 'rank'
+	| 'popularity'
+	| 'members'
+	| 'favorites'
 
-export enum AnimeSearchOrder {
-  type = 'type',
-  rating = 'rating',
-  episodes = 'episodes',
-}
+export type AnimeSearchOrder = 'type' | 'rating' | 'episodes' | SearchOrder
 
-export enum AnimeSearchStatus {
-  airing = 'airing',
-  complete = 'complete',
-  upcoming = 'upcoming',
-}
+export type AnimeSearchStatus = 'airing' | 'complete' | 'upcoming'
 
-export enum MangaSearchOrder {
-  chapters = 'chapters',
-  volumes = 'volumes',
-}
+export type MangaSearchOrder = 'chapters' | 'volumes' | SearchOrder
 
-export enum MangaSearchStatus {
-  publishing = 'publishing',
-  complete = 'complete',
-  hiatus = 'hiatus',
-  discontinued = 'discontinued',
-  upcoming = 'upcoming',
-}
+export type MangaSearchStatus =
+	| 'publishing'
+	| 'complete'
+	| 'hiatus'
+	| 'discontinued'
+	| 'upcoming'
 
 export interface JikanSearchParams {
-  q?: string;
-  page?: number;
-  limit?: number;
-  score?: number;
-  min_score?: number;
-  max_score?: number;
-  sfw?: boolean;
-  genres?: string;
-  genres_exclude?: string;
-  sort?: SortOptions | string;
-  letter?: string;
-  producers?: string;
-  start_date?: string;
-  end_date?: string;
-  unapproved?: boolean;
+	q?: string
+	page?: number
+	limit?: number
+	score?: number
+	min_score?: number
+	max_score?: number
+	sfw?: boolean
+	genres?: string
+	genres_exclude?: string
+	sort?: SortOptions
+	letter?: string
+	producers?: string
+	start_date?: string
+	end_date?: string
+	unapproved?: boolean
 }
 
 /**
@@ -68,10 +52,10 @@ export interface JikanSearchParams {
  * See also: [Jikan API Documentation](https://docs.api.jikan.moe/#tag/manga/operation/getMangaSearch)
  */
 export interface MangaSearchParams extends JikanSearchParams {
-  type?: MangaType | string;
-  status?: MangaSearchStatus | string;
-  order_by?: MangaSearchOrder | SearchOrder | string;
-  magazines?: string;
+	type?: MangaType
+	status?: MangaSearchStatus
+	order_by?: MangaSearchOrder
+	magazines?: string
 }
 
 /**
@@ -80,8 +64,8 @@ export interface MangaSearchParams extends JikanSearchParams {
  * See also: [Jikan API Documentation](https://docs.api.jikan.moe/#tag/anime/operation/getAnimeSearch)
  */
 export interface AnimeSearchParams extends JikanSearchParams {
-  type?: AnimeType | string;
-  status?: AnimeSearchStatus | string;
-  rating?: AnimeRating | string;
-  order_by?: AnimeSearchOrder | SearchOrder | string;
+	type?: AnimeType
+	status?: AnimeSearchStatus
+	rating?: AnimeRating
+	order_by?: AnimeSearchOrder
 }

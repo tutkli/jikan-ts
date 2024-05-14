@@ -1,4 +1,4 @@
-export enum GenresEndpoints {
-  AnimeGenres = '/genres/anime',
-  MangaGenres = 'genres/manga',
-}
+export const GenresEndpoints = {
+	animeGenres: '/genres/anime',
+	mangaGenres: '/genres/manga'
+} as const

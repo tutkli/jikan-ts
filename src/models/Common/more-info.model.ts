@@ -1,3 +1,3 @@
 export interface JikanMoreInfo {
-  moreinfo: string;
+	moreinfo: string
 }

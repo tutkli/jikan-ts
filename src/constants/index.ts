@@ -1,2 +1,2 @@
-export * from './base.constant';
-export * from './endpoints';
+export * from './base.constant'
+export * from './endpoints'

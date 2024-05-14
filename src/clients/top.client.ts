@@ -1,12 +1,13 @@
-import { TopEndpoints } from '../constants';
-import {
-  Anime,
-  AnimeTopParams,
-  JikanResponse,
-  Manga,
-  MangaTopParams,
-} from '../models';
-import { BaseClient } from './base.client';
+import { TopEndpoints } from '../constants'
+import type {
+	Anime,
+	AnimeTopParams,
+	Character,
+	JikanTopParams,
+	Manga,
+	MangaTopParams
+} from '../models'
+import { BaseClient } from './base.client'
 
 /**
  * **Top Client**
@@ -16,33 +17,31 @@ import { BaseClient } from './base.client';
  * See also: [Jikan Documentation](https://docs.api.jikan.moe/)
  */
 export class TopClient extends BaseClient {
-  /**
-   * Get the top Animes
-   * @param searchParams Filter parameters
-   * @returns JikanResponse with Anime array data
-   */
-  public async getTopAnime(
-    searchParams?: Partial<AnimeTopParams>,
-  ): Promise<JikanResponse<Anime[]>> {
-    return this.getResource<JikanResponse<Anime[]>>(
-      TopEndpoints.TopAnime,
-      {},
-      searchParams,
-    );
-  }
+	/**
+	 * Get the top Animes
+	 * @param searchParams Filter parameters
+	 */
+	public getTopAnime(searchParams?: Partial<AnimeTopParams>) {
+		return this.getResource<Anime[]>(TopEndpoints.topAnime, {}, searchParams)
+	}
 
-  /**
-   * Get the top Mangas
-   * @param searchParams Filter parameters
-   * @returns JikanResponse with Manga array data
-   */
-  public async getTopManga(
-    searchParams?: Partial<MangaTopParams>,
-  ): Promise<JikanResponse<Manga[]>> {
-    return this.getResource<JikanResponse<Manga[]>>(
-      TopEndpoints.TopManga,
-      {},
-      searchParams,
-    );
-  }
+	/**
+	 * Get the top Mangas
+	 * @param searchParams Filter parameters
+	 */
+	public getTopManga(searchParams?: Partial<MangaTopParams>) {
+		return this.getResource<Manga[]>(TopEndpoints.topManga, {}, searchParams)
+	}
+
+	/**
+	 * Get the top Characters
+	 * @param searchParams Filter parameters
+	 */
+	public getTopCharacters(searchParams?: Partial<JikanTopParams>) {
+		return this.getResource<Character[]>(
+			TopEndpoints.topCharacters,
+			{},
+			searchParams
+		)
+	}
 }

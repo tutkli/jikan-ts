@@ -1,14 +1,19 @@
-import { MangaEndpoints } from '../constants';
-import {
-  CommonCharacter,
-  JikanImages,
-  JikanResponse,
-  Manga,
-  MangaSearchParams,
-  MangaStatistics,
-  Recommendation,
-} from '../models';
-import { BaseClient } from './base.client';
+import { MangaEndpoints } from '../constants'
+import type {
+	CommonCharacter,
+	ForumFilter,
+	JikanExternalLink,
+	JikanForum,
+	JikanImages,
+	JikanMoreInfo,
+	JikanNews,
+	JikanRelation,
+	Manga,
+	MangaSearchParams,
+	MangaStatistics,
+	Recommendation
+} from '../models'
+import { BaseClient } from './base.client'
 
 /**
  * **Manga Client**
@@ -18,97 +23,121 @@ import { BaseClient } from './base.client';
  * See also: [Jikan Documentation](https://docs.api.jikan.moe/)
  */
 export class MangaClient extends BaseClient {
-  /**
-   * Get a Manga with full information by its ID
-   * @param id The Manga ID
-   * @returns JikanResponse with Manga data
-   */
-  public async getMangaFullById(id: number): Promise<JikanResponse<Manga>> {
-    return this.getResource<JikanResponse<Manga>>(
-      MangaEndpoints.MangaFullById,
-      { id },
-    );
-  }
+	/**
+	 * Get a Manga with full information by its ID
+	 * @param id The Manga ID
+	 */
+	public getMangaFullById(id: number) {
+		return this.getResource<Manga>(MangaEndpoints.mangaFullById, { id })
+	}
 
-  /**
-   * Get a Manga by its ID
-   * @param id The Manga ID
-   * @returns JikanResponse with Manga data
-   */
-  public async getMangaById(id: number): Promise<JikanResponse<Manga>> {
-    return this.getResource<JikanResponse<Manga>>(MangaEndpoints.MangaById, {
-      id,
-    });
-  }
+	/**
+	 * Get a Manga by its ID
+	 * @param id The Manga ID
+	 */
+	public getMangaById(id: number) {
+		return this.getResource<Manga>(MangaEndpoints.mangaById, {
+			id
+		})
+	}
 
-  /**
-   * Get Characters of a specific Manga
-   * @param id The Manga ID
-   * @returns JikanResponse with CommonCharacter array data
-   */
-  public async getMangaCharacters(
-    id: number,
-  ): Promise<JikanResponse<CommonCharacter[]>> {
-    return this.getResource<JikanResponse<CommonCharacter[]>>(
-      MangaEndpoints.MangaCharacters,
-      { id },
-    );
-  }
+	/**
+	 * Get Characters of a specific Manga
+	 * @param id The Manga ID
+	 */
+	public getMangaCharacters(id: number) {
+		return this.getResource<CommonCharacter[]>(MangaEndpoints.mangaCharacters, {
+			id
+		})
+	}
 
-  /**
-   * Get Pictures related to a specific Manga
-   * @param id The Manga ID
-   * @returns JikanResponse with JikanImages array data
-   */
-  public async getMangaPictures(
-    id: number,
-  ): Promise<JikanResponse<JikanImages[]>> {
-    return this.getResource<JikanResponse<JikanImages[]>>(
-      MangaEndpoints.MangaPictures,
-      { id },
-    );
-  }
+	/**
+	 * Get a list of manga news
+	 * @param id The Manga ID
+	 */
+	public getMangaNews(id: string) {
+		return this.getResource<JikanNews[]>(MangaEndpoints.mangaNews, { id })
+	}
 
-  /**
-   * Get Statistics related to a specific Manga
-   * @param id The Manga ID
-   * @returns JikanResponse with MangaStatistics data
-   */
-  public async getMangaStatistics(
-    id: number,
-  ): Promise<JikanResponse<MangaStatistics>> {
-    return this.getResource<JikanResponse<MangaStatistics>>(
-      MangaEndpoints.MangaStatistics,
-      { id },
-    );
-  }
+	/**
+	 * Get a list og manga forum topics
+	 * @param id The manga ID
+	 * @param filter Filter topics
+	 */
+	public getMangaTopics(id: string, filter?: ForumFilter) {
+		return this.getResource<JikanForum[]>(
+			MangaEndpoints.mangaTopics,
+			{ id },
+			filter ? { filter } : undefined
+		)
+	}
 
-  /**
-   * Get Recommendations related to a specific Manga
-   * @param id The Manga ID
-   * @returns JikanResponse with Recommendation array data
-   */
-  public async getMangaRecommendations(
-    id: number,
-  ): Promise<JikanResponse<Recommendation[]>> {
-    return this.getResource<JikanResponse<Recommendation[]>>(
-      MangaEndpoints.MangaRecommendations,
-      { id },
-    );
-  }
+	/**
+	 * Get Pictures related to a specific Manga
+	 * @param id The Manga ID
+	 */
+	public getMangaPictures(id: number) {
+		return this.getResource<JikanImages[]>(MangaEndpoints.mangaPictures, { id })
+	}
 
-  /**
-   * Get all the filtered Mangas. Returns all the Mangas if no filters are given.
-   * @param searchParams Filter parameters
-   * @returns JikanResponse with Manga array data
-   */
-  public async getMangaSearch(
-    searchParams?: Partial<MangaSearchParams>,
-  ): Promise<JikanResponse<Manga[]>> {
-    return this.getResource<JikanResponse<Manga[]>>(
-      MangaEndpoints.MangaSearch,
-      {},
-      searchParams,
-    );
-  }
+	/**
+	 * Get Statistics related to a specific Manga
+	 * @param id The Manga ID
+	 */
+	public getMangaStatistics(id: number) {
+		return this.getResource<MangaStatistics>(MangaEndpoints.mangaStatistics, {
+			id
+		})
+	}
+
+	/**
+	 * Get more info related to the manga
+	 * @param id manga id
+	 */
+	public getMangaMoreInfo(id: number) {
+		return this.getResource<JikanMoreInfo>(MangaEndpoints.mangaMoreInfo, { id })
+	}
+
+	/**
+	 * Get Recommendations related to a specific Manga
+	 * @param id The Manga ID
+	 */
+	public getMangaRecommendations(id: number) {
+		return this.getResource<Recommendation[]>(
+			MangaEndpoints.mangaRecommendations,
+			{ id }
+		)
+	}
+
+	/**
+	 * Get anime Relations
+	 * @param id manga id
+	 */
+	public getMangaRelations(id: number) {
+		return this.getResource<JikanRelation[]>(MangaEndpoints.mangaRelations, {
+			id
+		})
+	}
+
+	/**
+	 * Get manga external links
+	 * @param id manga id
+	 */
+	public getMangaExternal(id: number) {
+		return this.getResource<JikanExternalLink[]>(MangaEndpoints.mangaExternal, {
+			id
+		})
+	}
+
+	/**
+	 * Get all the filtered Mangas. Returns all the Mangas if no filters are given.
+	 * @param searchParams Filter parameters
+	 */
+	public getMangaSearch(searchParams?: Partial<MangaSearchParams>) {
+		return this.getResource<Manga[]>(
+			MangaEndpoints.mangaSearch,
+			{},
+			searchParams
+		)
+	}
 }

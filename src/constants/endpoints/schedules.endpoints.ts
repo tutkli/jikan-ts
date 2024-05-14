@@ -1,3 +1,3 @@
-export enum SchedulesEndpoints {
-  Schedules = '/schedules',
-}
+export const SchedulesEndpoints = {
+	schedules: '/schedules'
+} as const

@@ -1,11 +1,11 @@
 export interface JikanRelation {
-  relation: string;
-  entry: RelationEntry[];
+	relation: string
+	entry: RelationEntry[]
 }
 
 export interface RelationEntry {
-  mal_id: number;
-  type: string;
-  name: string;
-  url: string;
+	mal_id: number
+	type: string
+	name: string
+	url: string
 }

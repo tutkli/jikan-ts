@@ -18,3 +18,4 @@ biome.json
 .githooks
 tsup.config.ts
 vitest.config.ts
+bun.lockb
