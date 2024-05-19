@@ -19,5 +19,5 @@ export const AnimeEndpoints = {
 	animeThemes: '/anime/{id}/themes',
 	animeExternal: '/anime/{id}/external',
 	animeStreaming: '/anime/{id}/streaming',
-	animeSearch: '/anime/{id}/search'
+	animeSearch: '/anime'
 } as const
