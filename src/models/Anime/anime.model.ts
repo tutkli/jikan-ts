@@ -16,7 +16,7 @@ export interface Anime {
 	approved: boolean
 	titles: JikanResourceTitle[]
 	title: string
-	title_english: string
+	title_english?: string
 	title_japanese: string
 	title_synonyms: string[]
 	type: AnimeType
