@@ -1,4 +1,5 @@
 import xior, { type XiorInstance } from 'xior'
+import cachePlugin, { type XiorCacheOptions } from 'xior/plugins/cache'
 import { BaseURL } from '../constants'
 import type { JikanResponse } from '../models'
 
@@ -13,6 +14,12 @@ export interface ClientArgs {
 	 * Location of the JikanAPI. Leave empty to use the official JikanAPI instance.
 	 */
 	baseURL: string
+	/**
+	 * **Xior Cache Options**
+	 * Options for cache.
+	 * @see https://github.com/suhaotian/xior?tab=readme-ov-file#cache-plugin
+	 */
+	cacheOptions: XiorCacheOptions
 }
 
 /**
@@ -30,6 +37,7 @@ export abstract class BaseClient {
 				'Content-Type': 'application/json'
 			}
 		})
+		this.api.plugins.use(cachePlugin(clientOptions.cacheOptions))
 	}
 
 	protected async getResource<T>(

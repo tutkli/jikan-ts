@@ -18,15 +18,14 @@
 
 - 💅 Fully typed
 - ♻ Http Request Cache
-- 📄 Logging
 - 📦 ESM with tree shaking support
 
 ## Installation
 
 ```bash
-npm install --save @tutkli/jikan-ts axios axios-cache-interceptor
+npm install --save @tutkli/jikan-ts
 # or
-yarn add @tutkli/jikan-ts axios axios-cache-interceptor
+yarn add @tutkli/jikan-ts
 ```
 
 ## Example
@@ -63,31 +62,19 @@ jikanClient.anime
 
 ### Cache Configuration
 
-Jikan-ts uses `axios-cache-interceptor` to store request results.
+Jikan-ts uses Xior's cache plugin to store request results.
 To use a specific configuration, pass the `cacheOptions` argument when instantiating a client:
 
 ```ts
 import { AnimeClient } from '@tutkli/jikan-ts';
 
 const animeClient = new AnimeClient({
-    cacheOptions: { ... } // axios-cache-interceptor options
+    cacheOptions: { ... } // xior cache options
   }
 );
 ```
 
-For more information, check out the [axios-cache-interceptor Documentation](https://axios-cache-interceptor.js.org/).
-
-### Logging
-
-To enable logging, pass the `enableLogging` argument as `true`.
-
-```ts
-import { AnimeClient } from '@tutkli/jikan-ts';
-
-const animeClient = new AnimeClient({
-  enableLogging: true,
-});
-```
+For more information, check out the [Xior's cache documentation](https://github.com/suhaotian/xior?tab=readme-ov-file#cache-plugin).
 
 ## Available Clients
 
