@@ -13,9 +13,7 @@ export interface JikanTopParams {
 }
 
 /**
- * QueryParams used in **getTopAnime** call
- *
- * See also: [Jikan API Documentation](https://docs.api.jikan.moe/#tag/top/operation/getTopAnime)
+ * QueryParams used in `getTopAnime`
  */
 export interface AnimeTopParams extends JikanTopParams {
 	type?: AnimeType
@@ -23,9 +21,7 @@ export interface AnimeTopParams extends JikanTopParams {
 }
 
 /**
- * QueryParams used in **getTopManga** call
- *
- * See also: [Jikan API Documentation](https://docs.api.jikan.moe/#tag/top/operation/getTopManga)
+ * QueryParams used in `getTopManga`
  */
 export interface MangaTopParams extends JikanTopParams {
 	type?: MangaType

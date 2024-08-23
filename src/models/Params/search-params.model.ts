@@ -47,9 +47,7 @@ export interface JikanSearchParams {
 }
 
 /**
- * QueryParams used in **getMangaSearch** call
- *
- * See also: [Jikan API Documentation](https://docs.api.jikan.moe/#tag/manga/operation/getMangaSearch)
+ * QueryParams used in `getMangaSearch`
  */
 export interface MangaSearchParams extends JikanSearchParams {
 	type?: MangaType
@@ -59,9 +57,7 @@ export interface MangaSearchParams extends JikanSearchParams {
 }
 
 /**
- * QueryParams used in **getAnimeSearch** call
- *
- * See also: [Jikan API Documentation](https://docs.api.jikan.moe/#tag/anime/operation/getAnimeSearch)
+ * QueryParams used in `getAnimeSearch`
  */
 export interface AnimeSearchParams extends JikanSearchParams {
 	type?: AnimeType
