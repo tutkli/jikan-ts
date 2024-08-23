@@ -11,11 +11,9 @@ import type {
 import { BaseClient } from './base.client'
 
 /**
- * **Characters Client**
+ * Client used to access the Character Endpoints.
  *
- * Client used to access the Character Endpoints:
- *
- * See also: [Jikan Documentation](https://docs.api.jikan.moe/)
+ * @see [Jikan Documentation](https://docs.api.jikan.moe/#tag/characters)
  */
 export class CharactersClient extends BaseClient {
 	/**

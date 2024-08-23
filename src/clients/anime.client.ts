@@ -20,11 +20,9 @@ import type {
 import { BaseClient } from './base.client'
 
 /**
- * **Anime Client**
+ * Client used to access the Anime Endpoints.
  *
- * Client used to access the Anime Endpoints:
- *
- * See also: [Jikan Documentation](https://docs.api.jikan.moe/)
+ * @see [Jikan Documentation](https://docs.api.jikan.moe/#tag/anime)
  */
 export class AnimeClient extends BaseClient {
 	/**

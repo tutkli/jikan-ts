@@ -3,11 +3,9 @@ import type { Anime, SchedulesParams } from '../models'
 import { BaseClient } from './base.client'
 
 /**
- * **Schedules Client**
+ * Client used to access the Schedules Endpoints.
  *
- * Client used to access the Schedules Endpoints
- *
- * See also: [Jikan Documentation](https://docs.api.jikan.moe/)
+ * @see [Jikan Documentation](https://docs.api.jikan.moe/#tag/schedules)
  */
 export class SchedulesClient extends BaseClient {
 	/**

@@ -16,11 +16,9 @@ import type {
 import { BaseClient } from './base.client'
 
 /**
- * **Manga Client**
+ * Client used to access the Manga Endpoints.
  *
- * Client used to access the Manga Endpoints:
- *
- * See also: [Jikan Documentation](https://docs.api.jikan.moe/)
+ * @see [Jikan Documentation](https://docs.api.jikan.moe/#tag/manga)
  */
 export class MangaClient extends BaseClient {
 	/**

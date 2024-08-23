@@ -9,11 +9,9 @@ import { SeasonsClient } from './seasons.client'
 import { TopClient } from './top.client'
 
 /**
- * **Jikan Client**
+ * The main client used to access all the Jikan Endpoints.
  *
- * The main client used to access all the Jikan Endpoints:
- *
- * See also: [Jikan Documentation](https://docs.api.jikan.moe/)
+ * @see [Jikan Documentation](https://docs.api.jikan.moe/)
  */
 export class JikanClient {
 	public anime: AnimeClient

@@ -3,11 +3,9 @@ import type { Anime, Character, Manga } from '../models'
 import { BaseClient } from './base.client'
 
 /**
- * **Random Client**
+ * Client used to access the Random Endpoints.
  *
- * Client used to access the Random Endpoints:
- *
- * See also: [Jikan Documentation](https://docs.api.jikan.moe/)
+ * @see [Jikan Documentation](https://docs.api.jikan.moe/#tag/random)
  */
 export class RandomClient extends BaseClient {
 	/**

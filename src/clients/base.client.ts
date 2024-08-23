@@ -4,13 +4,10 @@ import { JikanURL } from '../constants'
 import type { JikanResponse } from '../models'
 
 /**
- * **Client Args**
- *
- * Used to pass optional configuration for logging and cache to the clients.
+ * Optional configuration of the client.
  */
 export interface ClientArgs {
 	/**
-	 * **Xior Cache Options**
 	 * Options for cache.
 	 * @see https://github.com/suhaotian/xior?tab=readme-ov-file#cache-plugin
 	 */
@@ -18,9 +15,7 @@ export interface ClientArgs {
 }
 
 /**
- * **Base Client**
- *
- * This client is responsible for creating an Axios Instance and the cache and logging configurations
+ * The client responsible for creating a Xior Instance.
  */
 export abstract class BaseClient {
 	private api: XiorInstance

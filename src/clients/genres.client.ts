@@ -3,11 +3,9 @@ import type { Genre, GenresFilter } from '../models'
 import { BaseClient } from './base.client'
 
 /**
- * **Genres Client**
+ * Client used to access the Genres Endpoints.
  *
- * Client used to access the Genres Endpoints:
- *
- * See also: [Jikan Documentation](https://docs.api.jikan.moe/)
+ * @see [Jikan Documentation](https://docs.api.jikan.moe/#tag/genres)
  */
 export class GenresClient extends BaseClient {
 	/**

@@ -9,11 +9,9 @@ import type {
 import { BaseClient } from './base.client'
 
 /**
- * **Seasons Client**
+ * Client used to access the Seasons Endpoints.
  *
- * Client used to access the Seasons Endpoints
- *
- * See also: [Jikan Documentation](https://docs.api.jikan.moe/)
+ * @see [Jikan Documentation](https://docs.api.jikan.moe/#tag/seasons)
  */
 export class SeasonsClient extends BaseClient {
 	/**

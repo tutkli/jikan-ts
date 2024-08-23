@@ -10,11 +10,9 @@ import type {
 import { BaseClient } from './base.client'
 
 /**
- * **Top Client**
+ * Client used to access the Top Endpoints.
  *
- * Client used to access the Top Endpoints:
- *
- * See also: [Jikan Documentation](https://docs.api.jikan.moe/)
+ * @see [Jikan Documentation](https://docs.api.jikan.moe/#tag/top)
  */
 export class TopClient extends BaseClient {
 	/**
