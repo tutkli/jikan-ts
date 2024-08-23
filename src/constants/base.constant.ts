@@ -1,1 +1,1 @@
-export const BaseURL = 'https://api.jikan.moe/v4'
+export const JikanURL = 'https://api.jikan.moe/v4'

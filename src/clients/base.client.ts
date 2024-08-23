@@ -1,6 +1,6 @@
 import xior, { type XiorInstance } from 'xior'
 import cachePlugin, { type XiorCacheOptions } from 'xior/plugins/cache'
-import { BaseURL } from '../constants'
+import { JikanURL } from '../constants'
 import type { JikanResponse } from '../models'
 
 /**
@@ -9,11 +9,6 @@ import type { JikanResponse } from '../models'
  * Used to pass optional configuration for logging and cache to the clients.
  */
 export interface ClientArgs {
-	/**
-	 * **Base URL**
-	 * Location of the JikanAPI. Leave empty to use the official JikanAPI instance.
-	 */
-	baseURL: string
 	/**
 	 * **Xior Cache Options**
 	 * Options for cache.
@@ -32,7 +27,7 @@ export abstract class BaseClient {
 
 	constructor(clientOptions: Partial<ClientArgs> = {}) {
 		this.api = xior.create({
-			baseURL: clientOptions.baseURL ?? BaseURL,
+			baseURL: JikanURL,
 			headers: {
 				'Content-Type': 'application/json'
 			}
