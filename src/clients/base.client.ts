@@ -59,12 +59,10 @@ export abstract class BaseClient {
 		path: string,
 		params: { [key in string]: unknown }
 	): string {
-		let endpoint = path
-		for (const param of Object.keys(params)) {
-			if (!RegExp(`{${param}}`).exec(endpoint))
+		return Object.keys(params).reduce((str, param) => {
+			if (!RegExp(`{${param}}`).exec(str))
 				throw new Error(`Path does not contain "${param}" parameter.`)
-			endpoint = endpoint.replace(`{${param}}`, String(params[param]))
-		}
-		return endpoint
+			return str.replace(`{${param}}`, String(params[param]))
+		}, path)
 	}
 }
