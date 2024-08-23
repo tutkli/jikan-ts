@@ -19,7 +19,7 @@
 		"format:fix": "biome format --write ./src",
 		"lint": "biome check src",
 		"lint:ci": "biome ci src",
-		"lint:fix": "biome check --apply-unsafe ./src"
+		"lint:fix": "biome check --write --unsafe ./src"
 	},
 	"repository": {
 		"type": "git",
