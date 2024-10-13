@@ -1,7 +1,7 @@
 {
-	"name": "@zenuu/jikan-ts",
-	"version": "2.0.3",
-	"description": "(FORK) Node.js wrapper for the Jikan API with built-in typings.",
+	"name": "@tutkli/jikan-ts",
+	"version": "2.0.2",
+	"description": "Node.js wrapper for the Jikan API with built-in typings.",
 	"source": "src/index.ts",
 	"main": "dist/index.js",
 	"types": "dist/index.d.ts",
@@ -9,7 +9,7 @@
 	"scripts": {
 		"prepare": "git config core.hookspath .githooks",
 		"build": "tsup --config tsup.config.ts",
-		"prepublishOnly": "npm run build",
+		"prepublishOnly": "yarn run build",
 		"test:ci": "vitest --silent --run",
 		"test:coverage": "vitest run --coverage",
 		"test:dev": "vitest",
@@ -23,7 +23,7 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/zenuu-play/jikan-ts"
+		"url": "https://github.com/tutkli/jikan-ts.git"
 	},
 	"keywords": ["jikan", "jikan-api", "jikanAPI", "MyAnimeList"],
 	"author": {
@@ -32,9 +32,9 @@
 	},
 	"license": "MIT",
 	"bugs": {
-		"url": "https://github.com/zenuu-play/jikan-ts/issues"
+		"url": "https://github.com/tutkli/jikan-ts/issues"
 	},
-	"homepage": "https://github.com/zenuu-play/jikan-ts#readme",
+	"homepage": "https://github.com/tutkli/jikan-ts#readme",
 	"peerDependencies": {
 		"axios": "^1.6.8",
 		"axios-cache-interceptor": "^1.5.2"
