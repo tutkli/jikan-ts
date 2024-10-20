@@ -33,7 +33,7 @@ export interface Anime {
 	popularity: number
 	members: number
 	favorites: number
-	synopsis: string
+	synopsis?: string
 	background: string
 	season?: AnimeSeason
 	year: number
