@@ -75,6 +75,20 @@ const animeClient = new AnimeClient({
 );
 ```
 
+### Custom Axios instance
+
+Jikan uses `axios` as an `http` client and if you are not satisfied with the default client settings, then you can build your instance by passing it to the optional `axiosInstance` argument
+
+```ts
+import { AnimeClient } from '@tutkli/jikan-ts';
+import Axios from 'axios';
+
+const animeClient = new AnimeClient({
+    axiosInstance: Axios.create({ ... })
+  }
+);
+```
+
 For more information, check out the [axios-cache-interceptor Documentation](https://axios-cache-interceptor.js.org/).
 
 ### Logging
