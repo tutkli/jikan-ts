@@ -1,4 +1,4 @@
-import { assertType, beforeAll, beforeEach, describe, expect, it } from 'vitest'
+import { beforeAll, beforeEach, describe, expect, it } from 'bun:test'
 import { AnimeClient } from '../clients'
 import type { AnimeSearchParams } from '../models'
 
@@ -16,7 +16,6 @@ describe('test Anime Client', () => {
 
 	it('should be instantiated correctly', () => {
 		expect(client).toBeDefined()
-		assertType<AnimeClient>(client)
 	})
 
 	// Endpoints

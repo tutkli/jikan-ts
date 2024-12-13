@@ -1,21 +1,21 @@
 {
-  "$schema": "http://json.schemastore.org/tsconfig",
-  "compilerOptions": {
-    "target": "esnext",
-    "skipLibCheck": false,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "declaration": true,
-    "esModuleInterop": true,
-    "module": "esnext",
-    "moduleResolution": "node",
-    "types": ["node"],
-    "resolveJsonModule": true,
-    "typeRoots": ["./node_modules/@types"],
-    "experimentalDecorators": true,
-    "inlineSourceMap": false,
-    "isolatedModules": true,
-    "importHelpers": true
-  },
-  "exclude": ["node_modules", "dist", "**/*.spec.ts", "**/*.test.ts"]
+	"$schema": "http://json.schemastore.org/tsconfig",
+	"compilerOptions": {
+		"target": "esnext",
+		"skipLibCheck": true,
+		"strict": true,
+		"forceConsistentCasingInFileNames": true,
+		"declaration": true,
+		"esModuleInterop": true,
+		"module": "esnext",
+		"moduleResolution": "node",
+		"types": ["node", "bun"],
+		"resolveJsonModule": true,
+		"typeRoots": ["./node_modules/@types"],
+		"experimentalDecorators": true,
+		"inlineSourceMap": false,
+		"isolatedModules": true,
+		"importHelpers": true
+	},
+	"exclude": ["node_modules", "dist", "**/*.spec.ts", "**/*.test.ts"]
 }

@@ -19,3 +19,4 @@ biome.json
 tsup.config.ts
 vitest.config.ts
 bun.lockb
+bun.build.js

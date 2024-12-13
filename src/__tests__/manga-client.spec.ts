@@ -1,4 +1,4 @@
-import { beforeAll, beforeEach, describe, expect, it } from 'vitest'
+import { beforeAll, beforeEach, describe, expect, it } from 'bun:test'
 import { MangaClient } from '../clients'
 import type {
 	CommonCharacter,

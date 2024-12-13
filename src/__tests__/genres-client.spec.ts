@@ -1,4 +1,4 @@
-import { beforeAll, beforeEach, describe, expect, it } from 'vitest'
+import { beforeAll, beforeEach, describe, expect, it } from 'bun:test'
 import { GenresClient } from '../clients'
 import { type Genre, GenresFilter, type JikanResponse } from '../models'
 
