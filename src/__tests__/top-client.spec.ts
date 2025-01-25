@@ -1,4 +1,4 @@
-import { beforeAll, beforeEach, describe, expect, it } from 'vitest'
+import { beforeAll, beforeEach, describe, expect, it } from 'bun:test'
 import { TopClient } from '../clients'
 import {
 	type Anime,
