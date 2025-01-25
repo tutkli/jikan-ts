@@ -4,6 +4,7 @@ import type { ClientArgs } from './base.client'
 import { CharactersClient } from './characters.client'
 import { ClubsClient } from './clubs.client'
 import { GenresClient } from './genres.client'
+import { MagazinesClient } from './magazines.client'
 import { MangaClient } from './manga.client'
 import { RandomClient } from './random.client'
 import { SchedulesClient } from './schedules.client'
@@ -23,6 +24,7 @@ export class JikanClient {
 	public characters: CharactersClient
 	public clubs: ClubsClient
 	public genres: GenresClient
+	public magazines: MagazinesClient
 	public manga: MangaClient
 	public top: TopClient
 	public schedules: SchedulesClient
@@ -49,6 +51,10 @@ export class JikanClient {
 			...clientOptions
 		})
 		this.genres = new GenresClient({
+			axiosInstance: axiosCacheInstance,
+			...clientOptions
+		})
+		this.magazines = new MagazinesClient({
 			axiosInstance: axiosCacheInstance,
 			...clientOptions
 		})
