@@ -1,4 +1,4 @@
-import { SeasonsEndpoints } from '../constants/endpoints/seasons.endpoints'
+import { SeasonsEndpoints } from '../endpoints/seasons.endpoints'
 import type {
 	Anime,
 	AnimeSeason,

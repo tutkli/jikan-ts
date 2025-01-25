@@ -13,15 +13,17 @@ export * from './clients/random.client'
 // CONFIG
 export * from './config/logging.config'
 
+// ENDPOINTS
+export * from './endpoints/anime.endpoints'
+export * from './endpoints/characters.endpoints'
+export * from './endpoints/genres.endpoints'
+export * from './endpoints/manga.endpoints'
+export * from './endpoints/seasons.endpoints'
+export * from './endpoints/top.endpoints'
+export * from './endpoints/random.endpoints'
+
 // CONSTANTS
-export * from './constants/endpoints/anime.endpoints'
-export * from './constants/endpoints/characters.endpoints'
-export * from './constants/endpoints/genres.endpoints'
-export * from './constants/endpoints/manga.endpoints'
-export * from './constants/endpoints/seasons.endpoints'
-export * from './constants/endpoints/top.endpoints'
-export * from './constants/endpoints/random.endpoints'
-export * from './constants/base.constant'
+export * from './constants/base.const'
 
 // MODELS
 export * from './models'

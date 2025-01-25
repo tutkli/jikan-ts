@@ -1,4 +1,4 @@
-import { TopEndpoints } from '../constants/endpoints/top.endpoints'
+import { TopEndpoints } from '../endpoints/top.endpoints'
 import type {
 	Anime,
 	AnimeTopParams,
