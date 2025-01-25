@@ -9,6 +9,7 @@ export * from './clients/schedules.client'
 export * from './clients/seasons.client'
 export * from './clients/top.client'
 export * from './clients/random.client'
+export * from './clients/watch.client'
 
 // CONFIG
 export * from './config/logging.config'
@@ -21,9 +22,11 @@ export * from './endpoints/manga.endpoints'
 export * from './endpoints/seasons.endpoints'
 export * from './endpoints/top.endpoints'
 export * from './endpoints/random.endpoints'
+export * from './endpoints/watch.endpoints'
 
 // CONSTANTS
 export * from './constants/base.const'
 
 // MODELS
 export * from './models'
+export * from './models/watch/watch.model'

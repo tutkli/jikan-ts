@@ -6,7 +6,7 @@ export interface AnimeVideos {
 	music_videos: AnimeMusicVideo[]
 }
 
-export interface AnimePromoVideo {
+export type AnimePromoVideo = {
 	title: string
 	trailer: AnimeYoutubeVideo
 }
