@@ -29,12 +29,11 @@ export class WatchClient extends BaseClient {
 	/**
 	 * @returns Recently added promotional videos
 	 */
-	public getWatchRecentPromos(params: { page?: number } = {}) {
+	public getWatchRecentPromos(params: Partial<{ page: number }> = {}) {
 		return this.getResource<WatchEpisodePromo[]>(
 			WatchEndpoints.watchRecentPromos,
-			{
-				params
-			}
+			{},
+			params
 		)
 	}
 
