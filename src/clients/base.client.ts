@@ -12,7 +12,7 @@ import {
 	handleResponse,
 	handleResponseError
 } from '../config'
-import { BaseURL } from '../constants'
+import { BASE_URL } from '../constants'
 import type { JikanResponse } from '../models'
 
 /**
@@ -33,12 +33,6 @@ export interface ClientArgs {
 	 */
 	cacheOptions: Partial<CacheOptions>
 	/**
-	 * **Base URL**
-	 * Location of the JikanAPI. Leave empty to use the official JikanAPI instance.
-	 */
-	baseURL: string
-
-	/**
 	 * **Axios Instance**
 	 * Еhe ability to build your own axios instance if you need it
 	 */
@@ -57,7 +51,7 @@ export abstract class BaseClient {
 		const axiosInstance = clientOptions?.axiosInstance
 			? clientOptions.axiosInstance
 			: axios.create({
-					baseURL: clientOptions.baseURL ?? BaseURL,
+					baseURL: BASE_URL,
 					headers: {
 						'Content-Type': 'application/json'
 					}
