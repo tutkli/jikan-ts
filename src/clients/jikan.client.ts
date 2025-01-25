@@ -1,3 +1,4 @@
+import { getAxiosCacheInstance } from '../config'
 import { AnimeClient } from './anime.client'
 import type { ClientArgs } from './base.client'
 import { CharactersClient } from './characters.client'
@@ -25,14 +26,43 @@ export class JikanClient {
 	public seasons: SeasonsClient
 	public random: RandomClient
 
-	constructor(clientOptions?: Partial<ClientArgs>) {
-		this.anime = new AnimeClient(clientOptions)
-		this.characters = new CharactersClient(clientOptions)
-		this.genres = new GenresClient(clientOptions)
-		this.manga = new MangaClient(clientOptions)
-		this.top = new TopClient(clientOptions)
-		this.schedules = new SchedulesClient(clientOptions)
-		this.seasons = new SeasonsClient(clientOptions)
-		this.random = new RandomClient(clientOptions)
+	constructor(clientOptions: Partial<ClientArgs> = {}) {
+		const axiosCacheInstance = getAxiosCacheInstance(
+			clientOptions.axiosInstance,
+			clientOptions.cacheOptions
+		)
+
+		this.anime = new AnimeClient({
+			axiosInstance: axiosCacheInstance,
+			...clientOptions
+		})
+		this.characters = new CharactersClient({
+			axiosInstance: axiosCacheInstance,
+			...clientOptions
+		})
+		this.genres = new GenresClient({
+			axiosInstance: axiosCacheInstance,
+			...clientOptions
+		})
+		this.manga = new MangaClient({
+			axiosInstance: axiosCacheInstance,
+			...clientOptions
+		})
+		this.top = new TopClient({
+			axiosInstance: axiosCacheInstance,
+			...clientOptions
+		})
+		this.schedules = new SchedulesClient({
+			axiosInstance: axiosCacheInstance,
+			...clientOptions
+		})
+		this.seasons = new SeasonsClient({
+			axiosInstance: axiosCacheInstance,
+			...clientOptions
+		})
+		this.random = new RandomClient({
+			axiosInstance: axiosCacheInstance,
+			...clientOptions
+		})
 	}
 }
