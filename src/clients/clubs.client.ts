@@ -1,11 +1,11 @@
-import { ClubEndpoints } from '../endpoints/club.enpoints'
-import type { ClubSearchParams } from '../models/club/club-params.model'
+import { ClubsEndpoints } from '../endpoints/clubs.enpoints'
+import type { ClubSearchParams } from '../models/clubs/clubs-params.model'
 import type {
 	Club,
 	ClubMember,
 	ClubRelations,
 	ClubStaff
-} from '../models/club/club.model'
+} from '../models/clubs/clubs.model'
 import { BaseClient } from './base.client'
 
 /**
@@ -21,7 +21,7 @@ export class ClubsClient extends BaseClient {
 	 * @param id Club ID
 	 */
 	public getClubsById(id: number) {
-		return this.getResource<Club>(ClubEndpoints.clubById, { id })
+		return this.getResource<Club>(ClubsEndpoints.clubById, { id })
 	}
 
 	/**
@@ -31,7 +31,7 @@ export class ClubsClient extends BaseClient {
 	 */
 	public getClubMembers(id: number, params: Partial<{ page: number }> = {}) {
 		return this.getResource<ClubMember[]>(
-			ClubEndpoints.clubMembers,
+			ClubsEndpoints.clubMembers,
 			{ id },
 			params
 		)
@@ -42,7 +42,7 @@ export class ClubsClient extends BaseClient {
 	 * @param id Club ID
 	 */
 	public getClubStaff(id: number) {
-		return this.getResource<ClubStaff[]>(ClubEndpoints.clubStaff, { id })
+		return this.getResource<ClubStaff[]>(ClubsEndpoints.clubStaff, { id })
 	}
 
 	/**
@@ -50,7 +50,7 @@ export class ClubsClient extends BaseClient {
 	 * @param id Club ID
 	 */
 	public getClubRelations(id: number) {
-		return this.getResource<ClubRelations>(ClubEndpoints.clubRelations, { id })
+		return this.getResource<ClubRelations>(ClubsEndpoints.clubRelations, { id })
 	}
 
 	/**
@@ -58,6 +58,6 @@ export class ClubsClient extends BaseClient {
 	 * @param params
 	 */
 	public getClubSearch(params: Partial<ClubSearchParams> = {}) {
-		return this.getResource<Club[]>(ClubEndpoints.clubSearch, {}, params)
+		return this.getResource<Club[]>(ClubsEndpoints.clubSearch, {}, params)
 	}
 }
