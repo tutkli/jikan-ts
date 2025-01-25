@@ -2,6 +2,7 @@ import { getAxiosCacheInstance } from '../config/axios.config'
 import { AnimeClient } from './anime.client'
 import type { ClientArgs } from './base.client'
 import { CharactersClient } from './characters.client'
+import { ClubsClient } from './clubs.client'
 import { GenresClient } from './genres.client'
 import { MangaClient } from './manga.client'
 import { RandomClient } from './random.client'
@@ -20,6 +21,7 @@ import { WatchClient } from './watch.client'
 export class JikanClient {
 	public anime: AnimeClient
 	public characters: CharactersClient
+	public clubs: ClubsClient
 	public genres: GenresClient
 	public manga: MangaClient
 	public top: TopClient
@@ -39,6 +41,10 @@ export class JikanClient {
 			...clientOptions
 		})
 		this.characters = new CharactersClient({
+			axiosInstance: axiosCacheInstance,
+			...clientOptions
+		})
+		this.clubs = new ClubsClient({
 			axiosInstance: axiosCacheInstance,
 			...clientOptions
 		})
