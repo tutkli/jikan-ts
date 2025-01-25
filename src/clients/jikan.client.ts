@@ -8,6 +8,7 @@ import { RandomClient } from './random.client'
 import { SchedulesClient } from './schedules.client'
 import { SeasonsClient } from './seasons.client'
 import { TopClient } from './top.client'
+import { WatchClient } from './watch.client'
 
 /**
  * **Jikan Client**
@@ -25,6 +26,7 @@ export class JikanClient {
 	public schedules: SchedulesClient
 	public seasons: SeasonsClient
 	public random: RandomClient
+	public watch: WatchClient
 
 	constructor(clientOptions: Partial<ClientArgs> = {}) {
 		const axiosCacheInstance = getAxiosCacheInstance(
@@ -61,6 +63,10 @@ export class JikanClient {
 			...clientOptions
 		})
 		this.random = new RandomClient({
+			axiosInstance: axiosCacheInstance,
+			...clientOptions
+		})
+		this.watch = new WatchClient({
 			axiosInstance: axiosCacheInstance,
 			...clientOptions
 		})
