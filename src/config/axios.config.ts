@@ -4,7 +4,7 @@ import {
 	type CacheOptions,
 	setupCache
 } from 'axios-cache-interceptor'
-import { BASE_URL } from '../constants'
+import { BASE_URL } from '../constants/base.constant'
 
 const isAxiosCacheInstance = (
 	instance: AxiosInstance | AxiosCacheInstance

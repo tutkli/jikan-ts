@@ -1,5 +1,5 @@
 import { beforeAll, beforeEach, describe, expect, it } from 'bun:test'
-import { MangaClient } from '../clients'
+import { MangaClient } from '../clients/manga.client'
 import type {
 	CommonCharacter,
 	JikanImages,

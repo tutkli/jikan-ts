@@ -1,4 +1,4 @@
-import { AnimeEndpoints } from '../constants'
+import { AnimeEndpoints } from '../constants/endpoints/anime.endpoints'
 import type {
 	Anime,
 	AnimeCharacter,

@@ -5,13 +5,13 @@ import type {
 	CacheOptions,
 	InternalCacheRequestConfig
 } from 'axios-cache-interceptor'
+import { getAxiosCacheInstance } from '../config/axios.config'
 import {
-	getAxiosCacheInstance,
 	handleRequest,
 	handleRequestError,
 	handleResponse,
 	handleResponseError
-} from '../config'
+} from '../config/logging.config'
 import type { JikanResponse } from '../models'
 
 /**

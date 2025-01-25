@@ -1,4 +1,4 @@
-import { getAxiosCacheInstance } from '../config'
+import { getAxiosCacheInstance } from '../config/axios.config'
 import { AnimeClient } from './anime.client'
 import type { ClientArgs } from './base.client'
 import { CharactersClient } from './characters.client'

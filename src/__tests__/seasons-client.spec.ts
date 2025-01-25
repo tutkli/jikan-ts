@@ -1,5 +1,5 @@
 import { beforeAll, beforeEach, describe, expect, it } from 'bun:test'
-import { SeasonsClient } from '../clients'
+import { SeasonsClient } from '../clients/seasons.client'
 import type {
 	Anime,
 	JikanResponse,
