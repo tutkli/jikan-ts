@@ -1,6 +1,6 @@
 {
 	"name": "@tutkli/jikan-ts",
-	"version": "2.1.0",
+	"version": "2.2.0",
 	"description": "Node.js wrapper for the Jikan API with built-in typings.",
 	"source": "src/index.ts",
 	"main": "dist/index.js",
@@ -15,10 +15,10 @@
 		"version": "auto-changelog -p -l false && git add CHANGELOG.md",
 		"format": "biome format ./src",
 		"format:fix": "biome format --write ./src",
-		"lint": "biome check src",
-		"lint:ci": "biome ci src",
-		"lint:fix": "biome check --apply-unsafe ./src"
+		"lint": "biome check ./src",
+		"lint:fix": "biome check --write --unsafe ./src"
 	},
+	"files": ["dist/", "README.md", "LICENSE"],
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/tutkli/jikan-ts.git"
@@ -45,7 +45,7 @@
 		"axios": "^1.7.9",
 		"axios-cache-interceptor": "^1.6.2",
 		"bun-plugin-dts": "^0.3.0",
-		"lint-staged": "^15.2.11",
-		"typescript": "5.7.2"
+		"lint-staged": "^15.4.2",
+		"typescript": "5.7.3"
 	}
 }

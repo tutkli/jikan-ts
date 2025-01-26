@@ -12,7 +12,7 @@
 
 </p>
 
-> Jikan API wrapper for Typescript and Node.js with built-in typings.
+> Jikan API wrapper for TypeScript and Node.js with built-in typing.
 
 ## Features
 
@@ -75,7 +75,7 @@ const animeClient = new AnimeClient({
 );
 ```
 
-### Custom Axios instance
+### Custom Axios Instance
 
 Jikan uses `axios` as an `http` client and if you are not satisfied with the default client settings, then you can build your instance by passing it to the optional `axiosInstance` argument
 
@@ -105,15 +105,23 @@ const animeClient = new AnimeClient({
 
 ## Available Clients
 
-- AnimeClient
-- CharactersClient
-- GenresClient
-- MangaClient
-- TopClient
-- SchedulesClient
-- SeasonsClient
-- RandomClient
-- JikanClient (Main client)
+- [X] AnimeClient
+- [X] CharactersClient
+- [X] ClubsClient
+- [X] GenresClient
+- [X] MagazinesClient
+- [X] MangaClient
+- [ ] PeopleClient
+- [ ] ProducersClient
+- [X] RandomClient
+- [ ] RecommendationsClient
+- [ ] ReviewsClient
+- [X] SchedulesClient
+- [ ] UsersClient
+- [X] SeasonsClient
+- [X] TopClient
+- [X] WatchClient
+- [X] **JikanClient (Main client)**
 
 ## Leave you feedback
 

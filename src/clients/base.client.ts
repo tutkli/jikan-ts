@@ -1,18 +1,17 @@
-import axios, { AxiosInstance, type AxiosError } from 'axios'
-import {
-	type AxiosCacheInstance,
-	type CacheAxiosResponse,
-	type CacheOptions,
-	type InternalCacheRequestConfig,
-	setupCache
+import type { AxiosError, AxiosInstance } from 'axios'
+import type {
+	AxiosCacheInstance,
+	CacheAxiosResponse,
+	CacheOptions,
+	InternalCacheRequestConfig
 } from 'axios-cache-interceptor'
+import { getAxiosCacheInstance } from '../config/axios.config'
 import {
 	handleRequest,
 	handleRequestError,
 	handleResponse,
 	handleResponseError
-} from '../config'
-import { BaseURL } from '../constants'
+} from '../config/logging.config'
 import type { JikanResponse } from '../models'
 
 /**
@@ -33,16 +32,10 @@ export interface ClientArgs {
 	 */
 	cacheOptions: Partial<CacheOptions>
 	/**
-	 * **Base URL**
-	 * Location of the JikanAPI. Leave empty to use the official JikanAPI instance.
-	 */
-	baseURL: string
-
-	/**
 	 * **Axios Instance**
-	 * Еhe ability to build your own axios instance if you need it
+	 * The ability to build your own axios instance if you need it
 	 */
-	axiosInstance?: AxiosInstance
+	axiosInstance?: AxiosInstance | AxiosCacheInstance
 }
 
 /**
@@ -54,19 +47,10 @@ export abstract class BaseClient {
 	private api: AxiosCacheInstance
 
 	constructor(clientOptions: Partial<ClientArgs> = {}) {
-		const axiosInstance = clientOptions?.axiosInstance
-			? clientOptions.axiosInstance
-			: axios.create({
-					baseURL: clientOptions.baseURL ?? BaseURL,
-					headers: {
-						'Content-Type': 'application/json'
-					}
-				})
-
-		this.api = setupCache(axiosInstance, {
-			...clientOptions.cacheOptions,
-			cacheTakeover: false
-		})
+		this.api = getAxiosCacheInstance(
+			clientOptions.axiosInstance,
+			clientOptions.cacheOptions
+		)
 
 		if (clientOptions.enableLogging) {
 			this.addLoggingInterceptors()

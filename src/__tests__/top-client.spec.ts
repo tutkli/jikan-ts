@@ -1,15 +1,11 @@
 import { beforeAll, beforeEach, describe, expect, it } from 'bun:test'
-import { TopClient } from '../clients'
-import {
-	type Anime,
-	AnimeStatus,
-	type AnimeTopParams,
-	type JikanResponse,
-	type Manga,
-	MangaStatus,
-	type MangaTopParams,
-	TopAnimeFilter,
-	TopMangaFilter
+import { TopClient } from '../clients/top.client'
+import type {
+	Anime,
+	AnimeTopParams,
+	JikanResponse,
+	Manga,
+	MangaTopParams
 } from '../models'
 
 describe('test Top Client', () => {

@@ -1,4 +1,4 @@
-import { MangaEndpoints } from '../constants'
+import { MangaEndpoints } from '../endpoints/manga.endpoints'
 import type {
 	CommonCharacter,
 	ForumFilter,

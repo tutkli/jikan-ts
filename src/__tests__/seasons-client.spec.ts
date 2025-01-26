@@ -1,13 +1,11 @@
 import { beforeAll, beforeEach, describe, expect, it } from 'bun:test'
-import { SeasonsClient } from '../clients'
-import {
-	type Anime,
-	AnimeSeason,
-	AnimeStatus,
-	type JikanResponse,
-	type JikanSeasonsParams,
-	type SeasonNowParams,
-	type SeasonsListData
+import { SeasonsClient } from '../clients/seasons.client'
+import type {
+	Anime,
+	JikanResponse,
+	JikanSeasonsParams,
+	SeasonNowParams,
+	SeasonsListData
 } from '../models'
 
 describe('test Seasons Client', () => {
