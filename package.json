@@ -15,8 +15,7 @@
 		"version": "auto-changelog -p -l false && git add CHANGELOG.md",
 		"format": "biome format ./src",
 		"format:fix": "biome format --write ./src",
-		"lint": "biome check src",
-		"lint:ci": "biome ci src",
+		"lint": "biome check ./src",
 		"lint:fix": "biome check --write --unsafe ./src"
 	},
 	"files": ["dist/", "README.md", "LICENSE"],
