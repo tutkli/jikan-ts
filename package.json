@@ -19,6 +19,7 @@
 		"lint:ci": "biome ci src",
 		"lint:fix": "biome check --write --unsafe ./src"
 	},
+	"files": ["dist/", "README.md", "LICENSE"],
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/tutkli/jikan-ts.git"
