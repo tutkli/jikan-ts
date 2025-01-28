@@ -105,23 +105,25 @@ const animeClient = new AnimeClient({
 
 ## Available Clients
 
-- [X] AnimeClient
-- [X] CharactersClient
-- [X] ClubsClient
-- [X] GenresClient
-- [X] MagazinesClient
-- [X] MangaClient
-- [ ] PeopleClient
-- [ ] ProducersClient
-- [X] RandomClient
-- [ ] RecommendationsClient
-- [ ] ReviewsClient
-- [X] SchedulesClient
-- [ ] UsersClient
-- [X] SeasonsClient
-- [X] TopClient
-- [X] WatchClient
-- [X] **JikanClient (Main client)**
+| Client                        | Status      |
+|-------------------------------|-------------|
+| **AnimeClient**               | ✅ Supported |
+| **CharactersClient**          | ✅ Supported |
+| **ClubsClient**               | ✅ Supported |
+| **GenresClient**              | ✅ Supported |
+| **MagazinesClient**           | ✅ Supported |
+| **MangaClient**               | ✅ Supported |
+| **PeopleClient**              | ❌ Upcoming  |
+| **ProducersClient**           | ❌ Upcoming  |
+| **RandomClient**              | ✅ Supported |
+| **RecommendationsClient**     | ❌ Upcoming  |
+| **ReviewsClient**             | ❌ Upcoming  |
+| **SchedulesClient**           | ✅ Supported |
+| **UsersClient**               | ❌ Upcoming  |
+| **SeasonsClient**             | ✅ Supported |
+| **TopClient**                 | ✅ Supported |
+| **WatchClient**               | ✅ Supported |
+| **JikanClient** (Main client) | ✅ Supported |
 
 ## Leave you feedback
 
