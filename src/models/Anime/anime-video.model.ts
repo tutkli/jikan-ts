@@ -12,9 +12,9 @@ export type AnimePromoVideo = {
 }
 
 export interface AnimeYoutubeVideo {
-	youtube_id: string
-	url: string
-	embed_url: string
+	youtube_id: string | null
+	url: string | null
+	embed_url: string | null
 	images?: JikanImagesCollection
 }
 
@@ -33,6 +33,6 @@ export interface AnimeMusicVideo {
 }
 
 export interface AnimeVideoMeta {
-	title: string
-	author: string
+	title: string | null
+	author: string | null
 }

@@ -14,23 +14,23 @@ export interface Manga {
 	approved: boolean
 	titles: JikanResourceTitle[]
 	title: string
-	title_english?: string
-	title_japanese: string
+	title_english?: string | null
+	title_japanese: string | null
 	title_synonyms?: string[]
-	type: MangaType
-	chapters: number
-	volumes: number
+	type: MangaType | null
+	chapters: number | null
+	volumes: number | null
 	status: MangaStatus
 	publishing: boolean
 	published: JikanResourcePeriod
-	score: number
-	scored_by: number
-	rank: number
-	popularity: number
-	members: number
-	favorites: number
-	synopsis: string
-	background: string
+	score: number | null
+	scored_by: number | null
+	rank: number | null
+	popularity: number | null
+	members: number | null
+	favorites: number | null
+	synopsis: string | null
+	background: string | null
 	authors: JikanResource[]
 	serializations: JikanResource[]
 	genres: JikanResource[]
@@ -47,8 +47,9 @@ export type MangaType =
 	| 'Light Novel'
 	| 'One-shot'
 	| 'Doujinshi'
-	| 'Manhwa'
 	| 'Manhua'
+	| 'Manhwa'
+	| 'OEL'
 export type MangaSearchType =
 	| 'manga'
 	| 'novel'
@@ -58,8 +59,8 @@ export type MangaSearchType =
 	| 'manhwa'
 	| 'manhua'
 export type MangaStatus =
+	| 'Finished'
 	| 'Publishing'
-	| 'Complete'
-	| 'Hiatus'
+	| 'On Hiatus'
 	| 'Discontinued'
 	| 'Not yet published'
