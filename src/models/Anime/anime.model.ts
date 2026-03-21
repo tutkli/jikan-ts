@@ -17,26 +17,26 @@ export interface Anime {
 	titles: JikanResourceTitle[]
 	title: string
 	title_english?: string
-	title_japanese: string
+	title_japanese?: string
 	title_synonyms: string[]
 	type: AnimeType
 	source: string
-	episodes: number
+	episodes?: number
 	status: AnimeStatus
 	airing: boolean
 	aired: JikanResourcePeriod
 	duration: string
-	rating: AnimeRating
-	score: number
-	scored_by: number
-	rank: number
+	rating?: AnimeRating
+	score?: number
+	scored_by?: number
+	rank?: number
 	popularity: number
 	members: number
 	favorites: number
 	synopsis?: string
-	background: string
+	background?: string
 	season?: AnimeSeason
-	year: number
+	year?: number
 	broadcast: AnimeBroadcast
 	producers: JikanResource[]
 	licensors: JikanResource[]
@@ -63,11 +63,29 @@ export interface AnimeTheme {
 	endings: string[]
 }
 
-export type AnimeType = 'TV' | 'Movie' | 'Ova' | 'Special' | 'Ona' | 'Music'
+export type AnimeType =
+	| 'TV'
+	| 'Movie'
+	| 'OVA'
+	| 'Special'
+	| 'ONA'
+	| 'Music'
+	| 'CM'
+	| 'PV'
+	| 'TV Special'
+export type AnimeSearchType =
+	| 'tv'
+	| 'movie'
+	| 'ova'
+	| 'special'
+	| 'ona'
+	| 'music'
+	| 'cm'
+	| 'pv'
+	| 'tv_special'
 export type AnimeStatus =
 	| 'Finished Airing'
 	| 'Currently Airing'
-	| 'Complete'
 	| 'Not yet aired'
 export type AnimeRating = 'g' | 'pg' | 'pg13' | 'r17' | 'r' | 'rx'
 export type AnimeSeason = 'spring' | 'summer' | 'fall' | 'winter'

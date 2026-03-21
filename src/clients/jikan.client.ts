@@ -6,7 +6,11 @@ import { ClubsClient } from './clubs.client'
 import { GenresClient } from './genres.client'
 import { MagazinesClient } from './magazines.client'
 import { MangaClient } from './manga.client'
+import { PeopleClient } from './people.client'
+import { ProducersClient } from './producers.client'
 import { RandomClient } from './random.client'
+import { RecommendationsClient } from './recommendations.client'
+import { ReviewsClient } from './reviews.client'
 import { SchedulesClient } from './schedules.client'
 import { SeasonsClient } from './seasons.client'
 import { TopClient } from './top.client'
@@ -26,10 +30,14 @@ export class JikanClient {
 	public genres: GenresClient
 	public magazines: MagazinesClient
 	public manga: MangaClient
+	public people: PeopleClient
+	public producers: ProducersClient
 	public top: TopClient
 	public schedules: SchedulesClient
 	public seasons: SeasonsClient
 	public random: RandomClient
+	public recommendations: RecommendationsClient
+	public reviews: ReviewsClient
 	public watch: WatchClient
 
 	constructor(clientOptions: Partial<ClientArgs> = {}) {
@@ -62,6 +70,14 @@ export class JikanClient {
 			axiosInstance: axiosCacheInstance,
 			...clientOptions
 		})
+		this.people = new PeopleClient({
+			axiosInstance: axiosCacheInstance,
+			...clientOptions
+		})
+		this.producers = new ProducersClient({
+			axiosInstance: axiosCacheInstance,
+			...clientOptions
+		})
 		this.top = new TopClient({
 			axiosInstance: axiosCacheInstance,
 			...clientOptions
@@ -75,6 +91,14 @@ export class JikanClient {
 			...clientOptions
 		})
 		this.random = new RandomClient({
+			axiosInstance: axiosCacheInstance,
+			...clientOptions
+		})
+		this.recommendations = new RecommendationsClient({
+			axiosInstance: axiosCacheInstance,
+			...clientOptions
+		})
+		this.reviews = new ReviewsClient({
 			axiosInstance: axiosCacheInstance,
 			...clientOptions
 		})

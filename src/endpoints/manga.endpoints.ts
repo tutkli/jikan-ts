@@ -10,5 +10,7 @@ export const MangaEndpoints = {
 	mangaMoreInfo: '/manga/{id}/moreinfo',
 	mangaRelations: '/manga/{id}/relations',
 	mangaExternal: '/manga/{id}/external',
-	mangaRecommendations: '/manga/{id}/recommendations'
+	mangaRecommendations: '/manga/{id}/recommendations',
+	mangaUserUpdates: '/manga/{id}/userupdates',
+	mangaReviews: '/manga/{id}/reviews'
 } as const

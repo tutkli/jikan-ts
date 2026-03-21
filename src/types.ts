@@ -10,6 +10,10 @@ export * from './endpoints/seasons.endpoints'
 export * from './endpoints/top.endpoints'
 export * from './endpoints/random.endpoints'
 export * from './endpoints/watch.endpoints'
+export * from './endpoints/people.endpoints'
+export * from './endpoints/producers.endpoints'
+export * from './endpoints/recommendations.endpoints'
+export * from './endpoints/reviews.endpoints'
 
 // CONSTANTS
 export * from './constants/base.const'

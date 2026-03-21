@@ -19,12 +19,12 @@ export type ClubSearchCategory =
 export type ClubSearchOrder = 'mal_id' | 'name' | 'members_count' | 'created'
 
 export type ClubSearchParams = {
-	page: number
-	limit: number
-	q: string
-	type: ClubSearchType
-	category: ClubSearchCategory
-	order_by: ClubSearchOrder
-	sort: SortOptions
-	letter: string
+	page?: number
+	limit?: number
+	q?: string
+	type?: ClubSearchType
+	category?: ClubSearchCategory
+	order_by?: ClubSearchOrder
+	sort?: SortOptions
+	letter?: string
 }

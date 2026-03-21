@@ -1,5 +1,5 @@
-import type { AnimeRating, AnimeType } from '../Anime'
-import type { MangaType } from '../Manga'
+import type { AnimeRating, AnimeSearchType } from '../Anime'
+import type { MangaSearchType } from '../Manga'
 
 export type SortOptions = 'asc' | 'desc'
 
@@ -15,11 +15,16 @@ export type SearchOrder =
 	| 'members'
 	| 'favorites'
 
-export type AnimeSearchOrder = 'type' | 'rating' | 'episodes' | SearchOrder
+export type AnimeSearchOrder =
+	| 'type'
+	| 'rating'
+	| 'episodes'
+	| 'status'
+	| SearchOrder
 
 export type AnimeSearchStatus = 'airing' | 'complete' | 'upcoming'
 
-export type MangaSearchOrder = 'chapters' | 'volumes' | SearchOrder
+export type MangaSearchOrder = 'chapters' | 'volumes' | 'status' | SearchOrder
 
 export type MangaSearchStatus =
 	| 'publishing'
@@ -52,7 +57,7 @@ export interface JikanSearchParams {
  * See also: [Jikan API Documentation](https://docs.api.jikan.moe/#tag/manga/operation/getMangaSearch)
  */
 export interface MangaSearchParams extends JikanSearchParams {
-	type?: MangaType
+	type?: MangaSearchType
 	status?: MangaSearchStatus
 	order_by?: MangaSearchOrder
 	magazines?: string
@@ -64,7 +69,7 @@ export interface MangaSearchParams extends JikanSearchParams {
  * See also: [Jikan API Documentation](https://docs.api.jikan.moe/#tag/anime/operation/getAnimeSearch)
  */
 export interface AnimeSearchParams extends JikanSearchParams {
-	type?: AnimeType
+	type?: AnimeSearchType
 	status?: AnimeSearchStatus
 	rating?: AnimeRating
 	order_by?: AnimeSearchOrder
