@@ -19,6 +19,7 @@ bun run format:fix     # Auto-fix formatting
 ```
 
 To run a single test file:
+
 ```bash
 bun test src/__tests__/anime-client.spec.ts
 ```
@@ -38,6 +39,7 @@ bun test src/__tests__/anime-client.spec.ts
 ## Code Style
 
 Configured via `biome.json`:
+
 - Tabs for indentation, line width 80
 - Single quotes, no semicolons (as-needed), no trailing commas
 - Arrow parens: as-needed

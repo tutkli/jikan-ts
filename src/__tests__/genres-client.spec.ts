@@ -1,6 +1,6 @@
 import { beforeAll, beforeEach, describe, expect, it } from 'bun:test'
-import { GenresClient } from '../clients/genres.client'
 import type { Genre, JikanResponse } from '../models'
+import { GenresClient } from '../clients/genres.client'
 
 describe('test Genres Client', () => {
 	let client: GenresClient

@@ -1,6 +1,6 @@
 import { beforeAll, beforeEach, describe, expect, it } from 'bun:test'
-import { AnimeClient } from '../clients/anime.client'
 import type { AnimeSearchParams } from '../models'
+import { AnimeClient } from '../clients/anime.client'
 
 describe('test Anime Client', () => {
 	let client: AnimeClient

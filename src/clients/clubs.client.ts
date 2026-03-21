@@ -1,12 +1,12 @@
-import { ClubsEndpoints } from '../endpoints/clubs.endpoints'
 import type { PaginationParams } from '../models'
+import type { ClubSearchParams } from '../models/clubs/clubs-params.model'
 import type {
 	Club,
 	ClubMember,
 	ClubRelations,
 	ClubStaff
 } from '../models/clubs/clubs.model'
-import type { ClubSearchParams } from '../models/clubs/clubs-params.model'
+import { ClubsEndpoints } from '../endpoints/clubs.endpoints'
 import { BaseClient } from './base.client'
 
 /**
@@ -51,7 +51,9 @@ export class ClubsClient extends BaseClient {
 	 * @param id Club ID
 	 */
 	public getClubRelations(id: number) {
-		return this.getResource<ClubRelations>(ClubsEndpoints.clubRelations, { id })
+		return this.getResource<ClubRelations>(ClubsEndpoints.clubRelations, {
+			id
+		})
 	}
 
 	/**

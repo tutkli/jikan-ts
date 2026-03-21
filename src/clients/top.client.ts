@@ -1,4 +1,3 @@
-import { TopEndpoints } from '../endpoints/top.endpoints'
 import type {
 	Anime,
 	AnimeReview,
@@ -9,6 +8,7 @@ import type {
 	MangaTopParams,
 	Person
 } from '../models'
+import { TopEndpoints } from '../endpoints/top.endpoints'
 import { BaseClient } from './base.client'
 
 /**

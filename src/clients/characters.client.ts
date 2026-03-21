@@ -1,4 +1,3 @@
-import { CharactersEndpoints } from '../endpoints/characters.endpoints'
 import type {
 	Character,
 	CharacterAnime,
@@ -8,6 +7,7 @@ import type {
 	CharacterVoiceActor,
 	JikanImagesCollection
 } from '../models'
+import { CharactersEndpoints } from '../endpoints/characters.endpoints'
 import { BaseClient } from './base.client'
 
 /**

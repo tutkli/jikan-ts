@@ -1,6 +1,3 @@
 {
-	"*.{js,ts,css,scss,html,json,md}": [
-		"biome format --write ./src",
-		"biome check --write --unsafe ./src"
-	]
+	"*.{js,ts,css,scss,html,json,md}": ["oxfmt"]
 }

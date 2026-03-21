@@ -1,8 +1,8 @@
-import { MagazinesEndpoints } from '../endpoints/magazines.endpoints'
 import type {
 	Magazine,
 	MagazineSearchParams
 } from '../models/magazine/magazine.model'
+import { MagazinesEndpoints } from '../endpoints/magazines.endpoints'
 import { BaseClient } from './base.client'
 
 export class MagazinesClient extends BaseClient {

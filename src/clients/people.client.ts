@@ -1,4 +1,3 @@
-import { PeopleEndpoints } from '../endpoints/people.endpoints'
 import type {
 	JikanImages,
 	PeopleSearchParams,
@@ -8,6 +7,7 @@ import type {
 	PersonMangaPosition,
 	PersonVoiceActingRole
 } from '../models'
+import { PeopleEndpoints } from '../endpoints/people.endpoints'
 import { BaseClient } from './base.client'
 
 /**

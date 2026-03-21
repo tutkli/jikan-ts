@@ -4,11 +4,11 @@
 
 <p align="center">
 
-  ![Language Shield](https://img.shields.io/badge/language-typescript-blue?style=for-the-badge)
-  ![GitHub License](https://img.shields.io/github/license/tutkli/jikan-ts?style=for-the-badge&color=blueviolet)
-  ![Code Style Shield](https://img.shields.io/badge/code%20style-Biome-60A5FA?style=for-the-badge&logo=biome)
-  ![NPM Downloads](https://img.shields.io/npm/dt/%40tutkli%2Fjikan-ts?style=for-the-badge&color=red&logo=npm&link=https%3A%2F%2Fwww.npmjs.com%2Fpackage%2F%40tutkli%2Fjikan-ts)
-  ![npm bundle size](https://img.shields.io/bundlephobia/minzip/%40tutkli%2Fjikan-ts?style=for-the-badge&color=darkgreen&link=https%3A%2F%2Fwww.npmjs.com%2Fpackage%2F%40tutkli%2Fjikan-ts)
+![Language Shield](https://img.shields.io/badge/language-typescript-blue?style=for-the-badge)
+![GitHub License](https://img.shields.io/github/license/tutkli/jikan-ts?style=for-the-badge&color=blueviolet)
+![Code Style Shield](https://img.shields.io/badge/code%20style-Biome-60A5FA?style=for-the-badge&logo=biome)
+![NPM Downloads](https://img.shields.io/npm/dt/%40tutkli%2Fjikan-ts?style=for-the-badge&color=red&logo=npm&link=https%3A%2F%2Fwww.npmjs.com%2Fpackage%2F%40tutkli%2Fjikan-ts)
+![npm bundle size](https://img.shields.io/bundlephobia/minzip/%40tutkli%2Fjikan-ts?style=for-the-badge&color=darkgreen&link=https%3A%2F%2Fwww.npmjs.com%2Fpackage%2F%40tutkli%2Fjikan-ts)
 
 </p>
 
@@ -42,40 +42,38 @@ npm install @tutkli/jikan-ts
 ### Using the types-only import
 
 ```ts
-import type { Anime, JikanResponse } from '@tutkli/jikan-ts/types';
-import { AnimeEndpoints, BASE_URL } from '@tutkli/jikan-ts/types';
+import type { Anime, JikanResponse } from '@tutkli/jikan-ts/types'
+import { AnimeEndpoints, BASE_URL } from '@tutkli/jikan-ts/types'
 
 // Build your own HTTP client using the provided types and endpoints
-const response = await fetch(`${BASE_URL}${AnimeEndpoints.AnimeById.replace('{id}', '1')}`);
-const data: JikanResponse<Anime> = await response.json();
+const response = await fetch(
+	`${BASE_URL}${AnimeEndpoints.AnimeById.replace('{id}', '1')}`
+)
+const data: JikanResponse<Anime> = await response.json()
 ```
 
 ### Using a specific client, like **AnimeClient**
 
 ```ts
-import { AnimeClient, JikanResponse, Anime } from '@tutkli/jikan-ts';
+import { AnimeClient, JikanResponse, Anime } from '@tutkli/jikan-ts'
 
-const animeClient = new AnimeClient();
+const animeClient = new AnimeClient()
 
-animeClient
-  .getAnimeById(1)
-  .then((response: JikanResponse<Anime>) => {
-    /* ... */
-  })
+animeClient.getAnimeById(1).then((response: JikanResponse<Anime>) => {
+	/* ... */
+})
 ```
 
 ### Using the **JikanClient**
 
 ```ts
-import { JikanClient, JikanResponse, Anime } from '@tutkli/jikan-ts';
+import { JikanClient, JikanResponse, Anime } from '@tutkli/jikan-ts'
 
-const jikanClient = new JikanClient();
+const jikanClient = new JikanClient()
 
-jikanClient.anime
-  .getAnimeById(1)
-  .then((response: JikanResponse<Anime>) => {
-    /* ... */
-  })
+jikanClient.anime.getAnimeById(1).then((response: JikanResponse<Anime>) => {
+	/* ... */
+})
 ```
 
 ## Client configuration
@@ -115,17 +113,17 @@ For more information, check out the [axios-cache-interceptor Documentation](http
 To enable logging, pass the `enableLogging` argument as `true`.
 
 ```ts
-import { AnimeClient } from '@tutkli/jikan-ts';
+import { AnimeClient } from '@tutkli/jikan-ts'
 
 const animeClient = new AnimeClient({
-  enableLogging: true,
-});
+	enableLogging: true
+})
 ```
 
 ## Available Clients
 
-| Client                        | Status      |
-|-------------------------------|-------------|
+| Client                        | Status       |
+| ----------------------------- | ------------ |
 | **AnimeClient**               | ✅ Supported |
 | **CharactersClient**          | ✅ Supported |
 | **ClubsClient**               | ✅ Supported |

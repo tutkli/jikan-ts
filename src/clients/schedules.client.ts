@@ -1,5 +1,5 @@
-import { SchedulesEndpoints } from '../endpoints/schedules.endpoints'
 import type { Anime, SchedulesParams } from '../models'
+import { SchedulesEndpoints } from '../endpoints/schedules.endpoints'
 import { BaseClient } from './base.client'
 
 /**

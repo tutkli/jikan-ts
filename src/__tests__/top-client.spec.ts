@@ -1,5 +1,4 @@
 import { beforeAll, beforeEach, describe, expect, it } from 'bun:test'
-import { TopClient } from '../clients/top.client'
 import type {
 	Anime,
 	AnimeTopParams,
@@ -7,6 +6,7 @@ import type {
 	Manga,
 	MangaTopParams
 } from '../models'
+import { TopClient } from '../clients/top.client'
 
 describe('test Top Client', () => {
 	let client: TopClient

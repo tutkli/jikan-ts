@@ -1,5 +1,4 @@
 import { beforeAll, beforeEach, describe, expect, it } from 'bun:test'
-import { MangaClient } from '../clients/manga.client'
 import type {
 	CommonCharacter,
 	JikanImages,
@@ -9,6 +8,7 @@ import type {
 	MangaStatistics,
 	Recommendation
 } from '../models'
+import { MangaClient } from '../clients/manga.client'
 
 describe('test Manga Client', () => {
 	let client: MangaClient
