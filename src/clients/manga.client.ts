@@ -55,7 +55,7 @@ export class MangaClient extends BaseClient {
 	 * Get a list of manga news
 	 * @param id The Manga ID
 	 */
-	public getMangaNews(id: string) {
+	public getMangaNews(id: number) {
 		return this.getResource<JikanNews[]>(MangaEndpoints.mangaNews, { id })
 	}
 
@@ -64,7 +64,7 @@ export class MangaClient extends BaseClient {
 	 * @param id The manga ID
 	 * @param filter Filter topics
 	 */
-	public getMangaTopics(id: string, filter?: ForumFilter) {
+	public getMangaTopics(id: number, filter?: ForumFilter) {
 		return this.getResource<JikanForum[]>(
 			MangaEndpoints.mangaTopics,
 			{ id },
