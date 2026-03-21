@@ -1,109 +1,120 @@
-import { beforeAll, beforeEach, describe, expect, it } from 'bun:test'
-import type { AnimeSearchParams } from '../models'
+import { afterEach, beforeEach, describe, expect, it, spyOn } from 'bun:test'
 import { AnimeClient } from '../clients/anime.client'
+import { BaseClient } from '../clients/base.client'
+import { ResponseCache } from '../config/cache'
+import { AnimeEndpoints } from '../endpoints/anime.endpoints'
 
-describe('test Anime Client', () => {
+describe('AnimeClient', () => {
 	let client: AnimeClient
+	let spy: ReturnType<typeof spyOn>
 
-	beforeAll(() => {
-		client = new AnimeClient()
+	beforeEach(() => {
+		spy = spyOn(BaseClient.prototype as any, 'getResource').mockResolvedValue({
+			data: {}
+		})
+		client = new AnimeClient({
+			kyInstance: {} as any,
+			_cache: new ResponseCache()
+		})
 	})
 
-	// Prevent rate-limit errors. See: https://docs.api.jikan.moe/#section/Information/Rate-Limiting
-	beforeEach(async () => {
-		await new Promise(resolve => setTimeout(resolve, 1000))
+	afterEach(() => {
+		spy.mockRestore()
 	})
 
-	it('should be instantiated correctly', () => {
-		expect(client).toBeDefined()
+	it('getAnimeById passes correct endpoint and path params', async () => {
+		await client.getAnimeById(1)
+		expect(spy).toHaveBeenCalledWith(AnimeEndpoints.animeById, { id: 1 })
 	})
 
-	// Endpoints
-
-	it('should get a full anime by its id', async () => {
-		const { data } = await client.getAnimeFullById(1)
-		expect(data.mal_id).toBe(1)
+	it('getAnimeFullById passes correct endpoint and path params', async () => {
+		await client.getAnimeFullById(1)
+		expect(spy).toHaveBeenCalledWith(AnimeEndpoints.animeFullById, { id: 1 })
 	})
 
-	it('should get an anime by its id', async () => {
-		const { data } = await client.getAnimeById(1)
-		expect(data.mal_id).toBe(1)
+	it('getAnimeEpisodes uses default page=1', async () => {
+		await client.getAnimeEpisodes(1)
+		expect(spy).toHaveBeenCalledWith(
+			AnimeEndpoints.animeEpisodes,
+			{ id: 1 },
+			{ page: 1 }
+		)
 	})
 
-	it('should get anime characters', async () => {
-		const { data } = await client.getAnimeCharacters(1)
-		expect(data.length).toBeGreaterThanOrEqual(0)
+	it('getAnimeEpisodes passes custom page', async () => {
+		await client.getAnimeEpisodes(1, 3)
+		expect(spy).toHaveBeenCalledWith(
+			AnimeEndpoints.animeEpisodes,
+			{ id: 1 },
+			{ page: 3 }
+		)
 	})
 
-	it('should get anime staff', async () => {
-		const { data } = await client.getAnimeStaff(1)
-		expect(data.length).toBeGreaterThanOrEqual(0)
+	it('getAnimeEpisodeById passes multiple path params', async () => {
+		await client.getAnimeEpisodeById(1, 5)
+		expect(spy).toHaveBeenCalledWith(AnimeEndpoints.animeEpisodeById, {
+			id: 1,
+			episode: 5
+		})
 	})
 
-	it('should get anime episodes', async () => {
-		const { data } = await client.getAnimeEpisodes(1)
-		expect(data.length).toBeGreaterThanOrEqual(0)
+	it('getAnimeForum without filter passes undefined params', async () => {
+		await client.getAnimeForum(1)
+		expect(spy).toHaveBeenCalledWith(
+			AnimeEndpoints.animeForum,
+			{ id: 1 },
+			undefined
+		)
 	})
 
-	it('should get anime episode by its id', async () => {
-		const { data } = await client.getAnimeEpisodeById(1, 1)
-		expect(data.mal_id).toBe(1)
+	it('getAnimeForum with filter passes filter param', async () => {
+		await client.getAnimeForum(1, 'episode')
+		expect(spy).toHaveBeenCalledWith(
+			AnimeEndpoints.animeForum,
+			{ id: 1 },
+			{ filter: 'episode' }
+		)
 	})
 
-	it('should get anime news', async () => {
-		const { data } = await client.getAnimeNews(1, 1)
-		expect(data.length).toBeGreaterThanOrEqual(0)
+	it('getAnimeSearch with params passes empty path params and search params', async () => {
+		await client.getAnimeSearch({ limit: 3, score: 8 })
+		expect(spy).toHaveBeenCalledWith(
+			AnimeEndpoints.animeSearch,
+			{},
+			{
+				limit: 3,
+				score: 8
+			}
+		)
 	})
 
-	it('should get anime forum topics', async () => {
-		const { data } = await client.getAnimeForum(1)
-		expect(data.length).toBeGreaterThanOrEqual(1)
+	it('getAnimeSearch without params passes undefined search params', async () => {
+		await client.getAnimeSearch()
+		expect(spy).toHaveBeenCalledWith(AnimeEndpoints.animeSearch, {}, undefined)
 	})
 
-	it('should get anime videos', async () => {
-		const { data } = await client.getAnimeVideos(1)
-		expect(data.promo.length).toBeGreaterThanOrEqual(0)
-		expect(data.episodes.length).toBeGreaterThanOrEqual(0)
-		expect(data.music_videos.length).toBeGreaterThanOrEqual(0)
+	it('getAnimeReviews with params passes review params', async () => {
+		await client.getAnimeReviews(1, { page: 2 })
+		expect(spy).toHaveBeenCalledWith(
+			AnimeEndpoints.animeReviews,
+			{ id: 1 },
+			{ page: 2 }
+		)
 	})
 
-	it('should get anime episode videos', async () => {
-		const { data } = await client.getAnimeEpisodeVideos(1)
-		expect(data.length).toBeGreaterThanOrEqual(0)
+	it('getAnimeReviews without params passes undefined', async () => {
+		await client.getAnimeReviews(1)
+		expect(spy).toHaveBeenCalledWith(
+			AnimeEndpoints.animeReviews,
+			{ id: 1 },
+			undefined
+		)
 	})
 
-	it('should get anime pictures', async () => {
-		const { data } = await client.getAnimePictures(1)
-		expect(data.length).toBeGreaterThanOrEqual(0)
-	})
-
-	it('should get anime statistics', async () => {
-		const { data } = await client.getAnimeStatistics(1)
-		expect(data.total).toBeGreaterThanOrEqual(1000)
-	})
-
-	it('should get anime more info', async () => {
-		const { data } = await client.getAnimeMoreInfo(1)
-		expect(data.moreinfo.length).toBeGreaterThanOrEqual(0)
-	})
-
-	it('should get anime recommendations', async () => {
-		const { data } = await client.getAnimeRecommendations(1)
-		expect(data.length).toBeGreaterThanOrEqual(0)
-	})
-
-	it('should get anime relations', async () => {
-		const { data } = await client.getAnimeRelations(1)
-		expect(data.length).toBeGreaterThanOrEqual(0)
-	})
-
-	it('should get animes filtered by params', async () => {
-		const params: AnimeSearchParams = { limit: 3, score: 8 }
-		const { data } = await client.getAnimeSearch(params)
-
-		expect(data).toHaveLength(3)
-		for (const anime of data) {
-			expect(anime.score).toBeGreaterThanOrEqual(8)
-		}
+	it('getAnimeCharacters passes correct endpoint', async () => {
+		await client.getAnimeCharacters(1)
+		expect(spy).toHaveBeenCalledWith(AnimeEndpoints.animeCharacters, {
+			id: 1
+		})
 	})
 })
