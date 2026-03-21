@@ -1,7 +1,7 @@
 import type { KyInstance } from 'ky'
 import type { CacheOptions, ResponseCache } from '../config/cache'
-import { createKyInstance } from '../config/ky.config'
 import type { JikanResponse } from '../models'
+import { createKyInstance } from '../config/ky.config'
 
 /**
  * **Client Args**
@@ -89,9 +89,10 @@ export abstract class BaseClient {
 		return sorted ? `${path}?${sorted}` : path
 	}
 
-	private cleanParams(
-		params: { [key in string]: unknown }
-	): Record<string, string | number | boolean> {
+	private cleanParams(params: { [key in string]: unknown }): Record<
+		string,
+		string | number | boolean
+	> {
 		return Object.fromEntries(
 			Object.entries(params).filter(([, v]) => v !== undefined)
 		) as Record<string, string | number | boolean>

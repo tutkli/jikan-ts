@@ -1,10 +1,10 @@
-import { ProducersEndpoints } from '../endpoints/producers.endpoints'
 import type {
 	JikanNamedResource,
 	Producer,
 	ProducerFull,
 	ProducersSearchParams
 } from '../models'
+import { ProducersEndpoints } from '../endpoints/producers.endpoints'
 import { BaseClient } from './base.client'
 
 /**

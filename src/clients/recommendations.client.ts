@@ -1,5 +1,5 @@
-import { RecommendationsEndpoints } from '../endpoints/recommendations.endpoints'
 import type { PaginationParams, RecentRecommendation } from '../models'
+import { RecommendationsEndpoints } from '../endpoints/recommendations.endpoints'
 import { BaseClient } from './base.client'
 
 /**

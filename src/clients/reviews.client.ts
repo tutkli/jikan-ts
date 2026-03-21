@@ -1,5 +1,5 @@
-import { ReviewsEndpoints } from '../endpoints/reviews.endpoints'
 import type { AnimeReview, MangaReview, ReviewsParams } from '../models'
+import { ReviewsEndpoints } from '../endpoints/reviews.endpoints'
 import { BaseClient } from './base.client'
 
 /**

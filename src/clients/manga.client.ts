@@ -1,4 +1,3 @@
-import { MangaEndpoints } from '../endpoints/manga.endpoints'
 import type {
 	CommonCharacter,
 	ForumFilter,
@@ -16,6 +15,7 @@ import type {
 	Recommendation,
 	ReviewsParams
 } from '../models'
+import { MangaEndpoints } from '../endpoints/manga.endpoints'
 import { BaseClient } from './base.client'
 
 /**
@@ -80,7 +80,9 @@ export class MangaClient extends BaseClient {
 	 * @param id The Manga ID
 	 */
 	public getMangaPictures(id: number) {
-		return this.getResource<JikanImages[]>(MangaEndpoints.mangaPictures, { id })
+		return this.getResource<JikanImages[]>(MangaEndpoints.mangaPictures, {
+			id
+		})
 	}
 
 	/**
@@ -98,7 +100,9 @@ export class MangaClient extends BaseClient {
 	 * @param id manga id
 	 */
 	public getMangaMoreInfo(id: number) {
-		return this.getResource<JikanMoreInfo>(MangaEndpoints.mangaMoreInfo, { id })
+		return this.getResource<JikanMoreInfo>(MangaEndpoints.mangaMoreInfo, {
+			id
+		})
 	}
 
 	/**

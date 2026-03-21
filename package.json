@@ -1,6 +1,18 @@
 {
 	"name": "@tutkli/jikan-ts",
 	"version": "2.2.0",
+	"description": "Node.js wrapper for the Jikan API with built-in typings.",
+	"keywords": [
+		"MyAnimeList",
+		"jikan",
+		"jikan-api",
+		"jikanAPI"
+	],
+	"homepage": "https://github.com/tutkli/jikan-ts#readme",
+	"bugs": {
+		"url": "https://github.com/tutkli/jikan-ts/issues"
+	},
+	"license": "MIT",
 	"author": {
 		"name": "Clara Castillo",
 		"url": "https://github.com/tutkli"
@@ -9,16 +21,15 @@
 		"type": "git",
 		"url": "https://github.com/tutkli/jikan-ts.git"
 	},
+	"source": "src/index.ts",
+	"files": [
+		"dist/",
+		"README.md",
+		"LICENSE"
+	],
+	"type": "module",
 	"main": "dist/index.js",
-	"devDependencies": {
-		"@biomejs/biome": "2.4.8",
-		"@types/bun": "^1.3.11",
-		"@types/node": "25.5.0",
-		"auto-changelog": "^2.5.0",
-		"ky": "^1.14.3",
-		"lint-staged": "^16.4.0",
-		"typescript": "5.9.3"
-	},
+	"types": "dist/index.d.ts",
 	"exports": {
 		".": {
 			"types": "./dist/index.d.ts",
@@ -33,23 +44,28 @@
 			"import": "./dist/client.js"
 		}
 	},
-	"bugs": {
-		"url": "https://github.com/tutkli/jikan-ts/issues"
+	"scripts": {
+		"build": "bun bun.build.js && tsc --emitDeclarationOnly --outDir dist",
+		"fmt": "oxfmt",
+		"fmt:check": "oxfmt --check",
+		"lint": "oxlint",
+		"lint:fix": "oxlint --fix",
+		"prepare": "git config core.hookspath .githooks",
+		"prepublishOnly": "bun run build",
+		"test:coverage": "bun test --coverage",
+		"test:dev": "bun test",
+		"version": "auto-changelog -p -l false && git add CHANGELOG.md"
 	},
-	"description": "Node.js wrapper for the Jikan API with built-in typings.",
-	"files": [
-		"dist/",
-		"README.md",
-		"LICENSE"
-	],
-	"homepage": "https://github.com/tutkli/jikan-ts#readme",
-	"keywords": [
-		"jikan",
-		"jikan-api",
-		"jikanAPI",
-		"MyAnimeList"
-	],
-	"license": "MIT",
+	"devDependencies": {
+		"@types/bun": "^1.3.11",
+		"@types/node": "25.5.0",
+		"auto-changelog": "^2.5.0",
+		"ky": "^1.14.3",
+		"lint-staged": "^16.4.0",
+		"oxfmt": "^0.41.0",
+		"oxlint": "^1.56.0",
+		"typescript": "5.9.3"
+	},
 	"peerDependencies": {
 		"ky": "^1.7.0"
 	},
@@ -57,20 +73,5 @@
 		"ky": {
 			"optional": true
 		}
-	},
-	"scripts": {
-		"prepare": "git config core.hookspath .githooks",
-		"build": "bun bun.build.js && tsc --emitDeclarationOnly --outDir dist",
-		"prepublishOnly": "bun run build",
-		"test:dev": "bun test",
-		"test:coverage": "bun test --coverage",
-		"version": "auto-changelog -p -l false && git add CHANGELOG.md",
-		"format": "biome format ./src",
-		"format:fix": "biome format --write ./src",
-		"lint": "biome check ./src",
-		"lint:fix": "biome check --write --unsafe ./src"
-	},
-	"source": "src/index.ts",
-	"type": "module",
-	"types": "dist/index.d.ts"
+	}
 }

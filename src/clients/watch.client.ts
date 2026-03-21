@@ -1,9 +1,9 @@
-import { WatchEndpoints } from '../endpoints/watch.endpoints'
 import type { PaginationParams } from '../models'
 import type {
 	WatchEpisode,
 	WatchEpisodePromo
 } from '../models/watch/watch.model'
+import { WatchEndpoints } from '../endpoints/watch.endpoints'
 import { BaseClient } from './base.client'
 
 /**

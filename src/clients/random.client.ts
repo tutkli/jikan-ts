@@ -1,5 +1,5 @@
-import { RandomEndpoints } from '../endpoints/random.endpoints'
 import type { Anime, Character, Manga, Person } from '../models'
+import { RandomEndpoints } from '../endpoints/random.endpoints'
 import { BaseClient } from './base.client'
 
 /**

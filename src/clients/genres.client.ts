@@ -1,5 +1,5 @@
-import { GenresEndpoints } from '../endpoints/genres.endpoints'
 import type { Genre, GenresFilter } from '../models'
+import { GenresEndpoints } from '../endpoints/genres.endpoints'
 import { BaseClient } from './base.client'
 
 /**

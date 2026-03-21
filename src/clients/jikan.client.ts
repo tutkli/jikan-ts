@@ -1,6 +1,6 @@
+import type { ClientArgs } from './base.client'
 import { createKyInstance } from '../config/ky.config'
 import { AnimeClient } from './anime.client'
-import type { ClientArgs } from './base.client'
 import { CharactersClient } from './characters.client'
 import { ClubsClient } from './clubs.client'
 import { GenresClient } from './genres.client'

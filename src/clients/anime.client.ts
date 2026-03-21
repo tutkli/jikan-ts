@@ -1,4 +1,3 @@
-import { AnimeEndpoints } from '../endpoints/anime.endpoints'
 import type {
 	Anime,
 	AnimeCharacter,
@@ -21,6 +20,7 @@ import type {
 	Recommendation,
 	ReviewsParams
 } from '../models'
+import { AnimeEndpoints } from '../endpoints/anime.endpoints'
 import { BaseClient } from './base.client'
 
 /**
@@ -164,7 +164,9 @@ export class AnimeClient extends BaseClient {
 	 * @param id anime id
 	 */
 	public getAnimeMoreInfo(id: number) {
-		return this.getResource<JikanMoreInfo>(AnimeEndpoints.animeMoreInfo, { id })
+		return this.getResource<JikanMoreInfo>(AnimeEndpoints.animeMoreInfo, {
+			id
+		})
 	}
 
 	/**
