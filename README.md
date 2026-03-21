@@ -23,15 +23,34 @@
 
 ## Installation
 
+### Full client (with axios)
+
 ```bash
-npm install --save @tutkli/jikan-ts axios axios-cache-interceptor
-# or
-yarn add @tutkli/jikan-ts axios axios-cache-interceptor
+npm install @tutkli/jikan-ts axios axios-cache-interceptor
+```
+
+### Types only (zero runtime dependencies)
+
+If you want to use the types and endpoint constants to build your own HTTP client:
+
+```bash
+npm install @tutkli/jikan-ts
 ```
 
 ## Example
 
-Using a specific client, like **AnimeClient**:
+### Using the types-only import
+
+```ts
+import type { Anime, JikanResponse } from '@tutkli/jikan-ts/types';
+import { AnimeEndpoints, BASE_URL } from '@tutkli/jikan-ts/types';
+
+// Build your own HTTP client using the provided types and endpoints
+const response = await fetch(`${BASE_URL}${AnimeEndpoints.AnimeById.replace('{id}', '1')}`);
+const data: JikanResponse<Anime> = await response.json();
+```
+
+### Using a specific client, like **AnimeClient**
 
 ```ts
 import { AnimeClient, JikanResponse, Anime } from '@tutkli/jikan-ts';
@@ -45,7 +64,7 @@ animeClient
   })
 ```
 
-Or, using the **JikanClient**:
+### Using the **JikanClient**
 
 ```ts
 import { JikanClient, JikanResponse, Anime } from '@tutkli/jikan-ts';
