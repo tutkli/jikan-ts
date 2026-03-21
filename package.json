@@ -1,11 +1,24 @@
 {
 	"name": "@tutkli/jikan-ts",
 	"version": "2.2.0",
-	"description": "Node.js wrapper for the Jikan API with built-in typings.",
-	"source": "src/index.ts",
+	"author": {
+		"name": "Clara Castillo",
+		"url": "https://github.com/tutkli"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/tutkli/jikan-ts.git"
+	},
 	"main": "dist/index.js",
-	"types": "dist/index.d.ts",
-	"type": "module",
+	"devDependencies": {
+		"@biomejs/biome": "2.4.8",
+		"@types/bun": "^1.3.11",
+		"@types/node": "25.5.0",
+		"auto-changelog": "^2.5.0",
+		"ky": "^1.14.3",
+		"lint-staged": "^16.4.0",
+		"typescript": "5.9.3"
+	},
 	"exports": {
 		".": {
 			"types": "./dist/index.d.ts",
@@ -20,6 +33,31 @@
 			"import": "./dist/client.js"
 		}
 	},
+	"bugs": {
+		"url": "https://github.com/tutkli/jikan-ts/issues"
+	},
+	"description": "Node.js wrapper for the Jikan API with built-in typings.",
+	"files": [
+		"dist/",
+		"README.md",
+		"LICENSE"
+	],
+	"homepage": "https://github.com/tutkli/jikan-ts#readme",
+	"keywords": [
+		"jikan",
+		"jikan-api",
+		"jikanAPI",
+		"MyAnimeList"
+	],
+	"license": "MIT",
+	"peerDependencies": {
+		"ky": "^1.7.0"
+	},
+	"peerDependenciesMeta": {
+		"ky": {
+			"optional": true
+		}
+	},
 	"scripts": {
 		"prepare": "git config core.hookspath .githooks",
 		"build": "bun bun.build.js && tsc --emitDeclarationOnly --outDir dist",
@@ -32,50 +70,7 @@
 		"lint": "biome check ./src",
 		"lint:fix": "biome check --write --unsafe ./src"
 	},
-	"files": [
-		"dist/",
-		"README.md",
-		"LICENSE"
-	],
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/tutkli/jikan-ts.git"
-	},
-	"keywords": [
-		"jikan",
-		"jikan-api",
-		"jikanAPI",
-		"MyAnimeList"
-	],
-	"author": {
-		"name": "Clara Castillo",
-		"url": "https://github.com/tutkli"
-	},
-	"license": "MIT",
-	"bugs": {
-		"url": "https://github.com/tutkli/jikan-ts/issues"
-	},
-	"homepage": "https://github.com/tutkli/jikan-ts#readme",
-	"peerDependencies": {
-		"axios": "^1.7.9",
-		"axios-cache-interceptor": "^1.6.2"
-	},
-	"peerDependenciesMeta": {
-		"axios": {
-			"optional": true
-		},
-		"axios-cache-interceptor": {
-			"optional": true
-		}
-	},
-	"devDependencies": {
-		"@biomejs/biome": "2.4.8",
-		"@types/bun": "^1.3.11",
-		"@types/node": "25.5.0",
-		"auto-changelog": "^2.5.0",
-		"axios": "^1.13.6",
-		"axios-cache-interceptor": "^1.12.0",
-		"lint-staged": "^16.4.0",
-		"typescript": "5.9.3"
-	}
+	"source": "src/index.ts",
+	"type": "module",
+	"types": "dist/index.d.ts"
 }

@@ -1,42 +1,28 @@
-import type { AxiosError } from 'axios'
-import type {
-	CacheAxiosResponse,
-	InternalCacheRequestConfig
-} from 'axios-cache-interceptor'
+import type { AfterResponseHook, BeforeErrorHook, BeforeRequestHook } from 'ky'
 
-export const handleRequest = (
-	requestConfig: InternalCacheRequestConfig
-): InternalCacheRequestConfig => {
-	console.info(
-		`[Request] ${requestConfig.method?.toUpperCase() ?? ''} | ${
-			requestConfig.url ?? ''
-		}`
-	)
-	return requestConfig
+export const loggingBeforeRequest: BeforeRequestHook = request => {
+	console.info(`[Request] ${request.method.toUpperCase()} | ${request.url}`)
 }
 
-export const handleRequestError = (error: AxiosError): Promise<AxiosError> => {
+export const loggingAfterResponse: AfterResponseHook = (
+	request,
+	_options,
+	response
+) => {
+	if (response.ok) {
+		console.info(
+			`[Request Response] ${request.method.toUpperCase()} | ${request.url}`
+		)
+	} else {
+		console.error(
+			`[Response Error] CODE ${response.status} | ${response.statusText}`
+		)
+	}
+}
+
+export const loggingBeforeError: BeforeErrorHook = error => {
 	console.error(
-		`[Request Error] CODE ${error.code ?? 'UNKNOWN'} | ${error.message}`
+		`[Request Error] CODE ${error.response?.status ?? 'UNKNOWN'} | ${error.message}`
 	)
-	throw error
-}
-
-export const handleResponse = (
-	response: CacheAxiosResponse
-): CacheAxiosResponse => {
-	console.info(
-		`[Request Response] ${response.config.method?.toUpperCase() ?? ''} | ${
-			response.config.url ?? ''
-		}`,
-		response.data
-	)
-	return response
-}
-
-export const handleResponseError = (error: AxiosError): Promise<AxiosError> => {
-	console.error(
-		`[ Response Error ] CODE ${error.code ?? 'UNKNOWN'} | ${error.message}`
-	)
-	throw error
+	return error
 }
