@@ -19,7 +19,7 @@ export * from './config/logging.config'
 // ENDPOINTS
 export * from './endpoints/anime.endpoints'
 export * from './endpoints/characters.endpoints'
-export * from './endpoints/clubs.enpoints'
+export * from './endpoints/clubs.endpoints'
 export * from './endpoints/genres.endpoints'
 export * from './endpoints/magazines.endpoints'
 export * from './endpoints/manga.endpoints'

@@ -1,4 +1,5 @@
 export * from './characters-params.model'
+export * from './pagination-params.model'
 export * from './genres-params.model'
 export * from './schedules-params.model'
 export * from './search-params.model'

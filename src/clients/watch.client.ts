@@ -1,4 +1,5 @@
 import { WatchEndpoints } from '../endpoints/watch.endpoints'
+import type { PaginationParams } from '../models'
 import type {
 	WatchEpisode,
 	WatchEpisodePromo
@@ -29,7 +30,7 @@ export class WatchClient extends BaseClient {
 	/**
 	 * @returns Recently added promotional videos
 	 */
-	public getWatchRecentPromos(params: Partial<{ page: number }> = {}) {
+	public getWatchRecentPromos(params: Partial<PaginationParams> = {}) {
 		return this.getResource<WatchEpisodePromo[]>(
 			WatchEndpoints.watchRecentPromos,
 			{},
