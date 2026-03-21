@@ -1,4 +1,5 @@
-import { ClubsEndpoints } from '../endpoints/clubs.enpoints'
+import { ClubsEndpoints } from '../endpoints/clubs.endpoints'
+import type { PaginationParams } from '../models'
 import type { ClubSearchParams } from '../models/clubs/clubs-params.model'
 import type {
 	Club,
@@ -29,7 +30,7 @@ export class ClubsClient extends BaseClient {
 	 * @param id Club ID
 	 * @param params
 	 */
-	public getClubMembers(id: number, params: Partial<{ page: number }> = {}) {
+	public getClubMembers(id: number, params: Partial<PaginationParams> = {}) {
 		return this.getResource<ClubMember[]>(
 			ClubsEndpoints.clubMembers,
 			{ id },
