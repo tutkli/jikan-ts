@@ -2,23 +2,23 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
-## Project Overview
+## Project
 
-jikan-ts is a TypeScript wrapper for the [Jikan API](https://jikan.moe/) (unofficial MyAnimeList API). Published as `@tutkli/jikan-ts` on npm. ESM-only package using Bun as build tool and test runner.
+TypeScript wrapper for the [Jikan API](https://jikan.moe/) (unofficial MyAnimeList API). Published as `@tutkli/jikan-ts` on npm.
 
-## Common Commands
+## Commands
 
 ```bash
-bun run build          # Build to dist/ (ESM + .d.ts)
-bun test               # Run all tests (alias: bun run test:dev)
-bun test --coverage    # Run tests with coverage
-bun run lint           # Check linting (biome)
-bun run lint:fix       # Auto-fix lint issues
-bun run format         # Check formatting (biome)
-bun run format:fix     # Auto-fix formatting
+bun run build          # Bundle with Bun + generate .d.ts files
+bun run lint           # Lint with Oxlint
+bun run lint:fix       # Lint and auto-fix
+bun run fmt            # Format with Oxfmt
+bun run fmt:check      # Check formatting
+bun run test:dev       # Run tests (Bun test framework)
+bun run test:coverage  # Run tests with coverage
 ```
 
-To run a single test file:
+Run a single test file:
 
 ```bash
 bun test src/__tests__/anime-client.spec.ts
@@ -26,36 +26,37 @@ bun test src/__tests__/anime-client.spec.ts
 
 ## Architecture
 
-**Client-Endpoint-Model pattern:**
+**Entry points** (defined in `bun.build.js` and `package.json` exports):
 
-- **BaseClient** (`src/clients/base.client.ts`) — Abstract base with `getResource<T>()` and `replacePathParams()`. Handles axios instance creation with caching (`axios-cache-interceptor`) and optional logging interceptors.
-- **Domain Clients** (e.g., `AnimeClient`, `MangaClient`) — Extend BaseClient, expose typed methods like `getAnimeById(id)`. Each client maps to one API resource domain.
-- **JikanClient** (`src/clients/jikan.client.ts`) — Facade that composes all domain clients (`.anime`, `.manga`, `.characters`, etc.) sharing a single axios instance for cache reuse.
-- **Endpoints** (`src/endpoints/`) — Constant objects mapping method names to parameterized URL paths (e.g., `'/anime/{id}/full'`).
-- **Models** (`src/models/`) — TypeScript interfaces for API responses. `JikanResponse<T>` is the generic wrapper with pagination metadata.
+- `src/index.ts` → main export (re-exports client.ts)
+- `src/client.ts` → client classes export
+- `src/types.ts` → types-only export (zero runtime dependencies)
 
-**Not yet implemented clients:** PeopleClient, ProducersClient, RecommendationsClient, ReviewsClient, UsersClient.
+**Client pattern**: `BaseClient` (abstract) → specialized clients (e.g., `AnimeClient`) → `JikanClient` (aggregator that composes all clients sharing one cache and Ky instance).
+
+- `src/clients/base.client.ts` — Abstract base with `getResource<T>()`, in-memory caching, and path parameter interpolation (`{id}` replacement)
+- `src/clients/jikan.client.ts` — Facade exposing all 15 domain clients as properties
+- `src/config/ky.config.ts` — Ky HTTP client factory (base URL, optional logging hooks)
+- `src/config/cache.ts` — `ResponseCache` class (Map-based, TTL expiry, default 5 min)
+- `src/constants/base.const.ts` — `BASE_URL = 'https://api.jikan.moe/v4'`
+- `src/endpoints/` — Endpoint path templates as `const` objects per domain
+- `src/models/` — TypeScript interfaces for API responses and query parameters
 
 ## Code Style
 
-Configured via `biome.json`:
+- **Formatter**: Oxfmt — tabs, single quotes, no semicolons, no trailing commas, 80 char width
+- **Pre-commit hook**: lint-staged runs `oxfmt` on staged files (configured in `.githooks/pre-commit`)
+- **Strict TypeScript**: `strict: true` in tsconfig.json
 
-- Tabs for indentation, line width 80
-- Single quotes, no semicolons (as-needed), no trailing commas
-- Arrow parens: as-needed
-- CRLF line endings
-- `noUnusedImports` enforced as error
-- Import organization is automatic
+## Testing
 
-Pre-commit hook runs lint-staged with biome on staged files.
-
-## Testing Notes
-
-- Tests are in `src/__tests__/*.spec.ts` and use `bun:test` (describe/it/expect).
-- Tests are **integration tests** — they hit the live Jikan API, not mocks.
-- Tests include 1000ms delays between requests to respect API rate limits.
-- Peer dependencies `axios` and `axios-cache-interceptor` must be installed to run tests.
+Tests are integration tests that call the live Jikan API. Each test has a 1-second `beforeEach` delay for rate limiting. Located in `src/__tests__/`. Uses `bun:test` imports (`describe`, `it`, `expect`).
 
 ## Build
 
-Build config is in `bun.build.js`. Entry point: `src/index.ts`. Output: minified ESM in `dist/` with generated `.d.ts` via `bun-plugin-dts`. `axios` and `axios-cache-interceptor` are externalized (peer deps).
+Two-step process in the `build` script:
+
+1. Bun bundles ESM output with code splitting and minification (`bun.build.js`)
+2. `tsc --emitDeclarationOnly` generates type declarations into `dist/`
+
+Ky is marked as `external` (peer dependency).
