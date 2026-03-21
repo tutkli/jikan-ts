@@ -1,4 +1,4 @@
-import { getAxiosCacheInstance } from '../config/axios.config'
+import { createKyInstance } from '../config/ky.config'
 import { AnimeClient } from './anime.client'
 import type { ClientArgs } from './base.client'
 import { CharactersClient } from './characters.client'
@@ -41,70 +41,32 @@ export class JikanClient {
 	public watch: WatchClient
 
 	constructor(clientOptions: Partial<ClientArgs> = {}) {
-		const axiosCacheInstance = getAxiosCacheInstance(
-			clientOptions.axiosInstance,
-			clientOptions.cacheOptions
-		)
+		const { api, cache } = createKyInstance({
+			enableLogging: clientOptions.enableLogging,
+			cacheOptions: clientOptions.cacheOptions,
+			kyInstance: clientOptions.kyInstance
+		})
 
-		this.anime = new AnimeClient({
-			axiosInstance: axiosCacheInstance,
-			...clientOptions
-		})
-		this.characters = new CharactersClient({
-			axiosInstance: axiosCacheInstance,
-			...clientOptions
-		})
-		this.clubs = new ClubsClient({
-			axiosInstance: axiosCacheInstance,
-			...clientOptions
-		})
-		this.genres = new GenresClient({
-			axiosInstance: axiosCacheInstance,
-			...clientOptions
-		})
-		this.magazines = new MagazinesClient({
-			axiosInstance: axiosCacheInstance,
-			...clientOptions
-		})
-		this.manga = new MangaClient({
-			axiosInstance: axiosCacheInstance,
-			...clientOptions
-		})
-		this.people = new PeopleClient({
-			axiosInstance: axiosCacheInstance,
-			...clientOptions
-		})
-		this.producers = new ProducersClient({
-			axiosInstance: axiosCacheInstance,
-			...clientOptions
-		})
-		this.top = new TopClient({
-			axiosInstance: axiosCacheInstance,
-			...clientOptions
-		})
-		this.schedules = new SchedulesClient({
-			axiosInstance: axiosCacheInstance,
-			...clientOptions
-		})
-		this.seasons = new SeasonsClient({
-			axiosInstance: axiosCacheInstance,
-			...clientOptions
-		})
-		this.random = new RandomClient({
-			axiosInstance: axiosCacheInstance,
-			...clientOptions
-		})
-		this.recommendations = new RecommendationsClient({
-			axiosInstance: axiosCacheInstance,
-			...clientOptions
-		})
-		this.reviews = new ReviewsClient({
-			axiosInstance: axiosCacheInstance,
-			...clientOptions
-		})
-		this.watch = new WatchClient({
-			axiosInstance: axiosCacheInstance,
-			...clientOptions
-		})
+		const sharedOptions: Partial<ClientArgs> = {
+			...clientOptions,
+			kyInstance: api,
+			_cache: cache
+		}
+
+		this.anime = new AnimeClient(sharedOptions)
+		this.characters = new CharactersClient(sharedOptions)
+		this.clubs = new ClubsClient(sharedOptions)
+		this.genres = new GenresClient(sharedOptions)
+		this.magazines = new MagazinesClient(sharedOptions)
+		this.manga = new MangaClient(sharedOptions)
+		this.people = new PeopleClient(sharedOptions)
+		this.producers = new ProducersClient(sharedOptions)
+		this.top = new TopClient(sharedOptions)
+		this.schedules = new SchedulesClient(sharedOptions)
+		this.seasons = new SeasonsClient(sharedOptions)
+		this.random = new RandomClient(sharedOptions)
+		this.recommendations = new RecommendationsClient(sharedOptions)
+		this.reviews = new ReviewsClient(sharedOptions)
+		this.watch = new WatchClient(sharedOptions)
 	}
 }
