@@ -10,10 +10,10 @@ export interface Character {
 	url: string
 	images: JikanImages
 	name: string
-	name_kanji: string
+	name_kanji: string | null
 	nicknames: string[]
 	favorites: number
-	about: string
+	about: string | null
 }
 
 export interface CharacterFull extends Character {

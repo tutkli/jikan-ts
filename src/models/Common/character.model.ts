@@ -17,4 +17,4 @@ export interface CharacterVoiceActor {
 	language: string
 }
 
-export type CharacterRole = 'Main' | 'Supporting'
+export type CharacterRole = string

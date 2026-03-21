@@ -16,13 +16,13 @@ export interface JikanResourceTitle {
 }
 
 export interface JikanResourcePeriod {
-	from: string
-	to: string
+	from: string | null
+	to: string | null
 	prop: {
-		from: { day: number; month: number; year: number }
-		to: { day: number; month: number; year: number }
+		from: { day: number | null; month: number | null; year: number | null }
+		to: { day: number | null; month: number | null; year: number | null }
+		string: string | null
 	}
-	string: string
 }
 
 export interface JikanResourceRelation {

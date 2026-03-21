@@ -1,7 +1,9 @@
 import type { JikanImages } from './image.model'
 
 export interface Recommendation {
-	entry: RecommendationEntry[]
+	entry: RecommendationEntry
+	url: string
+	votes: number
 }
 
 export interface RecommendationEntry {

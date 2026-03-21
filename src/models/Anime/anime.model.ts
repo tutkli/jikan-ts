@@ -16,27 +16,27 @@ export interface Anime {
 	approved: boolean
 	titles: JikanResourceTitle[]
 	title: string
-	title_english?: string
-	title_japanese?: string
+	title_english?: string | null
+	title_japanese?: string | null
 	title_synonyms: string[]
-	type: AnimeType
-	source: string
-	episodes?: number
-	status: AnimeStatus
+	type: AnimeType | null
+	source: string | null
+	episodes: number | null
+	status: AnimeStatus | null
 	airing: boolean
 	aired: JikanResourcePeriod
-	duration: string
-	rating?: AnimeRating
-	score?: number
-	scored_by?: number
-	rank?: number
-	popularity: number
-	members: number
-	favorites: number
-	synopsis?: string
-	background?: string
-	season?: AnimeSeason
-	year?: number
+	duration: string | null
+	rating?: AnimeRatingString | null
+	score: number | null
+	scored_by: number | null
+	rank: number | null
+	popularity: number | null
+	members: number | null
+	favorites: number | null
+	synopsis: string | null
+	background: string | null
+	season: AnimeSeason | null
+	year: number | null
 	broadcast: AnimeBroadcast
 	producers: JikanResource[]
 	licensors: JikanResource[]
@@ -48,14 +48,14 @@ export interface Anime {
 	relations?: JikanResourceRelation[]
 	theme?: AnimeTheme
 	external?: JikanNamedResource[]
-	streaming: JikanNamedResource[]
+	streaming?: JikanNamedResource[]
 }
 
 export interface AnimeBroadcast {
-	day: string
-	time: string
-	timezone: string
-	string: string
+	day: string | null
+	time: string | null
+	timezone: string | null
+	string: string | null
 }
 
 export interface AnimeTheme {
@@ -63,16 +63,7 @@ export interface AnimeTheme {
 	endings: string[]
 }
 
-export type AnimeType =
-	| 'TV'
-	| 'Movie'
-	| 'OVA'
-	| 'Special'
-	| 'ONA'
-	| 'Music'
-	| 'CM'
-	| 'PV'
-	| 'TV Special'
+export type AnimeType = 'TV' | 'OVA' | 'Movie' | 'Special' | 'ONA' | 'Music'
 export type AnimeSearchType =
 	| 'tv'
 	| 'movie'
@@ -88,4 +79,11 @@ export type AnimeStatus =
 	| 'Currently Airing'
 	| 'Not yet aired'
 export type AnimeRating = 'g' | 'pg' | 'pg13' | 'r17' | 'r' | 'rx'
+export type AnimeRatingString =
+	| 'G - All Ages'
+	| 'PG - Children'
+	| 'PG-13 - Teens 13 or older'
+	| 'R - 17+ (violence & profanity)'
+	| 'R+ - Mild Nudity'
+	| 'Rx - Hentai'
 export type AnimeSeason = 'spring' | 'summer' | 'fall' | 'winter'

@@ -10,7 +10,7 @@ export interface JikanForum {
 		url: string
 		author_username: string
 		author_url: string
-		date: string
+		date: string | null
 	}
 }
 
