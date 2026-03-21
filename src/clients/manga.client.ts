@@ -9,9 +9,12 @@ import type {
 	JikanNews,
 	JikanRelation,
 	Manga,
+	MangaReview,
 	MangaSearchParams,
 	MangaStatistics,
-	Recommendation
+	MangaUserUpdate,
+	Recommendation,
+	ReviewsParams
 } from '../models'
 import { BaseClient } from './base.client'
 
@@ -127,6 +130,32 @@ export class MangaClient extends BaseClient {
 		return this.getResource<JikanExternalLink[]>(MangaEndpoints.mangaExternal, {
 			id
 		})
+	}
+
+	/**
+	 * Get user updates for the manga
+	 * @param id manga id
+	 * @param page page number
+	 */
+	public getMangaUserUpdates(id: number, page = 1) {
+		return this.getResource<MangaUserUpdate[]>(
+			MangaEndpoints.mangaUserUpdates,
+			{ id },
+			{ page }
+		)
+	}
+
+	/**
+	 * Get reviews for the manga
+	 * @param id manga id
+	 * @param params review parameters
+	 */
+	public getMangaReviews(id: number, params?: Partial<ReviewsParams>) {
+		return this.getResource<MangaReview[]>(
+			MangaEndpoints.mangaReviews,
+			{ id },
+			params
+		)
 	}
 
 	/**

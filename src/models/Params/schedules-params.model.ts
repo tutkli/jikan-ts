@@ -13,5 +13,7 @@ export type SchedulesFilter =
 	| 'wednesday'
 	| 'thursday'
 	| 'friday'
+	| 'saturday'
+	| 'sunday'
 	| 'unknown'
 	| 'other'

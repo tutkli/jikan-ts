@@ -1,5 +1,5 @@
-import type { AnimeType } from '../Anime'
-import type { MangaType } from '../Manga'
+import type { AnimeSearchType } from '../Anime'
+import type { MangaSearchType } from '../Manga'
 
 type TopFilter = 'upcoming' | 'bypopularity' | 'favorite'
 
@@ -18,7 +18,7 @@ export interface JikanTopParams {
  * See also: [Jikan API Documentation](https://docs.api.jikan.moe/#tag/top/operation/getTopAnime)
  */
 export interface AnimeTopParams extends JikanTopParams {
-	type?: AnimeType
+	type?: AnimeSearchType
 	filter?: TopAnimeFilter
 }
 
@@ -28,6 +28,6 @@ export interface AnimeTopParams extends JikanTopParams {
  * See also: [Jikan API Documentation](https://docs.api.jikan.moe/#tag/top/operation/getTopManga)
  */
 export interface MangaTopParams extends JikanTopParams {
-	type?: MangaType
+	type?: MangaSearchType
 	filter?: TopMangaFilter
 }

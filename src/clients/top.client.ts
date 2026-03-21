@@ -1,11 +1,13 @@
 import { TopEndpoints } from '../endpoints/top.endpoints'
 import type {
 	Anime,
+	AnimeReview,
 	AnimeTopParams,
 	Character,
 	JikanTopParams,
 	Manga,
-	MangaTopParams
+	MangaTopParams,
+	Person
 } from '../models'
 import { BaseClient } from './base.client'
 
@@ -43,5 +45,21 @@ export class TopClient extends BaseClient {
 			{},
 			searchParams
 		)
+	}
+
+	/**
+	 * Get top people
+	 * @param params pagination params
+	 */
+	public getTopPeople(params?: Partial<JikanTopParams>) {
+		return this.getResource<Person[]>(TopEndpoints.topPeople, {}, params)
+	}
+
+	/**
+	 * Get top reviews
+	 * @param params pagination params
+	 */
+	public getTopReviews(params?: Partial<JikanTopParams>) {
+		return this.getResource<AnimeReview[]>(TopEndpoints.topReviews, {}, params)
 	}
 }

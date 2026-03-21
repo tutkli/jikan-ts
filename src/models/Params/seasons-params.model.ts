@@ -1,9 +1,11 @@
-import type { AnimeType } from '../Anime'
+import type { AnimeSearchType } from '../Anime'
 
 export interface JikanSeasonsParams {
 	page?: number
 	limit?: number
-	filter?: AnimeType
+	filter?: AnimeSearchType
+	sfw?: boolean
+	unapproved?: boolean
 }
 
 /**

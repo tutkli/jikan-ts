@@ -5,9 +5,12 @@ import type {
 	AnimeEpisode,
 	AnimeEpisodeVideo,
 	AnimePicture,
+	AnimeReview,
 	AnimeSearchParams,
 	AnimeStaff,
 	AnimeStatistics,
+	AnimeTheme,
+	AnimeUserUpdate,
 	AnimeVideos,
 	ForumFilter,
 	JikanExternalLink,
@@ -15,7 +18,8 @@ import type {
 	JikanMoreInfo,
 	JikanNews,
 	JikanRelation,
-	Recommendation
+	Recommendation,
+	ReviewsParams
 } from '../models'
 import { BaseClient } from './base.client'
 
@@ -192,6 +196,51 @@ export class AnimeClient extends BaseClient {
 		return this.getResource<JikanExternalLink[]>(AnimeEndpoints.animeExternal, {
 			id
 		})
+	}
+
+	/**
+	 * Get anime streaming links
+	 * @param id anime id
+	 */
+	public getAnimeStreaming(id: number) {
+		return this.getResource<JikanExternalLink[]>(
+			AnimeEndpoints.animeStreaming,
+			{ id }
+		)
+	}
+
+	/**
+	 * Get anime themes (openings and endings)
+	 * @param id anime id
+	 */
+	public getAnimeThemes(id: number) {
+		return this.getResource<AnimeTheme>(AnimeEndpoints.animeThemes, { id })
+	}
+
+	/**
+	 * Get user updates for the anime
+	 * @param id anime id
+	 * @param page page number
+	 */
+	public getAnimeUserUpdates(id: number, page = 1) {
+		return this.getResource<AnimeUserUpdate[]>(
+			AnimeEndpoints.animeUserUpdates,
+			{ id },
+			{ page }
+		)
+	}
+
+	/**
+	 * Get reviews for the anime
+	 * @param id anime id
+	 * @param params review parameters
+	 */
+	public getAnimeReviews(id: number, params?: Partial<ReviewsParams>) {
+		return this.getResource<AnimeReview[]>(
+			AnimeEndpoints.animeReviews,
+			{ id },
+			params
+		)
 	}
 
 	/**

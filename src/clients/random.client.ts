@@ -1,5 +1,5 @@
 import { RandomEndpoints } from '../endpoints/random.endpoints'
-import type { Anime, Character, Manga } from '../models'
+import type { Anime, Character, Manga, Person } from '../models'
 import { BaseClient } from './base.client'
 
 /**
@@ -25,9 +25,16 @@ export class RandomClient extends BaseClient {
 	}
 
 	/**
-	 * Get random character
+	 * Get a random character
 	 */
 	public getRandomCharacters() {
 		return this.getResource<Character>(RandomEndpoints.randomCharacters)
+	}
+
+	/**
+	 * Get random person
+	 */
+	public getRandomPerson() {
+		return this.getResource<Person>(RandomEndpoints.randomPeople)
 	}
 }
