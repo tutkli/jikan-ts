@@ -4,8 +4,8 @@ import type {
 	CharacterAnime,
 	CharacterFull,
 	CharacterManga,
-	CharacterVoiceActor,
 	CharactersSearchParams,
+	CharacterVoiceActor,
 	JikanImagesCollection
 } from '../models'
 import { BaseClient } from './base.client'

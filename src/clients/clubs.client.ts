@@ -1,12 +1,12 @@
 import { ClubsEndpoints } from '../endpoints/clubs.endpoints'
 import type { PaginationParams } from '../models'
-import type { ClubSearchParams } from '../models/clubs/clubs-params.model'
 import type {
 	Club,
 	ClubMember,
 	ClubRelations,
 	ClubStaff
 } from '../models/clubs/clubs.model'
+import type { ClubSearchParams } from '../models/clubs/clubs-params.model'
 import { BaseClient } from './base.client'
 
 /**
