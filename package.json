@@ -1,6 +1,6 @@
 {
 	"name": "@tutkli/jikan-ts",
-	"version": "2.2.0",
+	"version": "3.0.0",
 	"description": "Node.js wrapper for the Jikan API with built-in typings.",
 	"keywords": [
 		"MyAnimeList",
