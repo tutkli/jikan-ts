@@ -123,3 +123,9 @@ dist
 # vitepress
 docs/.vitepress/dist
 docs/.vitepress/cache
+
+# Claude
+/.claude/settings.local.json
+
+sh.exe.stackdump
+
