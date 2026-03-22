@@ -2,6 +2,7 @@
 
 ### ⚠ BREAKING CHANGES
 
+- migrate from `auto-changelog` to `conventional-changelog` and update related dependencies
 - consolidate and rewrite client test suites
 - migrate from Biome to Oxlint and Oxfmt
 - replace Axios with Ky
@@ -22,6 +23,10 @@
 - correct clubs endpoints typo and update pagination types ([07e7581](https://github.com/tutkli/jikan-ts/commit/07e7581c68f1a2fcd0f5fb2232e0b3b005a5720a))
 - use correct trailingCommas key in biome config ([5fbce96](https://github.com/tutkli/jikan-ts/commit/5fbce9693077e186c88c05fb5ed53b7067c9e52d))
 - **watch.client:** correct parameter handling in promo fetch ([ad166b9](https://github.com/tutkli/jikan-ts/commit/ad166b9284da5ff2417577681c7745dfa298411a))
+
+### Miscellaneous Chores
+
+- migrate from `auto-changelog` to `conventional-changelog` and update related dependencies ([cf1f68b](https://github.com/tutkli/jikan-ts/commit/cf1f68be7c9151a37c1800171a0163cfd9fa89a2))
 
 ### Code Refactoring
 
