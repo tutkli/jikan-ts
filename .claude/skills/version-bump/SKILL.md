@@ -46,12 +46,16 @@ The highest-priority signal wins: if there is at least one breaking change, bump
 7. **Apply the version bump.** Run:
 
    ```bash
-   npm version <major|minor|patch> --no-git-tag-version
+   npm version <major|minor|patch>
    ```
 
-   This updates `package.json` and triggers the `preversion` / `version` / `postversion` lifecycle scripts if they exist. The `--no-git-tag-version` flag prevents npm from auto-committing and tagging — the user controls when to commit.
+   This updates `package.json`, runs the `version` lifecycle script (which generates the CHANGELOG via `conventional-changelog`), commits `package.json` and `CHANGELOG.md`, and creates a git tag `v<new-version>`.
 
-8. **Report the result.** Show the new version and any output from lifecycle scripts (e.g., changelog generation).
+8. **Report the result.** Show the new version and remind the user that the commit and tag have been created. They can publish with:
+
+   ```bash
+   git push --follow-tags && npm publish
+   ```
 
 ## Edge cases
 
