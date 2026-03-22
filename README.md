@@ -6,7 +6,7 @@
 
 ![Language Shield](https://img.shields.io/badge/language-typescript-blue?style=for-the-badge)
 ![GitHub License](https://img.shields.io/github/license/tutkli/jikan-ts?style=for-the-badge&color=blueviolet)
-![Code Style Shield](https://img.shields.io/badge/code%20style-Biome-60A5FA?style=for-the-badge&logo=biome)
+![Code Style Shield](https://img.shields.io/badge/code%20style-Oxfmt-60A5FA?style=for-the-badge)
 ![NPM Downloads](https://img.shields.io/npm/dt/%40tutkli%2Fjikan-ts?style=for-the-badge&color=red&logo=npm&link=https%3A%2F%2Fwww.npmjs.com%2Fpackage%2F%40tutkli%2Fjikan-ts)
 ![npm bundle size](https://img.shields.io/bundlephobia/minzip/%40tutkli%2Fjikan-ts?style=for-the-badge&color=darkgreen&link=https%3A%2F%2Fwww.npmjs.com%2Fpackage%2F%40tutkli%2Fjikan-ts)
 
@@ -17,16 +17,16 @@
 ## Features
 
 - 💅 Fully typed
-- ♻ Http Request Cache
-- 📄 Logging
+- ♻ Built-in in-memory response cache (TTL-based)
+- 📄 Request logging
 - 📦 ESM with tree shaking support
 
 ## Installation
 
-### Full client (with axios)
+### Full client (with ky)
 
 ```bash
-npm install @tutkli/jikan-ts axios axios-cache-interceptor
+npm install @tutkli/jikan-ts ky
 ```
 
 ### Types only (zero runtime dependencies)
@@ -80,33 +80,31 @@ jikanClient.anime.getAnimeById(1).then((response: JikanResponse<Anime>) => {
 
 ### Cache Configuration
 
-Jikan-ts uses `axios-cache-interceptor` to store request results.
-To use a specific configuration, pass the `cacheOptions` argument when instantiating a client:
+Jikan-ts uses a built-in in-memory cache with TTL-based expiry (default: 5 minutes).
+To customize the cache, pass the `cacheOptions` argument when instantiating a client:
 
 ```ts
-import { AnimeClient } from '@tutkli/jikan-ts';
+import { AnimeClient } from '@tutkli/jikan-ts'
 
 const animeClient = new AnimeClient({
-    cacheOptions: { ... } // axios-cache-interceptor options
-  }
-);
+	cacheOptions: { ttl: 10 * 60 * 1000 } // 10 minutes
+})
 ```
 
-### Custom Axios Instance
+### Custom Ky Instance
 
-Jikan uses `axios` as an `http` client and if you are not satisfied with the default client settings, then you can build your instance by passing it to the optional `axiosInstance` argument
+Jikan-ts uses [Ky](https://github.com/sindresorhus/ky) as its HTTP client. You can provide your own Ky instance via the optional `kyInstance` argument:
 
 ```ts
-import { AnimeClient } from '@tutkli/jikan-ts';
-import Axios from 'axios';
+import { AnimeClient } from '@tutkli/jikan-ts'
+import ky from 'ky'
 
 const animeClient = new AnimeClient({
-    axiosInstance: Axios.create({ ... })
-  }
-);
+	kyInstance: ky.create({
+		/* ... */
+	})
+})
 ```
-
-For more information, check out the [axios-cache-interceptor Documentation](https://axios-cache-interceptor.js.org/).
 
 ### Logging
 
@@ -120,29 +118,7 @@ const animeClient = new AnimeClient({
 })
 ```
 
-## Available Clients
-
-| Client                        | Status       |
-| ----------------------------- | ------------ |
-| **AnimeClient**               | ✅ Supported |
-| **CharactersClient**          | ✅ Supported |
-| **ClubsClient**               | ✅ Supported |
-| **GenresClient**              | ✅ Supported |
-| **MagazinesClient**           | ✅ Supported |
-| **MangaClient**               | ✅ Supported |
-| **PeopleClient**              | ❌ Upcoming  |
-| **ProducersClient**           | ❌ Upcoming  |
-| **RandomClient**              | ✅ Supported |
-| **RecommendationsClient**     | ❌ Upcoming  |
-| **ReviewsClient**             | ❌ Upcoming  |
-| **SchedulesClient**           | ✅ Supported |
-| **UsersClient**               | ❌ Upcoming  |
-| **SeasonsClient**             | ✅ Supported |
-| **TopClient**                 | ✅ Supported |
-| **WatchClient**               | ✅ Supported |
-| **JikanClient** (Main client) | ✅ Supported |
-
-## Leave you feedback
+## Leave your feedback
 
 - Did you find this project useful? [Leave a ⭐](https://github.com/tutkli/jikan-ts)
 - Found a problem? [Create an issue 🔎](https://github.com/tutkli/jikan-ts/issues)
