@@ -14,6 +14,7 @@ import { ReviewsClient } from './reviews.client'
 import { SchedulesClient } from './schedules.client'
 import { SeasonsClient } from './seasons.client'
 import { TopClient } from './top.client'
+import { UsersClient } from './users.client'
 import { WatchClient } from './watch.client'
 
 /**
@@ -38,6 +39,7 @@ export class JikanClient {
 	public random: RandomClient
 	public recommendations: RecommendationsClient
 	public reviews: ReviewsClient
+	public users: UsersClient
 	public watch: WatchClient
 
 	constructor(clientOptions: Partial<ClientArgs> = {}) {
@@ -67,6 +69,7 @@ export class JikanClient {
 		this.random = new RandomClient(sharedOptions)
 		this.recommendations = new RecommendationsClient(sharedOptions)
 		this.reviews = new ReviewsClient(sharedOptions)
+		this.users = new UsersClient(sharedOptions)
 		this.watch = new WatchClient(sharedOptions)
 	}
 }
