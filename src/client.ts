@@ -15,6 +15,7 @@ export * from './clients/reviews.client'
 export * from './clients/schedules.client'
 export * from './clients/seasons.client'
 export * from './clients/top.client'
+export * from './clients/users.client'
 export * from './clients/watch.client'
 // CONFIG
 export * from './config/logging.config'
