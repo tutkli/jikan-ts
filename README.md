@@ -100,9 +100,7 @@ import { AnimeClient } from '@tutkli/jikan-ts'
 import ky from 'ky'
 
 const animeClient = new AnimeClient({
-	kyInstance: ky.create({
-		/* ... */
-	})
+	kyInstance: ky.create({/* ... */})
 })
 ```
 
