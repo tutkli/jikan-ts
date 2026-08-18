@@ -1,3 +1,13 @@
+## [3.1.0](https://github.com/tutkli/jikan-ts/compare/v3.0.0...v3.1.0) (2026-08-18)
+
+### Features
+
+- add users endpoints and client ([53e284b](https://github.com/tutkli/jikan-ts/commit/53e284b54c466e8ca2d29815239140687a0cbb67)), closes [#20](https://github.com/tutkli/jikan-ts/issues/20)
+
+### Bug Fixes
+
+- set oxfmt endOfLine to lf to match committed files ([1f5b263](https://github.com/tutkli/jikan-ts/commit/1f5b26312a1ab02e1014b0abd98c9590732f26d7))
+
 ## [3.0.0](https://github.com/tutkli/jikan-ts/compare/v2.2.0...v3.0.0) (2026-03-22)
 
 ### ⚠ BREAKING CHANGES
